@@ -30,7 +30,7 @@ HOST: https://api.mis.tot.co.th/mis
 + Operation_Id: `61-0003` (string) - เลขปฏิบัติการ
 + O_Department_Id: `10-1-DEP-171` (string) - รหัสหน่วยปฏิบัติการ
 + O_Department_Name: `โรงพยาบาลวิภาวดี` (string) - ชื่อหน่วยปฏิบัติการ
-+ O_Vehicle (Vehicle) - รายการชุดปฏิบัติการ
++ O_Vehicle (array[Vehicle]) - รายการชุดปฏิบัติการ
 + O_Victim (Victim) - ข้อมูลผู้ป่วย
 
 # Victim (object)
@@ -68,6 +68,6 @@ HOST: https://api.mis.tot.co.th/mis
 + No - เลขที่ใบประกอบ
 + Tel - เบอร์โทรศัพท์
 
-# Vehicle (array, fixed-type)
+# Vehicle (object)
 + Vehicle_Id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
 + Vehicle_Name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
