@@ -1,0 +1,73 @@
+FORMAT: 1A
+HOST: https://api.mis.tot.co.th/mis
+
+# MIS API
+
+เอกสารการใช้งาน **MIS's RESTful API.**
+
+## ปฏิบัติการ [/dispatch]
+
+### เพิ่มปฏิบัติการใหม่ [POST /dispatch]
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
+    + Attributes (Dispatch , fixed-type)
+
++ Response 201 (application/json)
+
+    + Attributes (House , fixed-type)
+
+
+## Data Structures
+
+# Dispatch (object)
++ Victim_Id: `61-0004` (string) - เลขผู้ป่วย
++ Event_Id: `61-0001` (string) - เลขเหตุการณ์
++ Operation_Id: `61-0003` (string) - เลขปฏิบัติการ
++ O_Department_Id: `10-1-DEP-171` (string) - รหัสหน่วยปฏิบัติการ
++ O_Department_Name: `โรงพยาบาลวิภาวดี` (string) - ชื่อหน่วยปฏิบัติการ
++ O_Vehicle (Vehicle) - รายการชุดปฏิบัติการ
++ O_Victim (Victim) - ข้อมูลผู้ป่วย
+
+# Victim (object)
++ Victim_Id: `61-0004` (string) - เลขผู้ป่วย
++ V_Title: `นาย` (string) - คำนำหน้าชื่อ
++ V_Firstname: `สมปอง` (string) - ชื่อผู้ป่วย
++ V_Lastname: `สองปม` (string) - นามสกุลผู้ป่วย
++ V_Age_Year: `25` (string) - อายุ(ปี)
++ V_Age_Month: `0` (string) - อายุ(เดือน)
++ V_Age_Day: `0` (string) - อายุ(วัน)
++ V_Gender (Gender) - เพศ
++ V_People_Type (People_Type) - กลุ่มผู้ใช้สิทธิการรักษา
++ V_Id_Card: `1000000000001` (string) - เลขบัตรประชาชนผู้ป่วย
++ V_Country (string) - ประเทศ(ชาวต่างชาติ)
++ V_Passport (string) - เลขที่หนังสือเดินทาง
+
+
+# People_Type (enum)
++ One - คนไทย
++ Two - แรงงานต่างด้าว
++ Three - ชาวต่างชาติ
+
+# Gender (enum)
++ M - ชาย
++ F - หญิง
+
+# Vehicle_Level (enum)
++ ALS - ปฏิบัติการฉุกเฉินระดับสูง
++ ILS - ปฏิบัติการฉุกเฉินระดับกลาง
++ BLS - ปฏิบัติการฉุกเฉินระดับต้น
++ FR - ปฏิบัติการฉุกเฉินเบื้องต้น
+
+# Medical_Director (object)
++ Name - ชื่อ
++ No - เลขที่ใบประกอบ
++ Tel - เบอร์โทรศัพท์
+
+# Vehicle (array, fixed-type)
++ Vehicle_Id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
++ Vehicle_Name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
