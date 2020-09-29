@@ -25,6 +25,7 @@ HOST: https://api.mis.tot.co.th/mis
 ## Data Structures
 
 # Dispatch (object)
++ type: `Dispatch` (string, fixed) - ค่าคงที่
 + Victim_Id: `61-0004` (string) - เลขผู้ป่วย
 + Event_Id: `61-0001` (string) - เลขเหตุการณ์
 + Operation_Id: `61-0003` (string) - เลขปฏิบัติการ
@@ -34,6 +35,7 @@ HOST: https://api.mis.tot.co.th/mis
 + O_Victim (Victim) - ข้อมูลผู้ป่วย
 
 # Victim (object)
++ type: `Victim` (string, fixed) - ค่าคงที่
 + Victim_Id: `61-0004` (string) - เลขผู้ป่วย
 + V_Title: `นาย` (string) - คำนำหน้าชื่อ
 + V_Firstname: `สมปอง` (string) - ชื่อผู้ป่วย
@@ -63,11 +65,13 @@ HOST: https://api.mis.tot.co.th/mis
 + BLS - ปฏิบัติการฉุกเฉินระดับต้น
 + FR - ปฏิบัติการฉุกเฉินเบื้องต้น
 
-# Medical_Director (object)
+# Medical (object)
++ type: `Medical` (string, fixed) - ค่าคงที่
 + Name - ชื่อ
 + No - เลขที่ใบประกอบ
 + Tel - เบอร์โทรศัพท์
 
 # Vehicle (object)
++ type: `Vehicle` (string, fixed) - ค่าคงที่
 + Vehicle_Id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
 + Vehicle_Name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
