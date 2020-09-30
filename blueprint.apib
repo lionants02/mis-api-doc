@@ -37,9 +37,11 @@ MIS API
       + misRoomId: `22315` (string) - รหัสห้อง MIS
       + return (Dispatch)
 
-## อัพเดทปฏิบัติการ Message Queue [PUT /dispatch]
+## อัพเดทปฏิบัติการ [PUT /dispatch]
 
   <img src="data\image\update_dispatch.svg">
+
+  **Message Queue**
 
   ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะทำงานผ่าน Message Queue
 
@@ -52,13 +54,13 @@ MIS API
       + dispatch (Dispatch) - ข้อมูลปฏิบัติการ
 
 
-## เมื่อผู้ป่วยขึ้นรถ หรือ มีการเปลี่ยนพาหนะ [PUT /dispatch/vehicle]
+## ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ [PUT /dispatch/vehicle]
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ป่วย 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ป่วย
 
 ## ส่งรายงานปฏิบัติงาน [POST /dispatch]
 
-## แก้ไขรายงานปฏิบัติงาน 24 ชม. [PUT /dispatch/{idxxx}]
+## แก้ไขรายงานปฏิบัติงาน [PUT /dispatch/{idxxx}]
 
 หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
@@ -74,9 +76,9 @@ MIS API
 
 # Lookup [/lookup]
 
-## ดึงข้อมูล Special list จาก OIS [GET /specialist]
+## Special list [GET /specialist]
 
-## ดึงข้อมูลสิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id card}]
+## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id card}]
 
 # ระบบ Telemed [/telemed]
 
@@ -86,15 +88,21 @@ MIS API
 
 # Notification [/notification]
 
-## ส่ง Notification ไปยังระบบอื่น [POST /notification]
+## ส่ง Notification ไประบบอื่น [PUT /notification]
+
+**Message Queue**
 
 ในที่นี้สำหรับใช้ในกรณี mis ต้องการส่ง Notification ไปยังศูนย์สั่งการ
 
 ## รับ Notification จากระบบอื่น [POST /notification]
 
+**Message Queue**
+
 ใช้ในกรณีระบบอื่นต้องการส่ง Notification ไปยังผู้ใช้ MIS ในที่นี้จะใช้สำหรับ ศูนย์สั่งการต้องการเรียกหมอ
 
 ## รับ Alert จากระบบอื่น [POST /notification]
+
+**Message Queue**
 
 ใช้ในกรณีระบบอื่น ต้องการส่ง Alert message ไปยังผู้ใช้ MIS
 
