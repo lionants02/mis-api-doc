@@ -80,6 +80,20 @@ MIS API
 
 ## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id card}]
 
+สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
+
+**(รอหารือกับทีมอีกครั้งว่าสมควรดึงได้โดยตรงไหม เพราะเป็นข้อมูลละเอียดอ่อน)**
+
++ Parameters
+    + card: `3250400000001` (string, required)
+      ``หมายเลขประจำตัวประชาชน``
+
+## สมาชิกในทีมปฏิบัติการ [GET /operating/{OperatingSetID}]
+
+  + Parameters
+      + OperatingSetID: `23154` (string, required)
+        ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
+
 # ระบบ Telemed [/telemed]
 
 ## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns]
