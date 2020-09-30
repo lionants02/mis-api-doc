@@ -157,6 +157,7 @@ MIS API
 + O_Victim (Victim) - ข้อมูลผู้ป่วย
 
 # Victim (object)
++ type: `Victim` (string, required)
 + EventPatientID: `2222` (number) - รหัสรายละเอียดผู้ประสบเหตุ
 + EventID: `610001` (number) - รหัสเหตุการณ์
 + CBDCode: `CBD25` (string) - อาการผู้ป่วยที่แจ้ง
@@ -178,7 +179,7 @@ MIS API
 + DisabilityCode: `00` (string) - ความพิการ File Disability.xlsx
 
 # Vehicle (object)
-+ type: `Vehicle` (string, fixed) - ค่าคงที่
++ type: `Vehicle` (string, required) - ค่าคงที่
 + Vehicle_Id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
 + Vehicle_Name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
 
