@@ -76,7 +76,13 @@ MIS API
 
 # Lookup [/lookup]
 
-## Special list [GET /specialist]
+## Special list [GET /specialist/{?province}{?query}]
+
++ Parameters
+    + province: `สระแก้ว` (string)
+      ``ชื่อจังหวัด``
+    + query: `กระดูก` (string)
+      ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
 
 ## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id card}]
 
@@ -91,14 +97,22 @@ MIS API
 ## สมาชิกในทีมปฏิบัติการ [GET /operating/{OperatingSetID}]
 
   + Parameters
-      + OperatingSetID: `23154` (string, required)
+      + OperatingSetID: `23154` (number, required)
         ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
 
 # ระบบ Telemed [/telemed]
 
-## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns]
+## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns/{PersonID}]
 
-## ข้อมูลสัญญาณชีพ json [GET /telemed/vitalsigns]
++ Parameters
+    + PersonID: `002321` (number, required)
+      ``รหัสข้อมูลบุคคล``
+
+## ข้อมูลสัญญาณชีพ json [GET /telemed/vitalsigns/{PersonID}]
+
++ Parameters
+    + PersonID: `002321` (number, required)
+      ``รหัสข้อมูลบุคคล``
 
 # Notification [/notification]
 
