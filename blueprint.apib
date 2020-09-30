@@ -35,23 +35,25 @@ MIS API
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ป่วย 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ป่วย
 
-## ส่งรายงานปฏิบัติงาน [/dispatch]
+## ส่งรายงานปฏิบัติงาน [POST /dispatch]
 
-## แก้ไขรายงานปฏิบัติงาน 24 ชม. [/dispatch]
+## แก้ไขรายงานปฏิบัติงาน 24 ชม. [PUT /dispatch/{idxxx}]
 
 # จัดการเวร [/duty]
 
-## เข้าเวร/ออกเวร [/duty]
+## เข้าเวร/ออกเวร [PUT /duty]
 
 # Protocol [/protocol]
 
-## Offline protocol [/protocol]
+## Offline protocol [GET /protocol]
 
-## Online protocol [/protocol]
+## Online protocol [GET /protocol]
 
 # Lookup [/lookup]
 
-## ดึงข้อมูล Special list จาก OIS [/specialist]
+## ดึงข้อมูล Special list จาก OIS [GET /specialist]
+
+## ดึงข้อมูลสิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id card}]
 
 # ระบบ Telemed [/telemed]
 
@@ -64,22 +66,25 @@ MIS API
 ## Data Structures
 
 # Dispatch (object)
-+ type: `Dispatch` (string, fixed) - ค่าคงที่
-+ EventID: `61-0001` (string) - รหัสเหตุการณ์
-+ OperationID: `61-0003` (string) - เลขปฏิบัติการ
-+ VehicleIID: : 6กจ9999, 9ดม2448 (array) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
-+ OfficeID (number) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ OperatingSetID (number) - ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
-+ O_Victim (Victim) - เลขผู้ป่วย
++ type: `Dispatch` (string, fixed, required) - ค่าคงที่
++ EventID: `610001` (number, required) - รหัสเหตุการณ์ ss
++ OperationID: `610003` (number, required) - เลขปฏิบัติการ ss
++ VehicleIID: : 6กจ9999, 9ดม2448 (array[string]) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
++ OfficeID (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
++ OperatingSetID: 23154,22314 (array[number]) - ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
++ O_Victim (Victim) - ข้อมูลผู้ป่วย
 
 # Victim (object)
-+ CBDCode (string) - อาการผู้ป่วย ณ เกิดเหตุ
-+ EmergencyLevelCode: `02` - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
-+ O_Person (Person) - รายละเอียดผู้ป่วย
++ EventPatientID (number) - รหัสรายละเอียดผู้ประสบเหตุ
++ EventID: `610001` (number) - รหัสเหตุการณ์
++ CBDCode: `CBD25` (string) - อาการผู้ป่วยที่แจ้ง
++ PatientName: `002321` (number) - ชื่อผู้ป่วย ชุดข้อมูลบุคคล PersonID
++ CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
++ EmergencyLevelCode: `02` (string) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
 
 # Person (object)
 + PersonID: `002321` (number) - รหัสข้อมูลบุคคล
-+ CitizenID: `3250400000001` - หมายเลขประจำตัวประชาชน
++ CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + PrefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
 + GivenName: `แสม` (string) - ชื่อตัว
 + FamilyName: `แสนซน` (string) - ชื่อสกุล
@@ -94,27 +99,6 @@ MIS API
 + type: `Vehicle` (string, fixed) - ค่าคงที่
 + Vehicle_Id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
 + Vehicle_Name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
-
-# Victim (object)
-+ type: `Victim` (string, fixed) - ค่าคงที่
-+ Victim_Id: `61-0004` (string) - เลขผู้ป่วย
-+ V_Title: `นาย` (string) - คำนำหน้าชื่อ
-+ V_Firstname: `สมปอง` (string) - ชื่อผู้ป่วย
-+ V_Lastname: `สองปม` (string) - นามสกุลผู้ป่วย
-+ V_Age_Year: `25` (string) - อายุ(ปี)
-+ V_Age_Month: `0` (string) - อายุ(เดือน)
-+ V_Age_Day: `0` (string) - อายุ(วัน)
-+ V_Gender (Gender) - เพศ
-+ V_People_Type: `1` (string) - กลุ่มผู้ใช้สิทธิการรักษา 1=คนไทย, 2=แรงงานต่างด้าว, 3=ชาวต่างชาติ
-+ V_Id_Card: `1000000000001` (string) - เลขบัตรประชาชนผู้ป่วย
-+ V_Country (string) - ประเทศ(ชาวต่างชาติ)
-+ V_Passport (string) - เลขที่หนังสือเดินทาง
-+ V_Treatment_Right: `2` (string) - สิทธิการรักษา 1=ไม่มี, 2=สิทธิประกันสุขภาพถ้วนหน้า, 3=สิทธิข้าราชการ/สิทธิรัฐวิสาหกิจ, 4=สิทธิประกันสังคม, 5=แรงงานต่างด้าว
-+ V_Insurance_Type (string) - ประกันอื่นๆ 1=ประกันท่องเที่ยว, 2=ผู้ประสบภัยจากรถ
-
-# Gender (enum)
-+ M - ชาย
-+ F - หญิง
 
 # Vehicle_Level (enum)
 + ALS - ปฏิบัติการฉุกเฉินระดับสูง
