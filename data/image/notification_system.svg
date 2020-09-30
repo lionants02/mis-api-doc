@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="110px" preserveAspectRatio="none" style="width:329px;height:110px;" version="1.1" viewBox="0 0 329 110" width="329px" zoomAndPan="magnify"><defs><filter height="300%" id="fad8uxv1skrpn" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="91" x="220" y="10.3809">notification_system</text><!--MD5=[e6ea842d0e7d6e0034e581f1fe1ed48a]
+entity Other--><ellipse cx="52" cy="26.5781" fill="#FEFECE" filter="url(#fad8uxv1skrpn)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M52,34.5781 L52,61.5781 M39,42.5781 L65,42.5781 M52,61.5781 L39,76.5781 M52,61.5781 L65,76.5781 " fill="none" filter="url(#fad8uxv1skrpn)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="92" x="6" y="96.6113">Other Platform</text><!--MD5=[277af81c43435f3e1e7d98246e8611f4]
+entity MIS--><ellipse cx="289" cy="26.5781" fill="#FEFECE" filter="url(#fad8uxv1skrpn)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M289,34.5781 L289,61.5781 M276,42.5781 L302,42.5781 M289,61.5781 L276,76.5781 M289,61.5781 L302,76.5781 " fill="none" filter="url(#fad8uxv1skrpn)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="261" y="96.6113">MIS User</text><!--MD5=[3a9399f35393a1e8bbbcdb535089ab8a]
+link Other to MIS--><path d="M98.2586,58.5781 C144.507,58.5781 214.494,58.5781 255.591,58.5781 " fill="none" id="Other-to-MIS" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="260.701,58.5781,251.701,54.5781,255.701,58.5781,251.701,62.5781,260.701,58.5781" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="116.5" y="52.0732">ต้องการส่ง Notification</text><!--MD5=[7801fb2f8a7775a15801b1f017ddfac4]
+@startuml
+Header notification_system
+  :Other Platform : as Other
+  :MIS User : as MIS
+  Other -right-> MIS : ต้องการส่ง Notification
+@enduml
+
+PlantUML version 1.2020.17(Sat Sep 19 19:30:11 ICT 2020)
+(MIT source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>
