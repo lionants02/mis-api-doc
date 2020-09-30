@@ -3,26 +3,26 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Introduction
 
-MIS API
+  MIS API
 
-เอกสารการสเปค **MIS API.**
-ชื่อ และ type ตัวแปรที่ใช้ จะล้อตามโครงสร้างที่เกษตรกำหนดมา
+  เอกสารการสเปค **MIS API.**
+  ชื่อ และ type ตัวแปรที่ใช้ จะล้อตามโครงสร้างที่เกษตรกำหนดมา
 
-<img src="data\image\api_gateway.svg" width="100%">
+  <img src="data\image\api_gateway.svg" width="100%">
 
-ภาพจำลองการเชื่อมต่อจากระบบอื่น การเชื่อมต่อจะเชื่อมต่อผ่าน **api gateway** ซึ่งจะทำหน้าที่ตรวจสอบสิทธิ์การใช้งานระบบ
+  ภาพจำลองการเชื่อมต่อจากระบบอื่น การเชื่อมต่อจะเชื่อมต่อผ่าน **api gateway** ซึ่งจะทำหน้าที่ตรวจสอบสิทธิ์การใช้งานระบบ
 
 # Group Authorization
 
-การใช้งาน จำเป็นต้องมี api key
+  การใช้งาน จำเป็นต้องมี api key
 
 # Group ปฏิบัติการ
 
 ## เพิ่มปฏิบัติการใหม่ (ทดสอบตัวสร้างเอกสารยังไม่ใช่โครงสร้างข้อมูลจริง) [POST /dispatch]
 
-<img src="data\image\create_dispatch.svg">
+  <img src="data\image\create_dispatch.svg">
 
-เปิดปฏิบัติการ 1 คน ต่อ 1 ห้อง MIS
+  เปิดปฏิบัติการ 1 คน ต่อ 1 ห้อง MIS
 
 + Request (application/json)
 
@@ -63,7 +63,11 @@ MIS API
 
 ## แก้ไขรายงานปฏิบัติงาน [PUT /dispatch/{idxxx}]
 
-หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
+  หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
+
+## UI สำหรับแสดงผล MIS [GET /dispatch/{misRoomId}]
+
+  หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบอื่น
 
 # Group จัดการเวร
 
@@ -87,7 +91,7 @@ MIS API
 
 ## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id_card}]
 
-สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
+  สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
 
 **(รอหารือกับทีมอีกครั้งว่าสมควรดึงได้โดยตรงไหม เพราะเป็นข้อมูลละเอียดอ่อน)**
 
@@ -119,31 +123,31 @@ MIS API
 
 ## ส่ง Notification ไประบบอื่น [PUT /notification]
 
-**Message Queue**
+  **Message Queue**
 
-<img src="data\image\notification_system_002.svg">
+  <img src="data\image\notification_system_002.svg">
 
-<img src="data\image\notification_system_003.svg">
+  <img src="data\image\notification_system_003.svg">
 
-ในที่นี้สำหรับใช้ในกรณี mis ต้องการส่ง Notification ไปยังศูนย์สั่งการ
+  ในที่นี้สำหรับใช้ในกรณี mis ต้องการส่ง Notification ไปยังศูนย์สั่งการ
 
 ## รับ Notification จากระบบอื่น [POST /notification]
 
-**Message Queue**
+  **Message Queue**
 
-<img src="data\image\notification_system.svg">
+  <img src="data\image\notification_system.svg">
 
-<img src="data\image\notification_system_001.svg">
+  <img src="data\image\notification_system_001.svg">
 
-ใช้ในกรณีระบบอื่นต้องการส่ง Notification ไปยังผู้ใช้ MIS ในที่นี้จะใช้สำหรับ ศูนย์สั่งการต้องการเรียกหมอ
+  ใช้ในกรณีระบบอื่นต้องการส่ง Notification ไปยังผู้ใช้ MIS ในที่นี้จะใช้สำหรับ ศูนย์สั่งการต้องการเรียกหมอ
 
 ## รับ Alert จากระบบอื่น [POST /notification]
 
-**Message Queue**
+  **Message Queue**
 
-ใช้ในกรณีระบบอื่น ต้องการส่ง Alert message ไปยังผู้ใช้ MIS
+  ใช้ในกรณีระบบอื่น ต้องการส่ง Alert message ไปยังผู้ใช้ MIS
 
-(รอหารือกับทีมอีกครั้ง ว่าจะทำตรงนี้หรือไม่)
+  (รอหารือกับทีมอีกครั้ง ว่าจะทำตรงนี้หรือไม่)
 
 ## Data Structures
 
