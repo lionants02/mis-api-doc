@@ -45,7 +45,7 @@ MIS API
 
 + Request (application/json)
 
-    + Attributes (Dispatch , fixed-type)
+    + Attributes (object , fixed-type)
       + event: `update_dispatch` (string, required) - กำหนดค่าคงที่
       + EventID: `610001` (number, required) - รหัสเหตุการณ์
       + OperationID: `610003` (number, required) - เลขปฏิบัติการ
@@ -86,7 +86,9 @@ MIS API
 
 # Notification [/notification]
 
-## ส่ง Notification ไปยัง OIS [POST /notification]
+## ส่ง Notification ไปยังระบบอื่น [POST /notification]
+
+## รับ Notification จากระบบอื่น [POST /notification]
 
 ## Data Structures
 
