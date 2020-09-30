@@ -1,7 +1,8 @@
 FORMAT: 1A
 HOST: https://api.mis.tot.co.th/mis
 
-# Intro
+# Introduction
+
 MIS API
 
 เอกสารการสเปค **MIS API.**
@@ -15,7 +16,7 @@ MIS API
 
 การใช้งาน จำเป็นต้องมี api key
 
-# ปฏิบัติการ [/dispatch]
+# Group ปฏิบัติการ [/dispatch]
 
 ## เพิ่มปฏิบัติการใหม่ (ทดสอบตัวสร้างเอกสารยังไม่ใช่โครงสร้างข้อมูลจริง) [POST /dispatch]
 
@@ -64,17 +65,17 @@ MIS API
 
 หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
-# จัดการเวร [/duty]
+# Group จัดการเวร [/duty]
 
 ## เข้าเวร/ออกเวร [PUT /duty]
 
-# Protocol [/protocol]
+# Group Protocol [/protocol]
 
 ## Offline protocol [GET /protocol]
 
 ## Online protocol [GET /protocol]
 
-# Lookup [/lookup]
+# Group Lookup [/lookup]
 
 ## Special list [GET /specialist{?province,query}]
 
@@ -100,7 +101,7 @@ MIS API
       + OperatingSetID: `23154` (number, required)
         ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
 
-# ระบบ Telemed [/telemed]
+# Group ระบบ Telemed [/telemed]
 
 ## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns/{PersonID}]
 
@@ -114,7 +115,7 @@ MIS API
     + PersonID: `002321` (number, required)
       ``รหัสข้อมูลบุคคล``
 
-# Notification [/notification]
+# Group Notification [/notification]
 
 ## ส่ง Notification ไประบบอื่น [PUT /notification]
 
