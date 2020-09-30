@@ -25,11 +25,17 @@ MIS API
 
     + Attributes (Dispatch , fixed-type)
 
-## อัพเดทปฏิบัติการ [PUT /dispatch]
+## อัพเดทปฏิบัติการ [PUT /dispatch/{EventID}/{OperationID}]
 
   <img src="data\image\update_dispatch.svg">
 
   ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน
+
+  + Parameters
+      + EventID: `610001` (number, required)
+        ``รหัสเหตุการณ``
+      + OperationID: `610003` (number, required)
+        ``เลขปฏิบัติการ``
 
 ## เมื่อผู้ป่วยขึ้นรถ หรือ มีการเปลี่ยนพาหนะ [PUT /dispatch/vehicle]
 
@@ -69,8 +75,8 @@ MIS API
 
 # Dispatch (object)
 + type: `Dispatch` (string, fixed, required) - ค่าคงที่
-+ EventID: `610001` (number, required) - รหัสเหตุการณ์ ss
-+ OperationID: `610003` (number, required) - เลขปฏิบัติการ ss
++ EventID: `610001` (number, required) - รหัสเหตุการณ์
++ OperationID: `610003` (number, required) - เลขปฏิบัติการ
 + VehicleIID: `6กจ9999`, `9ดม2448` (array[string]) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
 + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + OperatingSetID: `23154`,`22314` (array[number]) - ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
