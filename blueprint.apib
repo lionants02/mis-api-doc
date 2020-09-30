@@ -1,10 +1,19 @@
 FORMAT: 1A
 HOST: https://api.mis.tot.co.th/mis
 
+# Intro
 MIS API
 
 เอกสารการสเปค **MIS API.**
-ชื่อ และ type ตัวแปรที่ใช้ จะล้อตามระบบเกษตรที่ร่างมา
+ชื่อ และ type ตัวแปรที่ใช้ จะล้อตามโครงสร้างที่เกษตรกำหนดมา
+
+<img src="data\image\api_gateway.svg" width="100%">
+ภาพจำลองการเชื่อมต่อจากระบบอื่น การเชื่อมต่อจะเชื่อมต่อผ่าน api gateway ซึ่งจะทำหน้าที่ ตรวจสอบ token ก่อนเข้าสู่ MIS api
+สาเหตุเพื่อที่จะ ตอนพัฒนา api ทางทีมพัฒนาไม่จำเป็นต้องกังวลเกี่ยวกับการ ยืนยันตัวตนของระบบ ให้เป็นหน้าที่ของ api gateway ในการตรวจสอบ
+
+# Authorization
+
+การใช้งาน จำเป็นต้องมี api key
 
 # ปฏิบัติการ [/dispatch]
 
@@ -17,13 +26,15 @@ MIS API
 
     + Headers
 
-            Authorization: Bearer {token}
+            Authorization: Token {token}
 
     + Attributes (Dispatch , fixed-type)
 
 + Response 201 (application/json)
 
-    + Attributes (Dispatch , fixed-type)
+    + Attributes (object , fixed-type)
+      + misRoomId: `22315` (string) - รหัสห้อง MIS
+      + return (Dispatch)
 
 ## อัพเดทปฏิบัติการ [PUT /dispatch/{EventID}/{OperationID}]
 
@@ -37,6 +48,20 @@ MIS API
       + OperationID: `610003` (number, required)
         ``เลขปฏิบัติการ``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Token {token}
+
+    + Attributes (Dispatch , fixed-type)
+
++ Response 201 (application/json)
+
+    + Attributes (object , fixed-type)
+      + misRoomId: `22315` (string) - รหัสห้อง MIS
+      + return (Dispatch)
+
 ## เมื่อผู้ป่วยขึ้นรถ หรือ มีการเปลี่ยนพาหนะ [PUT /dispatch/vehicle]
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ป่วย 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ป่วย
@@ -44,6 +69,8 @@ MIS API
 ## ส่งรายงานปฏิบัติงาน [POST /dispatch]
 
 ## แก้ไขรายงานปฏิบัติงาน 24 ชม. [PUT /dispatch/{idxxx}]
+
+หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
 # จัดการเวร [/duty]
 
