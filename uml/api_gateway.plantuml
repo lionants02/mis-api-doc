@@ -1,0 +1,12 @@
+@startuml
+:Other Platform : as Other
+:MIS api : as MIS
+: mis api gateway : as (gateway)
+: Auth service : as (auth)
+
+  gateway <-- Other : ต้องการเรียกใช้ api
+  MIS <-- gateway
+
+  gateway = auth
+
+@enduml

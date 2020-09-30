@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="352px" preserveAspectRatio="none" style="width:313px;height:352px;" version="1.1" viewBox="0 0 313 352" width="313px" zoomAndPan="magnify"><defs><filter height="300%" id="f1p0pcyatf4xqy" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[e6ea842d0e7d6e0034e581f1fe1ed48a]
+entity Other--><ellipse cx="75.5" cy="269" fill="#FEFECE" filter="url(#f1p0pcyatf4xqy)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M75.5,277 L75.5,304 M62.5,285 L88.5,285 M75.5,304 L62.5,319 M75.5,304 L88.5,319 " fill="none" filter="url(#f1p0pcyatf4xqy)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="92" x="29.5" y="339.0332">Other Platform</text><!--MD5=[277af81c43435f3e1e7d98246e8611f4]
+entity MIS--><ellipse cx="75.5" cy="14" fill="#FEFECE" filter="url(#f1p0pcyatf4xqy)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M75.5,22 L75.5,49 M62.5,30 L88.5,30 M75.5,49 L62.5,64 M75.5,49 L88.5,64 " fill="none" filter="url(#f1p0pcyatf4xqy)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="52.5" y="84.0332">MIS api</text><ellipse cx="75.6188" cy="164.8238" fill="#FEFECE" filter="url(#f1p0pcyatf4xqy)" rx="69.6188" ry="16.3238" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="100" x="25.6188" y="170.1284">mis api gateway</text><ellipse cx="238.6543" cy="164.9517" fill="#FEFECE" filter="url(#f1p0pcyatf4xqy)" rx="58.1543" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="78" x="199.6543" y="170.2564">Auth service</text><!--MD5=[e6222d139004c81fb599c0b97cc86725]
+reverse link gateway to Other--><path d="M75.5,186.8 C75.5,206.101 75.5,235.37 75.5,259.311 " fill="none" id="gateway-backto-Other" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="75.5,181.634,71.5,190.634,75.5,186.634,79.5,190.634,75.5,181.634" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="105" x="76.5" y="225.9951">ต้องการเรียกใช้ api</text><!--MD5=[b6784320fc53c849dcaafb0d0b9fd1c2]
+reverse link MIS to gateway--><path d="M75.5,92.82 C75.5,112.523 75.5,134.242 75.5,148.443 " fill="none" id="MIS-backto-gateway" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="75.5,87.593,71.5,96.593,75.5,92.593,79.5,96.593,75.5,87.593" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[856460606661a8fbb73e35fc699befb5]
+link gateway to auth--><path d="M145.221,165 C156.881,165 168.541,165 180.2,165 " fill="none" id="gateway-auth" style="stroke: #A80036; stroke-width: 2.0;"/><!--MD5=[59be477cf793ff53779fd8ae9c703d76]
+@startuml
+:Other Platform : as Other
+:MIS api : as MIS
+: mis api gateway : as (gateway)
+: Auth service : as (auth)
+
+  gateway <- - Other : ต้องการเรียกใช้ api
+  MIS <- - gateway
+
+  gateway = auth
+
+@enduml
+
+PlantUML version 1.2020.17(Sat Sep 19 19:30:11 ICT 2020)
+(MIT source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>
