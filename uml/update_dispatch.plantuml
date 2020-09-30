@@ -1,0 +1,8 @@
+@startuml
+Title Update Dispatch
+actor OIS
+  OIS -> MIS: ส่งข้อมูล Update
+  note left: เกิดเหตุเกิดเหตุบางอย่าง\nที่จำเป็นต้องมีการ Update ภารกิจ\nที่กำลังดำเนินอยู่
+  MIS -> MIS: update MIS
+  OIS <- MIS: Id + Link ห้องปฏิบัติการ
+@enduml
