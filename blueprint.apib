@@ -4,7 +4,7 @@ HOST: https://api.mis.tot.co.th/mis
 MIS API
 
 เอกสารการสเปค **MIS API.**
-ชื่อ และ type ตัวแปรที่ใช้ จะล้อตามระบบ api ของระบบ ITEM สพฉ.
+ชื่อ และ type ตัวแปรที่ใช้ จะล้อตามระบบเกษตรที่ร่างมา
 
 # ปฏิบัติการ [/dispatch]
 
@@ -25,13 +25,13 @@ MIS API
 
     + Attributes (Dispatch , fixed-type)
 
-## อัพเดทปฏิบัติการ [/dispatch]
+## อัพเดทปฏิบัติการ [PUT /dispatch]
 
   <img src="data\image\update_dispatch.svg">
 
   ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน
 
-## เมื่อผู้ป่วยขึ้นรถ หรือ มีการเปลี่ยนพาหนะ [/dispatch]
+## เมื่อผู้ป่วยขึ้นรถ หรือ มีการเปลี่ยนพาหนะ [PUT /dispatch/vehicle]
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ป่วย 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ป่วย
 
@@ -62,6 +62,8 @@ MIS API
 ## ข้อมูลสัญญาณชีพ json [GET /telemed/vitalsigns]
 
 # Notification [/notification]
+
+## ส่ง Notification ไปยัง OIS [POST /notification]
 
 ## Data Structures
 
