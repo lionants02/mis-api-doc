@@ -12,11 +12,11 @@ MIS API
 
 ภาพจำลองการเชื่อมต่อจากระบบอื่น การเชื่อมต่อจะเชื่อมต่อผ่าน **api gateway** ซึ่งจะทำหน้าที่ตรวจสอบสิทธิ์การใช้งานระบบ
 
-# Authorization
+# Group Authorization
 
 การใช้งาน จำเป็นต้องมี api key
 
-# Group ปฏิบัติการ [/dispatch]
+# Group ปฏิบัติการ
 
 ## เพิ่มปฏิบัติการใหม่ (ทดสอบตัวสร้างเอกสารยังไม่ใช่โครงสร้างข้อมูลจริง) [POST /dispatch]
 
@@ -65,17 +65,17 @@ MIS API
 
 หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
-# Group จัดการเวร [/duty]
+# Group จัดการเวร
 
 ## เข้าเวร/ออกเวร [PUT /duty]
 
-# Group Protocol [/protocol]
+# Group Protocol
 
 ## Offline protocol [GET /protocol]
 
 ## Online protocol [GET /protocol]
 
-# Group Lookup [/lookup]
+# Group Lookup
 
 ## Special list [GET /specialist{?province,query}]
 
@@ -101,7 +101,7 @@ MIS API
       + OperatingSetID: `23154` (number, required)
         ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
 
-# Group ระบบ Telemed [/telemed]
+# Group ระบบ Telemed
 
 ## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns/{PersonID}]
 
@@ -115,7 +115,7 @@ MIS API
     + PersonID: `002321` (number, required)
       ``รหัสข้อมูลบุคคล``
 
-# Group Notification [/notification]
+# Group Notification
 
 ## ส่ง Notification ไประบบอื่น [PUT /notification]
 
