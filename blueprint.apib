@@ -76,7 +76,7 @@ MIS API
 
 # Lookup [/lookup]
 
-## Special list [GET /specialist/{?province}{?query}]
+## Special list [GET /specialist{?province,query}]
 
 + Parameters
     + province: `สระแก้ว` (string)
@@ -84,14 +84,14 @@ MIS API
     + query: `กระดูก` (string)
       ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
 
-## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id card}]
+## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id_card}]
 
 สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
 
 **(รอหารือกับทีมอีกครั้งว่าสมควรดึงได้โดยตรงไหม เพราะเป็นข้อมูลละเอียดอ่อน)**
 
 + Parameters
-    + card: `3250400000001` (string, required)
+    + id_card: `3250400000001` (string, required)
       ``หมายเลขประจำตัวประชาชน``
 
 ## สมาชิกในทีมปฏิบัติการ [GET /operating/{OperatingSetID}]
