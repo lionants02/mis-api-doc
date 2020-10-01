@@ -1,0 +1,15 @@
+@startuml
+Header center_call_medical
+  :ศูนย์สั่งการ : as OIS
+  :Medical director : as Medical
+  OIS -right-> Medical : เรียกหมอเข้าห้อง
+@enduml
+
+@startuml
+Header center_call_medical_001
+  actor "ศูนย์สั่งการ" as OIS
+  collections "Inbound Queue" as inbound
+  OIS --> inbound : send message
+  actor "Medical director" as Medical
+  inbound --> Medical : send message
+@enduml
