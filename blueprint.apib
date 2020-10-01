@@ -70,11 +70,19 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group OIS ปฏิบัติการ
 
-## ส่งรายงานปฏิบัติงาน [POST /dispatch]
+## ส่งรายงานปฏิบัติงาน [POST https://api.ois.tot.co.th/ois/dispatch/{OperationID}]
 
-## แก้ไขรายงานปฏิบัติงาน [PUT /dispatch/{idxxx}]
++ Parameters
+    + OperationID: `610003` (number, required)
+      ``เลขปฏิบัติการ``
+
+## แก้ไขรายงานปฏิบัติงาน [PUT https://api.ois.tot.co.th/ois/dispatch/{OperationID}]
 
   หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
+
++ Parameters
+    + OperationID: `610003` (number, required)
+      ``เลขปฏิบัติการ``
 
 # Group MIS Protocol
 
