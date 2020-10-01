@@ -1,12 +1,20 @@
 @startuml
-:Other Platform : as Other
-:MIS api : as MIS
-: mis api gateway : as (gateway)
-: Auth service : as (auth)
+  :OIS Platform : as OIS
+  :MIS system : as MIS
+  : MIS api gateway : as (gateway)
 
-  gateway <-- Other : ต้องการเรียกใช้ api
+  gateway <-- OIS : call api
   MIS <-- gateway
 
-  gateway = auth
+  : Outbound Queue : as (outbound)
+  MIS ----> outbound : notification to OIS
+
+  outbound --> OIS
+
+  : Inbound Queue : as (inbound)
+  OIS ----> inbound : notification to MIS
+  inbound -> MIS
+
+  MIS --> OIS : call api
 
 @enduml
