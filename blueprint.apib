@@ -54,7 +54,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `update_dispatch` (string, required) - กำหนดค่าคงที่
-      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + EventID: `610001` (number, required) - รหัสเหตุการณ์
       + OperationID: `610003` (number, required) - เลขปฏิบัติการ
       + dispatch (Dispatch) - ข้อมูลปฏิบัติการ
@@ -110,6 +110,37 @@ HOST: https://api.mis.tot.co.th/mis
       + OperatingSetID: `23154` (number, required)
         ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
 
+## ค้นหาหน่วยงาน [GET /organization{?query}]
+
+  <img src="data\image\ois_search_org.svg">
+
+  ดึงข้อมูลชื่อหน่วยงานจาก OIS ถ้าไม่ใส่ query จะส่งกลับรายชื่อหน่วยงานทั้งหมด
+
++ Parameters
+    + query: `สระแก้ว` (string, optional)
+      ``ข้อมูลที่ต้องการค้นหา``
+
++ Response 200 (application/json)
+    + Attributes (array, fixed-type)
+        + (object)
+            + OfficeID: `1010` (number ,required) - รหัสหน่วยงาน
+            + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
+            + OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
+
+## ข้อมูลหน่วยงาน [GET /organization/{OfficeID}]
+
+  <img src="data\image\ois_get_org.svg">
+
+  ดึงข้อมูลหน่วยงานจาก OIS
+
++ Parameters
+    + OfficeID: `1010` (string, required)
+      ``รหัสหน่วยงาน``
+
++ Response 200 (application/json)
+    + Attributes (Organization, fixed-type)
+
+
 # Group ระบบ Telemed
 
 ## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns/{PersonID}]
@@ -138,7 +169,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
-      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 
 ## แพทย์ส่งข้อความหาศูนย์สั่งการ [PUT /notification]
@@ -155,7 +186,7 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + misRoomId: `819232` (number, required) - รหัสเหตุการณ์
-      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
       + message: `แพทย์เรียก` (string, required) - ข้อความ
 
 ## ส่ง Notification ไป OIS [PUT /notification]
@@ -173,7 +204,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
-      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
 ## รับ Notification จาก OIS [POST /notification]
@@ -190,7 +221,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
-      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
@@ -206,7 +237,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `alert_operator` (string, required) - กำหนดค่าคงที่
-      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
 
@@ -217,7 +248,7 @@ HOST: https://api.mis.tot.co.th/mis
 + EventID: `610001` (number, required) - รหัสเหตุการณ์
 + OperationID: `610003` (number, required) - เลขปฏิบัติการ
 + VehicleIID: `6กจ9999`, `9ดม2448` (array[string]) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
-+ OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
++ OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + OperatingSetID: `23154`,`22314` (array[number]) - ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
 + O_Victim (Victim) - ข้อมูลผู้ป่วย
 
@@ -242,6 +273,15 @@ HOST: https://api.mis.tot.co.th/mis
 + NationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
 + LifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
 + DisabilityCode: `00` (string) - ความพิการ File Disability.xlsx
+
+# Organization (object)
++ OfficeID: `1010` (string) - รหัสหน่วยงาน
++ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string) - ชื่อหน่วยงาน(ไทย)
++ OfficeNameEn: `Vipa` (string) - ชื่อหน่วยงาน(อังกฤษ)
++ MinistryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
++ OfficeTypeCode (string) - ประเภทหน่วยงาน
++ TypeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ป่วยและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
++ Distance (string) - ระยะทางจากที่ตั้งหน่วยถึง
 
 # Vehicle (object)
 + type: `Vehicle` (string, required) - ค่าคงที่
