@@ -1,7 +1,7 @@
 @startuml
 Title Dispatch
-actor OIS
-  OIS -> MIS: ส่งคำสั่งเปิดปฏิบัติการ
-  MIS -> MIS: สร้างห้อง MIS สำหรับปฏิบัติการ
-  OIS <- MIS: หมายเลขห้อง MIS
+actor "OIS Platform" as OIS
+  OIS -> "MIS Platform": ส่งคำสั่งเปิดปฏิบัติการ
+  "MIS Platform" -> "MIS Platform": สร้างห้อง MIS สำหรับปฏิบัติการ
+  OIS <- "MIS Platform": หมายเลขห้อง MIS
 @enduml
