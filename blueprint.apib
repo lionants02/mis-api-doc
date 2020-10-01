@@ -18,7 +18,7 @@ HOST: https://api.mis.tot.co.th/mis
 
   การใช้งาน จำเป็นต้องมี api key
 
-# Group ปฏิบัติการ
+# Group MIS ปฏิบัติการ
 
 ## เพิ่มปฏิบัติการใหม่ [POST /dispatch]
 
@@ -64,27 +64,25 @@ HOST: https://api.mis.tot.co.th/mis
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ป่วย 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ป่วย
 
+## UI สำหรับแสดงผล MIS [GET /dispatch/{misRoomId}]
+
+  หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบอื่น
+
+# Group OIS ปฏิบัติการ
+
 ## ส่งรายงานปฏิบัติงาน [POST /dispatch]
 
 ## แก้ไขรายงานปฏิบัติงาน [PUT /dispatch/{idxxx}]
 
   หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
-## UI สำหรับแสดงผล MIS [GET /dispatch/{misRoomId}]
-
-  หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบอื่น
-
-# Group จัดการเวร
-
-## เข้าเวร/ออกเวร [PUT /duty]
-
-# Group Protocol
+# Group MIS Protocol
 
 ## Offline protocol [GET /protocol]
 
 ## Online protocol [GET /protocol]
 
-# Group ระบบ Telemed
+# Group ระบบ MIS Telemed
 
 ## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns/{PersonID}]
 
@@ -98,7 +96,7 @@ HOST: https://api.mis.tot.co.th/mis
     + PersonID: `002321` (number, required)
       ``รหัสข้อมูลบุคคล``
 
-# Group Notification
+# Group MIS Notification
 
 ## ศูนย์เรียกแพทย์เข้าห้องที่ระบุ [PUT /notification]
 
@@ -183,6 +181,10 @@ HOST: https://api.mis.tot.co.th/mis
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
+
+# Group OIS จัดการเวร
+
+## เข้าเวร/ออกเวร [PUT /duty]
 
 # Group Lookup from OIS
 
