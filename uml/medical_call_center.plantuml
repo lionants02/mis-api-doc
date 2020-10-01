@@ -1,0 +1,15 @@
+@startuml
+Header medical_call_center
+  :ศูนย์สั่งการ : as OIS
+  :Medical director : as Medical
+  OIS <-left- Medical : ส่งข้อความ
+@enduml
+
+@startuml
+Header medical_call_center_001
+  actor "Medical director" as Medical
+  collections "outbound Queue" as outbound
+  outbound <-- Medical : send message
+  actor "ศูนย์สั่งการ" as OIS
+  OIS <-- outbound : send message
+@enduml
