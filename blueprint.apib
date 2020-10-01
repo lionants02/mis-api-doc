@@ -14,6 +14,8 @@ HOST: https://api.mis.tot.co.th/mis
   - การเรียกใช้ api ภายใน MIS จะเชื่อมผ่าน MIS api gateway ทั้งหมด
   - สำหรับการส่ง Notification จะทำผ่านระบบ Message Queue
 
+  <img src="data\image\full.svg" width="100%">
+
 # Group Authorization
 
   การใช้งาน จำเป็นต้องมี api key
@@ -110,7 +112,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group MIS Notification
 
-## ศูนย์เรียกแพทย์เข้าห้องที่ระบุ [PUT /notification]
+## ศูนย์เรียกแพทย์เข้าห้อง [PUT /notification]
 
   <img src="data\image\center_call_medical.svg">
 
@@ -122,10 +124,10 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 
-## แพทย์ส่งข้อความหาศูนย์สั่งการ [PUT /notification]
+## แพทย์เรียกศูนย์เข้าห้อง [PUT /notification]
 
   <img src="data\image\medical_call_center.svg">
 
@@ -138,8 +140,8 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
-      + misRoomId: `819232` (number, required) - รหัสเหตุการณ์
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
+      + misRoomId: `819232` (number, required) - รหัสห้อง MIS
+      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
       + message: `แพทย์เรียก` (string, required) - ข้อความ
 
 ## ส่ง Notification ไป OIS [PUT /notification]
@@ -200,7 +202,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Lookup from OIS
 
-## Special list [GET /specialist{?province,query}]
+## Speciallist [GET /specialist{?province,query}]
 
 + Parameters
     + province: `สระแก้ว` (string)
@@ -208,7 +210,7 @@ HOST: https://api.mis.tot.co.th/mis
     + query: `กระดูก` (string)
       ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
 
-## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id_card}]
+## สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล [GET /rightoftreatment/{id_card}]
 
   สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
 

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="635px" preserveAspectRatio="none" style="width:1983px;height:635px;" version="1.1" viewBox="0 0 1983 635" width="1983px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fojithr5jti4i" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="156" x="923.5" y="18.6855">ภาพรวม api ทั้งหมด</text>
+        <!--MD5=[0735a41341780b144fbc6be43a4e5fcb]
+cluster MIS-->
+        <polygon fill="#FFFFFF" filter="url(#fojithr5jti4i)" points="30,117.6406,62,117.6406,69,141.25,822,141.25,822,623.6406,30,623.6406,30,117.6406" style="stroke: #000000; stroke-width: 1.5;" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="30" x2="69" y1="141.25" y2="141.25" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="26" x="34" y="134.1738">MIS</text>
+        <!--MD5=[917b4abc6a241353bf80a0ce7e5ed3ff]
+cluster OIS-->
+        <polygon fill="#FFFFFF" filter="url(#fojithr5jti4i)" points="1196,388.6406,1226,388.6406,1233,412.25,1961,412.25,1961,622.1406,1196,622.1406,1196,388.6406" style="stroke: #000000; stroke-width: 1.5;" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="1196" x2="1233" y1="412.25" y2="412.25" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="24" x="1200" y="405.1738">OIS</text>
+        <ellipse cx="125.8989" cy="180.9204" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="71.8989" ry="16.7798" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="106" x="72.8989" y="186.2251">เพิ่มปฏิบัติการใหม่</text>
+        <ellipse cx="302.2443" cy="181.3895" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="69.2443" ry="16.2489" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="99" x="252.7443" y="186.6942">อัพเดทปฏิบัติการ</text>
+        <ellipse cx="492.1163" cy="181.2639" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="86.1163" ry="19.6233" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="141" x="421.6163" y="186.5686">ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ</text>
+        <ellipse cx="695.8351" cy="181.0077" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="82.3351" ry="18.867" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="132" x="629.8351" y="186.3123">UI สำหรับแสดงผล MIS</text>
+        <ellipse cx="132.0005" cy="297.7407" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="68.5005" ry="16.1001" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="97" x="83.5005" y="303.0454">Offline Protocol</text>
+        <ellipse cx="304.0005" cy="297.7407" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="68.5005" ry="16.1001" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="97" x="255.5005" y="303.0454">Online Protocol</text>
+        <ellipse cx="491.0873" cy="297.7581" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="83.5873" ry="19.1175" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="135" x="423.5873" y="303.0628">ศูนย์เรียกแพทย์เข้าห้อง</text>
+        <ellipse cx="693.0873" cy="297.7581" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="83.5873" ry="19.1175" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="135" x="625.5873" y="303.0628">แพทย์เรียกศูนย์เข้าห้อง</text>
+        <ellipse cx="138.0873" cy="465.2581" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="83.5873" ry="19.1175" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="135" x="70.5873" y="470.5628">ส่ง Notification ไป OIS</text>
+        <ellipse cx="343.9661" cy="464.9339" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="86.9661" ry="19.7932" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="143" x="272.4661" y="470.2385">รับ Notification จาก OIS</text>
+        <ellipse cx="536.7518" cy="465.191" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="70.7518" ry="16.5504" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="103" x="485.2518" y="470.4957">รับ Alert จาก OIS</text>
+        <ellipse cx="674.0772" cy="465.0923" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="30.5772" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="39" x="654.5772" y="470.397">เข้าเวร</text>
+        <ellipse cx="138.0269" cy="579.0923" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="35.5269" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="115.0269" y="584.397">ออกเวร</text>
+        <ellipse cx="298.9659" cy="579.0338" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="89.9659" ry="20.3932" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="150" x="223.9659" y="584.3385">ข้อมูลสัญญาณชีพ HTML</text>
+        <ellipse cx="513.105" cy="579.3616" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="89.105" ry="20.221" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="148" x="439.105" y="584.6663">ข้อมูลสัญญาณชีพ JSON</text>
+        <ellipse cx="1316.1143" cy="465.3635" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="76.6143" ry="17.7229" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="118" x="1257.1143" y="470.6682">ส่งรายงานปฏิบัติงาน</text>
+        <ellipse cx="1514.8923" cy="465.0191" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="87.3923" ry="19.8785" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="144" x="1442.8923" y="470.3238">อัพเดทรายงานปฏิบัติงาน</text>
+        <ellipse cx="1786.7816" cy="464.8969" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="149.2816" ry="32.2563" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="279" x="1647.2816" y="470.2016">สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล</text>
+        <ellipse cx="1321.7516" cy="579.0909" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="82.7516" ry="18.9503" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="133" x="1255.2516" y="584.3956">สมาชิกในทีมปฏิบัติงาน</text>
+        <ellipse cx="1505.9529" cy="579.2312" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="65.9529" ry="15.5906" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="90" x="1460.9529" y="584.5359">ค้นหาหน่วยงาน</text>
+        <ellipse cx="1673.8112" cy="579.3029" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="66.3112" ry="15.6622" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="91" x="1628.3112" y="584.6076">ข้อมูลหน่วยงาน</text>
+        <ellipse cx="916.8726" cy="297.6151" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="70.3726" ry="16.4745" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="865.8726" y="302.9198">MIS api gateway</text>
+        <ellipse cx="1095.949" cy="297.7304" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="73.449" ry="17.0898" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="1040.949" y="303.0351">Outbound Queue</text>
+        <ellipse cx="1194.8716" cy="46.8149" fill="#FEFECE" filter="url(#fojithr5jti4i)" rx="68.8716" ry="16.1743" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="1145.8716" y="52.1196">Inbound Queue</text>
+        <!--MD5=[348ec2ed24420c00ad5d20dbaebecd7c]
+reverse link gateway to OIS-->
+        <path d="M946.821,315.8376 C982.9605,336.6781 1045.7953,372.9124 1100.3076,404.3473 C1127.5638,420.0647 1152.7394,434.5823 1171.4572,445.3759 C1180.8161,450.7727 1188.5606,455.2385 1194.1434,458.4578 C1194.4923,458.659 1194.8328,458.8553 1195.1647,459.0467 C1195.3307,459.1424 1195.4945,459.2369 1195.6561,459.3301 " fill="none" id="gateway&lt;-OIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="942.218,313.1826,948.0172,321.1431,946.5497,315.6799,952.0129,314.2124,942.218,313.1826" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="1028" y="361.1357">call api</text>
+        <!--MD5=[b6784320fc53c849dcaafb0d0b9fd1c2]
+reverse link MIS to gateway-->
+        <path d="M822.0634,191.104 C822.1496,191.1999 822.2364,191.2964 822.3238,191.3936 C822.4986,191.5879 822.6757,191.7848 822.8552,191.9842 C823.5728,192.782 824.3269,193.6203 825.1149,194.4962 C831.4185,201.5037 839.8864,210.9171 849.1409,221.2048 C867.6498,241.7801 889.3045,265.8526 903.082,281.1686 " fill="none" id="MIS&lt;-gateway" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="822.0634,191.104,825.1086,200.4703,825.4073,194.8213,831.0563,195.12,822.0634,191.104" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[9282edfa29dfb5d84e3b295b55c47f42]
+link MIS to outbound-->
+        <path d="M822.2631,185.4959 C827.1653,187.4863 834.0733,190.2911 842.51,193.7167 C859.3834,200.5677 882.3716,209.9016 907.658,220.1685 C958.2308,240.7024 1017.996,264.9686 1056.42,280.5696 " fill="none" id="MIS-&gt;outbound" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1061.36,282.5736,1054.5321,275.4758,1056.7289,280.6886,1051.5161,282.8855,1061.36,282.5736" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="103" x="973" y="245.1357">notification to OIS</text>
+        <!--MD5=[84d870a436b090ff6c1d0e482052ee54]
+link outbound to OIS-->
+        <path d="M1106.36,314.5096 C1119.66,334.8976 1143.52,371.4641 1164.3238,403.3444 C1174.7256,419.2845 1184.3634,434.0531 1191.5352,445.042 C1192.4316,446.4156 1193.2896,447.7301 1194.1056,448.9805 C1194.5137,449.6057 1194.9112,450.2149 1195.2979,450.8074 C1195.4913,451.1036 1195.6819,451.3957 1195.8698,451.6836 " fill="none" id="outbound-&gt;OIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1195.8698,451.6836,1194.3005,441.9605,1193.137,447.4964,1187.6011,446.333,1195.8698,451.6836" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[b65eee250716542d6c56e3ef5495a17f]
+link OIS to inbound-->
+        <path d="M1213.7315,388.62 C1213.7952,388.4738 1213.8592,388.3277 1213.9235,388.1818 C1214.0523,387.89 1214.1825,387.5989 1214.3143,387.3087 C1214.5778,386.7283 1214.8473,386.1512 1215.1231,385.5775 C1217.3294,380.9885 1219.9325,376.6264 1223,372.6406 C1227.85,366.3396 1233.74,370.5976 1239,364.6406 C1253.99,347.6826 1252.17,338.9456 1256,316.6406 C1272.2,222.3806 1225.99,111.4686 1204.9,67.2586 " fill="none" id="OIS-&gt;inbound" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1202.69,62.6956,1203.0013,72.5396,1204.8641,67.1982,1210.2055,69.061,1202.69,62.6956" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="1260" y="245.1357">notification to MIS</text>
+        <!--MD5=[7540eaa89551fb3873808912860b3f03]
+link inbound to MIS-->
+        <path d="M1158.47,60.3456 C1111.16,76.7976 1026.0133,106.4089 952.2143,132.0739 C915.3148,144.9064 881.2522,156.7523 856.1746,165.4735 C843.6358,169.8341 833.3433,173.4135 826.0655,175.9444 C825.1558,176.2608 824.2932,176.5608 823.4792,176.8439 C823.0722,176.9854 822.6773,177.1227 822.2948,177.2558 " fill="none" id="inbound-&gt;MIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="822.2948,177.2558,832.1093,178.0776,827.0174,175.6134,829.4816,170.5215,822.2948,177.2558" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[cf7f388c21052be49188fc12aae09f1b]
+link MIS to OIS-->
+        <path d="M822.5877,182.9006 C822.8093,182.921 823.0349,182.9419 823.2644,182.9632 C825.1007,183.1336 827.1904,183.3311 829.5155,183.5561 C838.8161,184.4562 851.8845,185.7973 867.5786,187.6125 C898.9669,191.2429 940.8584,196.7697 984.1176,204.4577 C1070.636,219.8339 1162.625,243.8551 1187,278.6406 C1198.69,295.3266 1205.6556,315.0343 1209.5142,335.2658 C1211.4435,345.3815 1212.5961,355.6282 1213.174,365.6937 C1213.463,370.7264 1213.6083,375.7138 1213.6353,380.6169 C1213.6487,383.0685 1213.6326,385.4989 1213.5901,387.9034 " fill="none" id="MIS-&gt;OIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1213.5901,387.9034,1217.7487,378.9756,1213.6785,382.9042,1209.7499,378.834,1213.5901,387.9034" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="1206" y="303.1357">call api</text>
+        <!--MD5=[00f4e41f389e8622cc2f661d1429cdb8]
+link เพิ่มปฏิบัติการใหม่ to อัพเดทปฏิบัติการ-->
+        <!--MD5=[d3c3db32eb3c655a4cc5010692ac6df7]
+link อัพเดทปฏิบัติการ to ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ-->
+        <!--MD5=[eeaa08feacab9662cb179111d5cabb18]
+link ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ to UI สำหรับแสดงผล MIS-->
+        <!--MD5=[7d53e7b3ff1dd9bf68edbc1de9c468a6]
+link เพิ่มปฏิบัติการใหม่ to Offline Protocol-->
+        <!--MD5=[8c20f3694b8aa3f1d151aec9ff92f8f6]
+link Offline Protocol to Online Protocol-->
+        <!--MD5=[70a6d7b3f9d90252c91536be411f01f7]
+link Online Protocol to ศูนย์เรียกแพทย์เข้าห้อง-->
+        <!--MD5=[c36ed040dedc3dfb1ea0bf990b8d1b9c]
+link ศูนย์เรียกแพทย์เข้าห้อง to แพทย์เรียกศูนย์เข้าห้อง-->
+        <!--MD5=[a11abf8465d7366ecfbc2b6564a935b8]
+link Offline Protocol to ส่ง Notification ไป OIS-->
+        <!--MD5=[f47df6cf571659afda56912411f254e2]
+link ส่ง Notification ไป OIS to รับ Notification จาก OIS-->
+        <!--MD5=[70f0265d91598af8fc524acb281d852a]
+link รับ Notification จาก OIS to รับ Alert จาก OIS-->
+        <!--MD5=[e8398e8771dacb3c59a87804d8960de8]
+link รับ Alert จาก OIS to เข้าเวร-->
+        <!--MD5=[c6414a7267114b282d888e899d6b5e1a]
+link ส่ง Notification ไป OIS to ออกเวร-->
+        <!--MD5=[a21ec42e7fce767ab3d98d5e345d0e14]
+link ออกเวร to ข้อมูลสัญญาณชีพ HTML-->
+        <!--MD5=[626f0b0de5ef9f7c9d78c4453588e911]
+link ข้อมูลสัญญาณชีพ HTML to ข้อมูลสัญญาณชีพ JSON-->
+        <!--MD5=[1f30d7e99f53fb1dcec1e833d43cd199]
+link ส่งรายงานปฏิบัติงาน to อัพเดทรายงานปฏิบัติงาน-->
+        <!--MD5=[e66b6f374445557acd761c0fe58e083f]
+link อัพเดทรายงานปฏิบัติงาน to สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล-->
+        <!--MD5=[2fdb209a2948ee957c60dc9bb3a41222]
+link ส่งรายงานปฏิบัติงาน to สมาชิกในทีมปฏิบัติงาน-->
+        <!--MD5=[b26c9b948b365a6fdc066b143db4dab2]
+link สมาชิกในทีมปฏิบัติงาน to ค้นหาหน่วยงาน-->
+        <!--MD5=[bfac61c12de64aa665476c7a58bc2c02]
+link ค้นหาหน่วยงาน to ข้อมูลหน่วยงาน-->
+        <!--MD5=[4ec40d6f879be7308cf6af61a4875bac]
+@startuml
+Title ภาพรวม api ทั้งหมด
+  : MIS api gateway : as (gateway)
+
+  gateway <- - OIS : call api
+  MIS <- - gateway
+
+  : Outbound Queue : as (outbound)
+  MIS - -> outbound : notification to OIS
+
+  outbound - -> OIS
+
+  : Inbound Queue : as (inbound)
+  OIS - -> inbound : notification to MIS
+  inbound - -> MIS
+
+  MIS - -> OIS : call api
+
+  package MIS {
+    usecase "เพิ่มปฏิบัติการใหม่"
+    usecase "อัพเดทปฏิบัติการ"
+    usecase "ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ"
+    usecase "UI สำหรับแสดงผล MIS"
+    usecase "Offline Protocol"
+    usecase "Online Protocol"
+    usecase "ศูนย์เรียกแพทย์เข้าห้อง"
+    usecase "แพทย์เรียกศูนย์เข้าห้อง"
+    usecase "ส่ง Notification ไป OIS"
+    usecase "รับ Notification จาก OIS"
+    usecase "รับ Alert จาก OIS"
+    usecase "เข้าเวร"
+    usecase "ออกเวร"
+    usecase "ข้อมูลสัญญาณชีพ HTML"
+    usecase "ข้อมูลสัญญาณชีพ JSON"
+  }
+
+  package OIS{
+    usecase "ส่งรายงานปฏิบัติงาน"
+    usecase "อัพเดทรายงานปฏิบัติงาน"
+    usecase "สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล"
+    usecase "สมาชิกในทีมปฏิบัติงาน"
+    usecase "ค้นหาหน่วยงาน"
+    usecase "ข้อมูลหน่วยงาน"
+  }
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_261-b12
+Operating System: Windows 10
+Default Encoding: Cp1252
+Language: en
+Country: US
+-->
+    </g>
+</svg>

@@ -1,0 +1,45 @@
+@startuml
+Title ภาพรวม api ทั้งหมด
+  : MIS api gateway : as (gateway)
+
+  gateway <-- OIS : call api
+  MIS <-- gateway
+
+  : Outbound Queue : as (outbound)
+  MIS --> outbound : notification to OIS
+
+  outbound --> OIS
+
+  : Inbound Queue : as (inbound)
+  OIS --> inbound : notification to MIS
+  inbound --> MIS
+
+  MIS --> OIS : call api
+
+  package MIS {
+    usecase "เพิ่มปฏิบัติการใหม่"
+    usecase "อัพเดทปฏิบัติการ"
+    usecase "ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ"
+    usecase "UI สำหรับแสดงผล MIS"
+    usecase "Offline Protocol"
+    usecase "Online Protocol"
+    usecase "ศูนย์เรียกแพทย์เข้าห้อง"
+    usecase "แพทย์เรียกศูนย์เข้าห้อง"
+    usecase "ส่ง Notification ไป OIS"
+    usecase "รับ Notification จาก OIS"
+    usecase "รับ Alert จาก OIS"
+    usecase "เข้าเวร"
+    usecase "ออกเวร"
+    usecase "ข้อมูลสัญญาณชีพ HTML"
+    usecase "ข้อมูลสัญญาณชีพ JSON"
+  }
+
+  package OIS{
+    usecase "ส่งรายงานปฏิบัติงาน"
+    usecase "อัพเดทรายงานปฏิบัติงาน"
+    usecase "สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล"
+    usecase "สมาชิกในทีมปฏิบัติงาน"
+    usecase "ค้นหาหน่วยงาน"
+    usecase "ข้อมูลหน่วยงาน"
+  }
+@enduml
