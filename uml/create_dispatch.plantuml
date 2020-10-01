@@ -3,5 +3,5 @@ Title Dispatch
 actor OIS
   OIS -> MIS: ส่งคำสั่งเปิดปฏิบัติการ
   MIS -> MIS: สร้างห้อง MIS สำหรับปฏิบัติการ
-  OIS <- MIS: Id + Link ห้องปฏิบัติการ
+  OIS <- MIS: หมายเลขห้อง MIS
 @enduml

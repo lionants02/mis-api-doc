@@ -39,7 +39,7 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 201 (application/json)
 
     + Attributes (object , fixed-type)
-      + misRoomId: `22315` (string) - รหัสห้อง MIS
+      + misRoomId: `819232` (string) - รหัสห้อง MIS
       + return (Dispatch)
 
 ## อัพเดทปฏิบัติการ [PUT /dispatch]
@@ -54,6 +54,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `update_dispatch` (string, required) - กำหนดค่าคงที่
+      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + EventID: `610001` (number, required) - รหัสเหตุการณ์
       + OperationID: `610003` (number, required) - เลขปฏิบัติการ
       + dispatch (Dispatch) - ข้อมูลปฏิบัติการ
@@ -133,6 +134,13 @@ HOST: https://api.mis.tot.co.th/mis
 
   เมื่อศูนย์ต้องการเรียกแพทย์ที่เข้าเวรอยู่ ไปยังห้องที่ระบุ
 
++ Request (application/json)
+
+    + Attributes (object , fixed-type)
+      + event: `send_operator` (string, required) - กำหนดค่าคงที่
+      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+
 ## แพทย์ส่งข้อความหาศูนย์สั่งการ [PUT /notification]
 
   <img src="data\image\medical_call_center.svg">
@@ -141,7 +149,16 @@ HOST: https://api.mis.tot.co.th/mis
 
   ใช้เมื่อแพทย์ ต้องการส่งข้อความหาศูนย์ ในที่นี้จะใช้สำหรับ ในกรณีที่แพทย์ ต้องการเรียกศูนย์เข้าห้อง
 
-## ส่ง Notification ไประบบอื่น [PUT /notification]
++ Request (application/json)
+
+    + Attributes (object , fixed-type)
+      + event: `send_center` (string, required) - กำหนดค่าคงที่
+      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + misRoomId: `819232` (number, required) - รหัสเหตุการณ์
+      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
+      + message: `แพทย์เรียก` (string, required) - ข้อความ
+
+## ส่ง Notification ไป OIS [PUT /notification]
 
   **Message Queue**
 
@@ -151,7 +168,15 @@ HOST: https://api.mis.tot.co.th/mis
 
   ในที่นี้สำหรับใช้ในกรณี mis ต้องการส่ง Notification ไปยังศูนย์สั่งการ
 
-## รับ Notification จากระบบอื่น [POST /notification]
++ Request (application/json)
+
+    + Attributes (object , fixed-type)
+      + event: `send_center` (string, required) - กำหนดค่าคงที่
+      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
+      + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
+
+## รับ Notification จาก OIS [POST /notification]
 
   **Message Queue**
 
@@ -161,13 +186,29 @@ HOST: https://api.mis.tot.co.th/mis
 
   ใช้ในกรณีระบบอื่นต้องการส่ง Notification ไปยังผู้ใช้ MIS ในที่นี้จะใช้สำหรับ ศูนย์สั่งการต้องการเรียกหมอ
 
-## รับ Alert จากระบบอื่น [POST /notification]
++ Request (application/json)
 
-  **Message Queue**
+    + Attributes (object , fixed-type)
+      + event: `send_operator` (string, required) - กำหนดค่าคงที่
+      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
-  ใช้ในกรณีระบบอื่น ต้องการส่ง Alert message ไปยังผู้ใช้ MIS
+## รับ Alert จาก OIS [POST /notification]
+
+  **Message Queue Remote procedure call (RPC)**
+
+  ใช้ในกรณ OIS ต้องการส่ง Alert message ไปยังผู้ใช้ MIS และยังสามารถทราบได้ด้วยว่า ข้อความถึงปลายทางหรือไม่
 
   (รอหารือกับทีมอีกครั้ง ว่าจะทำตรงนี้หรือไม่)
+
++ Request (application/json)
+
+    + Attributes (object , fixed-type)
+      + event: `alert_operator` (string, required) - กำหนดค่าคงที่
+      + OfficeID: `1111` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
 
 ## Data Structures
 
