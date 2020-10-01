@@ -1,0 +1,5 @@
+@startuml
+  :OIS Platform : as OIS
+  :MIS Platform : as MIS
+  MIS -right-> OIS : ต้องการรายชื่อหน่วยงาน
+@enduml
