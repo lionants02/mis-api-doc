@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="113px" preserveAspectRatio="none" style="width:334px;height:113px;" version="1.1" viewBox="0 0 334 113" width="334px" zoomAndPan="magnify">
-    <defs>
-        <filter height="300%" id="f1p1ngq96rv3jg" width="300%" x="-1" y="-1">
-            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
-            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
-            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
-            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
-        </filter>
-    </defs>
-    <g><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="91" x="231" y="10.3809">notification_system</text>
-        <!--MD5=[411c9672cbc43f9185df31beb613b987]
-entity OIS-->
-        <ellipse cx="45.5" cy="30.0781" fill="#FEFECE" filter="url(#f1p1ngq96rv3jg)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M45.5,38.0781 L45.5,65.0781 M32.5,46.0781 L58.5,46.0781 M45.5,65.0781 L32.5,80.0781 M45.5,65.0781 L58.5,80.0781 " fill="none" filter="url(#f1p1ngq96rv3jg)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="6" y="100.1113">OIS Platform</text>
-        <!--MD5=[277af81c43435f3e1e7d98246e8611f4]
-entity MIS-->
-        <ellipse cx="275.5" cy="30.0781" fill="#FEFECE" filter="url(#f1p1ngq96rv3jg)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M275.5,38.0781 L275.5,65.0781 M262.5,46.0781 L288.5,46.0781 M275.5,65.0781 L262.5,80.0781 M275.5,65.0781 L288.5,80.0781 " fill="none" filter="url(#f1p1ngq96rv3jg)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="247.5" y="100.1113">MIS User</text>
-        <!--MD5=[ae529726e9ba1cc805ada8d05a3c6cd5]
-link OIS to MIS-->
-        <path d="M85.0384,62.0781 C129.38,62.0781 200.519,62.0781 242.157,62.0781 " fill="none" id="OIS-&gt;MIS" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="247.333,62.0781,238.333,58.0781,242.333,62.0781,238.333,66.0781,247.333,62.0781" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="103.25" y="55.5732">ต้องการส่ง Notification</text>
-        <!--MD5=[bfbf1f810a63ae5b6d9330a460407fd8]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="110px" preserveAspectRatio="none" style="width:315px;height:110px;" version="1.1" viewBox="0 0 315 110" width="315px" zoomAndPan="magnify"><defs><filter height="300%" id="f1p1ngq96rv3jg" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="91" x="206.5" y="10.3809">notification_system</text><!--MD5=[411c9672cbc43f9185df31beb613b987]
+entity OIS--><ellipse cx="45.5" cy="26.5781" fill="#FEFECE" filter="url(#f1p1ngq96rv3jg)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M45.5,34.5781 L45.5,61.5781 M32.5,42.5781 L58.5,42.5781 M45.5,61.5781 L32.5,76.5781 M45.5,61.5781 L58.5,76.5781 " fill="none" filter="url(#f1p1ngq96rv3jg)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="6" y="96.6113">OIS Platform</text><!--MD5=[277af81c43435f3e1e7d98246e8611f4]
+entity MIS--><ellipse cx="275.5" cy="26.5781" fill="#FEFECE" filter="url(#f1p1ngq96rv3jg)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;"/><path d="M275.5,34.5781 L275.5,61.5781 M262.5,42.5781 L288.5,42.5781 M275.5,61.5781 L262.5,76.5781 M275.5,61.5781 L288.5,76.5781 " fill="none" filter="url(#f1p1ngq96rv3jg)" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="247.5" y="96.6113">MIS User</text><!--MD5=[ae529726e9ba1cc805ada8d05a3c6cd5]
+link OIS to MIS--><path d="M85.0384,58.5781 C129.38,58.5781 200.519,58.5781 242.157,58.5781 " fill="none" id="OIS-to-MIS" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="247.333,58.5781,238.333,54.5781,242.333,58.5781,238.333,62.5781,247.333,58.5781" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="126" x="103.25" y="52.0732">ต้องการส่ง Notification</text><!--MD5=[ef3cc95d3843486c9fd86e08c6f39201]
 @startuml
 Header notification_system
   :OIS Platform : as OIS
@@ -28,15 +9,11 @@ Header notification_system
   OIS -right-> MIS : ต้องการส่ง Notification
 @enduml
 
-PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
-(GPL source distribution)
+PlantUML version 1.2020.17(Sat Sep 19 19:30:11 ICT 2020)
+(MIT source distribution)
 Java Runtime: Java(TM) SE Runtime Environment
 JVM: Java HotSpot(TM) 64-Bit Server VM
-Java Version: 1.8.0_181-b13
-Operating System: Windows 10
 Default Encoding: MS874
 Language: en
 Country: US
--->
-    </g>
-</svg>
+--></g></svg>
