@@ -8,7 +8,7 @@ Header medical_call_center
 @startuml
 Header medical_call_center_001
   actor "Medical director" as Medical
-  collections "outbound Queue" as outbound
+  collections "Outbound Message Queue" as outbound
   outbound <-- Medical : send message
   actor "ศูนย์สั่งการ" as OIS
   OIS <-- outbound : send message

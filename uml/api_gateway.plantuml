@@ -1,6 +1,6 @@
 @startuml
-  :OIS Platform : as OIS
-  :MIS system : as MIS
+  "OIS Platform"  as [OIS]
+  "MIS Platform" as [MIS]
   : MIS api gateway : as (gateway)
 
   gateway <-- OIS : call api
