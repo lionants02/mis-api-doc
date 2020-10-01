@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="113px" preserveAspectRatio="none" style="width:330px;height:113px;" version="1.1" viewBox="0 0 330 113" width="330px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f144u111u7weaj" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="99" x="219" y="10.3809">center_call_medical</text>
+        <!--MD5=[411c9672cbc43f9185df31beb613b987]
+entity OIS-->
+        <ellipse cx="38.5" cy="30.0781" fill="#FEFECE" filter="url(#f144u111u7weaj)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M38.5,38.0781 L38.5,65.0781 M25.5,46.0781 L51.5,46.0781 M38.5,65.0781 L25.5,80.0781 M38.5,65.0781 L51.5,80.0781 " fill="none" filter="url(#f144u111u7weaj)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="6" y="100.1113">ศูนย์สั่งการ</text>
+        <!--MD5=[edcd463b84ace421b1582cf3bdc572cd]
+entity Medical-->
+        <ellipse cx="249.5" cy="30.0781" fill="#FEFECE" filter="url(#f144u111u7weaj)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M249.5,38.0781 L249.5,65.0781 M236.5,46.0781 L262.5,46.0781 M249.5,65.0781 L236.5,80.0781 M249.5,65.0781 L262.5,80.0781 " fill="none" filter="url(#f144u111u7weaj)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="100" x="199.5" y="100.1113">Medical director</text>
+        <!--MD5=[c1ef79af9492bd55e78eb527741dbc07]
+link OIS to Medical-->
+        <path d="M71.0063,62.0781 C103.7536,62.0781 154.905,62.0781 194.07,62.0781 " fill="none" id="OIS-&gt;Medical" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="199.27,62.0781,190.27,58.0781,194.27,62.0781,190.27,66.0781,199.27,62.0781" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="89.25" y="55.5732">เรียกหมอเข้าห้อง</text>
+        <!--MD5=[a3e5f3ce788fe4c0570465dca32d3db2]
+@startuml
+Header center_call_medical
+  :ศูนย์สั่งการ : as OIS
+  :Medical director : as Medical
+  OIS -right-> Medical : เรียกหมอเข้าห้อง
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_181-b13
+Operating System: Windows 10
+Default Encoding: MS874
+Language: en
+Country: US
+-->
+    </g>
+</svg>
