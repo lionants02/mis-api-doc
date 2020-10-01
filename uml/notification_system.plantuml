@@ -1,24 +1,24 @@
 @startuml
 Header notification_system
-  :Other Platform : as Other
+  :OIS Platform : as OIS
   :MIS User : as MIS
-  Other -right-> MIS : ต้องการส่ง Notification
+  OIS -right-> MIS : ต้องการส่ง Notification
 @enduml
 
 @startuml
 Header notification_system_001
-  actor "Other Platform" as Other
+  actor "OIS Platform" as OIS
   collections "Inbound Queue" as inbound
-  Other --> inbound : Notification message
+  OIS --> inbound : Notification message
   actor "Mis User" as MIS
   inbound --> MIS : Notification message
 @enduml
 
 @startuml
 Header notification_system_002
-  :Other Platform : as Other
+  :OIS Platform : as OIS
   :MIS User : as MIS
-  MIS -right-> Other : ต้องการส่ง Notification
+  MIS -right-> OIS : ต้องการส่ง Notification
 @enduml
 
 @startuml
@@ -26,6 +26,6 @@ Header notification_system_003
   actor "Mis User" as MIS
   collections "Outbound Queue" as outbound
   MIS --> outbound : Notification message
-  actor "Other Platform" as Other
-  outbound --> Other : Notification message
+  actor "OIS Platform" as OIS
+  outbound --> OIS : Notification message
 @enduml
