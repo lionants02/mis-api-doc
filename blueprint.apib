@@ -12,7 +12,7 @@ HOST: https://api.mis.tot.co.th/mis
   ภาพแสดงการเชื่อมต่อกับระบบ OIS
   - การเรียกใช้ api ภายใน MIS จะเชื่อมผ่าน MIS api gateway ทั้งหมด
   - สำหรับการส่ง Notification จะทำผ่านระบบ Message Queue
-  
+
   <a href="data\image\full.svg">
     <img src="data\image\full.svg" width="100%">
   </a>
@@ -57,6 +57,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `update_dispatch` (string, required) - กำหนดค่าคงที่
+      + randomNumber: `5324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + EventID: `610001` (number, required) - รหัสเหตุการณ์
       + OperationID: `610003` (number, required) - เลขปฏิบัติการ
@@ -125,6 +126,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
+      + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 
@@ -140,6 +142,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `send_center` (string, required) - กำหนดค่าคงที่
+      + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + misRoomId: `819232` (number, required) - รหัสห้อง MIS
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
@@ -159,6 +162,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `send_center` (string, required) - กำหนดค่าคงที่
+      + randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
@@ -177,6 +181,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
+      + randomNumber: `2347` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
@@ -193,6 +198,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + event: `alert_operator` (string, required) - กำหนดค่าคงที่
+      + randomNumber: `96544` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
