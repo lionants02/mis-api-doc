@@ -84,63 +84,6 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## Online protocol [GET /protocol]
 
-# Group Lookup
-
-## Special list [GET /specialist{?province,query}]
-
-+ Parameters
-    + province: `สระแก้ว` (string)
-      ``ชื่อจังหวัด``
-    + query: `กระดูก` (string)
-      ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
-
-## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id_card}]
-
-  สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
-
-**(รอหารือกับทีมอีกครั้งว่าสมควรดึงได้โดยตรงไหม เพราะเป็นข้อมูลละเอียดอ่อน)**
-
-+ Parameters
-    + id_card: `3250400000001` (string, required)
-      ``หมายเลขประจำตัวประชาชน``
-
-## สมาชิกในทีมปฏิบัติการ [GET /operating/{OperatingSetID}]
-
-  + Parameters
-      + OperatingSetID: `23154` (number, required)
-        ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
-
-## ค้นหาหน่วยงาน [GET /organization{?query}]
-
-  <img src="data\image\ois_search_org.svg">
-
-  ดึงข้อมูลชื่อหน่วยงานจาก OIS ถ้าไม่ใส่ query จะส่งกลับรายชื่อหน่วยงานทั้งหมด
-
-+ Parameters
-    + query: `สระแก้ว` (string, optional)
-      ``ข้อมูลที่ต้องการค้นหา``
-
-+ Response 200 (application/json)
-    + Attributes (array, fixed-type)
-        + (object)
-            + OfficeID: `1010` (number ,required) - รหัสหน่วยงาน
-            + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
-            + OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
-
-## ข้อมูลหน่วยงาน [GET /organization/{OfficeID}]
-
-  <img src="data\image\ois_get_org.svg">
-
-  ดึงข้อมูลหน่วยงานจาก OIS
-
-+ Parameters
-    + OfficeID: `1010` (string, required)
-      ``รหัสหน่วยงาน``
-
-+ Response 200 (application/json)
-    + Attributes (Organization, fixed-type)
-
-
 # Group ระบบ Telemed
 
 ## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns/{PersonID}]
@@ -240,6 +183,64 @@ HOST: https://api.mis.tot.co.th/mis
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
+
+# Group Lookup
+
+## Special list [GET /specialist{?province,query}]
+
++ Parameters
+    + province: `สระแก้ว` (string)
+      ``ชื่อจังหวัด``
+    + query: `กระดูก` (string)
+      ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
+
+## สิทธิ์/ประวัดิการรักษา [GET /rightoftreatment/{id_card}]
+
+  สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
+
+**(รอหารือกับทีมอีกครั้งว่าสมควรดึงได้โดยตรงไหม เพราะเป็นข้อมูลละเอียดอ่อน)**
+
++ Parameters
+    + id_card: `3250400000001` (string, required)
+      ``หมายเลขประจำตัวประชาชน``
+
+## สมาชิกในทีมปฏิบัติการ [GET /operating/{OperatingSetID}]
+
+  + Parameters
+      + OperatingSetID: `23154` (number, required)
+        ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
+
+## ค้นหาหน่วยงาน [GET /organization{?query}]
+
+  <img src="data\image\ois_search_org.svg">
+
+  ดึงข้อมูลชื่อหน่วยงานจาก OIS ถ้าไม่ใส่ query จะส่งกลับรายชื่อหน่วยงานทั้งหมด
+
++ Parameters
+    + query: `สระแก้ว` (string, optional)
+      ``ข้อมูลที่ต้องการค้นหา``
+
++ Response 200 (application/json)
+    + Attributes (array, fixed-type)
+        + (object)
+            + OfficeID: `1010` (number ,required) - รหัสหน่วยงาน
+            + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
+            + OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
+
+## ข้อมูลหน่วยงาน [GET /organization/{OfficeID}]
+
+  <img src="data\image\ois_get_org.svg">
+
+  ดึงข้อมูลหน่วยงานจาก OIS
+
++ Parameters
+    + OfficeID: `1010` (string, required)
+      ``รหัสหน่วยงาน``
+
++ Response 200 (application/json)
+    + Attributes (Organization, fixed-type)
+
+
 
 ## Data Structures
 
