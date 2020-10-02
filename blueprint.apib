@@ -13,6 +13,15 @@ HOST: https://api.mis.tot.co.th/mis
   - การเรียกใช้ api ภายใน MIS จะเชื่อมผ่าน MIS api gateway ทั้งหมด
   - สำหรับการส่ง Notification จะทำผ่านระบบ Message Queue
 
+  รูปแบบวันที่เวลาที่ใช้ `YYYY-MM-DDThh:mm:ss.s`
+  - YYYY = four-digit year
+  - MM   = two-digit month (01=January, etc.)
+  - DD   = two-digit day of month (01 through 31)
+  - hh   = two digits of hour (00 through 23) (am/pm NOT allowed)
+  - mm   = two digits of minute (00 through 59)
+  - ss   = two digits of second (00 through 59)
+  - s    = one or more digits representing a decimal fraction of a second
+
   <a href="data\image\full.svg">
     <img src="data\image\full.svg" width="100%">
   </a>
@@ -394,15 +403,7 @@ HOST: https://api.mis.tot.co.th/mis
 + PatientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล PersonID
 + CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + EmergencyLevelCode: `02` (string) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
-+ EventDateTime: `2020-04-23T18:25:43.511` (string) - `YYYY-MM-DDThh:mm:ss.s
-YYYY = four-digit year
-MM   = two-digit month (01=January, etc.)
-DD   = two-digit day of month (01 through 31)
-hh   = two digits of hour (00 through 23) (am/pm NOT allowed)
-mm   = two digits of minute (00 through 59)
-ss   = two digits of second (00 through 59)
-s    = one or more digits representing a decimal fraction of a second
-`
++ EventDateTime: `2020-04-23T18:25:43.511` (string) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # Person (object)
 + PersonID: `002321` (number) - รหัสข้อมูลบุคคล
