@@ -1,8 +1,8 @@
 @startuml
 Title Update Dispatch
-actor OIS
-  OIS -> "Inbound\nMessage Queue": ส่งข้อมูล Update
+actor "OIS Platform" as OIS
+  OIS -> "MIS Platform": ส่งข้อมูล Update
   note left: เกิดเหตุเกิดเหตุบางอย่าง\nที่จำเป็นต้องมีการ Update ภารกิจ\nที่กำลังดำเนินอยู่
-  "Inbound\nMessage Queue" -> "MIS Platform": ตรวจสอบการ Update
   "MIS Platform" -> "MIS Platform": update MIS
+  "MIS Platform" -> OIS: 200 OK
 @enduml
