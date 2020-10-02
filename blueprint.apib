@@ -205,6 +205,10 @@ HOST: https://api.mis.tot.co.th/mis
     + OperationID: `610003` (number, required)
       ``เลขปฏิบัติการ``
 
++ Request (application/json)
+
+    + Attributes (Report , fixed-type)
+
 # Group MIS Protocol
 
 ## Offline protocol [GET /protocol]
@@ -436,7 +440,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Report (object)
 + EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-+ detail (array[TreatmentInformation],fixed)
++ detail (array[TreatmentInformation],fixed-type)
 
 # TreatmentInformation (object)
 + PROCEDURENAME: `example` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
