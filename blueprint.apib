@@ -23,13 +23,15 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group MIS ปฏิบัติการ
 
-## เพิ่มปฏิบัติการใหม่ [POST /dispatch]
-
-  **(ทดสอบตัวสร้างเอกสารยังไม่ใช่โครงสร้างข้อมูลจริง)**
+## เปิดห้อง MIS [POST /room]
 
   <img src="data\image\create_dispatch.svg">
 
-  เปิดปฏิบัติการ 1 คน ต่อ 1 ห้อง MIS
+  ต้องเคลียร์กับทาง OIS ว่า 1 ห้อง MIS ต่อผู้ประสบเหตุ 1 คน
+
+  โครงสร้างที่ใช้
+  - ใช้โครงสร้าง `ชุดข้อมูลการรับแจ้งเหตุ` มาปรับ
+  - ในเอกสาร `ข้อมูลทะเบียนชุดปฏิบัติการ` จะผูกกับเลขทะเบียนรถเสมอ
 
 + Request (application/json)
 
@@ -37,19 +39,59 @@ HOST: https://api.mis.tot.co.th/mis
 
             Authorization: Token {token}
 
-    + Attributes (Dispatch , fixed-type)
+    + Attributes (MisRoom , fixed-type)
 
 + Response 201 (application/json)
 
     + Attributes (object , fixed-type)
-      + misRoomId: `819232` (string) - รหัสห้อง MIS
-      + return (Dispatch)
+      + misRoomId: `2222` (string) - รหัสห้อง MIS จะใช้เป็นรหัสผู้ประสบเหตุเลย
+      + return (MisRoom)
 
-## อัพเดทปฏิบัติการ [PUT /dispatch]
+## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/event/{EventID}]
+
+  รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `รหัสเหตุการณ์` เดียวกัน
+
+  1 เหตุการณ์ อาจมีผู้ประสบเหตุได้หลายคน
+
++ Parameters
+    + EventID: `610001` (number, required)
+      ``รหัสเหตุการณ์``
+
++ Response 200 (application/json)
+
+    + Attributes (array[MisRoom] , fixed-type)
+
+## รายการห้อง MIS อิงศูนย์สั่งการ [GET /room/office/{OfficeID}]
+
+  รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `รหัสศูนย์สั่งการ`
+
+  1 ศูนย์สั่งการ ปกติจะดูแลผู้ประสบเหตุหลายคน
+
++ Parameters
+    + OfficeID: `1010` (number, required)
+      ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
+
++ Response 200 (application/json)
+
+    + Attributes (array[MisRoom] , fixed-type)
+
+## รายการห้อง MIS อิงเลขรถ [GET /room/car/{VehicleIID}]
+
+  รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `เลขรถ`
+
+  รถ 1 คัน บางครั้งจะมีผู้ประสบเหตุได้หลายคน
+
++ Parameters
+    + VehicleIID: `6กจ9999` (number, required)
+      ``เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)``
+
++ Response 200 (application/json)
+
+    + Attributes (array[MisRoom] , fixed-type)
+
+## อัพเดทข้อมูลห้อง MIS [PUT /room/{EventPatientID}]
 
   <img src="data\image\update_dispatch.svg">
-
-  **Message Queue**
 
   ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะทำงานผ่าน Message Queue
 
@@ -61,12 +103,12 @@ HOST: https://api.mis.tot.co.th/mis
       + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + EventID: `610001` (number, required) - รหัสเหตุการณ์
       + OperationID: `610003` (number, required) - เลขปฏิบัติการ
-      + dispatch (Dispatch) - ข้อมูลปฏิบัติการ
+      + dispatch (MisRoom) - ข้อมูลปฏิบัติการ
 
 
-## ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ [PUT /dispatch/vehicle]
+## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [PUT /dispatch/vehicle]
 
-  ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ป่วย 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ป่วย
+  ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
 
 ## UI สำหรับแสดงผล MIS [GET /dispatch/{misRoomId}]
 
@@ -266,21 +308,19 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## Data Structures
 
-# Dispatch (object)
-+ type: `Dispatch` (string, fixed, required) - ค่าคงที่
+# MisRoom (object)
++ type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + EventID: `610001` (number, required) - รหัสเหตุการณ์
-+ OperationID: `610003` (number, required) - เลขปฏิบัติการ
-+ VehicleIID: `6กจ9999`, `9ดม2448` (array[string]) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
++ VehicleIID: `6กจ9999`, `9ดม2448` (array[string], required) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
 + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ OperatingSetID: `23154`,`22314` (array[number]) - ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
-+ O_Victim (Victim) - ข้อมูลผู้ป่วย
++ O_Victim (Victim) - ข้อมูลผู้ประสบเหตุ
 
 # Victim (object)
 + type: `Victim` (string, required)
-+ EventPatientID: `2222` (number) - รหัสรายละเอียดผู้ประสบเหตุ
++ EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + EventID: `610001` (number) - รหัสเหตุการณ์
-+ CBDCode: `CBD25` (string) - อาการผู้ป่วยที่แจ้ง
-+ PatientName: `002321` (number) - ชื่อผู้ป่วย ชุดข้อมูลบุคคล PersonID
++ CBDCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
++ PatientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล PersonID
 + CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + EmergencyLevelCode: `02` (string) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
 
@@ -303,7 +343,7 @@ HOST: https://api.mis.tot.co.th/mis
 + OfficeNameEn: `Vipa` (string) - ชื่อหน่วยงาน(อังกฤษ)
 + MinistryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
 + OfficeTypeCode (string) - ประเภทหน่วยงาน
-+ TypeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ป่วยและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
++ TypeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
 + Distance (string) - ระยะทางจากที่ตั้งหน่วยถึง
 
 # Vehicle (object)
