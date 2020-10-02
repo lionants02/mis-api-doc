@@ -170,9 +170,9 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## UI สำหรับแสดงผล MIS [GET /room/{EventPatientID}]
 
-  <img src="data\image\LINE_b9WEtafJT4.png">
+  หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนา 683 x 768 pixels
 
-  หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว
+  <img src="data\image\LINE_b9WEtafJT4.png">
 
 + Parameters
     + EventPatientID: `2222` (number, required)
@@ -191,6 +191,10 @@ HOST: https://api.mis.tot.co.th/mis
 + Parameters
     + OperationID: `610003` (number, required)
       ``เลขปฏิบัติการ``
+
++ Request (application/json)
+
+    + Attributes (Report , fixed-type)
 
 ## แก้ไขรายงานปฏิบัติงาน [PUT /ois/dispatch/{OperationID}]
 
@@ -385,7 +389,6 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 200 (application/json)
     + Attributes (Organization, fixed-type)
 
-
 ## Data Structures
 
 # MisRoom (object)
@@ -399,11 +402,14 @@ HOST: https://api.mis.tot.co.th/mis
 + type: `Victim` (string, required)
 + EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + EventID: `610001` (number) - รหัสเหตุการณ์
++ EventDateTime: `2020-04-23T18:25:43.511` (string) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + CBDCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
 + PatientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล PersonID
 + CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + EmergencyLevelCode: `02` (string) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
-+ EventDateTime: `2020-04-23T18:25:43.511` (string) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ INSTYPE (string) - สิทธิการรักษา 52file(Service)
++ Drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
++ HOSPCODE (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 
 # Person (object)
 + PersonID: `002321` (number) - รหัสข้อมูลบุคคล
@@ -426,6 +432,13 @@ HOST: https://api.mis.tot.co.th/mis
 + OfficeTypeCode (string) - ประเภทหน่วยงาน
 + TypeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
 + Distance (string) - ระยะทางจากที่ตั้งหน่วยถึง
+
+# Report (object)
++ EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ detail (array)
+  + (object)
+    + PROCEDURENAME (string) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+    + PDESCRIPTION (string) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 
 # Vehicle (object)
 + type: `Vehicle` (string, required) - ค่าคงที่
