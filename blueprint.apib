@@ -132,9 +132,32 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + message: `ชุดข้อมูล EventPatientID ไม่ตรงกับที่ระบุ` (string)
 
-## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [PUT /dispatch/vehicle]
+## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{EventPatientID}/vehicle/{VehicleIID}]
+
+  เพื่อให้สะดวกแก่การใช้งาน จะใช้ในลักษณะของ Webhook เรียก Link แล้วจะอัพเดทสถานะเลย
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
+
++ Parameters
+    + EventPatientID: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
+    + VehicleIID: `9ดม2448` (number, required)
+      ``เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)``
+
++ Response 200 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `OK` (string)
+
++ Response 404 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `ไม่พบเลข EventPatientID ที่ระบุ` (string)
+
++ Response 409 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `ข้อมูล VehicleIID(ทะเบียนรถ) ไม่ได้ระบุอยู่ในข้อมูลส่วน VehicleIID ในตอนสร้างห้อง MIS หรือ ยังไม่ได้อัพเดทเพิ่ม VehicleIID ที่จะใช้เข้าไปในส่วนข้อมูลห้อง MIS` (string)
 
 ## UI สำหรับแสดงผล MIS [GET /dispatch/{misRoomId}]
 
