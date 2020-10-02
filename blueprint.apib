@@ -13,6 +13,7 @@ HOST: https://api.mis.tot.co.th/mis
   - การเรียกใช้ api ภายใน MIS จะเชื่อมผ่าน MIS api gateway ทั้งหมด
   - สำหรับการส่ง Notification จะทำผ่านระบบ Message Queue
 
+
   รูปแบบวันที่เวลาที่ใช้ `YYYY-MM-DDThh:mm:ss.s`
   - YYYY = four-digit year
   - MM   = two-digit month (01=January, etc.)
@@ -435,10 +436,9 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Report (object)
 + EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-+ detail (array)
-  + (object)
-    + PROCEDURENAME (string) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-    + PDESCRIPTION (string) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ detail (array,fixed)
+  + PROCEDURENAME (string) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+  + PDESCRIPTION (string) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 
 # Vehicle (object)
 + type: `Vehicle` (string, required) - ค่าคงที่
