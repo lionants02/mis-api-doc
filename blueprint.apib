@@ -61,6 +61,10 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (array[MisRoom] , fixed-type)
 
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
 ## รายการห้อง MIS อิงศูนย์สั่งการ [GET /room/office/{OfficeID}]
 
   รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `รหัสศูนย์สั่งการ`
@@ -74,6 +78,11 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 200 (application/json)
 
     + Attributes (array[MisRoom] , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
 
 ## รายการห้อง MIS อิงเลขรถ [GET /room/car/{VehicleIID}]
 
@@ -89,22 +98,39 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (array[MisRoom] , fixed-type)
 
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
+
 ## อัพเดทข้อมูลห้อง MIS [PUT /room/{EventPatientID}]
 
   <img src="data\image\update_dispatch.svg">
 
-  ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะทำงานผ่าน Message Queue
+  ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข รหัสผู้ประสบเหตุ ในการอ้างอิงชุดข้อมูล
+
+  โดยระบบจะตรวจสอบอีกครั้งว่า เลข `EventPatientID` ใน link ตรงกับในชุดข้อมูลที่ตรงมาหรือไม่
+
++ Parameters
+    + EventPatientID: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
 
-    + Attributes (object , fixed-type)
-      + event: `update_dispatch` (string, required) - กำหนดค่าคงที่
-      + randomNumber: `5324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-      + EventID: `610001` (number, required) - รหัสเหตุการณ์
-      + OperationID: `610003` (number, required) - เลขปฏิบัติการ
-      + dispatch (MisRoom) - ข้อมูลปฏิบัติการ
+    + Attributes (MisRoom , fixed-type)
 
++ Response 200 (application/json)
+
+    + Attributes (MisRoom , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
++ Response 409 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `ชุดข้อมูล EventPatientID ไม่ตรงกับที่ระบุ` (string)
 
 ## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [PUT /dispatch/vehicle]
 
@@ -362,3 +388,6 @@ HOST: https://api.mis.tot.co.th/mis
 + Name - ชื่อ
 + No - เลขที่ใบประกอบ
 + Tel - เบอร์โทรศัพท์
+
+# NotFound (object)
++ message: `ไม่พบข้อมูลตามที่ระบุใน Link` (string)
