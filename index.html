@@ -9,6 +9,28 @@
 </li>
 <li>
 <p>สำหรับการส่ง Notification จะทำผ่านระบบ Message Queue</p>
+<p>รูปแบบวันที่เวลาที่ใช้ <code>YYYY-MM-DDThh:mm:ss.s</code></p>
+</li>
+<li>
+<p>YYYY = four-digit year</p>
+</li>
+<li>
+<p>MM   = two-digit month (01=January, etc.)</p>
+</li>
+<li>
+<p>DD   = two-digit day of month (01 through 31)</p>
+</li>
+<li>
+<p>hh   = two digits of hour (00 through 23) (am/pm NOT allowed)</p>
+</li>
+<li>
+<p>mm   = two digits of minute (00 through 59)</p>
+</li>
+<li>
+<p>ss   = two digits of second (00 through 59)</p>
+</li>
+<li>
+<p>s    = one or more digits representing a decimal fraction of a second</p>
 <a href="data\image\full.svg">
   <img src="data\image\full.svg" width="100%">
 </a></li>
@@ -762,7 +784,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">EventDateTime</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"`YYYY-MM-DDThh:mm:ss.s\n\nYYYY = four-digit year\nMM   = two-digit month (01=January, etc.)\nDD   = two-digit day of month (01 through 31)\nhh   = two digits of hour (00 through 23) (am/pm NOT allowed)\nmm   = two digits of minute (00 through 59)\nss   = two digits of second (00 through 59)\ns    = one or more digits representing a decimal fraction of a second\n`"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
