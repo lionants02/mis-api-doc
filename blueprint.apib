@@ -398,22 +398,23 @@ HOST: https://api.mis.tot.co.th/mis
 + VehicleIID: `6กจ9999`, `9ดม2448` (array[string], required) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
 + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ level: `ALS` (Vehicle_Level) - ระดับปฏิบัติการ
 
 # Victim (object)
 + type: `Victim` (string, required)
 + EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + EventID: `610001` (number) - รหัสเหตุการณ์
-+ EventDateTime: `2020-04-23T18:25:43.511` (string) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ EventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + CBDCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
 + PatientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล PersonID
 + CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
-+ EmergencyLevelCode: `02` (string) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
++ EmergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
 + INSTYPE (string) - สิทธิการรักษา 52file(Service)
 + Drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
 + HOSPCODE (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 
 # Person (object)
-+ PersonID: `002321` (number) - รหัสข้อมูลบุคคล
++ PersonID: `002321` (number, required) - รหัสข้อมูลบุคคล
 + CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + PrefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
 + GivenName: `แสม` (string) - ชื่อตัว
@@ -426,17 +427,16 @@ HOST: https://api.mis.tot.co.th/mis
 + DisabilityCode: `00` (string) - ความพิการ File Disability.xlsx
 
 # Organization (object)
-+ OfficeID: `1010` (string) - รหัสหน่วยงาน
-+ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string) - ชื่อหน่วยงาน(ไทย)
++ OfficeID: `1010` (string, required) - รหัสหน่วยงาน
++ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string, required) - ชื่อหน่วยงาน(ไทย)
 + OfficeNameEn: `Vipa` (string) - ชื่อหน่วยงาน(อังกฤษ)
 + MinistryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
 + OfficeTypeCode (string) - ประเภทหน่วยงาน
 + TypeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
-+ Distance (string) - ระยะทางจากที่ตั้งหน่วยถึง
 
 # Report (object)
 + EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-+ detail (array[TreatmentInformation],required)
++ detail (array[TreatmentInformation],fixed)
 
 # TreatmentInformation (object)
 + PROCEDURENAME: `example` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
