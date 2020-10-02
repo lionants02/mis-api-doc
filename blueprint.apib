@@ -300,6 +300,20 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Lookup from OIS
 
+## ข้อมูลผู้ประสบเหตุ [GET /EventPatient/{EventPatientID}]
+
++ Parameters
+    + EventPatientID: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
+
++ Response 200 (application/json)
+
+    + Attributes (Victim , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
 ## Speciallist [GET /specialist{?province,query}]
 
 + Parameters
@@ -362,7 +376,7 @@ HOST: https://api.mis.tot.co.th/mis
 + EventID: `610001` (number, required) - รหัสเหตุการณ์
 + VehicleIID: `6กจ9999`, `9ดม2448` (array[string], required) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
 + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ O_Victim (Victim) - ข้อมูลผู้ประสบเหตุ
++ EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 
 # Victim (object)
 + type: `Victim` (string, required)
