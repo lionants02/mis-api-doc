@@ -398,7 +398,6 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (Victim , fixed-type)
 
 + Response 404 (application/json)
-
     + Attributes (NotFound , fixed-type)
 
 ## Speciallist [GET /specialist{?province,query}]
@@ -424,6 +423,12 @@ HOST: https://api.mis.tot.co.th/mis
   + Parameters
       + OperatingSetID: `23154` (number, required)
         ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
+
++ Response 200 (application/json)
+    + Attributes (array[User], fixed-type)
+
++ Response 404 (application/json)
+    + Attributes (NotFound , fixed-type)
 
 ## ค้นหาหน่วยงาน [GET /organization{?query}]
 
@@ -513,6 +518,16 @@ HOST: https://api.mis.tot.co.th/mis
 + PDESCRIPTION: `example` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# User (object)
++ PersonID: `1354` (number) - รหัสข้อมูลบุคคล
++ OfficeID: `1010` (number) - หน่วยงานที่สังกัด
++ PrefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ GivenName: `แสม` (string) - ชื่อตัว
++ FamilyName: `แสนซน` (string) - ชื่อสกุล
++ GenderCode: `1` (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ OperationStatusCode: `1` (number) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
++ OperationTypeCode: `10` (string) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
 
 # Vehicle (object)
 + type: `Vehicle` (string, required) - ค่าคงที่
