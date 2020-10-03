@@ -115,15 +115,99 @@
     <span class="hljs-string">"level"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">misRoomId</span>": <span class="hljs-value"><span class="hljs-string">"2222"</span></span>,
+  "<span class="hljs-attribute">return</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"MisRoom"</span></span>,
+    "<span class="hljs-attribute">EventID</span>": <span class="hljs-value"><span class="hljs-number">610001</span></span>,
+    "<span class="hljs-attribute">VehicleIID</span>": <span class="hljs-value">[
+      <span class="hljs-string">"6กจ9999"</span>,
+      <span class="hljs-string">"9ดม2448"</span>
+    ]</span>,
+    "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value"><span class="hljs-number">1010</span></span>,
+    "<span class="hljs-attribute">EventPatientID</span>": <span class="hljs-value"><span class="hljs-number">2222</span></span>,
+    "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
+  </span>}
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">misRoomId</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสห้อง MIS จะใช้เป็นรหัสผู้ประสบเหตุเลย"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">return</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+      "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"MisRoom"</span>
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">EventID</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสเหตุการณ์"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">VehicleIID</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">[
+            {
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+            </span>},
+            {
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+            </span>}
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">EventPatientID</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสรายละเอียดผู้ประสบเหตุ"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+            <span class="hljs-string">"ALS"</span>,
+            <span class="hljs-string">"ILS"</span>,
+            <span class="hljs-string">"BLS"</span>,
+            <span class="hljs-string">"FR"</span>,
+            <span class="hljs-string">"ALS"</span>
+          ]</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+        </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+        <span class="hljs-string">"type"</span>,
+        <span class="hljs-string">"EventID"</span>,
+        <span class="hljs-string">"OfficeID"</span>,
+        <span class="hljs-string">"EventPatientID"</span>
+      ]
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"misRoomId"</span>,
+    <span class="hljs-string">"return"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"พบการสร้างห้องซ้ำโปรดตรวจสอบค่า EventPatientID ว่าเคยสร้างห้อง MIS ไปแล้วหรือไม่"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-ปฏิบัติการ-รายการห้อง-mis-อิงรหัสเหตุการณ์" class="resource"><h3 class="resource-heading">รายการห้อง MIS อิงรหัสเหตุการณ์ <a href="#mis-ปฏิบัติการ-รายการห้อง-mis-อิงรหัสเหตุการณ์" class="permalink">&nbsp;&para;</a></h3><div id="mis-ปฏิบัติการ-รายการห้อง-mis-อิงรหัสเหตุการณ์-get" class="action get"><h4 class="action-heading"><div class="name">รายการห้อง MIS อิงรหัสเหตุการณ์</div><a href="#mis-ปฏิบัติการ-รายการห้อง-mis-อิงรหัสเหตุการณ์-get" class="method get">GET</a><code class="uri">/room/event/{EventID}</code></h4><img src="data\image\ois_get_room_in_event.svg">
 <p>รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก <code>รหัสเหตุการณ์</code> เดียวกัน</p>
@@ -533,30 +617,66 @@
     <span class="hljs-string">"message"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"ชุดข้อมูล EventPatientID ไม่ตรงกับที่ระบุ"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-ปฏิบัติการ-ผู้ประสบเหตุ-ขึ้น-เปลี่ยน-พาหนะ" class="resource"><h3 class="resource-heading">ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ <a href="#mis-ปฏิบัติการ-ผู้ประสบเหตุ-ขึ้น-เปลี่ยน-พาหนะ" class="permalink">&nbsp;&para;</a></h3><div id="mis-ปฏิบัติการ-ผู้ประสบเหตุ-ขึ้น-เปลี่ยน-พาหนะ-get" class="action get"><h4 class="action-heading"><div class="name">ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ</div><a href="#mis-ปฏิบัติการ-ผู้ประสบเหตุ-ขึ้น-เปลี่ยน-พาหนะ-get" class="method get">GET</a><code class="uri">/patient/{EventPatientID}/vehicle/{VehicleIID}</code></h4><img src="data\image\change_car.svg">
 <p>เพื่อให้สะดวกแก่การใช้งาน จะใช้ในลักษณะของ Webhook เรียก Link แล้วจะอัพเดทสถานะเลย</p>
 <p>ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ</p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/patient/<span class="hljs-attribute" title="EventPatientID">2222</span>/vehicle/<span class="hljs-attribute" title="VehicleIID">9ดม2448</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>EventPatientID</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2222</span></span><p><code>รหัสรายละเอียดผู้ประสบเหตุ</code></p>
 </dd><dt>VehicleIID</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>9ดม2448</span></span><p><code>เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)</code></p>
-</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"OK"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>404</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>404</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"ไม่พบเลข EventPatientID ที่ระบุ"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูล VehicleIID(ทะเบียนรถ) ไม่ได้ระบุอยู่ในข้อมูลส่วน VehicleIID ในตอนสร้างห้อง MIS หรือ ยังไม่ได้อัพเดทเพิ่ม VehicleIID ที่จะใช้เข้าไปในส่วนข้อมูลห้อง MIS"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="ois-ปฏิบัติการ" class="resource-group"><h2 class="group-heading">OIS ปฏิบัติการ <a href="#ois-ปฏิบัติการ" class="permalink">&para;</a></h2><p>HOST และ link จะเป็นของทาง OIS</p>
 <p><a href="https://api.ois.tot.co.th/ois/report/%7BEventPatientID%7D">https://api.ois.tot.co.th/ois/report/{EventPatientID}</a></p>
@@ -673,10 +793,19 @@
     <span class="hljs-string">"detail"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"พบความผิดพลาด ชุดข้อมูลอาจถูกสร้างไปแล้ว"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="ois-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน" class="resource"><h3 class="resource-heading">แก้ไขรายงานปฏิบัติงาน <a href="#ois-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน" class="permalink">&nbsp;&para;</a></h3><div id="ois-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน-put" class="action put"><h4 class="action-heading"><div class="name">แก้ไขรายงานปฏิบัติงาน</div><a href="#ois-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน-put" class="method put">PUT</a><code class="uri">/ois/report/{EventPatientID}</code></h4><p>หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส</p>
 <h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/ois/report/<span class="hljs-attribute" title="EventPatientID">2222</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>EventPatientID</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2222</span></span><p><code>รหัสรายละเอียดผู้ประสบเหตุ</code></p>
@@ -918,52 +1047,244 @@
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/protocol/online</span></div></div></div></section><section id="ระบบ-mis-ui" class="resource-group"><h2 class="group-heading">ระบบ MIS UI <a href="#ระบบ-mis-ui" class="permalink">&para;</a></h2><div id="ระบบ-mis-ui-ui-สำหรับแสดงผล-mis" class="resource"><h3 class="resource-heading">UI สำหรับแสดงผล MIS <a href="#ระบบ-mis-ui-ui-สำหรับแสดงผล-mis" class="permalink">&nbsp;&para;</a></h3><div id="ระบบ-mis-ui-ui-สำหรับแสดงผล-mis-get" class="action get"><h4 class="action-heading"><div class="name">UI สำหรับแสดงผล MIS</div><a href="#ระบบ-mis-ui-ui-สำหรับแสดงผล-mis-get" class="method get">GET</a><code class="uri">/room/{misRoomId}</code></h4><p>หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนาด 683 x 768 pixels</p>
 <img src="data\image\LINE_b9WEtafJT4.png"><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/room/<span class="hljs-attribute" title="misRoomId">819232</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>misRoomId</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>819232</span></span><p><code>รหัสห้อง MIS</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">text/html</span></code></pre><div style="height: 1px;"></div></div></div></div></div><div id="ระบบ-mis-ui-ลิงค์ข้อมูล-telemed" class="resource"><h3 class="resource-heading">ลิงค์ข้อมูล telemed <a href="#ระบบ-mis-ui-ลิงค์ข้อมูล-telemed" class="permalink">&nbsp;&para;</a></h3><div id="ระบบ-mis-ui-ลิงค์ข้อมูล-telemed-get" class="action get"><h4 class="action-heading"><div class="name">ลิงค์ข้อมูล telemed</div><a href="#ระบบ-mis-ui-ลิงค์ข้อมูล-telemed-get" class="method get">GET</a><code class="uri">/telemed/link/{misRoomId}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/telemed/link/<span class="hljs-attribute" title="misRoomId">819232</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>misRoomId</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>819232</span></span><p><code>รหัสห้อง MIS</code></p>
-</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">VideoLink</span>": <span class="hljs-value"><span class="hljs-string">"https://"</span></span>,
+  "<span class="hljs-attribute">VitalsignsLing</span>": <span class="hljs-value"><span class="hljs-string">"https://"</span></span>,
+  "<span class="hljs-attribute">EKGLink</span>": <span class="hljs-value"><span class="hljs-string">"https://"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">VideoLink</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ลิงค์วีดีโอ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">VitalsignsLing</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ลิงค์สัญญาณชีพ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">EKGLink</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ลิงค์ EKG/ECG"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"VideoLink"</span>,
+    <span class="hljs-string">"VitalsignsLing"</span>,
+    <span class="hljs-string">"EKGLink"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="mis-notification" class="resource-group"><h2 class="group-heading">MIS Notification <a href="#mis-notification" class="permalink">&para;</a></h2><div id="mis-notification-ศูนย์เรียกแพทย์เข้าห้อง" class="resource"><h3 class="resource-heading">ศูนย์เรียกแพทย์เข้าห้อง <a href="#mis-notification-ศูนย์เรียกแพทย์เข้าห้อง" class="permalink">&nbsp;&para;</a></h3><div id="mis-notification-ศูนย์เรียกแพทย์เข้าห้อง-put" class="action put"><h4 class="action-heading"><div class="name">ศูนย์เรียกแพทย์เข้าห้อง</div><a href="#mis-notification-ศูนย์เรียกแพทย์เข้าห้อง-put" class="method put">PUT</a><code class="uri">/notification</code></h4><img src="data\image\center_call_medical.svg">
 <img src="data\image\center_call_medical_001.svg">
 <p>เมื่อศูนย์ต้องการเรียกแพทย์ที่เข้าเวรอยู่ ไปยังห้องที่ระบุ</p>
-<h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+<h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">event</span>": <span class="hljs-value"><span class="hljs-string">"send_operator"</span></span>,
+  "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value"><span class="hljs-number">965</span></span>,
+  "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value"><span class="hljs-number">1010</span></span>,
+  "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value"><span class="hljs-number">111222</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">event</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"กำหนดค่าคงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้สุ่มตัวเลขใส่ค่าในช่องนี้"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียนเจ้าหน้าที่"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"event"</span>,
+    <span class="hljs-string">"randomNumber"</span>,
+    <span class="hljs-string">"OfficeID"</span>,
+    <span class="hljs-string">"OperatorID"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-notification-แพทย์เรียกศูนย์เข้าห้อง" class="resource"><h3 class="resource-heading">แพทย์เรียกศูนย์เข้าห้อง <a href="#mis-notification-แพทย์เรียกศูนย์เข้าห้อง" class="permalink">&nbsp;&para;</a></h3><div id="mis-notification-แพทย์เรียกศูนย์เข้าห้อง-put" class="action put"><h4 class="action-heading"><div class="name">แพทย์เรียกศูนย์เข้าห้อง</div><a href="#mis-notification-แพทย์เรียกศูนย์เข้าห้อง-put" class="method put">PUT</a><code class="uri">/notification</code></h4><img src="data\image\medical_call_center.svg">
 <img src="data\image\medical_call_center_001.svg">
 <p>ใช้เมื่อแพทย์ ต้องการส่งข้อความหาศูนย์ ในที่นี้จะใช้สำหรับ ในกรณีที่แพทย์ ต้องการเรียกศูนย์เข้าห้อง</p>
-<h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+<h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">event</span>": <span class="hljs-value"><span class="hljs-string">"send_center"</span></span>,
+  "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value"><span class="hljs-number">124</span></span>,
+  "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value"><span class="hljs-number">111222</span></span>,
+  "<span class="hljs-attribute">misRoomId</span>": <span class="hljs-value"><span class="hljs-number">819232</span></span>,
+  "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value"><span class="hljs-number">1010</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"แพทย์เรียก"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">event</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"กำหนดค่าคงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้สุ่มตัวเลขใส่ค่าในช่องนี้"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียนเจ้าหน้าที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">misRoomId</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสห้อง MIS"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อความ"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"event"</span>,
+    <span class="hljs-string">"randomNumber"</span>,
+    <span class="hljs-string">"OperatorID"</span>,
+    <span class="hljs-string">"misRoomId"</span>,
+    <span class="hljs-string">"OfficeID"</span>,
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-notification-ส่ง-notification-ไป-ois" class="resource"><h3 class="resource-heading">ส่ง Notification ไป OIS <a href="#mis-notification-ส่ง-notification-ไป-ois" class="permalink">&nbsp;&para;</a></h3><div id="mis-notification-ส่ง-notification-ไป-ois-put" class="action put"><h4 class="action-heading"><div class="name">ส่ง Notification ไป OIS</div><a href="#mis-notification-ส่ง-notification-ไป-ois-put" class="method put">PUT</a><code class="uri">/notification</code></h4><p><strong>Message Queue</strong></p>
 <img src="data\image\notification_system_002.svg">
 <img src="data\image\notification_system_003.svg">
 <p>ในที่นี้สำหรับใช้ในกรณี mis ต้องการส่ง Notification ไปยังศูนย์สั่งการ</p>
-<h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+<h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">event</span>": <span class="hljs-value"><span class="hljs-string">"send_center"</span></span>,
+  "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value"><span class="hljs-number">6324</span></span>,
+  "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value"><span class="hljs-number">111222</span></span>,
+  "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value"><span class="hljs-number">1010</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"จะมีเคสส่งข้ามเขตไปหา"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">event</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"กำหนดค่าคงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้สุ่มตัวเลขใส่ค่าในช่องนี้"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียนเจ้าหน้าที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อความ Notification"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"event"</span>,
+    <span class="hljs-string">"randomNumber"</span>,
+    <span class="hljs-string">"OperatorID"</span>,
+    <span class="hljs-string">"OfficeID"</span>,
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-notification-รับ-notification-จาก-ois" class="resource"><h3 class="resource-heading">รับ Notification จาก OIS <a href="#mis-notification-รับ-notification-จาก-ois" class="permalink">&nbsp;&para;</a></h3><div id="mis-notification-รับ-notification-จาก-ois-post" class="action post"><h4 class="action-heading"><div class="name">รับ Notification จาก OIS</div><a href="#mis-notification-รับ-notification-จาก-ois-post" class="method post">POST</a><code class="uri">/notification</code></h4><p><strong>Message Queue</strong></p>
 <img src="data\image\notification_system.svg">
 <img src="data\image\notification_system_001.svg">
 <p>ใช้ในกรณี OIS ต้องการส่ง Notification ไปยังผู้ใช้ MIS</p>
-<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">event</span>": <span class="hljs-value"><span class="hljs-string">"send_operator"</span></span>,
+  "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value"><span class="hljs-number">2347</span></span>,
+  "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value"><span class="hljs-number">1010</span></span>,
+  "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value"><span class="hljs-number">111222</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"จะมีเคสส่งข้ามเขตไปหา"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">event</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"กำหนดค่าคงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้สุ่มตัวเลขใส่ค่าในช่องนี้"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียนเจ้าหน้าที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อความ Notification"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"event"</span>,
+    <span class="hljs-string">"randomNumber"</span>,
+    <span class="hljs-string">"OfficeID"</span>,
+    <span class="hljs-string">"OperatorID"</span>,
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-notification-รับ-alert-จาก-ois" class="resource"><h3 class="resource-heading">รับ Alert จาก OIS <a href="#mis-notification-รับ-alert-จาก-ois" class="permalink">&nbsp;&para;</a></h3><div id="mis-notification-รับ-alert-จาก-ois-post" class="action post"><h4 class="action-heading"><div class="name">รับ Alert จาก OIS</div><a href="#mis-notification-รับ-alert-จาก-ois-post" class="method post">POST</a><code class="uri">/notification</code></h4><p><strong>Message Queue Remote procedure call (RPC)</strong></p>
 <p>ใช้ในกรณ OIS ต้องการส่ง Alert message ไปยังผู้ใช้ MIS และยังสามารถทราบได้ด้วยว่า ข้อความถึงปลายทางหรือไม่</p>
 <p>(รอหารือกับทีมอีกครั้ง ว่าจะทำตรงนี้หรือไม่)</p>
-<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/notification</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">event</span>": <span class="hljs-value"><span class="hljs-string">"alert_operator"</span></span>,
+  "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value"><span class="hljs-number">96544</span></span>,
+  "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value"><span class="hljs-number">1010</span></span>,
+  "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value"><span class="hljs-number">111222</span></span>,
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"ติดต่อศูนย์ด่วน 02-222-2222"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}</span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">event</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"กำหนดค่าคงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">randomNumber</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ให้สุ่มตัวเลขใส่ค่าในช่องนี้"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OfficeID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">OperatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียนเจ้าหน้าที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อความ Notification"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"event"</span>,
+    <span class="hljs-string">"randomNumber"</span>,
+    <span class="hljs-string">"OfficeID"</span>,
+    <span class="hljs-string">"OperatorID"</span>,
+    <span class="hljs-string">"message"</span>
+  ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="ois-จัดการเวร" class="resource-group"><h2 class="group-heading">OIS จัดการเวร <a href="#ois-จัดการเวร" class="permalink">&para;</a></h2><div id="ois-จัดการเวร-เข้าเวร-ออกเวร" class="resource"><h3 class="resource-heading">เข้าเวร/ออกเวร <a href="#ois-จัดการเวร-เข้าเวร-ออกเวร" class="permalink">&nbsp;&para;</a></h3><div id="ois-จัดการเวร-เข้าเวร-ออกเวร-put" class="action put"><h4 class="action-heading"><div class="name">เข้าเวร/ออกเวร</div><a href="#ois-จัดการเวร-เข้าเวร-ออกเวร-put" class="method put">PUT</a><code class="uri">/duty</code></h4><h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/duty</span></div></div></div></section><section id="lookup-from-ois" class="resource-group"><h2 class="group-heading">Lookup from OIS <a href="#lookup-from-ois" class="permalink">&para;</a></h2><div id="lookup-from-ois-ข้อมูลผู้ประสบเหตุ" class="resource"><h3 class="resource-heading">ข้อมูลผู้ประสบเหตุ <a href="#lookup-from-ois-ข้อมูลผู้ประสบเหตุ" class="permalink">&nbsp;&para;</a></h3><div id="lookup-from-ois-ข้อมูลผู้ประสบเหตุ-get" class="action get"><h4 class="action-heading"><div class="name">ข้อมูลผู้ประสบเหตุ</div><a href="#lookup-from-ois-ข้อมูลผู้ประสบเหตุ-get" class="method get">GET</a><code class="uri">/EventPatient/{EventPatientID}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/EventPatient/<span class="hljs-attribute" title="EventPatientID">2222</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>EventPatientID</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2222</span></span><p><code>รหัสรายละเอียดผู้ประสบเหตุ</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
