@@ -57,6 +57,12 @@ HOST: https://api.mis.tot.co.th/mis
       + misRoomId: `2222` (string) - รหัสห้อง MIS จะใช้เป็นรหัสผู้ประสบเหตุเลย
       + return (MisRoom)
 
++ Response 409 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `พบการสร้างห้องซ้ำโปรดตรวจสอบค่า EventPatientID ว่าเคยสร้างห้อง MIS ไปแล้วหรือไม่` (string)
+
+
 ## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/event/{EventID}]
 
   รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `รหัสเหตุการณ์` เดียวกัน
@@ -211,9 +217,19 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group MIS Protocol
 
-## Offline protocol [GET /protocol]
+## Offline protocol [GET /protocol/offline]
 
-## Online protocol [GET /protocol]
++ Response 200 (application/json)
+
+    + Attributes (array[object] , fixed-type)
+      +(object)
+        + type: `Offline` (string,fixed) - รูปแบบ protocol
+        + OfflinePotocalName: `example` (string, required) - แนวทางการปฏิบัติงาน
+        + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
+
+## Online protocol [GET /protocol/online]
+
++ Response 200 (application/json)
 
 # Group ระบบ MIS Telemed
 
