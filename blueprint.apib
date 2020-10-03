@@ -227,9 +227,15 @@ HOST: https://api.mis.tot.co.th/mis
         + OfflinePotocalName: `example` (string, required) - แนวทางการปฏิบัติงาน
         + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
 
-## Online protocol [GET /protocol/online]
+## Online protocol [GET /protocol/online/{EventPatientID}]
+
++ Parameters
+    + EventPatientID: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Response 200 (application/json)
+
+    + Attributes (Report, fixed-type)
 
 # Group ระบบ MIS Telemed
 
