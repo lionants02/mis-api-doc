@@ -1,7 +1,0 @@
-@startuml
-Header ois_get_room_in_vehical
-  actor "OIS Platform" as OIS
-
-  OIS --> "MIS Platform" : ขอรายการห้อง MIS ที่กำลังปฏิบัติงานภายในรถ
-  "MIS Platform" --> OIS : รายการห้อง MIS
-@enduml
