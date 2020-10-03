@@ -191,43 +191,50 @@ HOST: https://api.mis.tot.co.th/mis
 
   HOST และ link จะเป็นของทาง OIS
 
-  https://api.ois.tot.co.th/ois/dispatch/{OperationID}
+  https://api.ois.tot.co.th/ois/report/{EventPatientID}
 
-## ส่งรายงานปฏิบัติงาน [POST /ois/dispatch/{OperationID}]
+## สร้างรายงานการช่วยเหลือ [POST /ois/report/{EventPatientID}]
 
 + Parameters
-    + OperationID: `610003` (number, required)
-      ``เลขปฏิบัติการ``
+    + EventPatientID: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
 
     + Attributes (Report , fixed-type)
 
-## แก้ไขรายงานปฏิบัติงาน [PUT /ois/dispatch/{OperationID}]
++ Response 201 (application/json)
+
+    + Attributes (Report , fixed-type)
+
++ Response 409 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `พบความผิดพลาด ชุดข้อมูลอาจถูกสร้างไปแล้ว` (string)
+
+## แก้ไขรายงานการช่วยเหลือ [PUT /ois/report/{EventPatientID}]
 
   หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
 + Parameters
-    + OperationID: `610003` (number, required)
-      ``เลขปฏิบัติการ``
+    + EventPatientID: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
 
     + Attributes (Report , fixed-type)
 
-# Group MIS Protocol
-
-## Offline protocol [GET /protocol/offline]
-
 + Response 200 (application/json)
 
-    + Attributes (array, fixed-type)
-      + (object)
-        + type: `Offline` (string,fixed) - รูปแบบ protocol
-        + OfflinePotocalName: `example` (string, required) - แนวทางการปฏิบัติงาน
-        + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
+    + Attributes (Report , fixed-type)
 
-## Online protocol [GET /protocol/online/{EventPatientID}]
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
+## ดึงรายงานการช่วยเหลือ [GET /ois/report/{EventPatientID}]
+
+  เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
 
 + Parameters
     + EventPatientID: `2222` (number, required)
@@ -235,7 +242,27 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (Report, fixed-type)
+    + Attributes (Report , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
+# Group MIS Protocol
+
+## Offline protocol [GET /protocol/offline]
+
++ Response 200 (application/json)
+
+    + Attributes (array[OfflineProtocal], fixed-type)
+
+## Online protocol [GET /protocol/online/{EventPatientID}]
+
+  จะใช้ endpoint ของ `ส่งรายงานปฏิบัติงาน` โดย MIS จะส่ง update ไปยัง OIS เอง
+
++ Parameters
+    + EventPatientID: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 # Group ระบบ MIS Telemed
 
@@ -459,6 +486,11 @@ HOST: https://api.mis.tot.co.th/mis
 + MinistryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
 + OfficeTypeCode (string) - ประเภทหน่วยงาน
 + TypeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
+
+# OfflineProtocal (object)
++ type: `OfflineProtocal` (string,fixed) - รูปแบบ protocol
++ OfflinePotocalName: `example` (string, required) - แนวทางการปฏิบัติงาน
++ AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
 
 # Report (object)
 + EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
