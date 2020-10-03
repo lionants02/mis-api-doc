@@ -62,7 +62,6 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + message: `พบการสร้างห้องซ้ำโปรดตรวจสอบค่า EventPatientID ว่าเคยสร้างห้อง MIS ไปแล้วหรือไม่` (string)
 
-
 ## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/event/{EventID}]
 
   <img src="data\image\ois_get_room_in_event.svg">
@@ -103,7 +102,6 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-
 ## รายการห้อง MIS อิงเลขรถ [GET /room/car/{VehicleIID}]
 
   <img src="data\image\ois_get_room_in_vehical.svg">
@@ -123,7 +121,6 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
 
     + Attributes (NotFound , fixed-type)
-
 
 ## อัพเดทข้อมูลห้อง MIS [PUT /room/{EventPatientID}]
 
@@ -400,13 +397,31 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
     + Attributes (NotFound , fixed-type)
 
-## Speciallist [GET /specialist{?province,query}]
+## Speciallist Search [GET /specialist{?province,query}]
+
+  ค้นหารายการการ Speciallist
 
 + Parameters
     + province: `สระแก้ว` (string)
       ``ชื่อจังหวัด``
     + query: `กระดูก` (string)
       ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
+
++ Response 200 (application/json)
+
+    + Attributes (array[Speciallist] , fixed-type)
+
+## Speciallist [GET /specialist/{id}]
+
+  ค้นหารายการการ Speciallist
+
++ Parameters
+    + id: `12346` (string)
+      ``เลขใบ ว.``
+
++ Response 200 (application/json)
+
+    + Attributes (Speciallist , fixed-type)
 
 ## สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล [GET /rightoftreatment/{id_card}]
 
@@ -520,14 +535,23 @@ HOST: https://api.mis.tot.co.th/mis
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # User (object)
-+ PersonID: `1354` (number) - รหัสข้อมูลบุคคล
++ PersonID: `1354` (number, required) - รหัสข้อมูลบุคคล
++ OfficeID: `1010` (number, required) - หน่วยงานที่สังกัด
++ PrefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ GivenName: `แสม` (string, required) - ชื่อตัว
++ FamilyName: `แสนซน` (string, required) - ชื่อสกุล
++ GenderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ OperationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
++ OperationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
+
+# Speciallist
++ id: `12346` (string, required) - เลขใบ ว.
++ nameTh: `สง กรานต์` (string) - ชือภาษาไทย
++ nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
 + OfficeID: `1010` (number) - หน่วยงานที่สังกัด
-+ PrefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
-+ GivenName: `แสม` (string) - ชื่อตัว
-+ FamilyName: `แสนซน` (string) - ชื่อสกุล
-+ GenderCode: `1` (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
-+ OperationStatusCode: `1` (number) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
-+ OperationTypeCode: `10` (string) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
++ GenderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ tel: `0649999998` (string) - เบอร์โทรศัพท์
++ knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
 
 # Vehicle (object)
 + type: `Vehicle` (string, required) - ค่าคงที่
