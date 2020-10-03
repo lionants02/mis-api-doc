@@ -2031,6 +2031,118 @@
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="data-structures" class="resource-group"><h2 class="group-heading">Data Structures <a href="#data-structures" class="permalink">&para;</a></h2><p>กำลังทำ</p>
+<pre><code><span class="hljs-header">## Data Structures</span>
+
+<span class="hljs-header"># MisRoom (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`MisRoom`</span> (string, fixed, required) - ค่าคงที่
+<span class="hljs-bullet">+ </span>operationNumber: <span class="hljs-code">`5354`</span> (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน
+<span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`1010`</span> (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+<span class="hljs-bullet">+ </span>eventPatientId: <span class="hljs-code">`2222`</span> (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+<span class="hljs-bullet">+ </span>vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
+<span class="hljs-bullet">+ </span>level: <span class="hljs-code">`ALS`</span> (VehicleLevel) - ระดับปฏิบัติการ
+<span class="hljs-bullet">+ </span>eventId: <span class="hljs-code">`610001`</span> (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีทาง OIS ต้องการายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
+
+<span class="hljs-header"># Victim (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Victim`</span> (string, required) - ค่าคงที่
+<span class="hljs-bullet">+ </span>eventPatientId: <span class="hljs-code">`2222`</span> (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+<span class="hljs-bullet">+ </span>eventDateTime: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+<span class="hljs-bullet">+ </span>cbdCode: <span class="hljs-code">`CBD25`</span> (string) - อาการผู้ประสบเหตุที่แจ้ง
+<span class="hljs-bullet">+ </span>patientName: <span class="hljs-code">`002321`</span> (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId
+<span class="hljs-bullet">+ </span>citizenID: <span class="hljs-code">`3250400000001`</span> (string) - หมายเลขประจำตัวประชาชน
+<span class="hljs-bullet">+ </span>emergencyLevelCode: <span class="hljs-code">`02`</span> (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
+<span class="hljs-bullet">+ </span>instype (string) - สิทธิการรักษา 52file(Service)
+<span class="hljs-bullet">+ </span>drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
+<span class="hljs-bullet">+ </span>hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
+
+<span class="hljs-header"># Person (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Person`</span> (string, required) - ค่าคงที่
+<span class="hljs-bullet">+ </span>personId: <span class="hljs-code">`002321`</span> (number, required) - รหัสข้อมูลบุคคล
+<span class="hljs-bullet">+ </span>citizenID: <span class="hljs-code">`3250400000001`</span> (string) - หมายเลขประจำตัวประชาชน
+<span class="hljs-bullet">+ </span>prefixCode: <span class="hljs-code">`001`</span> (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+<span class="hljs-bullet">+ </span>givenName: <span class="hljs-code">`แสม`</span> (string) - ชื่อตัว
+<span class="hljs-bullet">+ </span>familyName: <span class="hljs-code">`แสนซน`</span> (string) - ชื่อสกุล
+<span class="hljs-bullet">+ </span>genderCode: <span class="hljs-code">`1`</span> (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
+<span class="hljs-bullet">+ </span>birthDate: <span class="hljs-code">`1990-01-25`</span> (string) - วันเกิด
+<span class="hljs-bullet">+ </span>birthJurisdiction: <span class="hljs-code">`ลพบุรี`</span> (string) - สถานที่เกิด จังหวัด
+<span class="hljs-bullet">+ </span>nationalityCode: <span class="hljs-code">`TH`</span> (string) - สัญชาติ File Nationality.xlsx
+<span class="hljs-bullet">+ </span>lifeStatusCode: <span class="hljs-code">`LI`</span> (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
+<span class="hljs-bullet">+ </span>disabilityCode: <span class="hljs-code">`00`</span> (string) - ความพิการ File Disability.xlsx
+
+<span class="hljs-header"># Organization (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Organization`</span> (string, required) - ค่าคงที่
+<span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`1010`</span> (string, required) - รหัสหน่วยงาน
+<span class="hljs-bullet">+ </span>OfficeNameTh: <span class="hljs-code">`โรงพยาบาลวิภาวดี`</span> (string, required) - ชื่อหน่วยงาน(ไทย)
+<span class="hljs-bullet">+ </span>OfficeNameEn: <span class="hljs-code">`Vipa`</span> (string) - ชื่อหน่วยงาน(อังกฤษ)
+<span class="hljs-bullet">+ </span>ministryCode: <span class="hljs-code">`17`</span> (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
+<span class="hljs-bullet">+ </span>officeTypeCode (string) - ประเภทหน่วยงาน
+<span class="hljs-bullet">+ </span>typeOfWorkCode: <span class="hljs-code">`02`</span> (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
+
+<span class="hljs-header"># OfflineProtocal (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`OfflineProtocal`</span> (string,fixed) - ค่าคงที่
+<span class="hljs-bullet">+ </span>offlinePotocalName: <span class="hljs-code">`example`</span> (string, required) - ชื่อแนวทางการปฏิบัติงาน
+<span class="hljs-bullet">+ </span>AttechFile: <span class="hljs-code">`https://mis.tot.co.th/doc/offline/xxx.pdf`</span> (string, required) - เอกสารแนวทางปฏิบัติงาน
+
+<span class="hljs-header"># Report (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Report`</span> (string,fixed) - ค่าคงที่
+<span class="hljs-bullet">+ </span>eventPatientId: <span class="hljs-code">`2222`</span> (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+<span class="hljs-bullet">+ </span>vitalsignsLink: <span class="hljs-code">`https://`</span> (string) - ลิงค์สัญญาณชีพ
+<span class="hljs-bullet">+ </span>ekgLink: <span class="hljs-code">`https://`</span> (string) - ลิงค์ EKG/ECG
+<span class="hljs-bullet">+ </span>detail (array[TreatmentInformation],fixed-type)
+
+<span class="hljs-header"># TreatmentInformation (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`TreatmentInformation`</span> (string,fixed) - ค่าคงที่
+<span class="hljs-bullet">+ </span>procedureName: <span class="hljs-code">`example`</span> (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+<span class="hljs-bullet">+ </span>pDescription: <span class="hljs-code">`example`</span> (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+<span class="hljs-bullet">+ </span>doIt: <span class="hljs-code">`true`</span> (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
+<span class="hljs-bullet">+ </span>update: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+<span class="hljs-header"># User (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`User`</span> (string,fixed) - ค่าคงที่
+<span class="hljs-bullet">+ </span>personId: <span class="hljs-code">`1354`</span> (number, required) - รหัสข้อมูลบุคคล
+<span class="hljs-bullet">+ </span>operatorID: <span class="hljs-code">`111222`</span> (number, required) - รหัสทะเบียนเจ้าหน้าที่
+<span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`1010`</span> (number, required) - หน่วยงานที่สังกัด
+<span class="hljs-bullet">+ </span>prefixCode: <span class="hljs-code">`001`</span> (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+<span class="hljs-bullet">+ </span>givenName: <span class="hljs-code">`แสม`</span> (string, required) - ชื่อตัว
+<span class="hljs-bullet">+ </span>familyName: <span class="hljs-code">`แสนซน`</span> (string, required) - ชื่อสกุล
+<span class="hljs-bullet">+ </span>genderCode: <span class="hljs-code">`1`</span> (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
+<span class="hljs-bullet">+ </span>OperationStatusCode: <span class="hljs-code">`1`</span> (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
+<span class="hljs-bullet">+ </span>operationTypeCode: <span class="hljs-code">`10`</span> (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
+
+<span class="hljs-header"># Speciallist</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Speciallist`</span> (string,fixed) - ค่าคงที่
+<span class="hljs-bullet">+ </span>id: <span class="hljs-code">`12346`</span> (string, required) - เลขใบ ว.
+<span class="hljs-bullet">+ </span>nameTh: <span class="hljs-code">`สง กรานต์`</span> (string) - ชือภาษาไทย
+<span class="hljs-bullet">+ </span>nameEn: <span class="hljs-code">`Song Kran`</span> (string) - ชื่อภาษาอังกฤษ
+<span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`1010`</span> (number) - หน่วยงานที่สังกัด
+<span class="hljs-bullet">+ </span>genderCode: <span class="hljs-code">`1`</span> (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
+<span class="hljs-bullet">+ </span>tel: <span class="hljs-code">`0649999998`</span> (string) - เบอร์โทรศัพท์
+<span class="hljs-bullet">+ </span>knowledge: <span class="hljs-code">`สาขา ออร์โธปิดิกส์ ( Orthopedics )`</span>,<span class="hljs-code">`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)`</span> (array[string], fixed-type) - รายการความรู้เฉพาะทาง
+
+<span class="hljs-header"># OperatingSet (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`OperatingSet`</span> (string, fixed) - ค่าคงที่
+<span class="hljs-bullet">+ </span>id: <span class="hljs-code">`10-1-VEH-10010200034`</span> (string) - รหัสชุดปฏิบัติการ
+<span class="hljs-bullet">+ </span>name: <span class="hljs-code">`โรงพยาบาลวิภาวดี 3กษ 8019`</span> (string) - ชื่อชุดปฏิบัติการ
+
+<span class="hljs-header"># Vehicle (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Vehicle`</span> (string, fixed) - ค่าคงที่
+<span class="hljs-bullet">+ </span>category: <span class="hljs-code">`Boat`</span> (VehicleCategory) - ประเภทพาหนะ
+<span class="hljs-bullet">+ </span>vehicleNumber: <span class="hljs-code">`6กจ9999`</span> (string) - เลขทะเบียนรถ
+<span class="hljs-bullet">+ </span>province: <span class="hljs-code">`สระแก้ว`</span> (string) - จัดหวัด
+
+<span class="hljs-header"># VehicleCategory (enum)</span>
+<span class="hljs-bullet">+ </span>Boat - เรื่อ
+<span class="hljs-bullet">+ </span>Car - รถ
+<span class="hljs-bullet">+ </span>Aircraft - ทางอากาศ
+<span class="hljs-bullet">+ </span>Other - อื่นๆ
+
+<span class="hljs-header"># VehicleLevel (enum)</span>
+<span class="hljs-bullet">+ </span>ALS - ปฏิบัติการฉุกเฉินระดับสูง
+<span class="hljs-bullet">+ </span>ILS - ปฏิบัติการฉุกเฉินระดับกลาง
+<span class="hljs-bullet">+ </span>BLS - ปฏิบัติการฉุกเฉินระดับต้น
+<span class="hljs-bullet">+ </span>FR - ปฏิบัติการฉุกเฉินเบื้องต้น
+
+<span class="hljs-header"># NotFound (object)</span>
+<span class="hljs-bullet">+ </span>message: <span class="hljs-code">`ไม่พบข้อมูลตามที่ระบุใน Link`</span> (string)</code></pre>
 </section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 03 Oct 2020</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
