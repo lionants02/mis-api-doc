@@ -184,6 +184,8 @@ HOST: https://api.mis.tot.co.th/mis
 
   HOST และ link จะเป็นของทาง OIS
 
+  ทาง OIS จะต้องเป็นผู้พัฒนาให้
+
   https://api.ois.tot.co.th/ois/report/{eventPatientId}
 
 ## ส่งรายปฏิบัติงาน [POST /ois/report/{eventPatientId}]
@@ -386,6 +388,10 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group OIS จัดการเวร
 
+  HOST และ link จะเป็นของทาง OIS
+
+  ทาง OIS จะต้องเป็นผู้พัฒนาให้
+
 ## เข้าเวร/ออกเวร [PUT /duty/{operatorID}]
 
 + Parameters
@@ -398,6 +404,10 @@ HOST: https://api.mis.tot.co.th/mis
       + duty: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกแวร
 
 # Group Lookup from OIS
+
+  HOST และ link จะเป็นของทาง OIS
+
+  ทาง OIS จะต้องเป็นผู้พัฒนาให้
 
 ## ข้อมูลผู้ประสบเหตุ [GET /EventPatient/{eventPatientId}]
 
