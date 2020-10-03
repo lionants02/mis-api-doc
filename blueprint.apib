@@ -3,7 +3,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Introduction
 
-# MIS API
+# MIS API Draft alpha-1
   เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS มิใช่เอกสารสำหรับการใช้งานภายในระบบ
   ชื่อ และ type ตัวแปรจะใช้ตามโครงสร้างที่เกษตรกำหนดมา
 
@@ -273,7 +273,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (text/html)
 
-## ลิงค์ข้อมูล telemed [GET /telemed/link/{misRoomId}]
+## ลิงค์ข้อมูล Telemed [GET /telemed/link/{misRoomId}]
 
 + Parameters
     + misRoomId: `819232` (number, required)
@@ -282,9 +282,9 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 200 (application/json)
 
     + Attributes (object, fixed-type)
-      + VideoLink: `https://` (string) - ลิงค์วีดีโอ
-      + VitalsignsLing: `https://` (string) - ลิงค์สัญญาณชีพ
-      + EKGLink: `https://` (string) - ลิงค์ EKG/ECG
+      + videoLink: `https://` (string) - ลิงค์วีดีโอ
+      + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
+      + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
 
 
 # Group MIS Notification
@@ -295,6 +295,8 @@ HOST: https://api.mis.tot.co.th/mis
 
   <img src="data\image\center_call_medical_001.svg">
 
+  **อาจจะไม่ต้องทำ ใช้หน้าจอของเราใน OIS เลย**
+
   เมื่อศูนย์ต้องการเรียกแพทย์ที่เข้าเวรอยู่ ไปยังห้องที่ระบุ
 
 + Request (application/json)
@@ -303,13 +305,15 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
-      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 
 ## แพทย์เรียกศูนย์เข้าห้อง [PUT /notification]
 
   <img src="data\image\medical_call_center.svg">
 
   <img src="data\image\medical_call_center_001.svg">
+
+  **อาจจะไม่ต้องทำ ใช้หน้าจอของเราใน OIS ในการแจ้งเตือนเลย**
 
   ใช้เมื่อแพทย์ ต้องการส่งข้อความหาศูนย์ ในที่นี้จะใช้สำหรับ ในกรณีที่แพทย์ ต้องการเรียกศูนย์เข้าห้อง
 
@@ -318,7 +322,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + misRoomId: `819232` (number, required) - รหัสห้อง MIS
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
       + message: `แพทย์เรียก` (string, required) - ข้อความ
@@ -326,6 +330,8 @@ HOST: https://api.mis.tot.co.th/mis
 ## ส่ง Notification ไป OIS [PUT /notification]
 
   **Message Queue**
+
+  **อาจจะไม่ต้องทำ ใช้หน้าจอของเราใน OIS ในการแจ้งเตือนเลย**
 
   <img src="data\image\notification_system_002.svg">
 
@@ -338,7 +344,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
@@ -350,7 +356,7 @@ HOST: https://api.mis.tot.co.th/mis
 
   <img src="data\image\notification_system_001.svg">
 
-  ใช้ในกรณี OIS ต้องการส่ง Notification ไปยังผู้ใช้ MIS
+  ใช้ในกรณี OIS หรือ ศูนย์ ต้องการส่ง Notification ไปยังผู้ใช้ MIS
 
 + Request (application/json)
 
@@ -358,7 +364,7 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `2347` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
 ## รับ Alert จาก OIS [POST /notification]
@@ -367,7 +373,7 @@ HOST: https://api.mis.tot.co.th/mis
 
   ใช้ในกรณ OIS ต้องการส่ง Alert message ไปยังผู้ใช้ MIS และยังสามารถทราบได้ด้วยว่า ข้อความถึงปลายทางหรือไม่
 
-  (รอหารือกับทีมอีกครั้ง ว่าจะทำตรงนี้หรือไม่)
+  **(รอหารือกับทีมอีกครั้ง ว่าจะทำตรงนี้หรือไม่)**
 
 + Request (application/json)
 
@@ -375,12 +381,21 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `alert_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `96544` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-      + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
 
 # Group OIS จัดการเวร
 
-## เข้าเวร/ออกเวร [PUT /duty]
+## เข้าเวร/ออกเวร [PUT /duty/{operatorID}]
+
++ Parameters
+    + operatorID: `111222` (number, required)
+      ``รหัสทะเบียนเจ้าหน้าที่``
+
++ Request (application/json)
+
+    + Attributes (object , fixed-type)
+      + duty: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกแวร
 
 # Group Lookup from OIS
 
@@ -526,6 +541,8 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Report (object)
 + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
++ ekgLink: `https://` (string) - ลิงค์ EKG/ECG
 + detail (array[TreatmentInformation],fixed-type)
 
 # TreatmentInformation (object)
@@ -536,6 +553,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # User (object)
 + personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 + officeID: `1010` (number, required) - หน่วยงานที่สังกัด
 + prefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
 + givenName: `แสม` (string, required) - ชื่อตัว
