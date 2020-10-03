@@ -3,7 +3,17 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Introduction
 
-# MIS API Draft alpha-2
+# MIS API Draft alpha-3
+  alpha-3 change log
+  - แก้ไขตอน สร้าง/อัพเดท ห้อง MIS ให้อิงกับ `เลขปฏิบัติการ`
+  - แก้ไข ผู้ประสบเหตุขึ้นรถ ให้ใช้ `เลขปฏิบัติการ` กับ `เลขผู้ประสบเหต`ุ
+  - link ห้อง MIS ปรับจาก `เลขผู้ประสบเหตุ` เป็นอิงกับ `เลขปฏิบัติการ`
+  - link ข้อมูล Telemed ใช้ `เลขผู้ประสบเหตุ` ในการอ้างอิง โดยตัว link จะส่งไปกับรายงานการปฏิบัติงานด้วย
+  - ปรับโครงสร้าง Vehicle
+
+  alpha-2 change log
+  - เพิ่มตัวแปร type ใน object
+
   เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS มิใช่เอกสารสำหรับการใช้งานภายในระบบ
   ชื่อ และ type ตัวแปรจะใช้ตามโครงสร้างที่เกษตรกำหนดมา
 
@@ -33,7 +43,10 @@ HOST: https://api.mis.tot.co.th/mis
 
   <img src="data\image\create_dispatch.svg">
 
-  ต้องเคลียร์กับทาง OIS ว่า 1 ห้อง MIS ต่อผู้ประสบเหตุ 1 คน
+  ต้องเคลียร์กับทาง OIS ว่า 1 ห้อง MIS ต่อ 1 เลขปฏิบัติการ
+  - เลขปฏิบัติการ คือ เลขที่จะเกิดเมื่อตอนสั่งรถออกไป
+  - ถ้าในกณี ส่งไปรับ 2 คัน ต้องกดสร้างห้อง MIS 2 ครั้ง
+  - ถ้าเกิดในกรณี เพิ่มผู้ป่วย กลางทาง ฝั่ง OIS ต้องส่งข้อมูลมาอัพเดท
 
   โครงสร้างที่ใช้
   - ใช้โครงสร้าง `ชุดข้อมูลการรับแจ้งเหตุ` มาปรับ
@@ -50,7 +63,7 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 201 (application/json)
 
     + Attributes (object , fixed-type)
-      + misRoomId: `2222` (string) - รหัสห้อง MIS จะใช้เป็นรหัสผู้ประสบเหตุเลย
+      + operationNumber: `5354` (number,required) - หมายเลขห้อง เพราะใน MIS เลขห้อง=operationNumber
       + return (MisRoom)
 
 + Response 409 (application/json)
@@ -98,37 +111,18 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## รายการห้อง MIS อิงเลขรถ [GET /room/car/{vehicleIid}]
 
-  <img src="data\image\ois_get_room_in_vehical.svg">
-
-  รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `เลขรถ`
-
-  รถ 1 คัน บางครั้งจะมีผู้ประสบเหตุได้หลายคน
-
-+ Parameters
-    + vehicleIid: `6กจ9999` (number, required)
-      ``เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)``
-
-+ Response 200 (application/json)
-
-    + Attributes (array[MisRoom] , fixed-type)
-
-+ Response 404 (application/json)
-
-    + Attributes (NotFound , fixed-type)
-
-## อัพเดทข้อมูลห้อง MIS [PUT /room/{eventPatientId}]
+## อัพเดทข้อมูลห้อง MIS [PUT /room/{operationNumber}]
 
   <img src="data\image\update_dispatch.svg">
 
   ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข รหัสผู้ประสบเหตุ ในการอ้างอิงชุดข้อมูล
 
-  โดยระบบจะตรวจสอบอีกครั้งว่า เลข `eventPatientId` ใน link ตรงกับในชุดข้อมูลที่ตรงมาหรือไม่
+  โดยระบบจะตรวจสอบอีกครั้งว่า เลข `operationNumber` ใน link ตรงกับในชุดข้อมูลที่ตรงมาหรือไม่
 
 + Parameters
-    + eventPatientId: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ``
+    + operationNumber: `5354` (number,required)
+      ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
 
 + Request (application/json)
 
@@ -145,9 +139,9 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 409 (application/json)
 
     + Attributes (object , fixed-type)
-      + message: `ชุดข้อมูล eventPatientId ไม่ตรงกับที่ระบุ` (string)
+      + message: `ชุดข้อมูล operationNumber ไม่ตรงกับที่ระบุ` (string)
 
-## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{eventPatientId}/vehicle/{vehicleIid}]
+## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{eventPatientId}/operation/{operationNumber}]
 
   <img src="data\image\change_car.svg">
 
@@ -158,8 +152,8 @@ HOST: https://api.mis.tot.co.th/mis
 + Parameters
     + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
-    + vehicleIid: `9ดม2448` (number, required)
-      ``เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)``
+    + operationNumber: `5354` (number,required)
+      ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
 
 + Response 200 (application/json)
 
@@ -169,12 +163,7 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
 
     + Attributes (object , fixed-type)
-      + message: `ไม่พบเลข eventPatientId ที่ระบุ` (string)
-
-+ Response 409 (application/json)
-
-    + Attributes (object , fixed-type)
-      + message: `ข้อมูล vehicleIid(ทะเบียนรถ) ไม่ได้ระบุอยู่ในข้อมูลส่วน vehicleIid ในตอนสร้างห้อง MIS หรือ ยังไม่ได้อัพเดทเพิ่ม vehicleIid ที่จะใช้เข้าไปในส่วนข้อมูลห้อง MIS` (string)
+      + message: `ไม่พบเลข operationNumber ที่ระบุ` (string)
 
 # Group OIS ปฏิบัติการ
 
@@ -185,6 +174,8 @@ HOST: https://api.mis.tot.co.th/mis
   https://api.ois.tot.co.th/ois/report/{eventPatientId}
 
 ## ส่งรายปฏิบัติงาน [POST /ois/report/{eventPatientId}]
+
+  ส่งรายงานปฏิบัติงาน ต่อ 1 ผู้ประสบเหตุ
 
 + Parameters
     + eventPatientId: `2222` (number, required)
@@ -259,23 +250,23 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group ระบบ MIS UI
 
-## UI สำหรับแสดงผล MIS [GET /room/{misRoomId}]
+## UI สำหรับแสดงผล MIS [GET /room/{operationNumber}]
 
   หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนาด 683 x 768 pixels
 
   <img src="data\image\LINE_b9WEtafJT4.png">
 
 + Parameters
-    + misRoomId: `819232` (number, required)
-      ``รหัสห้อง MIS``
+    + operationNumber: `5354` (number,required)
+      ``เลขปฏิบัติงาน หรือก็คือ เลขสั่งรถออกปฏิบัติงาน``
 
 + Response 200 (text/html)
 
-## ลิงค์ข้อมูล Telemed [GET /telemed/link/{misRoomId}]
+## ลิงค์ข้อมูล Telemed [GET /telemed/link/{eventPatientId}]
 
 + Parameters
-    + misRoomId: `819232` (number, required)
-      ``รหัสห้อง MIS``
+    + eventPatientId: `2222` (number, fixed-type)
+      ``รหัสรายละเอียดผู้ประสบเหตุ หรือก็คือ รหัสคนที่เกิดเหตุ``
 
 + Response 200 (application/json)
 
@@ -303,6 +294,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+      + operationNumber: `5354` (number,required) - หมายเลขห้องที่แพทย์จะต้องเข้า เพราะใน MIS เลขห้อง=operationNumber
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
       + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 
@@ -322,7 +314,7 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
-      + misRoomId: `819232` (number, required) - รหัสห้อง MIS
+      + operationNumber: `5354` (number,required) - หมายเลขห้องที่ศูนย์จะต้องเข้า เพราะใน MIS เลขห้อง=operationNumber
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
       + message: `แพทย์เรียก` (string, required) - ข้อความ
 
@@ -505,16 +497,16 @@ HOST: https://api.mis.tot.co.th/mis
 
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
-+ eventId: `610001` (number, required) - รหัสเหตุการณ์
-+ vehicleIid: `6กจ9999`, `9ดม2448` (array[string], fixed-type) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
++ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-+ level: `ALS` (Vehicle_Level) - ระดับปฏิบัติการ
++ eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
++ vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
++ level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
++ eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีทาง OIS ต้องการายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
 
 # Victim (object)
 + type: `Victim` (string, required) - ค่าคงที่
 + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-+ eventId: `610001` (number) - รหัสเหตุการณ์
 + eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
 + patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId
@@ -588,12 +580,24 @@ HOST: https://api.mis.tot.co.th/mis
 + tel: `0649999998` (string) - เบอร์โทรศัพท์
 + knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
 
-# Vehicle (object)
-+ type: `Vehicle` (string, required) - ค่าคงที่
-+ Vehicle_Id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
-+ Vehicle_Name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
+# OperatingSet (object)
++ type: `OperatingSet` (string, fixed) - ค่าคงที่
++ id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
++ name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
 
-# Vehicle_Level (enum)
+# Vehicle (object)
++ type: `Vehicle` (string, fixed) - ค่าคงที่
++ category: `Boat` (VehicleCategory) - ประเภทพาหนะ
++ vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
++ province: `สระแก้ว` (string) - จัดหวัด
+
+# VehicleCategory (enum)
++ Boat - เรื่อ
++ Car - รถ
++ Aircraft - ทางอากาศ
++ Other - อื่นๆ
+
+# VehicleLevel (enum)
 + ALS - ปฏิบัติการฉุกเฉินระดับสูง
 + ILS - ปฏิบัติการฉุกเฉินระดับกลาง
 + BLS - ปฏิบัติการฉุกเฉินระดับต้น
