@@ -1,5 +1,5 @@
 @startuml
-Title Update Dispatch
+Title การอัพเดทข้อมูลห้อง __MIS__
 actor "OIS Platform" as OIS
   OIS -> "MIS Platform": ส่งข้อมูล Update
   note left: เกิดเหตุเกิดเหตุบางอย่าง\nที่จำเป็นต้องมีการ Update ภารกิจ\nที่กำลังดำเนินอยู่
