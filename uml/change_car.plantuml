@@ -1,0 +1,6 @@
+@startuml
+Header change_car
+  :OIS Platform : as OIS
+
+  OIS -> [MIS Platform] : เมื่อผู้ประสบเหตุ\nขึ้นรถ/เปลี่ยนรถ
+@enduml

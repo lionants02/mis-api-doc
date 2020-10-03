@@ -156,6 +156,8 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{EventPatientID}/vehicle/{VehicleIID}]
 
+  <img src="data\image\change_car.svg">
+
   เพื่อให้สะดวกแก่การใช้งาน จะใช้ในลักษณะของ Webhook เรียก Link แล้วจะอัพเดทสถานะเลย
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
@@ -181,25 +183,13 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + message: `ข้อมูล VehicleIID(ทะเบียนรถ) ไม่ได้ระบุอยู่ในข้อมูลส่วน VehicleIID ในตอนสร้างห้อง MIS หรือ ยังไม่ได้อัพเดทเพิ่ม VehicleIID ที่จะใช้เข้าไปในส่วนข้อมูลห้อง MIS` (string)
 
-## UI สำหรับแสดงผล MIS [GET /room/{EventPatientID}]
-
-  หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนา 683 x 768 pixels
-
-  <img src="data\image\LINE_b9WEtafJT4.png">
-
-+ Parameters
-    + EventPatientID: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ``
-
-+ Response 200 (text/html)
-
 # Group OIS ปฏิบัติการ
 
   HOST และ link จะเป็นของทาง OIS
 
   https://api.ois.tot.co.th/ois/report/{EventPatientID}
 
-## สร้างรายงานการช่วยเหลือ [POST /ois/report/{EventPatientID}]
+## ส่งรายปฏิบัติงาน [POST /ois/report/{EventPatientID}]
 
 + Parameters
     + EventPatientID: `2222` (number, required)
@@ -218,7 +208,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + message: `พบความผิดพลาด ชุดข้อมูลอาจถูกสร้างไปแล้ว` (string)
 
-## แก้ไขรายงานการช่วยเหลือ [PUT /ois/report/{EventPatientID}]
+## แก้ไขรายงานปฏิบัติงาน [PUT /ois/report/{EventPatientID}]
 
   หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
@@ -238,7 +228,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## ดึงรายงานการช่วยเหลือ [GET /ois/report/{EventPatientID}]
+## ดึงรายงานปฏิบัติงาน [GET /ois/report/{EventPatientID}]
 
   เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
 
@@ -256,33 +246,49 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group MIS Protocol
 
-## Offline protocol [GET /protocol/offline]
+## Offline protocol [GET /protocol/offline{?query}]
+
+  ประสานกับคุณ เอ ว่าได้เก็บข้อมูล offline protocol แยกเป็นหัวข้อหรือปล่าว
+
++ Parameters
+    + query: `หมดสติ` (string)
+      ``หัวข้อ หรือ คำค้นหา``
 
 + Response 200 (application/json)
 
     + Attributes (array[OfflineProtocal], fixed-type)
 
-## Online protocol [GET /protocol/online/{EventPatientID}]
+## Online protocol [GET /protocol/online]
 
   จะใช้ endpoint ของ `ส่งรายงานปฏิบัติงาน` โดย MIS จะส่ง update ไปยัง OIS เอง
 
-+ Parameters
-    + EventPatientID: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ``
+# Group ระบบ MIS UI
 
-# Group ระบบ MIS Telemed
+## UI สำหรับแสดงผล MIS [GET /room/{misRoomId}]
 
-## ข้อมูลสัญญาณชีพ html [GET /telemed/vitalsigns/{PersonID}]
+  หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนาด 683 x 768 pixels
 
-+ Parameters
-    + PersonID: `002321` (number, required)
-      ``รหัสข้อมูลบุคคล``
-
-## ข้อมูลสัญญาณชีพ json [GET /telemed/vitalsigns/{PersonID}]
+  <img src="data\image\LINE_b9WEtafJT4.png">
 
 + Parameters
-    + PersonID: `002321` (number, required)
-      ``รหัสข้อมูลบุคคล``
+    + misRoomId: `819232` (number, required)
+      ``รหัสห้อง MIS``
+
++ Response 200 (text/html)
+
+## ลิงค์ข้อมูล telemed [GET /telemed/link/{misRoomId}]
+
++ Parameters
+    + misRoomId: `819232` (number, required)
+      ``รหัสห้อง MIS``
+
++ Response 200 (application/json)
+
+    + Attributes (object, fixed-type)
+      + VideoLink: `https://` (string) - ลิงค์วีดีโอ
+      + VitalsignsLing: `https://` (string) - ลิงค์สัญญาณชีพ
+      + EKGLink: `https://` (string) - ลิงค์ EKG/ECG
+
 
 # Group MIS Notification
 
