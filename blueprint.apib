@@ -494,6 +494,121 @@ HOST: https://api.mis.tot.co.th/mis
 # Group Data Structures
 
   กำลังทำ
+  
+  ```
+## Data Structures
+
+# MisRoom (object)
++ type: `MisRoom` (string, fixed, required) - ค่าคงที่
++ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน
++ officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
++ eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
++ vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
++ level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
++ eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีทาง OIS ต้องการายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
+
+# Victim (object)
++ type: `Victim` (string, required) - ค่าคงที่
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
++ patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId
++ citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
++ emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
++ instype (string) - สิทธิการรักษา 52file(Service)
++ drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
++ hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
+
+# Person (object)
++ type: `Person` (string, required) - ค่าคงที่
++ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
++ citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
++ prefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ givenName: `แสม` (string) - ชื่อตัว
++ familyName: `แสนซน` (string) - ชื่อสกุล
++ genderCode: `1` (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ birthDate: `1990-01-25` (string) - วันเกิด
++ birthJurisdiction: `ลพบุรี` (string) - สถานที่เกิด จังหวัด
++ nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
++ lifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
++ disabilityCode: `00` (string) - ความพิการ File Disability.xlsx
+
+# Organization (object)
++ type: `Organization` (string, required) - ค่าคงที่
++ officeID: `1010` (string, required) - รหัสหน่วยงาน
++ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string, required) - ชื่อหน่วยงาน(ไทย)
++ OfficeNameEn: `Vipa` (string) - ชื่อหน่วยงาน(อังกฤษ)
++ ministryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
++ officeTypeCode (string) - ประเภทหน่วยงาน
++ typeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
+
+# OfflineProtocal (object)
++ type: `OfflineProtocal` (string,fixed) - ค่าคงที่
++ offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
++ AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
+
+# Report (object)
++ type: `Report` (string,fixed) - ค่าคงที่
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
++ ekgLink: `https://` (string) - ลิงค์ EKG/ECG
++ detail (array[TreatmentInformation],fixed-type)
+
+# TreatmentInformation (object)
++ type: `TreatmentInformation` (string,fixed) - ค่าคงที่
++ procedureName: `example` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ pDescription: `example` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
++ update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# User (object)
++ type: `User` (string,fixed) - ค่าคงที่
++ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ officeID: `1010` (number, required) - หน่วยงานที่สังกัด
++ prefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ givenName: `แสม` (string, required) - ชื่อตัว
++ familyName: `แสนซน` (string, required) - ชื่อสกุล
++ genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ OperationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
++ operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
+
+# Speciallist
++ type: `Speciallist` (string,fixed) - ค่าคงที่
++ id: `12346` (string, required) - เลขใบ ว.
++ nameTh: `สง กรานต์` (string) - ชือภาษาไทย
++ nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
++ officeID: `1010` (number) - หน่วยงานที่สังกัด
++ genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ tel: `0649999998` (string) - เบอร์โทรศัพท์
++ knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
+
+# OperatingSet (object)
++ type: `OperatingSet` (string, fixed) - ค่าคงที่
++ id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
++ name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
+
+# Vehicle (object)
++ type: `Vehicle` (string, fixed) - ค่าคงที่
++ category: `Boat` (VehicleCategory) - ประเภทพาหนะ
++ vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
++ province: `สระแก้ว` (string) - จัดหวัด
+
+# VehicleCategory (enum)
++ Boat - เรื่อ
++ Car - รถ
++ Aircraft - ทางอากาศ
++ Other - อื่นๆ
+
+# VehicleLevel (enum)
++ ALS - ปฏิบัติการฉุกเฉินระดับสูง
++ ILS - ปฏิบัติการฉุกเฉินระดับกลาง
++ BLS - ปฏิบัติการฉุกเฉินระดับต้น
++ FR - ปฏิบัติการฉุกเฉินเบื้องต้น
+
+# NotFound (object)
++ message: `ไม่พบข้อมูลตามที่ระบุใน Link` (string)
+  ```
 
 ## Data Structures
 
