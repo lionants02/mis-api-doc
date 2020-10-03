@@ -60,9 +60,9 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 409 (application/json)
 
     + Attributes (object , fixed-type)
-      + message: `พบการสร้างห้องซ้ำโปรดตรวจสอบค่า EventPatientID ว่าเคยสร้างห้อง MIS ไปแล้วหรือไม่` (string)
+      + message: `พบการสร้างห้องซ้ำโปรดตรวจสอบค่า eventPatientId ว่าเคยสร้างห้อง MIS ไปแล้วหรือไม่` (string)
 
-## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/event/{EventID}]
+## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/event/{eventId}]
 
   <img src="data\image\ois_get_room_in_event.svg">
 
@@ -71,7 +71,7 @@ HOST: https://api.mis.tot.co.th/mis
   1 เหตุการณ์ อาจมีผู้ประสบเหตุได้หลายคน
 
 + Parameters
-    + EventID: `610001` (number, required)
+    + eventId: `610001` (number, required)
       ``รหัสเหตุการณ์``
 
 + Response 200 (application/json)
@@ -82,7 +82,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## รายการห้อง MIS อิงศูนย์สั่งการ [GET /room/office/{OfficeID}]
+## รายการห้อง MIS อิงศูนย์สั่งการ [GET /room/office/{officeID}]
 
   <img src="data\image\ois_get_room_in_office.svg">
 
@@ -91,7 +91,7 @@ HOST: https://api.mis.tot.co.th/mis
   1 ศูนย์สั่งการ ปกติจะดูแลผู้ประสบเหตุหลายคน
 
 + Parameters
-    + OfficeID: `1010` (number, required)
+    + officeID: `1010` (number, required)
       ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
 
 + Response 200 (application/json)
@@ -102,7 +102,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## รายการห้อง MIS อิงเลขรถ [GET /room/car/{VehicleIID}]
+## รายการห้อง MIS อิงเลขรถ [GET /room/car/{vehicleIid}]
 
   <img src="data\image\ois_get_room_in_vehical.svg">
 
@@ -111,7 +111,7 @@ HOST: https://api.mis.tot.co.th/mis
   รถ 1 คัน บางครั้งจะมีผู้ประสบเหตุได้หลายคน
 
 + Parameters
-    + VehicleIID: `6กจ9999` (number, required)
+    + vehicleIid: `6กจ9999` (number, required)
       ``เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)``
 
 + Response 200 (application/json)
@@ -122,16 +122,16 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## อัพเดทข้อมูลห้อง MIS [PUT /room/{EventPatientID}]
+## อัพเดทข้อมูลห้อง MIS [PUT /room/{eventPatientId}]
 
   <img src="data\image\update_dispatch.svg">
 
   ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข รหัสผู้ประสบเหตุ ในการอ้างอิงชุดข้อมูล
 
-  โดยระบบจะตรวจสอบอีกครั้งว่า เลข `EventPatientID` ใน link ตรงกับในชุดข้อมูลที่ตรงมาหรือไม่
+  โดยระบบจะตรวจสอบอีกครั้งว่า เลข `eventPatientId` ใน link ตรงกับในชุดข้อมูลที่ตรงมาหรือไม่
 
 + Parameters
-    + EventPatientID: `2222` (number, required)
+    + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -149,9 +149,9 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 409 (application/json)
 
     + Attributes (object , fixed-type)
-      + message: `ชุดข้อมูล EventPatientID ไม่ตรงกับที่ระบุ` (string)
+      + message: `ชุดข้อมูล eventPatientId ไม่ตรงกับที่ระบุ` (string)
 
-## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{EventPatientID}/vehicle/{VehicleIID}]
+## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{eventPatientId}/vehicle/{vehicleIid}]
 
   <img src="data\image\change_car.svg">
 
@@ -160,9 +160,9 @@ HOST: https://api.mis.tot.co.th/mis
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
 
 + Parameters
-    + EventPatientID: `2222` (number, required)
+    + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
-    + VehicleIID: `9ดม2448` (number, required)
+    + vehicleIid: `9ดม2448` (number, required)
       ``เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)``
 
 + Response 200 (application/json)
@@ -173,23 +173,23 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
 
     + Attributes (object , fixed-type)
-      + message: `ไม่พบเลข EventPatientID ที่ระบุ` (string)
+      + message: `ไม่พบเลข eventPatientId ที่ระบุ` (string)
 
 + Response 409 (application/json)
 
     + Attributes (object , fixed-type)
-      + message: `ข้อมูล VehicleIID(ทะเบียนรถ) ไม่ได้ระบุอยู่ในข้อมูลส่วน VehicleIID ในตอนสร้างห้อง MIS หรือ ยังไม่ได้อัพเดทเพิ่ม VehicleIID ที่จะใช้เข้าไปในส่วนข้อมูลห้อง MIS` (string)
+      + message: `ข้อมูล vehicleIid(ทะเบียนรถ) ไม่ได้ระบุอยู่ในข้อมูลส่วน vehicleIid ในตอนสร้างห้อง MIS หรือ ยังไม่ได้อัพเดทเพิ่ม vehicleIid ที่จะใช้เข้าไปในส่วนข้อมูลห้อง MIS` (string)
 
 # Group OIS ปฏิบัติการ
 
   HOST และ link จะเป็นของทาง OIS
 
-  https://api.ois.tot.co.th/ois/report/{EventPatientID}
+  https://api.ois.tot.co.th/ois/report/{eventPatientId}
 
-## ส่งรายปฏิบัติงาน [POST /ois/report/{EventPatientID}]
+## ส่งรายปฏิบัติงาน [POST /ois/report/{eventPatientId}]
 
 + Parameters
-    + EventPatientID: `2222` (number, required)
+    + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -205,12 +205,12 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + message: `พบความผิดพลาด ชุดข้อมูลอาจถูกสร้างไปแล้ว` (string)
 
-## แก้ไขรายงานปฏิบัติงาน [PUT /ois/report/{EventPatientID}]
+## แก้ไขรายงานปฏิบัติงาน [PUT /ois/report/{eventPatientId}]
 
   หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
 + Parameters
-    + EventPatientID: `2222` (number, required)
+    + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -225,12 +225,12 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## ดึงรายงานปฏิบัติงาน [GET /ois/report/{EventPatientID}]
+## ดึงรายงานปฏิบัติงาน [GET /ois/report/{eventPatientId}]
 
   เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
 
 + Parameters
-    + EventPatientID: `2222` (number, required)
+    + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Response 200 (application/json)
@@ -302,7 +302,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
+      + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 
 ## แพทย์เรียกศูนย์เข้าห้อง [PUT /notification]
@@ -320,7 +320,7 @@ HOST: https://api.mis.tot.co.th/mis
       + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + misRoomId: `819232` (number, required) - รหัสห้อง MIS
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
+      + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
       + message: `แพทย์เรียก` (string, required) - ข้อความ
 
 ## ส่ง Notification ไป OIS [PUT /notification]
@@ -339,7 +339,7 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
+      + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
 ## รับ Notification จาก OIS [POST /notification]
@@ -357,7 +357,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `2347` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
@@ -374,7 +374,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `alert_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `96544` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
       + OperatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
 
@@ -384,10 +384,10 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Lookup from OIS
 
-## ข้อมูลผู้ประสบเหตุ [GET /EventPatient/{EventPatientID}]
+## ข้อมูลผู้ประสบเหตุ [GET /EventPatient/{eventPatientId}]
 
 + Parameters
-    + EventPatientID: `2222` (number, required)
+    + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Response 200 (application/json)
@@ -458,18 +458,18 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 200 (application/json)
     + Attributes (array, fixed-type)
         + (object)
-            + OfficeID: `1010` (number ,required) - รหัสหน่วยงาน
+            + officeID: `1010` (number ,required) - รหัสหน่วยงาน
             + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
             + OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
 
-## ข้อมูลหน่วยงาน [GET /organization/{OfficeID}]
+## ข้อมูลหน่วยงาน [GET /organization/{officeID}]
 
   <img src="data\image\ois_get_org.svg">
 
   ดึงข้อมูลหน่วยงานจาก OIS
 
 + Parameters
-    + OfficeID: `1010` (string, required)
+    + officeID: `1010` (string, required)
       ``รหัสหน่วยงาน``
 
 + Response 200 (application/json)
@@ -479,77 +479,77 @@ HOST: https://api.mis.tot.co.th/mis
 
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
-+ EventID: `610001` (number, required) - รหัสเหตุการณ์
-+ VehicleIID: `6กจ9999`, `9ดม2448` (array[string], fixed-type) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
-+ OfficeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventId: `610001` (number, required) - รหัสเหตุการณ์
++ vehicleIid: `6กจ9999`, `9ดม2448` (array[string], fixed-type) - เลขรถปฏิบัติการ (ทะเบียนยานพาหนะ)
++ officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + level: `ALS` (Vehicle_Level) - ระดับปฏิบัติการ
 
 # Victim (object)
 + type: `Victim` (string, required)
-+ EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-+ EventID: `610001` (number) - รหัสเหตุการณ์
-+ EventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
-+ CBDCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
-+ PatientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล PersonID
-+ CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
-+ EmergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
-+ INSTYPE (string) - สิทธิการรักษา 52file(Service)
-+ Drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
-+ HOSPCODE (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventId: `610001` (number) - รหัสเหตุการณ์
++ eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
++ patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId
++ citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
++ emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
++ instype (string) - สิทธิการรักษา 52file(Service)
++ drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
++ hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 
 # Person (object)
-+ PersonID: `002321` (number, required) - รหัสข้อมูลบุคคล
-+ CitizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
-+ PrefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
-+ GivenName: `แสม` (string) - ชื่อตัว
-+ FamilyName: `แสนซน` (string) - ชื่อสกุล
-+ GenderCode: `1` (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
-+ BirthDate: `1990-01-25` (string) - วันเกิด
-+ BirthJurisdiction: `ลพบุรี` (string) - สถานที่เกิด จังหวัด
-+ NationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
-+ LifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
-+ DisabilityCode: `00` (string) - ความพิการ File Disability.xlsx
++ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
++ citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
++ prefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ givenName: `แสม` (string) - ชื่อตัว
++ familyName: `แสนซน` (string) - ชื่อสกุล
++ genderCode: `1` (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ birthDate: `1990-01-25` (string) - วันเกิด
++ birthJurisdiction: `ลพบุรี` (string) - สถานที่เกิด จังหวัด
++ nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
++ lifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
++ disabilityCode: `00` (string) - ความพิการ File Disability.xlsx
 
 # Organization (object)
-+ OfficeID: `1010` (string, required) - รหัสหน่วยงาน
++ officeID: `1010` (string, required) - รหัสหน่วยงาน
 + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string, required) - ชื่อหน่วยงาน(ไทย)
 + OfficeNameEn: `Vipa` (string) - ชื่อหน่วยงาน(อังกฤษ)
-+ MinistryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
-+ OfficeTypeCode (string) - ประเภทหน่วยงาน
-+ TypeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
++ ministryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
++ officeTypeCode (string) - ประเภทหน่วยงาน
++ typeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
 
 # OfflineProtocal (object)
 + type: `OfflineProtocal` (string,fixed) - รูปแบบ protocol
-+ OfflinePotocalName: `example` (string, required) - แนวทางการปฏิบัติงาน
++ offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
 + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
 
 # Report (object)
-+ EventPatientID: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + detail (array[TreatmentInformation],fixed-type)
 
 # TreatmentInformation (object)
-+ PROCEDURENAME: `example` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-+ PDESCRIPTION: `example` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ procedureName: `example` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ pDescription: `example` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # User (object)
-+ PersonID: `1354` (number, required) - รหัสข้อมูลบุคคล
-+ OfficeID: `1010` (number, required) - หน่วยงานที่สังกัด
-+ PrefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
-+ GivenName: `แสม` (string, required) - ชื่อตัว
-+ FamilyName: `แสนซน` (string, required) - ชื่อสกุล
-+ GenderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ officeID: `1010` (number, required) - หน่วยงานที่สังกัด
++ prefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ givenName: `แสม` (string, required) - ชื่อตัว
++ familyName: `แสนซน` (string, required) - ชื่อสกุล
++ genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 + OperationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
-+ OperationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
++ operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
 
 # Speciallist
 + id: `12346` (string, required) - เลขใบ ว.
 + nameTh: `สง กรานต์` (string) - ชือภาษาไทย
 + nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
-+ OfficeID: `1010` (number) - หน่วยงานที่สังกัด
-+ GenderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ officeID: `1010` (number) - หน่วยงานที่สังกัด
++ genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 + tel: `0649999998` (string) - เบอร์โทรศัพท์
 + knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
 
@@ -563,12 +563,6 @@ HOST: https://api.mis.tot.co.th/mis
 + ILS - ปฏิบัติการฉุกเฉินระดับกลาง
 + BLS - ปฏิบัติการฉุกเฉินระดับต้น
 + FR - ปฏิบัติการฉุกเฉินเบื้องต้น
-
-# Medical (object)
-+ type: `Medical` (string, required) - ค่าคงที่
-+ Name - ชื่อ
-+ No - เลขที่ใบประกอบ
-+ Tel - เบอร์โทรศัพท์
 
 # NotFound (object)
 + message: `ไม่พบข้อมูลตามที่ระบุใน Link` (string)
