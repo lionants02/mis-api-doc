@@ -1625,6 +1625,21 @@
     <span class="hljs-string">"duty"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">duty</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">duty</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกแวร"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"duty"</span>
+  ]</span>,
+  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="lookup-from-ois" class="resource-group"><h2 class="group-heading">Lookup from OIS <a href="#lookup-from-ois" class="permalink">&para;</a></h2><p>HOST และ link จะเป็นของทาง OIS</p>
 <p>ทาง OIS จะต้องเป็นผู้พัฒนาให้</p>
 <div id="lookup-from-ois-ข้อมูลผู้ประสบเหตุ" class="resource"><h3 class="resource-heading">ข้อมูลผู้ประสบเหตุ <a href="#lookup-from-ois-ข้อมูลผู้ประสบเหตุ" class="permalink">&nbsp;&para;</a></h3><div id="lookup-from-ois-ข้อมูลผู้ประสบเหตุ-get" class="action get"><h4 class="action-heading"><div class="name">ข้อมูลผู้ประสบเหตุ</div><a href="#lookup-from-ois-ข้อมูลผู้ประสบเหตุ-get" class="method get">GET</a><code class="uri">/EventPatient/{eventPatientId}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/EventPatient/<span class="hljs-attribute" title="eventPatientId">2222</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>eventPatientId</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2222</span></span><p><code>รหัสรายละเอียดผู้ประสบเหตุ</code></p>
@@ -1664,7 +1679,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">patientName</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person"</span>
     </span>}</span>,
     "<span class="hljs-attribute">citizenID</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -1863,7 +1878,123 @@
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="lookup-from-ois-สิทธิ์การรักษา-ประวัติการรักษา-ข้อมูลส่วนบุคคล" class="resource"><h3 class="resource-heading">สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล <a href="#lookup-from-ois-สิทธิ์การรักษา-ประวัติการรักษา-ข้อมูลส่วนบุคคล" class="permalink">&nbsp;&para;</a></h3><div id="lookup-from-ois-สิทธิ์การรักษา-ประวัติการรักษา-ข้อมูลส่วนบุคคล-get" class="action get"><h4 class="action-heading"><div class="name">สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล</div><a href="#lookup-from-ois-สิทธิ์การรักษา-ประวัติการรักษา-ข้อมูลส่วนบุคคล-get" class="method get">GET</a><code class="uri">/rightoftreatment/{id_card}</code></h4><p>สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย</p>
 <p><strong>(รอหารือกับทีมอีกครั้งว่าสมควรดึงได้โดยตรงไหม เพราะเป็นข้อมูลละเอียดอ่อน)</strong></p>
 <h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/rightoftreatment/<span class="hljs-attribute" title="id_card">3250400000001</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id_card</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>3250400000001</span></span><p><code>หมายเลขประจำตัวประชาชน</code></p>
-</dd></dl></div></div></div><div id="lookup-from-ois-สมาชิกในทีมปฏิบัติการ" class="resource"><h3 class="resource-heading">สมาชิกในทีมปฏิบัติการ <a href="#lookup-from-ois-สมาชิกในทีมปฏิบัติการ" class="permalink">&nbsp;&para;</a></h3><div id="lookup-from-ois-สมาชิกในทีมปฏิบัติการ-get" class="action get"><h4 class="action-heading"><div class="name">สมาชิกในทีมปฏิบัติการ</div><a href="#lookup-from-ois-สมาชิกในทีมปฏิบัติการ-get" class="method get">GET</a><code class="uri">/operating/{OperatingSetID}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/operating/<span class="hljs-attribute" title="OperatingSetID">23154</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>OperatingSetID</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>23154</span></span><p><code>ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)</code></p>
+</dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Person"</span></span>,
+  "<span class="hljs-attribute">personId</span>": <span class="hljs-value"><span class="hljs-number">2321</span></span>,
+  "<span class="hljs-attribute">citizenID</span>": <span class="hljs-value"><span class="hljs-string">"3250400000001"</span></span>,
+  "<span class="hljs-attribute">prefixCode</span>": <span class="hljs-value"><span class="hljs-string">"001"</span></span>,
+  "<span class="hljs-attribute">givenName</span>": <span class="hljs-value"><span class="hljs-string">"แสม"</span></span>,
+  "<span class="hljs-attribute">familyName</span>": <span class="hljs-value"><span class="hljs-string">"แสนซน"</span></span>,
+  "<span class="hljs-attribute">genderCode</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+  "<span class="hljs-attribute">birthDate</span>": <span class="hljs-value"><span class="hljs-string">"1990-01-25"</span></span>,
+  "<span class="hljs-attribute">birthJurisdiction</span>": <span class="hljs-value"><span class="hljs-string">"ลพบุรี"</span></span>,
+  "<span class="hljs-attribute">nationalityCode</span>": <span class="hljs-value"><span class="hljs-string">"TH"</span></span>,
+  "<span class="hljs-attribute">lifeStatusCode</span>": <span class="hljs-value"><span class="hljs-string">"LI"</span></span>,
+  "<span class="hljs-attribute">disabilityCode</span>": <span class="hljs-value"><span class="hljs-string">"00"</span></span>,
+  "<span class="hljs-attribute">instype</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">drugallergy</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">hospCode</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+        <span class="hljs-string">"Person"</span>
+      ]</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">personId</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสข้อมูลบุคคล"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">citizenID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หมายเลขประจำตัวประชาชน"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">prefixCode</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำนำหน้าชื่อ ไฟล์ prefix.xlsx"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">givenName</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อตัว"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">familyName</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อสกุล"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">genderCode</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">birthDate</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันเกิด"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">birthJurisdiction</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สถานที่เกิด จังหวัด"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">nationalityCode</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สัญชาติ File Nationality.xlsx"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">lifeStatusCode</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">disabilityCode</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ความพิการ File Disability.xlsx"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">instype</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สิทธิการรักษา 52file(Service)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">drugallergy</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ประวัติการแพ้ยา 52file(DRUGALLERGY)"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">hospCode</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"type"</span>,
+    <span class="hljs-string">"personId"</span>,
+    <span class="hljs-string">"citizenID"</span>,
+    <span class="hljs-string">"prefixCode"</span>,
+    <span class="hljs-string">"givenName"</span>,
+    <span class="hljs-string">"familyName"</span>,
+    <span class="hljs-string">"genderCode"</span>,
+    <span class="hljs-string">"birthDate"</span>,
+    <span class="hljs-string">"birthJurisdiction"</span>,
+    <span class="hljs-string">"nationalityCode"</span>,
+    <span class="hljs-string">"lifeStatusCode"</span>,
+    <span class="hljs-string">"disabilityCode"</span>,
+    <span class="hljs-string">"instype"</span>,
+    <span class="hljs-string">"drugallergy"</span>,
+    <span class="hljs-string">"hospCode"</span>
+  ]</span>,
+  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>404</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"ไม่พบข้อมูลตามที่ระบุใน Link"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
+  ]</span>,
+  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="lookup-from-ois-สมาชิกในทีมปฏิบัติการ" class="resource"><h3 class="resource-heading">สมาชิกในทีมปฏิบัติการ <a href="#lookup-from-ois-สมาชิกในทีมปฏิบัติการ" class="permalink">&nbsp;&para;</a></h3><div id="lookup-from-ois-สมาชิกในทีมปฏิบัติการ-get" class="action get"><h4 class="action-heading"><div class="name">สมาชิกในทีมปฏิบัติการ</div><a href="#lookup-from-ois-สมาชิกในทีมปฏิบัติการ-get" class="method get">GET</a><code class="uri">/operating/{OperatingSetID}</code></h4><h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/operating/<span class="hljs-attribute" title="OperatingSetID">23154</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>OperatingSetID</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>23154</span></span><p><code>ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)</code></p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>[
   {
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"User"</span></span>,
@@ -2043,6 +2174,20 @@
     <span class="hljs-string">"ministryCode"</span>,
     <span class="hljs-string">"officeTypeCode"</span>,
     <span class="hljs-string">"typeOfWorkCode"</span>
+  ]</span>,
+  "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
+</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>404</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+  "<span class="hljs-attribute">message</span>": <span class="hljs-value"><span class="hljs-string">"ไม่พบข้อมูลตามที่ระบุใน Link"</span>
+</span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
+  "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">message</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+    </span>}
+  </span>}</span>,
+  "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+    <span class="hljs-string">"message"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="data-structures" class="resource-group"><h2 class="group-heading">Data Structures <a href="#data-structures" class="permalink">&para;</a></h2><p>กำลังทำ</p>
