@@ -252,15 +252,15 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group ระบบ MIS UI
 
-## UI สำหรับแสดงผล MIS [GET /room/{operationNumber}]
+## UI สำหรับแสดงผล MIS [GET /room/{officeID}]
 
   หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนาด 683 x 768 pixels
 
   <img src="data\image\LINE_b9WEtafJT4.png">
 
 + Parameters
-    + operationNumber: `5354` (number,required)
-      ``เลขปฏิบัติงาน หรือก็คือ เลขสั่งรถออกปฏิบัติงาน``
+    + officeID: `1010` (number,required)
+      ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
 
 + Response 200 (text/html)
 
