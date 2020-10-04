@@ -86,7 +86,7 @@
 </ul>
 </section><section id="authorization" class="resource-group"><h2 class="group-heading">Authorization <a href="#authorization" class="permalink">&para;</a></h2><p>การใช้งาน จำเป็นต้องมี api key กำลังหาข้อสรุป</p>
 </section><section id="mis-ปฏิบัติการ" class="resource-group"><h2 class="group-heading">MIS ปฏิบัติการ <a href="#mis-ปฏิบัติการ" class="permalink">&para;</a></h2><div id="mis-ปฏิบัติการ-เปิดห้อง-mis" class="resource"><h3 class="resource-heading">เปิดห้อง MIS <a href="#mis-ปฏิบัติการ-เปิดห้อง-mis" class="permalink">&nbsp;&para;</a></h3><div id="mis-ปฏิบัติการ-เปิดห้อง-mis-post" class="action post"><h4 class="action-heading"><div class="name">เปิดห้อง MIS</div><a href="#mis-ปฏิบัติการ-เปิดห้อง-mis-post" class="method post">POST</a><code class="uri">/room</code></h4><img src="data\image\create_dispatch.svg">
-<p>ต้องเคลียร์กับทาง OIS ว่า 1 ห้อง MIS ต่อ 1 เลขปฏิบัติการ</p>
+<p>ณ ตอนนี้ต้องเคลียร์กับทาง OIS ว่า 1 ห้อง MIS ต่อ 1 เลขปฏิบัติการ</p>
 <ul>
 <li>
 <p>เลขปฏิบัติการ คือ เลขที่จะเกิดเมื่อตอนสั่งรถออกไป</p>
@@ -102,7 +102,7 @@
 <p>ใช้โครงสร้าง <code>ชุดข้อมูลการรับแจ้งเหตุ</code> มาปรับ</p>
 </li>
 <li>
-<p>ในเอกสาร <code>ข้อมูลทะเบียนชุดปฏิบัติการ</code> จะผูกกับเลขทะเบียนรถเสมอ</p>
+<p>ในเอกสาร <code>ข้อมูลทะเบียนชุดปฏิบัติการ</code> จะผูกกับเลขทะเบียนรถเสมอ ต้องถาม TOT อีกครั้งว่าตอนนี้ ปรับเป็นลักษณะไหน</p>
 </li>
 </ul>
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/room</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Token {token}</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
