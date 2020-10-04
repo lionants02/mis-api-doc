@@ -1,0 +1,5 @@
+@startuml
+Header mis_send_report_to_ois
+  :MIS Platform : as MIS
+  MIS -right-> [OIS Platform] : ต้องการส่งรายงาน\nการปฏิบัติงาน
+@enduml

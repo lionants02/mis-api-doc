@@ -40,6 +40,8 @@ HOST: https://api.mis.tot.co.th/mis
   เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS มิใช่เอกสารสำหรับการใช้งานภายในระบบ
   ชื่อ และ type ตัวแปรจะใช้ตามโครงสร้างที่เกษตรกำหนดมา
 
+  ไฟล์โครงการเอกสาร https://github.com/lionants02/mis-api-doc
+
   <img src="data\image\api_gateway.svg" width="100%">
 
   ภาพแสดงการเชื่อมต่อกับระบบ OIS
@@ -160,9 +162,7 @@ HOST: https://api.mis.tot.co.th/mis
 
   <img src="data\image\update_dispatch.svg">
 
-  ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข รหัสผู้ประสบเหตุ ในการอ้างอิงชุดข้อมูล
-
-  โดยระบบจะตรวจสอบอีกครั้งว่า เลข `operationNumber` ใน link ตรงกับในชุดข้อมูลที่ตรงมาหรือไม่
+  ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข `misRoomId` ในการอ้างอิงชุดข้อมูล
 
 + Parameters
     + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
@@ -219,6 +219,8 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## ส่งรายปฏิบัติงาน [POST /ois/report/{eventPatientId}]
 
+  <img src="data\image\mis_send_report_to_ois.svg">
+
   ส่งรายงานปฏิบัติงาน ต่อ 1 ผู้ประสบเหตุ
 
 + Parameters
@@ -240,6 +242,8 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## แก้ไขรายงานปฏิบัติงาน [PUT /ois/report/{eventPatientId}]
 
+  <img src="data\image\mis_update_report_to_ois.svg">
+
   หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
 + Parameters
@@ -260,6 +264,8 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## ดึงรายงานปฏิบัติงาน [GET /ois/report/{eventPatientId}]
 
+  <img src="data\image\mis_get_report_from_ois.svg">
+
   เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
 
 + Parameters
@@ -277,6 +283,8 @@ HOST: https://api.mis.tot.co.th/mis
 # Group MIS Protocol
 
 ## Offline protocol [GET /protocol/offline{?query}]
+
+  <img src="data\image\ois_get_offline_doc.svg">
 
   ประสานกับคุณ เอ ว่าได้เก็บข้อมูล offline protocol แยกเป็นหัวข้อหรือปล่าว
 
@@ -307,6 +315,8 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 200 (text/html)
 
 ## ลิงค์ข้อมูล Telemed [GET /telemed/link/{eventPatientId}]
+
+  ลิงค์ข้อมูล Telemed จะใส่ไปกับข้อมูลตอนส่งรายงานด้วย
 
 + Parameters
     + eventPatientId: `2222` (number, fixed-type)
@@ -547,7 +557,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Data Structures
 
-  กำลังทำ
+  เป็นโครงสร้างในรูปแบบ **API Blueprint** หรือไม่ อาจจะดูที่ json schema ของตัว api เลยก็ได้
 
   ```
 ## Data Structures
