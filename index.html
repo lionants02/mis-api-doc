@@ -1146,7 +1146,9 @@
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
     </span>}
-  ]
+  ]</span>,
+  "<span class="hljs-attribute">note</span>": <span class="hljs-value"><span class="hljs-string">"ดาม แขน ขา คอ"</span></span>,
+  "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -1209,6 +1211,14 @@
           <span class="hljs-string">"update"</span>
         ]
       </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">note</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"note อื่นๆ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1216,7 +1226,9 @@
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vitalsignsLink"</span>,
     <span class="hljs-string">"ekgLink"</span>,
-    <span class="hljs-string">"detail"</span>
+    <span class="hljs-string">"detail"</span>,
+    <span class="hljs-string">"note"</span>,
+    <span class="hljs-string">"update"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -1232,7 +1244,9 @@
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
     </span>}
-  ]
+  ]</span>,
+  "<span class="hljs-attribute">note</span>": <span class="hljs-value"><span class="hljs-string">"ดาม แขน ขา คอ"</span></span>,
+  "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -1295,6 +1309,14 @@
           <span class="hljs-string">"update"</span>
         ]
       </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">note</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"note อื่นๆ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1302,7 +1324,9 @@
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vitalsignsLink"</span>,
     <span class="hljs-string">"ekgLink"</span>,
-    <span class="hljs-string">"detail"</span>
+    <span class="hljs-string">"detail"</span>,
+    <span class="hljs-string">"note"</span>,
+    <span class="hljs-string">"update"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>409</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -1335,7 +1359,9 @@
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
     </span>}
-  ]
+  ]</span>,
+  "<span class="hljs-attribute">note</span>": <span class="hljs-value"><span class="hljs-string">"ดาม แขน ขา คอ"</span></span>,
+  "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -1398,6 +1424,14 @@
           <span class="hljs-string">"update"</span>
         ]
       </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">note</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"note อื่นๆ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1405,7 +1439,9 @@
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vitalsignsLink"</span>,
     <span class="hljs-string">"ekgLink"</span>,
-    <span class="hljs-string">"detail"</span>
+    <span class="hljs-string">"detail"</span>,
+    <span class="hljs-string">"note"</span>,
+    <span class="hljs-string">"update"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -1421,7 +1457,9 @@
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
     </span>}
-  ]
+  ]</span>,
+  "<span class="hljs-attribute">note</span>": <span class="hljs-value"><span class="hljs-string">"ดาม แขน ขา คอ"</span></span>,
+  "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -1484,6 +1522,14 @@
           <span class="hljs-string">"update"</span>
         ]
       </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">note</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"note อื่นๆ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1491,7 +1537,9 @@
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vitalsignsLink"</span>,
     <span class="hljs-string">"ekgLink"</span>,
-    <span class="hljs-string">"detail"</span>
+    <span class="hljs-string">"detail"</span>,
+    <span class="hljs-string">"note"</span>,
+    <span class="hljs-string">"update"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>404</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -1524,7 +1572,9 @@
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
     </span>}
-  ]
+  ]</span>,
+  "<span class="hljs-attribute">note</span>": <span class="hljs-value"><span class="hljs-string">"ดาม แขน ขา คอ"</span></span>,
+  "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -1587,6 +1637,14 @@
           <span class="hljs-string">"update"</span>
         ]
       </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">note</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"note อื่นๆ"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1594,7 +1652,9 @@
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vitalsignsLink"</span>,
     <span class="hljs-string">"ekgLink"</span>,
-    <span class="hljs-string">"detail"</span>
+    <span class="hljs-string">"detail"</span>,
+    <span class="hljs-string">"note"</span>,
+    <span class="hljs-string">"update"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>404</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
