@@ -2207,7 +2207,7 @@
 <span class="hljs-bullet">+ </span>eventPatientId: <span class="hljs-code">`2222`</span> (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 <span class="hljs-bullet">+ </span>eventDateTime: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 <span class="hljs-bullet">+ </span>cbdCode: <span class="hljs-code">`CBD25`</span> (string) - อาการผู้ประสบเหตุที่แจ้ง
-<span class="hljs-bullet">+ </span>patientName: <span class="hljs-code">`002321`</span> (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId
+<span class="hljs-bullet">+ </span>patientName: <span class="hljs-code">`002321`</span> (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
 <span class="hljs-bullet">+ </span>citizenID: <span class="hljs-code">`3250400000001`</span> (string) - หมายเลขประจำตัวประชาชน
 <span class="hljs-bullet">+ </span>emergencyLevelCode: <span class="hljs-code">`02`</span> (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
 <span class="hljs-bullet">+ </span>instype (string) - สิทธิการรักษา 52file(Service)
@@ -2227,6 +2227,9 @@
 <span class="hljs-bullet">+ </span>nationalityCode: <span class="hljs-code">`TH`</span> (string) - สัญชาติ File Nationality.xlsx
 <span class="hljs-bullet">+ </span>lifeStatusCode: <span class="hljs-code">`LI`</span> (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
 <span class="hljs-bullet">+ </span>disabilityCode: <span class="hljs-code">`00`</span> (string) - ความพิการ File Disability.xlsx
+<span class="hljs-bullet">+ </span>instype (string) - สิทธิการรักษา 52file(Service)
+<span class="hljs-bullet">+ </span>drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
+<span class="hljs-bullet">+ </span>hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 
 <span class="hljs-header"># Organization (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Organization`</span> (string, fixed, required) - ค่าคงที่
