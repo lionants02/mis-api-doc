@@ -510,7 +510,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 404 (application/json)
     + Attributes (NotFound , fixed-type)
-    
+
 # Group Data Structures
 
   กำลังทำ
@@ -532,7 +532,7 @@ HOST: https://api.mis.tot.co.th/mis
 + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
-+ patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId
++ patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
 + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
 + instype (string) - สิทธิการรักษา 52file(Service)
@@ -552,6 +552,9 @@ HOST: https://api.mis.tot.co.th/mis
 + nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
 + lifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
 + disabilityCode: `00` (string) - ความพิการ File Disability.xlsx
++ instype (string) - สิทธิการรักษา 52file(Service)
++ drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
++ hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 
 # Organization (object)
 + type: `Organization` (string, fixed, required) - ค่าคงที่
