@@ -2510,10 +2510,10 @@
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Drugallergy`</span> (string, fixed, required) - ค่าคงที่
 <span class="hljs-bullet">+ </span>drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php
 <span class="hljs-bullet">+ </span>drugName (string, optional) - ชื่อยาที่แพ้
-<span class="hljs-bullet">+ </span>diagnose: <span class="hljs-code">`1`</span> (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
+<span class="hljs-bullet">+ </span>typeDX: <span class="hljs-code">`1`</span> (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
  3= possible, 4= unlikely, 5= unclassified)
-<span class="hljs-bullet">+ </span>severity: <span class="hljs-code">`1`</span> (string, optional) - ระดบความรัุนแรงของการแพ้ยา 8 ระดับ  1.ไม่ร้ายแรง (Non-serious), 2.ร้ายแรง - เสียชีวิต (Death), 3.ร้ายแรง - อันตรายถึงชีวิต (Life-threatening), 4.ร้ายแรง - ต้องเข้ารับการรักษาในโรงพยาบาล (Hospitalization-initial), 5.ร้ายแรง - ทําให้เพิ่มระยะเวลาในการรักษานานขึ้น (Hospitalization-prolonged), 6.ร้ายแรง - พิการ (Disability), 7.ร้ายแรง - เป็นเหตุให้เกิดความผิดปกติแต่กำเนิด (Congenital anomaly), 8.ร้ายแรง-อื่นๆ(คือ เหตุการณ์ร้ายแรงอื่น ๆ ที่สำคัญทางการแพทย์ ซึ่งส่งผลให้ผู้ป่วยต้องได้รับการรักษาด้วยวิธีอื่น เช่น การผ่านตัด กรณีนี้รวมถึงผู้ป่วย ซึ่งเกิดปัญหาการหายใจติดขัดอย่างรุ่นแรง และต้องรักษาในห้องฉุกเฉิน ผู้ป่วยเกิดการอาการชักหมดสติ ระบบเลือดผิดปกติเป็นต้น
-<span class="hljs-bullet">+ </span>drugAllergyCharacteristics (string, required) - ลักษณะอาการของการแพ้ยา
+<span class="hljs-bullet">+ </span>aLevel: <span class="hljs-code">`1`</span> (string, optional) - ระดบความรัุนแรงของการแพ้ยา 8 ระดับ  1.ไม่ร้ายแรง (Non-serious), 2.ร้ายแรง - เสียชีวิต (Death), 3.ร้ายแรง - อันตรายถึงชีวิต (Life-threatening), 4.ร้ายแรง - ต้องเข้ารับการรักษาในโรงพยาบาล (Hospitalization-initial), 5.ร้ายแรง - ทําให้เพิ่มระยะเวลาในการรักษานานขึ้น (Hospitalization-prolonged), 6.ร้ายแรง - พิการ (Disability), 7.ร้ายแรง - เป็นเหตุให้เกิดความผิดปกติแต่กำเนิด (Congenital anomaly), 8.ร้ายแรง-อื่นๆ(คือ เหตุการณ์ร้ายแรงอื่น ๆ ที่สำคัญทางการแพทย์ ซึ่งส่งผลให้ผู้ป่วยต้องได้รับการรักษาด้วยวิธีอื่น เช่น การผ่านตัด กรณีนี้รวมถึงผู้ป่วย ซึ่งเกิดปัญหาการหายใจติดขัดอย่างรุ่นแรง และต้องรักษาในห้องฉุกเฉิน ผู้ป่วยเกิดการอาการชักหมดสติ ระบบเลือดผิดปกติเป็นต้น
+<span class="hljs-bullet">+ </span>symptom (string, required) - ลักษณะอาการของการแพ้ยา
 
 <span class="hljs-header"># Organization (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Organization`</span> (string, fixed, required) - ค่าคงที่
@@ -2538,8 +2538,8 @@
 
 <span class="hljs-header"># TreatmentInformation (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`TreatmentInformation`</span> (string, fixed, required) - ค่าคงที่
-<span class="hljs-bullet">+ </span>procedureName: <span class="hljs-code">`example`</span> (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-<span class="hljs-bullet">+ </span>pDescription: <span class="hljs-code">`example`</span> (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+<span class="hljs-bullet">+ </span>procedureName: <span class="hljs-code">`ดาม`</span> (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+<span class="hljs-bullet">+ </span>pDescription: <span class="hljs-code">`ดามคอ แขน และ ขา`</span> (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 <span class="hljs-bullet">+ </span>doIt: <span class="hljs-code">`true`</span> (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 <span class="hljs-bullet">+ </span>update: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
