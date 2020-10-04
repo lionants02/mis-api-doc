@@ -1,0 +1,4 @@
+@startuml
+  :MIS Platform : as MIS
+  MIS -right-> [OIS Platform] : ต้องการข้อมูลการแจ้งเหตุ\nของผู้ประสบเหตุ
+@enduml
