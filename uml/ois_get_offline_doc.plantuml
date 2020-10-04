@@ -1,0 +1,5 @@
+@startuml
+Header ois_get_offline_doc
+  :OIS Platform : as OIS
+  OIS -right-> [MIS Platform] : ต้องการเอกสาร\nOffline Protocal
+@enduml
