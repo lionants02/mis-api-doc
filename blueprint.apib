@@ -4,6 +4,13 @@ HOST: https://api.mis.tot.co.th/mis
 # Group Introduction
 
 # MIS API Draft alpha-5
+  **alpha-6 change log**
+  - เพิ่มโครงสร้าง `MedicalInformation`
+  - ย้ายข้อมูล สิทธิ์การรักษา, การแพ้ยา ไปไว้ในโครงสร้างข้อมูล `MedicalInformation`
+  - ตัดข้อมูลประวัดติ `รายละเอียดทางการแพทย์` ในชุดข้อมูล ผู้ประสบเหตุ(`Victim`) มาไว้ในข้อมูล คน(`Person`) ในตัวแปร medicalInformation
+  - เพิ่มข้อมูลหมู่เลือดใน `MedicalInformation`
+  - เพิ่มโครงสร้าง การแพ้ยา(`Drugallergy`) โดยปรับจาก 52file(DRUGALLERGY)
+
   **alpha-5 change log**
   - หมายเลขห้อง MIS ปรับจาก `เลขปฏิบัติการ` เป็น `misRoomId` เป็นเลขห้อง MIS ของระบบเอง เพื่อให้ OIS ใช้อ้างอิง เผื่อมีการเปลี่ยนภายหลังจะยืดหยุ่นกว่า
   - เพิ่ม api ให้สามารถค้นหาห้องด้วย `เลขปฏิบัติการ`
@@ -47,6 +54,9 @@ HOST: https://api.mis.tot.co.th/mis
   - mm   = two digits of minute (00 through 59)
   - ss   = two digits of second (00 through 59)
   - s    = one or more digits representing a decimal fraction of a second
+
+
+  รูปแบบรหัสสิทธิ์การรักษาพยาบาลที่ใช้ http://www.thcc.or.th/treatment.php
 
 # Group Authorization
 
@@ -563,9 +573,6 @@ HOST: https://api.mis.tot.co.th/mis
 + patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
 + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
-+ instype (string) - สิทธิการรักษา 52file(Service)
-+ drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
-+ hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 
 # Person (object)
 + type: `Person` (string, fixed, required) - ค่าคงที่
@@ -580,9 +587,25 @@ HOST: https://api.mis.tot.co.th/mis
 + nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
 + lifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
 + disabilityCode: `00` (string) - ความพิการ File Disability.xlsx
-+ instype (string) - สิทธิการรักษา 52file(Service)
-+ drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
-+ hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
++ medicalInformation (MedicalInformation) - ข้อมูลทางการแพทย์
+
+# MedicalInformation
++ type: `MedicalInformation` (string, fixed, required) - ค่าคงที่
++ instype (string) - สิทธิการรักษา 52file(Service) http://www.thcc.or.th/treatment.php
++ drugallergy (arrya[Drugallergy], optional) - ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
++ recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
++ recentHospName (string) - ชื่อโรงพยาบาลที่รักษาล่าสุด
++ bloodGroup: `AB` (string) - หมู่เลือด
++ bloodGroupAH: `AB` (string) - หมู่เลือด RH
+
+# Drugallergy
++ type: `Drugallergy` (string, fixed, required) - ค่าคงที่
++ drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php
++ drugName (string, optional) - ชื่อยาที่แพ้
++ diagnose: `1` (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
+ 3= possible, 4= unlikely, 5= unclassified)
++ severity: `1` (string, optional) - ระดบความรัุนแรงของการแพ้ยา 8 ระดับ  1.ไม่ร้ายแรง (Non-serious), 2.ร้ายแรง - เสียชีวิต (Death), 3.ร้ายแรง - อันตรายถึงชีวิต (Life-threatening), 4.ร้ายแรง - ต้องเข้ารับการรักษาในโรงพยาบาล (Hospitalization-initial), 5.ร้ายแรง - ทําให้เพิ่มระยะเวลาในการรักษานานขึ้น (Hospitalization-prolonged), 6.ร้ายแรง - พิการ (Disability), 7.ร้ายแรง - เป็นเหตุให้เกิดความผิดปกติแต่กำเนิด (Congenital anomaly), 8.ร้ายแรง-อื่นๆ(คือ เหตุการณ์ร้ายแรงอื่น ๆ ที่สำคัญทางการแพทย์ ซึ่งส่งผลให้ผู้ป่วยต้องได้รับการรักษาด้วยวิธีอื่น เช่น การผ่านตัด กรณีนี้รวมถึงผู้ป่วย ซึ่งเกิดปัญหาการหายใจติดขัดอย่างรุ่นแรง และต้องรักษาในห้องฉุกเฉิน ผู้ป่วยเกิดการอาการชักหมดสติ ระบบเลือดผิดปกติเป็นต้น
++ drugAllergyCharacteristics (string, required) - ลักษณะอาการของการแพ้ยา
 
 # Organization (object)
 + type: `Organization` (string, fixed, required) - ค่าคงที่
@@ -685,9 +708,6 @@ HOST: https://api.mis.tot.co.th/mis
 + patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
 + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
-+ instype (string) - สิทธิการรักษา 52file(Service)
-+ drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
-+ hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 
 # Person (object)
 + type: `Person` (string, fixed, required) - ค่าคงที่
@@ -702,9 +722,25 @@ HOST: https://api.mis.tot.co.th/mis
 + nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
 + lifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
 + disabilityCode: `00` (string) - ความพิการ File Disability.xlsx
-+ instype (string) - สิทธิการรักษา 52file(Service)
-+ drugallergy (string) - ประวัติการแพ้ยา 52file(DRUGALLERGY)
-+ hospCode (string) - โรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
++ medicalInformation (MedicalInformation) - ข้อมูลทางการแพทย์
+
+# MedicalInformation
++ type: `MedicalInformation` (string, fixed, required) - ค่าคงที่
++ instype (string) - สิทธิการรักษา 52file(Service) http://www.thcc.or.th/treatment.php
++ drugallergy (arrya[Drugallergy], optional) - ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
++ recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
++ recentHospName (string) - ชื่อโรงพยาบาลที่รักษาล่าสุด
++ bloodGroup: `AB` (string) - หมู่เลือด
++ bloodGroupAH: `AB` (string) - หมู่เลือด RH
+
+# Drugallergy
++ type: `Drugallergy` (string, fixed, required) - ค่าคงที่
++ drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php
++ drugName (string, optional) - ชื่อยาที่แพ้
++ diagnose: `1` (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
+ 3= possible, 4= unlikely, 5= unclassified)
++ severity: `1` (string, optional) - ระดบความรัุนแรงของการแพ้ยา 8 ระดับ  1.ไม่ร้ายแรง (Non-serious), 2.ร้ายแรง - เสียชีวิต (Death), 3.ร้ายแรง - อันตรายถึงชีวิต (Life-threatening), 4.ร้ายแรง - ต้องเข้ารับการรักษาในโรงพยาบาล (Hospitalization-initial), 5.ร้ายแรง - ทําให้เพิ่มระยะเวลาในการรักษานานขึ้น (Hospitalization-prolonged), 6.ร้ายแรง - พิการ (Disability), 7.ร้ายแรง - เป็นเหตุให้เกิดความผิดปกติแต่กำเนิด (Congenital anomaly), 8.ร้ายแรง-อื่นๆ(คือ เหตุการณ์ร้ายแรงอื่น ๆ ที่สำคัญทางการแพทย์ ซึ่งส่งผลให้ผู้ป่วยต้องได้รับการรักษาด้วยวิธีอื่น เช่น การผ่านตัด กรณีนี้รวมถึงผู้ป่วย ซึ่งเกิดปัญหาการหายใจติดขัดอย่างรุ่นแรง และต้องรักษาในห้องฉุกเฉิน ผู้ป่วยเกิดการอาการชักหมดสติ ระบบเลือดผิดปกติเป็นต้น
++ drugAllergyCharacteristics (string, required) - ลักษณะอาการของการแพ้ยา
 
 # Organization (object)
 + type: `Organization` (string, fixed, required) - ค่าคงที่
