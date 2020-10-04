@@ -3,10 +3,13 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Introduction
 
-# MIS API Draft alpha-4
+# MIS API Draft alpha-5
   **alpha-5 change log**
-  - เพิ่ม `misRoomId` เพื่อให้ OIS ใช้อ้างอิง เผื่อมีการเปลี่ยนภายหลังจะยืดหยุ่นกว่า
-  -
+  - หมายเลขห้อง MIS ปรับจาก `เลขปฏิบัติการ` เป็น `misRoomId` เป็นเลขห้อง MIS ของระบบเอง เพื่อให้ OIS ใช้อ้างอิง เผื่อมีการเปลี่ยนภายหลังจะยืดหยุ่นกว่า
+  - เพิ่ม api ให้สามารถค้นหาห้องด้วย `เลขปฏิบัติการ`
+  - ปรับ api ในส่วนการค้นหาให้คืนค่า `misRoomId`
+  - ปรับ api อัพเดทข้อมูลห้องให้ใช้ `misRoomId`
+  - ปรับโครงสร้างข้อมูล คน(`Person`) ให้แนบ `สิทธิ์การรักษา` กับ `ประวัดิการแพ้ยา` มาด้วย
 
 
   **alpha-4 change log**
@@ -74,9 +77,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 201 (application/json)
 
-    + Attributes (object , fixed-type)
-      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
-      + return (MisRoom)
+    + Attributes (MisRoomReturn , fixed-type)
 
 + Response 409 (application/json)
 
@@ -97,10 +98,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (array[object] , fixed-type)
-      + (object)
-        + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
-        + detail (MisRoom) - ข้อมูลห้อง MIS
+    + Attributes (array[MisRoomReturn] , fixed-type)
 
 + Response 404 (application/json)
 
@@ -120,7 +118,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (array[MisRoom] , fixed-type)
+    + Attributes (array[MisRoomReturn] , fixed-type)
 
 + Response 404 (application/json)
 
@@ -140,14 +138,14 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (array[MisRoom] , fixed-type)
+    + Attributes (array[MisRoomReturn] , fixed-type)
 
 + Response 404 (application/json)
 
     + Attributes (NotFound , fixed-type)
 
 
-## อัพเดทข้อมูลห้อง MIS [PUT /room/{operationNumber}]
+## อัพเดทข้อมูลห้อง MIS [PUT /room/{misRoomId}]
 
   <img src="data\image\update_dispatch.svg">
 
@@ -156,8 +154,8 @@ HOST: https://api.mis.tot.co.th/mis
   โดยระบบจะตรวจสอบอีกครั้งว่า เลข `operationNumber` ใน link ตรงกับในชุดข้อมูลที่ตรงมาหรือไม่
 
 + Parameters
-    + operationNumber: `5354` (number,required)
-      ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
+    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+      ``หมายเลขห้อง MIS``
 
 + Request (application/json)
 
@@ -329,7 +327,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + operationNumber: `5354` (number,required) - หมายเลขห้องที่แพทย์จะต้องเข้า เพราะใน MIS เลขห้อง=operationNumber
+      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
       + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
 
@@ -349,7 +347,7 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `send_center` (string, required) - กำหนดค่าคงที่
       + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
-      + operationNumber: `5354` (number,required) - หมายเลขห้องที่ศูนย์จะต้องเข้า เพราะใน MIS เลขห้อง=operationNumber
+      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
       + message: `แพทย์เรียก` (string, required) - ข้อความ
 
@@ -390,7 +388,7 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `send_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `2347` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่ ที่จะส่งข้อความให้
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
 
 ## รับ Alert จาก OIS [POST /notification]
@@ -407,7 +405,7 @@ HOST: https://api.mis.tot.co.th/mis
       + event: `alert_operator` (string, required) - กำหนดค่าคงที่
       + randomNumber: `96544` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่ ที่จะส่ง Alert ให้
       + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
 
 # Group OIS จัดการเวร
@@ -479,9 +477,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล [GET /rightoftreatment/{id_card}]
 
-  สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ ด้วย
-
-**(รอหารือกับทีมอีกครั้งว่าสมควรดึงได้โดยตรงไหม เพราะเป็นข้อมูลละเอียดอ่อน)**
+  สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ
 
 + Parameters
     + id_card: `3250400000001` (string, required)
@@ -547,12 +543,17 @@ HOST: https://api.mis.tot.co.th/mis
 
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
-+ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 + vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
 + level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
-+ eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีทาง OIS ต้องการายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
++ eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
++ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน  จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหาห้องด้วย เลขปฏิบัติงาน
+
+# MisRoomReturn (object)
++ type: `MisRoomReturn` (string, fixed, required) - ค่าคงที่
++ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
++ detail (MisRoom) - ข้อมูลรายเอียดห้อง MIS
 
 # Victim (object)
 + type: `Victim` (string, fixed, required) - ค่าคงที่
@@ -670,6 +671,11 @@ HOST: https://api.mis.tot.co.th/mis
 + level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
 + eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
 + operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน  จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหาห้องด้วย เลขปฏิบัติงาน
+
+# MisRoomReturn (object)
++ type: `MisRoomReturn` (string, fixed, required) - ค่าคงที่
++ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
++ detail (MisRoom) - ข้อมูลรายเอียดห้อง MIS
 
 # Victim (object)
 + type: `Victim` (string, fixed, required) - ค่าคงที่
