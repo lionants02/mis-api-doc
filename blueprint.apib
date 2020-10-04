@@ -457,7 +457,11 @@ HOST: https://api.mis.tot.co.th/mis
 
   ทาง OIS จะต้องเป็นผู้พัฒนาให้
 
-## ข้อมูลผู้ประสบเหตุ [GET /EventPatient/{eventPatientId}]
+## ข้อมูลการรับแจ้งเหตุ [GET /EventPatient/{eventPatientId}]
+
+  <img src="data\image\mis_get_eventn_patient_from_ois.svg">
+
+  ข้อมูลการรับแจ้งเหตุ ของผู้ประสบเหตุ
 
 + Parameters
     + eventPatientId: `2222` (number, required)
@@ -471,6 +475,8 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (NotFound , fixed-type)
 
 ## Speciallist Search [GET /specialist{?province,query}]
+
+  <img src="data\image\mis_get_specialist_from_ois.svg">
 
   ค้นหารายการการ Speciallist
 
@@ -486,7 +492,9 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## Speciallist [GET /specialist/{id}]
 
-  ค้นหารายการการ Speciallist
+  <img src="data\image\mis_get_specialist_from_ois.svg">
+
+  ดึงข้อมูล Speciallist
 
 + Parameters
     + id: `12346` (string)
@@ -497,6 +505,8 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (Speciallist , fixed-type)
 
 ## สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล [GET /rightoftreatment/{id_card}]
+
+  <img src="data\image\mis_get_person_from_ois.svg">
 
   สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ
 
@@ -512,9 +522,11 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## สมาชิกในทีมปฏิบัติการ [GET /operating/{OperatingSetID}]
 
+  <img src="data\image\mis_get_team_from_ois.svg">
+
   + Parameters
       + OperatingSetID: `23154` (number, required)
-        ``ชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
+        ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
 
 + Response 200 (application/json)
     + Attributes (array[User], fixed-type)
@@ -568,6 +580,7 @@ HOST: https://api.mis.tot.co.th/mis
 + eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 + vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
 + level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
++ OperatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
 + eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
 + operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน  จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหาห้องด้วย เลขปฏิบัติงาน
 
@@ -703,6 +716,7 @@ HOST: https://api.mis.tot.co.th/mis
 + eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 + vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
 + level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
++ OperatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
 + eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
 + operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน  จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหาห้องด้วย เลขปฏิบัติงาน
 
