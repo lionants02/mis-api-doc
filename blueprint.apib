@@ -3,7 +3,16 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Introduction
 
-# MIS API Draft alpha-7
+# MIS API Draft alpha-8
+  **alpha-8 change log**
+  - ปรับโครงสร้าง `MisRoom` ให้ผูกข้อมูลกับ `ผู้ประสบเหตุ` ได้ 1 คน
+  - `MisRoom` สามารถใส่สถานะได้ว่า ตอนนี้ผู้ป่วยอยู่รถคันไหน
+  - ปรับ `MisRoom` สามารถใส่ข้อมูลรถได้ หลายคัน
+  - เพิ่ม note ในส่วนส่งรายงาน
+  - เพิ่มชุดข้อมูล Gps ใช้สำหรับส่งค่าตำแหน่งบุคคล
+  - เพิ่ม api สำหรับปรับสถานะผู้ป่วย เขียว เหลือง แดง ระหว่างปฏิบัติงาน แบบ Realtime
+
+
   **alpha-7 change log**
   - แก้ไขชื่อ field ในโครงสร้าง `Drugallergy` ให้เป็นไปตาม 52file(DRUGALLERGY)
   - แก้ขื่อ api `ข้อมูลผู้ประสบเหตุ` เป็น `ข้อมูลการรับแจ้งเหตุ`
@@ -340,15 +349,15 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group MIS UI
 
-## UI สำหรับแสดงผล MIS [GET /room/{officeID}]
+## UI สำหรับแสดงผล MIS [GET /room/{misRoomId}]
 
   หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนาด 683 x 768 pixels
 
   <img src="data\image\LINE_b9WEtafJT4.png">
 
 + Parameters
-    + officeID: `1010` (number,required)
-      ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
+    + misRoomId: `999888` (number,required)
+      ``หมายเลขห้อง MIS``
 
 + Response 200 (text/html)
 
