@@ -77,14 +77,10 @@ HOST: https://api.mis.tot.co.th/mis
 
   <img src="data\image\create_dispatch.svg">
 
-  ณ ตอนนี้ต้องเคลียร์กับทาง OIS ว่า 1 ห้อง MIS ต่อ 1 เลขปฏิบัติการ
-  - เลขปฏิบัติการ คือ เลขที่จะเกิดเมื่อตอนสั่งรถออกไป
-  - ถ้าในกณี ส่งไปรับ 2 คัน ต้องกดสร้างห้อง MIS 2 ครั้ง
-  - ถ้าเกิดในกรณี เพิ่มผู้ป่วย กลางทาง ฝั่ง OIS ต้องส่งข้อมูลมาอัพเดท
+  1 ห้อง MIS ต่อ ผู้ป่วย 1 คน
 
   โครงสร้างที่ใช้
   - ใช้โครงสร้าง `ชุดข้อมูลการรับแจ้งเหตุ` มาปรับ
-  - ในเอกสาร `ข้อมูลทะเบียนชุดปฏิบัติการ` จะผูกกับเลขทะเบียนรถเสมอ ต้องถาม TOT อีกครั้งว่าตอนนี้ ปรับเป็นลักษณะไหน
 
 + Request (application/json)
 
@@ -102,6 +98,48 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (object , fixed-type)
       + message: `พบการสร้างห้องซ้ำ` (string)
+
+## อัพเดทข้อมูลห้อง MIS [PUT /room/{misRoomId}]
+
+  <img src="data\image\update_dispatch.svg">
+
+  ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข `misRoomId` ในการอ้างอิงชุดข้อมูล
+
++ Parameters
+    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+      ``หมายเลขห้อง MIS``
+
++ Request (application/json)
+
+    + Attributes (MisRoom , fixed-type)
+
++ Response 200 (application/json)
+
+    + Attributes (MisRoom , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
++ Response 409 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `ชุดข้อมูล operationNumber ไม่ตรงกับที่ระบุ` (string)
+
+## ปิดห้อง MIS [DELETE /room/{misRoomId}]
+
++ Parameters
+    + misRoomId: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ``
+
++ Response 200 (application/json)
+
+    + Attributes (object , fixed-type)
+      + status: `200` (string) - status code
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
 
 ## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/event/{eventId}]
 
@@ -163,39 +201,13 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-
-## อัพเดทข้อมูลห้อง MIS [PUT /room/{misRoomId}]
-
-  <img src="data\image\update_dispatch.svg">
-
-  ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข `misRoomId` ในการอ้างอิงชุดข้อมูล
-
-+ Parameters
-    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
-      ``หมายเลขห้อง MIS``
-
-+ Request (application/json)
-
-    + Attributes (MisRoom , fixed-type)
-
-+ Response 200 (application/json)
-
-    + Attributes (MisRoom , fixed-type)
-
-+ Response 404 (application/json)
-
-    + Attributes (NotFound , fixed-type)
-
-+ Response 409 (application/json)
-
-    + Attributes (object , fixed-type)
-      + message: `ชุดข้อมูล operationNumber ไม่ตรงกับที่ระบุ` (string)
-
 ## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{eventPatientId}/operation/{operationNumber}]
 
   <img src="data\image\change_car.svg">
 
   เพื่อให้สะดวกแก่การใช้งาน จะใช้ในลักษณะของ Webhook เรียก Link แล้วจะอัพเดทสถานะเลย
+
+  ปฏิบัติการต้องถูกสั่งเปิดมาแล้ว เท่านั้นถึงจะเอาคนขึ้นรถได้
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
 
@@ -746,8 +758,9 @@ HOST: https://api.mis.tot.co.th/mis
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-+ vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
++ vehicle (array[Vehicle], fixed-type, required) - ข้อมูลรถปฏิบัติการ
++ vehicleActive (Vehicle) - ผู้ป่วยอยู่รถคันไหน
 + level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
 + OperatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
 + eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
