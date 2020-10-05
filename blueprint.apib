@@ -235,6 +235,26 @@ HOST: https://api.mis.tot.co.th/mis
 
   https://api.ois.tot.co.th/ois/report/{eventPatientId}
 
+## อัพเดทสถานะผู้ป่วย [PUT /ois/victim/{eventPatientId}]
+
+  อัพเดทสถานะผู้ป่วย เขียน เหลือง แดง
+
++ Parameters
+    + eventPatientId: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
+
++ Request (application/json)
+
+    + Attributes (VictimStatus , fixed-type)
+
++ Response 200 (application/json)
+
+    + Attributes (VictimStatus , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
 ## ส่งรายปฏิบัติงาน [POST /ois/report/{eventPatientId}]
 
   <img src="data\image\mis_send_report_to_ois.svg">
@@ -780,6 +800,11 @@ HOST: https://api.mis.tot.co.th/mis
 + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
 
+# VictimStatus (object)
++ type: `VictimStatus` (string, fixed, required) - ค่าคงที่
++ color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
++ timestamp : `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
 # Person (object)
 + type: `Person` (string, fixed, required) - ค่าคงที่
 + personId: `002321` (number, required) - รหัสข้อมูลบุคคล
@@ -882,6 +907,11 @@ HOST: https://api.mis.tot.co.th/mis
 + lon (string)
 + accuracy: `4` (number)
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# Color (enum)
++ GREEN
++ YELLOW
++ RED
 
 # VehicleCategory (enum)
 + Boat - เรื่อ
