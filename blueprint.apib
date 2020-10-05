@@ -573,6 +573,24 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
     + Attributes (NotFound , fixed-type)
 
+# Group OIS GPS
+
+# Send GPS [PUT /gps/{personId}/]
+
+  ส่งข้อมูล GPS เข้าระบบ ผ่านระบบ Message Queue
+
++ Parameters
+    + personId: `1354` (number, required)
+      ``รหัสข้อมูลบุคคล``
+
++ Request (application/json)
+
+    + Attributes (object , fixed-type)
+      + event: `send_gps` (string, required) - กำหนดค่าคงที่
+      + randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+      + personId: `1354` (number, required) - รหัสข้อมูลบุคคล
+      + gps (array[Gps], fixed-type, required) - ข้อมูล gps
+
 # Group Data Structures
 
   เป็นโครงสร้างในรูปแบบ **API Blueprint** หรือไม่ อาจจะดูที่ json schema ของตัว api เลยก็ได้
@@ -835,6 +853,13 @@ HOST: https://api.mis.tot.co.th/mis
 + category: `Boat` (VehicleCategory) - ประเภทพาหนะ
 + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
 + province: `สระแก้ว` (string) - จัดหวัด
+
+# Gps (object)
++ type: `Gps` (string, fixed, required) - ค่าคงที่
++ lat (string)
++ lon (string)
++ accuracy: `4` (number)
++ timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # VehicleCategory (enum)
 + Boat - เรื่อ
