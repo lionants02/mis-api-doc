@@ -1,45 +1,84 @@
 @startuml
 Title ภาพรวม api ทั้งหมด
-  : MIS api gateway : as (gateway)
-
-  gateway <-- OIS : call api
-  MIS <-- gateway
-
-  : Outbound Queue : as (outbound)
-  MIS --> outbound : notification to OIS
-
-  outbound --> OIS
-
-  : Inbound Queue : as (inbound)
-  OIS --> inbound : notification to MIS
-  inbound --> MIS
-
-  MIS --> OIS : call api
-
-  package MIS {
-    usecase "เพิ่มปฏิบัติการใหม่"
-    usecase "อัพเดทปฏิบัติการ"
-    usecase "ผู้ป่วย ขึ้น/เปลี่ยน พาหนะ"
-    usecase "UI สำหรับแสดงผล MIS"
-    usecase "Offline Protocol"
-    usecase "Online Protocol"
-    usecase "ศูนย์เรียกแพทย์เข้าห้อง"
-    usecase "แพทย์เรียกศูนย์เข้าห้อง"
-    usecase "ส่ง Notification ไป OIS"
-    usecase "รับ Notification จาก OIS"
-    usecase "รับ Alert จาก OIS"
-    usecase "เข้าเวร"
-    usecase "ออกเวร"
-    usecase "ข้อมูลสัญญาณชีพ HTML"
-    usecase "ข้อมูลสัญญาณชีพ JSON"
-  }
+  usecase (Meeting\nRoom) as MeetingRoom
+  usecase (Close\nRoom) as CloseRoom
+  usecase (Protocol) as Protocol
+  usecase (Operation) as Ops
+  usecase (MIS\nLogin) as MISLogin
+  usecase (Medicine) as Med
+  usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
+  usecase (Recive\nInvite) as ReciveInvite
+  usecase (Grant\nPermission) as GrantPermission
+  usecase (Recive\nGrant) as ReciveGrant
+  usecase (Telemed) as Telemed
+  usecase (Live\nVideo) as LiveVideo
+  usecase (Vital Sign) as VitalSign
+  usecase (Switch Partient\nVital Sign) as SwitchVS
 
   package OIS{
-    usecase "ส่งรายงานปฏิบัติงาน"
-    usecase "อัพเดทรายงานปฏิบัติงาน"
-    usecase "สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล"
-    usecase "สมาชิกในทีมปฏิบัติงาน"
-    usecase "ค้นหาหน่วยงาน"
-    usecase "ข้อมูลหน่วยงาน"
+    usecase (Update Patiant\nStatus) as UpdatePatiantStatus
+    usecase (ER/Specialist\nInfomation) as ERSpecialistInfomation
+    usecase (check in/out) as checkIn
+    usecase (Assign\nAmbulance) as AssignAmbulance
+    usecase (Switch\nAmbulance) as SwitchAmbulance
+    AssignAmbulance ....> SwitchAmbulance
   }
+
+  MeetingRoom ------ CloseRoom
+  Protocol ....> Ops
+  Protocol ....> Med
+  Med ....> Check
+  InviteToMeetingRoom ....> ReciveInvite :<extend>
+  GrantPermission ....> ReciveGrant:<extend>
+  Telemed -- LiveVideo
+  Telemed -- VitalSign
+  VitalSign -- SwitchVS
+
+
+  Supervisor ..> Coordinator :<extend>
+  Supervisor ..> Dispatcher :<extend>
+
+  CallTaker ---> UpdatePatiantStatus
+  CallTaker ---> AssignAmbulance
+
+  Coordinator ------> ERSpecialistInfomation
+  Coordinator ------> MeetingRoom: Case G, Y
+  Coordinator --> checkIn
+  Coordinator ------> Protocol
+  Coordinator ------> CloseRoom
+
+  Dispatcher ------> ERSpecialistInfomation
+  Dispatcher ------> MeetingRoom : Case R
+  Dispatcher --> checkIn
+  Dispatcher ------> InviteToMeetingRoom
+  Dispatcher ------> Protocol
+  Dispatcher ------> CloseRoom
+
+  ER ------> ReciveInvite
+  ER ------> MISLogin
+
+  Specialist ....> ER :<extend>
+  Specialist ------> MeetingRoom
+  Specialist ------> ReciveGrant
+  Specialist ------> ReciveInvite
+
+  Paramedic ------> MISLogin
+  Paramedic ------> MeetingRoom
+  Paramedic ------> Protocol
+  Paramedic ------> SwitchVS
+  Paramedic ------> Med
+  Paramedic ------> Check
+  Paramedic ------> checkIn
+  Paramedic ------> SwitchAmbulance
+  Paramedic ------> UpdatePatiantStatus
+
+  :Medical Director: as MD
+  MD ------> MISLogin
+  MD ------> MeetingRoom
+  MD ------> GrantPermission
+  MD ------> InviteToMeetingRoom
+  MD ------> ReciveInvite
+  MD ------> checkIn
+  MD ------> ERSpecialistInfomation
+
 @enduml
