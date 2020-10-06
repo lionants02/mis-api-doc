@@ -617,8 +617,9 @@ HOST: https://api.mis.tot.co.th/mis
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-+ vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
++ vehicle (array[Vehicle], fixed-type, required) - ข้อมูลรถปฏิบัติการ
++ vehicleActive (Vehicle) - ผู้ป่วยอยู่รถคันไหน
 + level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
 + OperatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
 + eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
@@ -637,6 +638,11 @@ HOST: https://api.mis.tot.co.th/mis
 + patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
 + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
+
+# VictimStatus (object)
++ type: `VictimStatus` (string, fixed, required) - ค่าคงที่
++ color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
++ timestamp : `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # Person (object)
 + type: `Person` (string, fixed, required) - ค่าคงที่
@@ -696,10 +702,13 @@ HOST: https://api.mis.tot.co.th/mis
 
 # TreatmentInformation (object)
 + type: `TreatmentInformation` (string, fixed, required) - ค่าคงที่
++ createBy: `2323` (number,required) - สร้างโดยใคร
++ updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + pDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # User (object)
 + type: `User` (string, fixed, required) - ค่าคงที่
@@ -740,6 +749,11 @@ HOST: https://api.mis.tot.co.th/mis
 + lon (string)
 + accuracy: `4` (number)
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# Color (enum)
++ GREEN
++ YELLOW
++ RED
 
 # VehicleCategory (enum)
 + Boat - เรื่อ
