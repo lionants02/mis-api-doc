@@ -137,6 +137,10 @@
 </li>
 </ul>
 <p>รูปแบบรหัสสิทธิ์การรักษาพยาบาลที่ใช้ <a href="http://www.thcc.or.th/treatment.php">http://www.thcc.or.th/treatment.php</a></p>
+<p>Use Case Diagram
+<a href="data\image\full.svg">
+<img src="data\image\full.svg" width="100%">
+</a></p>
 </section><section id="authorization" class="resource-group"><h2 class="group-heading">Authorization <a href="#authorization" class="permalink">&para;</a></h2><p>การใช้งาน จำเป็นต้องมี api key กำลังหาข้อสรุป</p>
 </section><section id="mis-ปฏิบัติการ" class="resource-group"><h2 class="group-heading">MIS ปฏิบัติการ <a href="#mis-ปฏิบัติการ" class="permalink">&para;</a></h2><div id="mis-ปฏิบัติการ-เปิดห้อง-mis" class="resource"><h3 class="resource-heading">เปิดห้อง MIS <a href="#mis-ปฏิบัติการ-เปิดห้อง-mis" class="permalink">&nbsp;&para;</a></h3><div id="mis-ปฏิบัติการ-เปิดห้อง-mis-post" class="action post"><h4 class="action-heading"><div class="name">เปิดห้อง MIS</div><a href="#mis-ปฏิบัติการ-เปิดห้อง-mis-post" class="method post">POST</a><code class="uri">/room</code></h4><img src="data\image\create_dispatch.svg">
 <p>1 ห้อง MIS ต่อ ผู้ป่วย 1 คน</p>
@@ -1323,7 +1327,7 @@
     <span class="hljs-string">"message"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน" class="resource"><h3 class="resource-heading">แก้ไขรายงานปฏิบัติงาน <a href="#mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน" class="permalink">&nbsp;&para;</a></h3><div id="mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน-put" class="action put"><h4 class="action-heading"><div class="name">แก้ไขรายงานปฏิบัติงาน</div><a href="#mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน-put" class="method put">PUT</a><code class="uri">/protocol/{eventPatientId}</code></h4><img src="data\image\update_report_from_mis.svg">
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน" class="resource"><h3 class="resource-heading">แก้ไขรายงานปฏิบัติงาน <a href="#mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน" class="permalink">&nbsp;&para;</a></h3><div id="mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน-put" class="action put"><h4 class="action-heading"><div class="name">แก้ไขรายงานปฏิบัติงาน</div><a href="#mis-ปฏิบัติการ-แก้ไขรายงานปฏิบัติงาน-put" class="method put">PUT</a><code class="uri">/protocol/{eventPatientId}</code></h4><img src="data\image\update_report_to_mis.svg">
 <p>หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส</p>
 <h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname">https://api.mis.tot.co.th/mis</span>/protocol/<span class="hljs-attribute" title="eventPatientId">2222</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>eventPatientId</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2222</span></span><p><code>รหัสรายละเอียดผู้ประสบเหตุ</code></p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -2782,8 +2786,9 @@
 <span class="hljs-header"># MisRoom (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`MisRoom`</span> (string, fixed, required) - ค่าคงที่
 <span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`1010`</span> (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-<span class="hljs-bullet">+ </span>eventPatientId: <span class="hljs-code">`2222`</span> (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-<span class="hljs-bullet">+ </span>vehicle (Vehicle, required) - ข้อมูลรถปฏิบัติการ
+<span class="hljs-bullet">+ </span>eventPatientId: <span class="hljs-code">`2222`</span> (number, required) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+<span class="hljs-bullet">+ </span>vehicle (array[Vehicle], fixed-type, required) - ข้อมูลรถปฏิบัติการ
+<span class="hljs-bullet">+ </span>vehicleActive (Vehicle) - ผู้ป่วยอยู่รถคันไหน
 <span class="hljs-bullet">+ </span>level: <span class="hljs-code">`ALS`</span> (VehicleLevel) - ระดับปฏิบัติการ
 <span class="hljs-bullet">+ </span>OperatingSetID: <span class="hljs-code">`23154`</span> (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
 <span class="hljs-bullet">+ </span>eventId: <span class="hljs-code">`610001`</span> (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
@@ -2802,6 +2807,11 @@
 <span class="hljs-bullet">+ </span>patientName: <span class="hljs-code">`002321`</span> (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
 <span class="hljs-bullet">+ </span>citizenID: <span class="hljs-code">`3250400000001`</span> (string) - หมายเลขประจำตัวประชาชน
 <span class="hljs-bullet">+ </span>emergencyLevelCode: <span class="hljs-code">`02`</span> (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
+
+<span class="hljs-header"># VictimStatus (object)</span>
+<span class="hljs-bullet">+ </span>type: <span class="hljs-code">`VictimStatus`</span> (string, fixed, required) - ค่าคงที่
+<span class="hljs-bullet">+ </span>color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
+<span class="hljs-bullet">+ </span>timestamp : <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 <span class="hljs-header"># Person (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Person`</span> (string, fixed, required) - ค่าคงที่
@@ -2861,10 +2871,13 @@
 
 <span class="hljs-header"># TreatmentInformation (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`TreatmentInformation`</span> (string, fixed, required) - ค่าคงที่
+<span class="hljs-bullet">+ </span>createBy: <span class="hljs-code">`2323`</span> (number,required) - สร้างโดยใคร
+<span class="hljs-bullet">+ </span>updateBy: <span class="hljs-code">`3424`</span> (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 <span class="hljs-bullet">+ </span>procedureName: <span class="hljs-code">`ดาม`</span> (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 <span class="hljs-bullet">+ </span>pDescription: <span class="hljs-code">`ดามคอ แขน และ ขา`</span> (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 <span class="hljs-bullet">+ </span>doIt: <span class="hljs-code">`true`</span> (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 <span class="hljs-bullet">+ </span>update: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+<span class="hljs-bullet">+ </span>timestamp: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 <span class="hljs-header"># User (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`User`</span> (string, fixed, required) - ค่าคงที่
@@ -2905,6 +2918,11 @@
 <span class="hljs-bullet">+ </span>lon (string)
 <span class="hljs-bullet">+ </span>accuracy: <span class="hljs-code">`4`</span> (number)
 <span class="hljs-bullet">+ </span>timestamp: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+<span class="hljs-header"># Color (enum)</span>
+<span class="hljs-bullet">+ </span>GREEN
+<span class="hljs-bullet">+ </span>YELLOW
+<span class="hljs-bullet">+ </span>RED
 
 <span class="hljs-header"># VehicleCategory (enum)</span>
 <span class="hljs-bullet">+ </span>Boat - เรื่อ
