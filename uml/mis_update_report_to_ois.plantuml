@@ -1,5 +1,0 @@
-@startuml
-Header mis_update_report_to_ois
-  :MIS Platform : as MIS
-  MIS -right-> [OIS Platform] : ต้องการแก้ไขรายงาน\nการปฏิบัติงาน
-@enduml
