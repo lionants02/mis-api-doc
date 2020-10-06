@@ -95,7 +95,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Headers
 
-            Authorization: Token {token}
+            Authorization: Bearer {token}
 
     + Attributes (MisRoom , fixed-type)
 
@@ -150,7 +150,9 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/event/{eventId}]
+## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/{?eventId,officeID,operationNumber}]
+
+  ปรับเป็นใช้ query ทั้งหมด
 
   <img src="data\image\ois_get_room_in_event.svg">
 
@@ -159,46 +161,10 @@ HOST: https://api.mis.tot.co.th/mis
   1 เหตุการณ์ อาจมีผู้ประสบเหตุได้หลายคน
 
 + Parameters
-    + eventId: `610001` (number, required)
-      ``รหัสเหตุการณ์``
-
-+ Response 200 (application/json)
-
-    + Attributes (array[MisRoomReturn] , fixed-type)
-
-+ Response 404 (application/json)
-
-    + Attributes (NotFound , fixed-type)
-
-## รายการห้อง MIS อิงศูนย์สั่งการ [GET /room/office/{officeID}]
-
-  <img src="data\image\ois_get_room_in_office.svg">
-
-  รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `รหัสศูนย์สั่งการ`
-
-  1 ศูนย์สั่งการ ปกติจะดูแลผู้ประสบเหตุหลายคน
-
-+ Parameters
-    + officeID: `1010` (number, required)
+    + officeID: `1010` (number, optional)
       ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
-
-+ Response 200 (application/json)
-
-    + Attributes (array[MisRoomReturn] , fixed-type)
-
-+ Response 404 (application/json)
-
-    + Attributes (NotFound , fixed-type)
-
-## รายการห้อง MIS อิงเลขปฏิบัติการ [GET /room/operation/{operationNumber}]
-
-  <img src="data\image\ois_get_room_in_office.svg">
-
-  รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `รหัสศูนย์สั่งการ`
-
-  1 ศูนย์สั่งการ ปกติจะดูแลผู้ประสบเหตุหลายคน
-
-+ Parameters
+    + eventId: `610001` (number, optional)
+      ``รหัสเหตุการณ์``
     + operationNumber: `5354` (number,required)
       ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
 
@@ -210,7 +176,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [GET /patient/{eventPatientId}/operation/{operationNumber}]
+## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [PUT /patient/{eventPatientId}/operation/{operationNumber}]
 
   <img src="data\image\change_car.svg">
 
@@ -236,11 +202,74 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + message: `ไม่พบเลข operationNumber ที่ระบุ` (string)
 
+## ส่งรายปฏิบัติงาน [POST /protocol/{eventPatientId}]
+
+  <img src="data\image\send_report_to_mis.svg">
+
+  ส่งรายงานปฏิบัติงาน ต่อ 1 ผู้ประสบเหตุ
+
++ Parameters
+    + eventPatientId: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
+
++ Request (application/json)
+
+    + Attributes (Report , fixed-type)
+
++ Response 201 (application/json)
+
+    + Attributes (Report , fixed-type)
+
++ Response 409 (application/json)
+
+    + Attributes (object , fixed-type)
+      + message: `พบความผิดพลาด ชุดข้อมูลอาจถูกสร้างไปแล้ว` (string)
+
+## แก้ไขรายงานปฏิบัติงาน [PUT /protocol/{eventPatientId}]
+
+  <img src="data\image\update_report_from_mis.svg">
+
+  หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
+
++ Parameters
+    + eventPatientId: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
+
++ Request (application/json)
+
+    + Attributes (Report , fixed-type)
+
++ Response 200 (application/json)
+
+    + Attributes (Report , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
+## ดึงรายงานปฏิบัติงาน [GET /protocol/{eventPatientId}]
+
+  <img src="data\image\get_report_from_mis.svg">
+
+  เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
+
++ Parameters
+    + eventPatientId: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
+
++ Response 200 (application/json)
+
+    + Attributes (Report , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
 # Group OIS ปฏิบัติการ
 
   HOST และ link จะเป็นของทาง OIS
 
-  ทาง OIS จะต้องเป็นผู้พัฒนาให้
+  ทาง OIS จะต้องเป็นผู้พัฒนาให้ ใช้ Token ที่ได้มาจาก auth service เลย
 
   https://api.ois.tot.co.th/ois/report/{eventPatientId}
 
@@ -264,69 +293,6 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## ส่งรายปฏิบัติงาน [POST /ois/report/{eventPatientId}]
-
-  <img src="data\image\mis_send_report_to_ois.svg">
-
-  ส่งรายงานปฏิบัติงาน ต่อ 1 ผู้ประสบเหตุ
-
-+ Parameters
-    + eventPatientId: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ``
-
-+ Request (application/json)
-
-    + Attributes (Report , fixed-type)
-
-+ Response 201 (application/json)
-
-    + Attributes (Report , fixed-type)
-
-+ Response 409 (application/json)
-
-    + Attributes (object , fixed-type)
-      + message: `พบความผิดพลาด ชุดข้อมูลอาจถูกสร้างไปแล้ว` (string)
-
-## แก้ไขรายงานปฏิบัติงาน [PUT /ois/report/{eventPatientId}]
-
-  <img src="data\image\mis_update_report_to_ois.svg">
-
-  หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
-
-+ Parameters
-    + eventPatientId: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ``
-
-+ Request (application/json)
-
-    + Attributes (Report , fixed-type)
-
-+ Response 200 (application/json)
-
-    + Attributes (Report , fixed-type)
-
-+ Response 404 (application/json)
-
-    + Attributes (NotFound , fixed-type)
-
-## ดึงรายงานปฏิบัติงาน [GET /ois/report/{eventPatientId}]
-
-  <img src="data\image\mis_get_report_from_ois.svg">
-
-  เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
-
-+ Parameters
-    + eventPatientId: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ``
-
-+ Response 200 (application/json)
-
-    + Attributes (Report , fixed-type)
-
-+ Response 404 (application/json)
-
-    + Attributes (NotFound , fixed-type)
-
 # Group MIS Protocol
 
 ## Offline protocol [GET /protocol/offline{?query}]
@@ -342,10 +308,6 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 200 (application/json)
 
     + Attributes (array[OfflineProtocal], fixed-type)
-
-## Online protocol [GET /protocol/online]
-
-  จะใช้ endpoint ของ `ส่งรายงานปฏิบัติงาน` โดย MIS จะส่ง update ไปยัง OIS เอง
 
 # Group MIS UI
 
@@ -365,6 +327,8 @@ HOST: https://api.mis.tot.co.th/mis
 
   ลิงค์ข้อมูล Telemed จะใส่ไปกับข้อมูลตอนส่งรายงานด้วย
 
+  ต้องประสานพี่โจ้ ด่วน
+
 + Parameters
     + eventPatientId: `2222` (number, fixed-type)
       ``รหัสรายละเอียดผู้ประสบเหตุ หรือก็คือ รหัสคนที่เกิดเหตุ``
@@ -376,7 +340,6 @@ HOST: https://api.mis.tot.co.th/mis
       + videoLink: `https://` (string) - ลิงค์วีดีโอ
       + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
       + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
-
 
 # Group MIS Notification
 
@@ -482,21 +445,27 @@ HOST: https://api.mis.tot.co.th/mis
 
   ทาง OIS จะต้องเป็นผู้พัฒนาให้
 
-## เข้าเวร/ออกเวร [PUT /duty/{operatorID}]
+## เข้าเวร [POST /operator/{operatorID}/checkin]
 
 + Parameters
     + operatorID: `111222` (number, required)
       ``รหัสทะเบียนเจ้าหน้าที่``
 
-+ Request (application/json)
++ Response 200 (application/json)
 
     + Attributes (object , fixed-type)
-      + duty: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกแวร
+      + checkIn: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
+
+## เข้าเวร [POST /operator/{operatorID}/checkout]
+
++ Parameters
+    + operatorID: `111222` (number, required)
+      ``รหัสทะเบียนเจ้าหน้าที่``
 
 + Response 200 (application/json)
 
     + Attributes (object , fixed-type)
-      + duty: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกแวร
+      + checkIn: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
 
 # Group OIS Lookup
 
@@ -504,7 +473,7 @@ HOST: https://api.mis.tot.co.th/mis
 
   ทาง OIS จะต้องเป็นผู้พัฒนาให้
 
-## ข้อมูลการรับแจ้งเหตุ [GET /EventPatient/{eventPatientId}]
+## ข้อมูลการรับแจ้งเหตุ [GET /eventpatient/{eventPatientId}]
 
   <img src="data\image\mis_get_eventn_patient_from_ois.svg">
 
@@ -551,7 +520,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (Speciallist , fixed-type)
 
-## สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล [GET /rightoftreatment/{id_card}]
+## สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล [GET /patient/{?id_card}]
 
   <img src="data\image\mis_get_person_from_ois.svg">
 
@@ -782,6 +751,11 @@ HOST: https://api.mis.tot.co.th/mis
 + message: `ไม่พบข้อมูลตามที่ระบุใน Link` (string)
   ```
 
+
+```
+ทุกตัวให้เป็น arrary ให้หมด
+```
+
 ## Data Structures
 
 # MisRoom (object)
@@ -872,10 +846,13 @@ HOST: https://api.mis.tot.co.th/mis
 
 # TreatmentInformation (object)
 + type: `TreatmentInformation` (string, fixed, required) - ค่าคงที่
++ createBy: `2323` (number,required) - สร้างโดยใคร
++ updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + pDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # User (object)
 + type: `User` (string, fixed, required) - ค่าคงที่

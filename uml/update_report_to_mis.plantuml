@@ -1,0 +1,5 @@
+@startuml
+Header update_report_from_mis
+  :Other Platform : as Other
+  Other -right-> [MIS Platform] : ต้องการแก้ไขรายงาน\nการปฏิบัติงาน
+@enduml

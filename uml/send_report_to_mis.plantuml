@@ -1,0 +1,5 @@
+@startuml
+Header send_report_to_mis
+  :Other Platform : as Other
+  Other -right-> [MIS Platform] : ต้องการส่งรายงาน\nการปฏิบัติงาน
+@enduml
