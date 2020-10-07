@@ -1,17 +1,139 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="467px" preserveAspectRatio="none" style="width:534px;height:467px;" version="1.1" viewBox="0 0 534 467" width="534px" zoomAndPan="magnify"><defs><filter height="300%" id="f1evjo5haqbe2j" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[411c9672cbc43f9185df31beb613b987]
-entity OIS--><rect fill="#FEFECE" filter="url(#f1evjo5haqbe2j)" height="47.6094" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="209.5" y="401"/><rect fill="#FEFECE" height="10" style="stroke: #A80036; stroke-width: 1.5;" width="15" x="308.5" y="406"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="306.5" y="408"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="306.5" y="412"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="224.5" y="435.5332">OIS Platform</text><!--MD5=[277af81c43435f3e1e7d98246e8611f4]
-entity MIS--><rect fill="#FEFECE" filter="url(#f1evjo5haqbe2j)" height="47.6094" style="stroke: #A80036; stroke-width: 1.5;" width="119" x="209.5" y="7"/><rect fill="#FEFECE" height="10" style="stroke: #A80036; stroke-width: 1.5;" width="15" x="308.5" y="12"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="306.5" y="14"/><rect fill="#FEFECE" height="2" style="stroke: #A80036; stroke-width: 1.5;" width="4" x="306.5" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="224.5" y="41.5332">MIS Platform</text><ellipse cx="315.8726" cy="163.4745" fill="#FEFECE" filter="url(#f1evjo5haqbe2j)" rx="70.3726" ry="16.4745" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="264.8726" y="168.7792">MIS api gateway</text><ellipse cx="443.949" cy="323.0898" fill="#FEFECE" filter="url(#f1evjo5haqbe2j)" rx="73.449" ry="17.0898" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="388.949" y="328.3945">Outbound Queue</text><ellipse cx="74.8716" cy="31.1743" fill="#FEFECE" filter="url(#f1evjo5haqbe2j)" rx="68.8716" ry="16.1743" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="25.8716" y="36.479">Inbound Queue</text><!--MD5=[348ec2ed24420c00ad5d20dbaebecd7c]
-reverse link gateway to OIS--><path d="M312.235,185.287 C303.57,233.131 282.265,350.7611 273.196,400.8312 " fill="none" id="gateway-backto-OIS" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="313.131,180.342,307.5905,188.4847,312.2396,185.2619,315.4624,189.9109,313.131,180.342" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="300" y="272.4951">call api</text><!--MD5=[b6784320fc53c849dcaafb0d0b9fd1c2]
-reverse link MIS to gateway--><path d="M279.019,59.819 C288.548,86.277 302.546,125.142 310.3,146.673 " fill="none" id="MIS-backto-gateway" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="277.294,55.03,276.5803,64.853,278.9883,59.7342,284.107,62.1422,277.294,55.03" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[9282edfa29dfb5d84e3b295b55c47f42]
-link MIS to outbound--><path d="M304.604,55.18 C333.639,75.894 373.555,108.812 397,147 C427.466,196.623 438.447,265.975 442.192,300.584 " fill="none" id="MIS-to-outbound" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="442.733,305.831,445.7886,296.4681,442.2201,300.8574,437.8308,297.2888,442.733,305.831" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="103" x="415" y="168.9951">notification to OIS</text><!--MD5=[84d870a436b090ff6c1d0e482052ee54]
-link outbound to OIS--><path d="M417.801,338.971 C390.334,354.6665 346.671,379.6166 313.732,398.439 " fill="none" id="outbound-to-OIS" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="309.362,400.9359,319.1606,399.9423,313.7029,398.4546,315.1906,392.9969,309.362,400.9359" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[b65eee250716542d6c56e3ef5495a17f]
-link OIS to inbound--><path d="M209.266,422.1644 C142.91,416.5611 45,396.0805 45,324 C45,116 45,116 45,116 C45,92.786 55.2868,67.956 63.8131,51.362 " fill="none" id="OIS-to-inbound" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="66.1613,46.909,58.4245,53.0034,63.8286,51.3315,65.5005,56.7357,66.1613,46.909" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="46" y="224.4951">notification to MIS</text><!--MD5=[7540eaa89551fb3873808912860b3f03]
-link inbound to MIS--><path d="M144.34,31 C164.242,31 184.143,31 204.045,31 " fill="none" id="inbound-to-MIS" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="209.105,31,200.105,27,204.105,31,200.105,35,209.105,31" style="stroke: #A80036; stroke-width: 1.0;"/><!--MD5=[cf7f388c21052be49188fc12aae09f1b]
-link MIS to OIS--><path d="M247.247,55.01 C234.547,70.878 221,93.157 221,116 C221,116 221,116 221,324 C221,350.4972 234.866,377.3992 247.693,396.6163 " fill="none" id="MIS-to-OIS" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="250.579,400.8412,248.8053,391.1534,247.7587,396.7126,242.1995,395.6659,250.579,400.8412" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="222" y="224.4951">call api</text><!--MD5=[e6fbef309e8dc69ea889c96a51d45b08]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="626px" preserveAspectRatio="none" style="width:1237px;height:626px;" version="1.1" viewBox="0 0 1237 626" width="1237px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1c7p7z526iz1j" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g>
+        <!--MD5=[0735a41341780b144fbc6be43a4e5fcb]
+cluster MIS-->
+        <polygon fill="#FFFFFF" filter="url(#f1c7p7z526iz1j)" points="30,32,124,32,131,55.6094,716,55.6094,716,387,30,387,30,32" style="stroke: #000000; stroke-width: 1.5;" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="30" x2="131" y1="55.6094" y2="55.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="88" x="34" y="48.5332">MIS Platform</text>
+        <!--MD5=[d2c8068cd7c592884f257f2899549a2c]
+entity MIS Room-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="84" x="402" y="76" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="397" y="81" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="397" y="103.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="64" x="412" y="100.5332">MIS Room</text>
+        <!--MD5=[2d562914bdca4fe98803940ecdb66bfd]
+entity Telemed-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="54.5" y="192" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="49.5" y="197" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="49.5" y="219.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="55" x="64.5" y="216.5332">Telemed</text>
+        <!--MD5=[754a6269055bce839685cd0889a54b07]
+entity Vital Sign-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="79" x="164.5" y="192" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="159.5" y="197" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="159.5" y="219.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="174.5" y="216.5332">Vital Sign</text>
+        <!--MD5=[384d59ba5fb8ff9d360033d960ba09ad]
+entity Conference-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="94" x="279" y="192" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="274" y="197" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="274" y="219.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="289" y="216.5332">Conference</text>
+        <!--MD5=[e9133d319b00836ead36bafe5be9939b]
+entity Protocol-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="408" y="192" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="403" y="197" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="403" y="219.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="418" y="216.5332">Protocol</text>
+        <!--MD5=[696b10c26f30c091ad0393d8fea63830]
+entity Victim-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="57" x="515.5" y="192" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="510.5" y="197" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="510.5" y="219.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="525.5" y="216.5332">Victim</text>
+        <!--MD5=[fee662a292a0353a69bd162820bae93b]
+entity User-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="76" x="608" y="192" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="603" y="197" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="603" y="219.6094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="618" y="216.5332">MIS User</text>
+        <!--MD5=[c796543839e6086ac460deba3cd4e684]
+entity Vehicle-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="55.2188" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="57" y="308" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="52" y="313" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="52" y="353.2188" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="67" y="332.5332">Vehicle</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="67" y="350.1426">Camera</text>
+        <!--MD5=[411c9672cbc43f9185df31beb613b987]
+entity OIS-->
+        <rect fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" height="37.6094" style="stroke: #A80036; stroke-width: 1.5;" width="99" x="834.5" y="316.5" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="829.5" y="321.5" />
+        <rect fill="#FEFECE" height="5" style="stroke: #A80036; stroke-width: 1.5;" width="10" x="829.5" y="344.1094" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="844.5" y="341.0332">OIS Platform</text>
+        <ellipse cx="973.8726" cy="210.9745" fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" rx="70.3726" ry="16.4745" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="922.8726" y="216.2792">MIS api gateway</text>
+        <ellipse cx="1152.949" cy="211.0898" fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" rx="73.449" ry="17.0898" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="110" x="1097.949" y="216.3945">Outbound Queue</text>
+        <ellipse cx="790.8716" cy="599.1743" fill="#FEFECE" filter="url(#f1c7p7z526iz1j)" rx="68.8716" ry="16.1743" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="741.8716" y="604.479">Inbound Queue</text>
+        <!--MD5=[6ecc119d027f8df20d939a5742acbf57]
+link MIS Room to Telemed-->
+        <path d="M401.687,109.623 C344.064,128.188 237.696,162.501 147,192 C141.363,193.833 135.403,195.778 129.568,197.685 " fill="none" id="MIS Room-Telemed" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[db405617dcce36d3372fb42f0ed28938]
+link MIS Room to Conference-->
+        <path d="M425.303,114.064 C403.337,135.284 367.096,170.297 345.001,191.643 " fill="none" id="MIS Room-Conference" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[cf9ef26775446c60e444e25760aaf0ce]
+link MIS Room to Protocol-->
+        <path d="M444,114.064 C444,135.284 444,170.297 444,191.643 " fill="none" id="MIS Room-Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[cfb6456c8d2bf85cf31720af1f0d2fcd]
+link MIS Room to Victim-->
+        <path d="M459.845,114.064 C478.46,135.284 509.173,170.297 527.898,191.643 " fill="none" id="MIS Room-Victim" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[ae6eb96d4592d09c73a3d0096f5cc980]
+link MIS Room to User-->
+        <path d="M476.008,114.064 C513.72,135.347 576.016,170.504 613.808,191.832 " fill="none" id="MIS Room-User" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[8b3766b010d1ba02df42f865005b86d8]
+link Telemed to Vital Sign-->
+        <path d="M129.625,211 C141.246,211 152.867,211 164.488,211 " fill="none" id="Telemed-Vital Sign" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[bff48f4a49dd5af585bf074a03614325]
+link Telemed to Vehicle-->
+        <path d="M92,230.075 C92,250.574 92,284.199 92,307.74 " fill="none" id="Telemed-Vehicle" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[348ec2ed24420c00ad5d20dbaebecd7c]
+reverse link gateway to OIS-->
+        <path d="M959.533,231.691 C942.375,255.045 914.007,293.657 897.352,316.326 " fill="none" id="gateway&lt;-OIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="962.601,227.515,954.0486,232.3993,959.6405,231.5443,960.4955,237.1362,962.601,227.515" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="938" y="274.4951">call api</text>
+        <!--MD5=[b6784320fc53c849dcaafb0d0b9fd1c2]
+reverse link MIS to gateway-->
+        <path d="M716.0178,98.1757 C716.1221,98.2046 716.2273,98.2336 716.3335,98.263 C716.5458,98.3217 716.7618,98.3815 716.9814,98.4424 C718.7382,98.9294 720.7265,99.4852 722.9227,100.1059 C731.7076,102.5886 743.819,106.1105 757.7458,110.4305 C785.5993,119.0705 820.714,130.903 851,144 C886.367,159.295 925.25,181.05 949.638,195.341 " fill="none" id="MIS&lt;-gateway" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="716.0178,98.1757,723.6276,104.4279,720.8372,99.5072,725.758,96.7168,716.0178,98.1757" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[9282edfa29dfb5d84e3b295b55c47f42]
+link MIS to outbound-->
+        <path d="M716.2384,98.1107 C717.845,98.5223 719.6722,98.9904 721.7073,99.5117 C729.8474,101.597 741.3128,104.5342 755.2843,108.1134 C783.2273,115.2718 821.1951,124.9984 862.6361,135.6147 C945.5183,156.8475 1042.2935,181.6395 1100.55,196.564 " fill="none" id="MIS-&gt;outbound" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1105.64,197.868,1097.8995,191.7783,1100.7934,196.6389,1095.9329,199.5328,1105.64,197.868" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="103" x="958" y="158.4951">notification to OIS</text>
+        <!--MD5=[84d870a436b090ff6c1d0e482052ee54]
+link outbound to OIS-->
+        <path d="M1121.35,226.413 C1073.63,248.146 983.05,289.394 928.638,314.172 " fill="none" id="outbound-&gt;OIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="923.813,316.37,933.6614,316.2789,928.3631,314.2971,930.3448,308.9987,923.813,316.37" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[b65eee250716542d6c56e3ef5495a17f]
+link OIS to inbound-->
+        <path d="M877.46,354.888 C860.552,402.432 815.494,529.1273 798.042,578.199 " fill="none" id="OIS-&gt;inbound" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="796.344,582.9739,803.129,575.835,798.0197,578.2631,795.5916,573.1538,796.344,582.9739" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="837" y="487.4951">notification to MIS</text>
+        <!--MD5=[7540eaa89551fb3873808912860b3f03]
+link inbound to MIS-->
+        <path d="M772.416,583.5604 C756.796,569.6572 737,547.0882 737,522 C737,210 737,210 737,210 C737,184.2685 729.9748,156.25 722.8398,134.4293 C721.056,128.9741 719.2654,123.9062 717.576,119.3583 C717.1536,118.2214 716.7376,117.1169 716.3296,116.047 C716.2276,115.7795 716.1261,115.5142 716.0251,115.2511 " fill="none" id="inbound-&gt;MIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="716.0251,115.2511,715.5152,125.0867,717.8165,119.9191,722.9841,122.2205,716.0251,115.2511" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[cf7f388c21052be49188fc12aae09f1b]
+link MIS to OIS-->
+        <path d="M716.0654,101.8508 C716.558,102.2189 717.0687,102.6023 717.5961,103.0004 C718.651,103.7966 719.7729,104.6513 720.9517,105.5598 C723.3091,107.3766 725.8936,109.4082 728.6224,111.6152 C739.5375,120.4432 752.7615,132.0775 763,144 C810.271,199.045 852.469,274.138 872.197,311.47 " fill="none" id="MIS-&gt;OIS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="874.717,316.265,874.0712,306.4373,872.3911,311.8389,866.9895,310.1588,874.717,316.265" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="825" y="216.4951">call api</text>
+        <!--MD5=[ca424ea03a486be2e79f73fe3e3dec00]
 @startuml
   "OIS Platform"  as [OIS]
-  "MIS Platform" as [MIS]
   : MIS api gateway : as (gateway)
+
+  package "MIS Platform" as MIS{
+    [MIS Room]
+    [Telemed]
+    [Vital Sign]
+    [Conference]
+    [Protocol]
+    [Victim]
+    [MIS User] as User
+    [Vehicle\nCamera] as Vehicle
+
+    [MIS Room] - - [Telemed]
+    [MIS Room] - - [Conference]
+    [MIS Room] - - [Protocol]
+    [MIS Room] - - [Victim]
+    [MIS Room] - - User
+
+    [Telemed] - [Vital Sign]
+    [Telemed] - - Vehicle
+
+  }
 
   gateway <- - OIS : call api
   MIS <- - gateway
@@ -29,11 +151,15 @@ link MIS to OIS--><path d="M247.247,55.01 C234.547,70.878 221,93.157 221,116 C22
 
 @enduml
 
-PlantUML version 1.2020.17(Sat Sep 19 19:30:11 ICT 2020)
-(MIT source distribution)
+PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
+(GPL source distribution)
 Java Runtime: Java(TM) SE Runtime Environment
 JVM: Java HotSpot(TM) 64-Bit Server VM
-Default Encoding: MS874
+Java Version: 1.8.0_261-b12
+Operating System: Windows 10
+Default Encoding: Cp1252
 Language: en
 Country: US
---></g></svg>
+-->
+    </g>
+</svg>
