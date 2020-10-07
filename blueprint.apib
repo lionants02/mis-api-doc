@@ -3,7 +3,20 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group Introduction
 
-# MIS API Draft alpha-8
+# MIS API Draft alpha-9
+  **alpha-10 โน๊ตกันลืม**
+  - โน๊ตกันลืม หารือกับพี่บาส ปรับโครงสร้างให้ทุกตัว link หากันได้หมด ก่อนส่งให้ TOT review
+  - ใส่ Authorization: Bearer {token} ทุกอัน พร้อม อธิบายว่าใช้ token ของ user หรือ api token
+
+
+  **alpha-9 change log**
+  - เพิ่ม user case
+  - ปรับ api เกี่ยกับการค้นหาบางอันให้ใช้ query string แทน
+  - ปรับ api เปลี่ยนภาหนะ `GET` เป็น `PUT`
+  - ปรับ path api บางอัน `checkin`, `checkout`, `protocol`
+  - ปรับโครงสร้าง รายงานปฏิบัติงานให้เก็บข้อมูล `ผู้สร้าง` และ `ผู้แก้ไข` ด้วย
+
+
   **alpha-8 change log**
   - ปรับโครงสร้าง `MisRoom` ให้ผูกข้อมูลกับ `ผู้ประสบเหตุ` ได้ 1 คน
   - `MisRoom` สามารถใส่สถานะได้ว่า ตอนนี้ผู้ป่วยอยู่รถคันไหน

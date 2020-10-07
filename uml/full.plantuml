@@ -1,5 +1,5 @@
 @startuml
-Title ภาพรวม api ทั้งหมด
+Title Use case
   usecase (Meeting\nRoom) as MeetingRoom
   usecase (Close\nRoom) as CloseRoom
   usecase (Protocol) as Protocol
