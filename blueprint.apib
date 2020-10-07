@@ -340,11 +340,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (object, fixed-type)
-      + type: `TelemedLink` (string,fixed) - ค่าคงที่
-      + videoLink: `https://` (string) - ลิงค์วีดีโอ
-      + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
-      + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
+    + Attributes (TelemedLink, fixed-type)
 
 # Group MIS Notification
 
@@ -360,12 +356,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Request (application/json)
 
-    + Attributes (object , fixed-type)
-      + event: `send_operator` (string, required) - กำหนดค่าคงที่
-      + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
-      + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
-      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+    + Attributes (SendOperator , fixed-type)
 
 ## แพทย์เรียกศูนย์เข้าห้อง [PUT /notification]
 
@@ -379,34 +370,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Request (application/json)
 
-    + Attributes (object , fixed-type)
-      + event: `send_center` (string, required) - กำหนดค่าคงที่
-      + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
-      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
-      + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
-      + message: `แพทย์เรียก` (string, required) - ข้อความ
-
-## ส่ง Notification ไป OIS [PUT /notification]
-
-  **Message Queue**
-
-  **ไม่ต้องพัฒนา จะใช้จอ MIS เลย**
-
-  <img src="data\image\notification_system_002.svg">
-
-  <img src="data\image\notification_system_003.svg">
-
-  ในที่นี้สำหรับใช้ในกรณี mis ต้องการส่ง Notification ไปยังศูนย์สั่งการ
-
-+ Request (application/json)
-
-    + Attributes (object , fixed-type)
-      + event: `send_center` (string, required) - กำหนดค่าคงที่
-      + randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
-      + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
-      + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
+    + Attributes (SendCenter , fixed-type)
 
 # Group OIS จัดการเวร
 
@@ -422,8 +386,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (object , fixed-type)
-      + checkIn: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
+    + Attributes (CheckIn , fixed-type)
 
 ## เข้าเวร [POST /operator/{operatorID}/checkout]
 
@@ -439,8 +402,8 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (object , fixed-type)
-      + checkIn: `true` (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
+    + Attributes (CheckIn , fixed-type)
+      + checkIn: false (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
 
 # Group OIS Lookup
 
@@ -577,9 +540,11 @@ HOST: https://api.mis.tot.co.th/mis
             Authorization: Bearer {token}
 
 + Response 200 (application/json)
+
     + Attributes (Person, fixed-type)
 
 + Response 404 (application/json)
+
     + Attributes (NotFound , fixed-type)
 
 ## สมาชิกในทีมปฏิบัติการ [GET /operating/{operatingSetID}]
@@ -597,9 +562,11 @@ HOST: https://api.mis.tot.co.th/mis
             Authorization: Bearer {token}
 
 + Response 200 (application/json)
+
     + Attributes (array[User], fixed-type)
 
 + Response 404 (application/json)
+
     + Attributes (NotFound , fixed-type)
 
 ## ค้นหาหน่วยงาน [GET /organization{?query}]
@@ -619,11 +586,8 @@ HOST: https://api.mis.tot.co.th/mis
             Authorization: Bearer {token}
 
 + Response 200 (application/json)
-    + Attributes (array, fixed-type)
-        + (object)
-            + officeID: `1010` (number ,required) - รหัสหน่วยงาน
-            + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
-            + OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
+
+    + Attributes (array[ShortOrganization], fixed-type)
 
 ## ข้อมูลหน่วยงาน [GET /organization/{officeID}]
 
@@ -642,9 +606,11 @@ HOST: https://api.mis.tot.co.th/mis
             Authorization: Bearer {token}
 
 + Response 200 (application/json)
+
     + Attributes (Organization, fixed-type)
 
 + Response 404 (application/json)
+
     + Attributes (NotFound , fixed-type)
 
 # Group OIS GPS
@@ -659,11 +625,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Request (application/json)
 
-    + Attributes (object , fixed-type)
-      + event: `send_gps` (string, required) - กำหนดค่าคงที่
-      + randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + personId: `1354` (number, required) - รหัสข้อมูลบุคคล
-      + gps (array[Gps], fixed-type, required) - ข้อมูล gps
+    + Attributes (GpsMessageQueue , fixed-type)
 
 # Group Data Structures
 
@@ -902,6 +864,12 @@ HOST: https://api.mis.tot.co.th/mis
 + officeTypeCode (string) - ประเภทหน่วยงาน
 + typeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
 
+# ShortOrganization (object)
++ type: `ShortOrganization` (string, fixed, required) - ค่าคงที่
++ officeID: `1010` (number ,required) - รหัสหน่วยงาน
++ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
++ OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
+
 # OfflineProtocal (object)
 + type: `OfflineProtocal` (string, fixed, required) - ค่าคงที่
 + offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
@@ -972,6 +940,39 @@ HOST: https://api.mis.tot.co.th/mis
 + lon: `100.601302` (string,required)
 + accuracy: `4` (number, optional)
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# GpsMessageQueue (object)
++ type: `GpsMessageQueue` (string, fixed, required) - ค่าคงที่
++ randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ gps (array[Gps], fixed-type, required) - ข้อมูล gps
+
+# TelemedLink (object)
++ type: `TelemedLink` (string, fixed, required) - ค่าคงที่
++ videoLink: `https://` (string) - ลิงค์วีดีโอ
++ vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
++ ekgLink: `https://` (string) - ลิงค์ EKG/ECG
+
+# SendOperator (object)
++ type: `SendOperator` (string, fixed, required) - ค่าคงที่
++ randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
++ officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ message: `ศูนย์เรียก` (string, required) - ข้อความ
+
+# SendCenter (object)
++ type: `SendCenter` (string, fixed, required) - ค่าคงที่
++ randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
++ officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
++ message: `แพทย์เรียก` (string, required) - ข้อความ
+
+# CheckIn (object)
++ type: `CheckIn` (string, fixed, required) - ค่าคงที่
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ checkIn: true (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
 
 # PatternProtocal (enum)
 + DIRECT - อำนวยการตรง
