@@ -211,21 +211,15 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [POST /patient/{eventPatientId}/operation/{operationNumber}]
+## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [POST /patient/changevehicle/{eventPatientId}]
 
   <img src="data\image\change_car.svg">
-
-  เพื่อให้สะดวกแก่การใช้งาน จะใช้ในลักษณะของ Webhook เรียก Link แล้วจะอัพเดทสถานะเลย
-
-  ปฏิบัติการต้องถูกสั่งเปิดมาแล้ว เท่านั้นถึงจะเอาคนขึ้นรถได้
 
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
 
 + Parameters
     + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
-    + operationNumber: `5354` (number,required)
-      ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
 
 + Request (application/json)
 
@@ -233,10 +227,14 @@ HOST: https://api.mis.tot.co.th/mis
 
             Authorization: Bearer {token}
 
+    + Attributes (object , fixed-type)
+      + message: `OK` (string)
+
 + Response 200 (application/json)
 
     + Attributes (object , fixed-type)
-      + message: `OK` (string)
+      + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+      + vehicleId: `3324` (number, required) - รหัสพาหนะ
 
 + Response 404 (application/json)
 
@@ -259,11 +257,11 @@ HOST: https://api.mis.tot.co.th/mis
 
             Authorization: Bearer {token}
 
-    + Attributes (Report , fixed-type)
+    + Attributes (Protocol , fixed-type)
 
 + Response 201 (application/json)
 
-    + Attributes (Report , fixed-type)
+    + Attributes (Protocol , fixed-type)
 
 + Response 409 (application/json)
 
@@ -286,11 +284,11 @@ HOST: https://api.mis.tot.co.th/mis
 
             Authorization: Bearer {token}
 
-    + Attributes (Report , fixed-type)
+    + Attributes (Protocol , fixed-type)
 
 + Response 200 (application/json)
 
-    + Attributes (Report , fixed-type)
+    + Attributes (Protocol , fixed-type)
 
 + Response 404 (application/json)
 
@@ -314,7 +312,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (Report , fixed-type)
+    + Attributes (Protocol , fixed-type)
 
 + Response 404 (application/json)
 
@@ -574,12 +572,12 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (NotFound , fixed-type)
 
 
-## ค้นหาข้อมูลรถปฏิบัติการ [GET /car{?carId,operatingSetID,eventPatientId,operationNumber}]
+## ค้นหาข้อมูลรถปฏิบัติการ [GET /car{?vehicleId,operatingSetID,eventPatientId,operationNumber}]
 
   ค้นหาข้อมูลรถปฏิบัติการ ตามพารามิเตอร์ที่ระบุ ต้องใส่ค่ามาอย่างน้อย 1 ค่า
 
 + Parameters
-    + carId: `3324` (number, optional)
+    + vehicleId: `3324` (number, optional)
       ``รหัสรถ``
     + operatingSetID: `23154` (number, optional)
       ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่``
@@ -602,12 +600,12 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
     + Attributes (NotFound , fixed-type)
 
-## ข้อมูลรถปฏิบัติการ [GET /car/{carId}]
+## ข้อมูลรถปฏิบัติการ [GET /car/{vehicleId}]
 
   คืนค่าข้อมูล `รถปฏิบัติการ` ที่ระบุ
 
 + Parameters
-    + carId: `3324` (number, required)
+    + vehicleId: `3324` (number, required)
       ``รหัสรถ``
 
 + Request (application/json)
@@ -778,7 +776,7 @@ HOST: https://api.mis.tot.co.th/mis
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-+ vehicle: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสรถ ที่ออกปฏิบัติการ
++ vehicleId: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
 + level (VehicleLevel) - ระดับปฏิบัติการ
 
 # MisRoomReturn (object)
@@ -851,8 +849,8 @@ HOST: https://api.mis.tot.co.th/mis
 + offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
 + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
 
-# Report (object)
-+ type: `Report` (string, fixed, required) - ค่าคงที่
+# Protocol (object)
++ type: `Protocol` (string, fixed, required) - ค่าคงที่
 + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
 + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
@@ -894,7 +892,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Vehicle (object)
 + type: `Vehicle` (string, fixed, required) - ค่าคงที่
-+ carId: `3324` (number, required) - รหัสรถ
++ vehicleId: `3324` (number, required) - รหัสพาหนะ
 + operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
 + operatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
 + eventPatientId: 2222,2345 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
@@ -941,7 +939,7 @@ HOST: https://api.mis.tot.co.th/mis
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-+ vehicle: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสรถ ที่ออกปฏิบัติการ
++ vehicleId: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
 + level (VehicleLevel) - ระดับปฏิบัติการ
 
 # MisRoomReturn (object)
@@ -1014,8 +1012,8 @@ HOST: https://api.mis.tot.co.th/mis
 + offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
 + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
 
-# Report (object)
-+ type: `Report` (string, fixed, required) - ค่าคงที่
+# Protocol (object)
++ type: `Protocol` (string, fixed, required) - ค่าคงที่
 + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
 + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
@@ -1057,7 +1055,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Vehicle (object)
 + type: `Vehicle` (string, fixed, required) - ค่าคงที่
-+ carId: `3324` (number, required) - รหัสรถ
++ vehicleId: `3324` (number, required) - รหัสพาหนะ
 + operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
 + operatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
 + eventPatientId: 2222,2345 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
