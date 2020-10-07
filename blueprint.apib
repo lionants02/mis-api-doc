@@ -29,7 +29,7 @@ HOST: https://api.mis.tot.co.th/mis
   **alpha-7 change log**
   - แก้ไขชื่อ field ในโครงสร้าง `Drugallergy` ให้เป็นไปตาม 52file(DRUGALLERGY)
   - แก้ขื่อ api `ข้อมูลผู้ประสบเหตุ` เป็น `ข้อมูลการรับแจ้งเหตุ`
-  - เพิ่มข้อมูล field เลขชุดปฏิบัติการ(`OperatingSetID`) ตอนสร้างห้อง MIS
+  - เพิ่มข้อมูล field เลขชุดปฏิบัติการ(`operatingSetID`) ตอนสร้างห้อง MIS
 
 
   **alpha-6 change log**
@@ -67,6 +67,8 @@ HOST: https://api.mis.tot.co.th/mis
 
   เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS มิใช่เอกสารสำหรับการใช้งานภายในระบบ
   ชื่อ และ type ตัวแปรจะใช้ตามโครงสร้างที่เกษตรกำหนดมา
+
+  ตัวโครงสร้างส่วนใหญ่จะมี field ที่ใช้ link หากันได้หมด
 
   ไฟล์โครงการเอกสาร https://github.com/lionants02/mis-api-doc
 
@@ -179,7 +181,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## ค้นหาห้อง MIS [GET /room/{?eventId,officeID,operationNumber}]
+## ค้นหาห้อง MIS [GET /room/{?officeID,operationNumber}]
 
   ปรับเป็นใช้ query ทั้งหมด
 
@@ -192,8 +194,6 @@ HOST: https://api.mis.tot.co.th/mis
 + Parameters
     + officeID: `1010` (number, optional)
       ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
-    + eventId: `610001` (number, optional)
-      ``รหัสเหตุการณ์``
     + operationNumber: `5354` (number,required)
       ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
 
@@ -573,6 +573,49 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
     + Attributes (NotFound , fixed-type)
 
+
+## ค้นหาข้อมูลรถปฏิบัติการ [GET /car{?carId,operatingSetID,eventPatientId,operationNumber}]
+
+  ค้นหาข้อมูลรถปฏิบัติการ ตามพารามิเตอร์ที่ระบุ ต้องใส่ค่ามาอย่างน้อย 1 ค่า
+
++ Parameters
+    + carId: `3324` (number, optional)
+      ``รหัสรถ``
+    + operatingSetID: `23154` (number, optional)
+      ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่``
+    + eventPatientId: `2222` (number, optional)
+      ``รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ``
+    + operationNumber: `5354` (number,optional)
+      ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่``
+
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+    + Attributes (array[Vehicle] , fixed-type)
+
++ Response 404 (application/json)
+    + Attributes (NotFound , fixed-type)
+
+## ข้อมูลรถปฏิบัติการ [GET /car/{carId}]
+
+  คืนค่าข้อมูล `รถปฏิบัติการ` ที่ระบุ
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+    + Attributes (Vehicle , fixed-type)
+
 ## Speciallist Search [GET /specialist{?province,query}]
 
   <img src="data\image\mis_get_specialist_from_ois.svg">
@@ -637,12 +680,12 @@ HOST: https://api.mis.tot.co.th/mis
 + Response 404 (application/json)
     + Attributes (NotFound , fixed-type)
 
-## สมาชิกในทีมปฏิบัติการ [GET /operating/{OperatingSetID}]
+## สมาชิกในทีมปฏิบัติการ [GET /operating/{operatingSetID}]
 
   <img src="data\image\mis_get_team_from_ois.svg">
 
   + Parameters
-      + OperatingSetID: `23154` (number, required)
+      + operatingSetID: `23154` (number, required)
         ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
 
 + Request (application/json)
@@ -695,7 +738,7 @@ HOST: https://api.mis.tot.co.th/mis
     + Headers
 
             Authorization: Bearer {token}
-            
+
 + Response 200 (application/json)
     + Attributes (Organization, fixed-type)
 
@@ -730,13 +773,9 @@ HOST: https://api.mis.tot.co.th/mis
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-+ vehicle (array[Vehicle], fixed-type, required) - ข้อมูลรถปฏิบัติการ
-+ vehicleActive (Vehicle) - ผู้ป่วยอยู่รถคันไหน
-+ level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
-+ OperatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
-+ eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
-+ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน  จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหาห้องด้วย เลขปฏิบัติงาน
++ eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
++ vehicle: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสรถ ที่ออกปฏิบัติการ
++ level (VehicleLevel) - ระดับปฏิบัติการ
 
 # MisRoomReturn (object)
 + type: `MisRoomReturn` (string, fixed, required) - ค่าคงที่
@@ -746,6 +785,7 @@ HOST: https://api.mis.tot.co.th/mis
 # Victim (object)
 + type: `Victim` (string, fixed, required) - ค่าคงที่
 + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vehicle: 3324 (number,nullable, optional) - พาหนะที่ผู้ประสบเหตุ กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น ยังไม่ต้องกำหนดค่า
 + eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
 + patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
@@ -754,6 +794,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # VictimStatus (object)
 + type: `VictimStatus` (string, fixed, required) - ค่าคงที่
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
 + timestamp : `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
@@ -774,6 +815,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # MedicalInformation
 + type: `MedicalInformation` (string, fixed, required) - ค่าคงที่
++ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
 + instype (string) - สิทธิการรักษา 52file(Service) http://www.thcc.or.th/treatment.php
 + drugallergy (array[Drugallergy], optional) - ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
 + recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
@@ -783,6 +825,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Drugallergy
 + type: `Drugallergy` (string, fixed, required) - ค่าคงที่
++ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
 + drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php
 + drugName (string, optional) - ชื่อยาที่แพ้
 + typeDX: `1` (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
@@ -845,13 +888,12 @@ HOST: https://api.mis.tot.co.th/mis
 + tel: `0649999998` (string) - เบอร์โทรศัพท์
 + knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
 
-# OperatingSet (object)
-+ type: `OperatingSet` (string, fixed, required) - ค่าคงที่
-+ id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
-+ name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
-
 # Vehicle (object)
 + type: `Vehicle` (string, fixed, required) - ค่าคงที่
++ carId: `3324` (number, required) - รหัสรถ
++ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
++ operatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
++ eventPatientId: 2222,2345 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
 + category: `Boat` (VehicleCategory) - ประเภทพาหนะ
 + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
 + province: `สระแก้ว` (string) - จัดหวัด
@@ -894,13 +936,9 @@ HOST: https://api.mis.tot.co.th/mis
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-+ vehicle (array[Vehicle], fixed-type, required) - ข้อมูลรถปฏิบัติการ
-+ vehicleActive (Vehicle) - ผู้ป่วยอยู่รถคันไหน
-+ level: `ALS` (VehicleLevel) - ระดับปฏิบัติการ
-+ OperatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)
-+ eventId: `610001` (number) - รหัสเหตุการณ์ ไม่ได้ใช้ใน MIS จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหารายการห้อง MIS ทีอยู่ในเหตุการณ์เดียวกัน
-+ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน  จะใช้สำหรับในกรณีที่ OIS ต้องการค้นหาห้องด้วย เลขปฏิบัติงาน
++ eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
++ vehicle: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสรถ ที่ออกปฏิบัติการ
++ level (VehicleLevel) - ระดับปฏิบัติการ
 
 # MisRoomReturn (object)
 + type: `MisRoomReturn` (string, fixed, required) - ค่าคงที่
@@ -910,6 +948,7 @@ HOST: https://api.mis.tot.co.th/mis
 # Victim (object)
 + type: `Victim` (string, fixed, required) - ค่าคงที่
 + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vehicle: 3324 (number,nullable, optional) - พาหนะที่ผู้ประสบเหตุ กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น ยังไม่ต้องกำหนดค่า
 + eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
 + patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
@@ -918,6 +957,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # VictimStatus (object)
 + type: `VictimStatus` (string, fixed, required) - ค่าคงที่
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
 + timestamp : `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
@@ -938,6 +978,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # MedicalInformation
 + type: `MedicalInformation` (string, fixed, required) - ค่าคงที่
++ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
 + instype (string) - สิทธิการรักษา 52file(Service) http://www.thcc.or.th/treatment.php
 + drugallergy (array[Drugallergy], optional) - ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
 + recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
@@ -947,6 +988,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Drugallergy
 + type: `Drugallergy` (string, fixed, required) - ค่าคงที่
++ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
 + drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php
 + drugName (string, optional) - ชื่อยาที่แพ้
 + typeDX: `1` (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
@@ -1009,13 +1051,12 @@ HOST: https://api.mis.tot.co.th/mis
 + tel: `0649999998` (string) - เบอร์โทรศัพท์
 + knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
 
-# OperatingSet (object)
-+ type: `OperatingSet` (string, fixed, required) - ค่าคงที่
-+ id: `10-1-VEH-10010200034` (string) - รหัสชุดปฏิบัติการ
-+ name: `โรงพยาบาลวิภาวดี 3กษ 8019` (string) - ชื่อชุดปฏิบัติการ
-
 # Vehicle (object)
 + type: `Vehicle` (string, fixed, required) - ค่าคงที่
++ carId: `3324` (number, required) - รหัสรถ
++ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
++ operatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
++ eventPatientId: 2222,2345 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
 + category: `Boat` (VehicleCategory) - ประเภทพาหนะ
 + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
 + province: `สระแก้ว` (string) - จัดหวัด
