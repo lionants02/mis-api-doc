@@ -189,8 +189,6 @@ HOST: https://api.mis.tot.co.th/mis
 
   รายการห้อง MIS คืนค่าแบบ Array
 
-  1 เหตุการณ์ อาจมีผู้ประสบเหตุได้หลายคน
-
 + Parameters
     + officeID: `1010` (number, optional)
       ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
@@ -215,7 +213,7 @@ HOST: https://api.mis.tot.co.th/mis
 
   <img src="data\image\change_car.svg">
 
-  ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
+  ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ หลังส่งข้อมูลมา ฝั่ง MIS จะเรียก api
 
 + Parameters
     + eventPatientId: `2222` (number, required)
@@ -232,9 +230,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Response 200 (application/json)
 
-    + Attributes (object , fixed-type)
-      + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-      + vehicleId: `3324` (number, required) - รหัสพาหนะ
+    + Attributes (ChangeVehicle , fixed-type)
 
 + Response 404 (application/json)
 
@@ -414,11 +410,11 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## ศูนย์เรียกแพทย์เข้าห้อง [PUT /notification]
 
+  **ยังไม่ต้องพัฒนา จะใช้จอ MIS เลย**
+
   <img src="data\image\center_call_medical.svg">
 
   <img src="data\image\center_call_medical_001.svg">
-
-  **อาจจะไม่ต้องทำ ใช้หน้าจอของเราใน OIS เลย**
 
   เมื่อศูนย์ต้องการเรียกแพทย์ที่เข้าเวรอยู่ ไปยังห้องที่ระบุ
 
@@ -433,11 +429,11 @@ HOST: https://api.mis.tot.co.th/mis
 
 ## แพทย์เรียกศูนย์เข้าห้อง [PUT /notification]
 
+  **ยังไม่ต้องพัฒนา จะใช้จอ MIS เลย**
+
   <img src="data\image\medical_call_center.svg">
 
   <img src="data\image\medical_call_center_001.svg">
-
-  **อาจจะไม่ต้องทำ ใช้หน้าจอของเราใน OIS ในการแจ้งเตือนเลย**
 
   ใช้เมื่อแพทย์ ต้องการส่งข้อความหาศูนย์ ในที่นี้จะใช้สำหรับ ในกรณีที่แพทย์ ต้องการเรียกศูนย์เข้าห้อง
 
@@ -455,7 +451,7 @@ HOST: https://api.mis.tot.co.th/mis
 
   **Message Queue**
 
-  **อาจจะไม่ต้องทำ ใช้หน้าจอของเราใน OIS ในการแจ้งเตือนเลย**
+  **ไม่ต้องพัฒนา จะใช้จอ MIS เลย**
 
   <img src="data\image\notification_system_002.svg">
 
@@ -471,42 +467,6 @@ HOST: https://api.mis.tot.co.th/mis
       + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
       + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งให้ (ทะเบียนหน่วยงาน)
       + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
-
-## รับ Notification จาก OIS [POST /notification]
-
-  **Message Queue**
-
-  <img src="data\image\notification_system.svg">
-
-  <img src="data\image\notification_system_001.svg">
-
-  ใช้ในกรณี OIS หรือ ศูนย์ ต้องการส่ง Notification ไปยังผู้ใช้ MIS
-
-+ Request (application/json)
-
-    + Attributes (object , fixed-type)
-      + event: `send_operator` (string, required) - กำหนดค่าคงที่
-      + randomNumber: `2347` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่ ที่จะส่งข้อความให้
-      + message: `จะมีเคสส่งข้ามเขตไปหา` (string, required) - ข้อความ Notification
-
-## รับ Alert จาก OIS [POST /notification]
-
-  **Message Queue Remote procedure call (RPC)**
-
-  ใช้ในกรณ OIS ต้องการส่ง Alert message ไปยังผู้ใช้ MIS และยังสามารถทราบได้ด้วยว่า ข้อความถึงปลายทางหรือไม่
-
-  **(รอหารือกับทีมอีกครั้ง ว่าจะทำตรงนี้หรือไม่)**
-
-+ Request (application/json)
-
-    + Attributes (object , fixed-type)
-      + event: `alert_operator` (string, required) - กำหนดค่าคงที่
-      + randomNumber: `96544` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-      + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่ ที่จะส่ง Alert ให้
-      + message: `ติดต่อศูนย์ด่วน 02-222-2222` (string, required) - ข้อความ Notification
 
 # Group OIS จัดการเวร
 
@@ -877,7 +837,7 @@ HOST: https://api.mis.tot.co.th/mis
 + givenName: `แสม` (string, required) - ชื่อตัว
 + familyName: `แสนซน` (string, required) - ชื่อสกุล
 + genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
-+ OperationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
++ operationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
 + operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
 
 # Speciallist
@@ -927,11 +887,6 @@ HOST: https://api.mis.tot.co.th/mis
 # NotFound (object)
 + message: `ไม่พบข้อมูลตามที่ระบุใน Link` (string)
   ```
-
-
-```
-ทุกตัวให้เป็น arrary ให้หมด
-```
 
 ## Data Structures
 
@@ -1027,9 +982,11 @@ HOST: https://api.mis.tot.co.th/mis
 + updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + pDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ pattern (PatternProtocal)
 + doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
 
 # User (object)
 + type: `User` (string, fixed, required) - ค่าคงที่
@@ -1040,7 +997,7 @@ HOST: https://api.mis.tot.co.th/mis
 + givenName: `แสม` (string, required) - ชื่อตัว
 + familyName: `แสนซน` (string, required) - ชื่อสกุล
 + genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
-+ OperationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
++ operationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
 + operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
 
 # Speciallist
@@ -1063,12 +1020,23 @@ HOST: https://api.mis.tot.co.th/mis
 + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
 + province: `สระแก้ว` (string) - จัดหวัด
 
+# ChangeVehicle (object)
++ type: `ChangeVehicle` (string, fixed, required) - ค่าคงที่
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vehicleId: `3324` (number,nullable , optional) - รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
+
 # Gps (object)
 + type: `Gps` (string, fixed, required) - ค่าคงที่
-+ lat (string)
-+ lon (string)
-+ accuracy: `4` (number)
++ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ lat: `14.077756` (string,required)
++ lon: `100.601302` (string,required)
++ accuracy: `4` (number, optional)
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# PatternProtocal (enum)
++ DIRECT - อำนวยการตรง
++ GENERAL - อำนวยการทั่วไป
++ OTHER - อำนวยการอื่นๆ ที่แพทย์สั่ง เช่น ย้ายรถ เปลี่ยนรถ
 
 # Color (enum)
 + GREEN
