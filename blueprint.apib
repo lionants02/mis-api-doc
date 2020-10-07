@@ -706,6 +706,12 @@ HOST: https://api.mis.tot.co.th/mis
 + officeTypeCode (string) - ประเภทหน่วยงาน
 + typeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
 
+# ShortOrganization (object)
++ type: `ShortOrganization` (string, fixed, required) - ค่าคงที่
++ officeID: `1010` (number ,required) - รหัสหน่วยงาน
++ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
++ OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
+
 # OfflineProtocal (object)
 + type: `OfflineProtocal` (string, fixed, required) - ค่าคงที่
 + offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
@@ -726,9 +732,11 @@ HOST: https://api.mis.tot.co.th/mis
 + updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + pDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ pattern (PatternProtocal)
 + doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
 
 # User (object)
 + type: `User` (string, fixed, required) - ค่าคงที่
@@ -762,12 +770,56 @@ HOST: https://api.mis.tot.co.th/mis
 + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
 + province: `สระแก้ว` (string) - จัดหวัด
 
+# ChangeVehicle (object)
++ type: `ChangeVehicle` (string, fixed, required) - ค่าคงที่
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vehicleId: `3324` (number,nullable , optional) - รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
+
 # Gps (object)
 + type: `Gps` (string, fixed, required) - ค่าคงที่
-+ lat (string)
-+ lon (string)
-+ accuracy: `4` (number)
++ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ lat: `14.077756` (string,required)
++ lon: `100.601302` (string,required)
++ accuracy: `4` (number, optional)
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# GpsMessageQueue (object)
++ type: `GpsMessageQueue` (string, fixed, required) - ค่าคงที่
++ randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ gps (array[Gps], fixed-type, required) - ข้อมูล gps
+
+# TelemedLink (object)
++ type: `TelemedLink` (string, fixed, required) - ค่าคงที่
++ videoLink: `https://` (string) - ลิงค์วีดีโอ
++ vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
++ ekgLink: `https://` (string) - ลิงค์ EKG/ECG
+
+# SendOperator (object)
++ type: `SendOperator` (string, fixed, required) - ค่าคงที่
++ randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
++ officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ message: `ศูนย์เรียก` (string, required) - ข้อความ
+
+# SendCenter (object)
++ type: `SendCenter` (string, fixed, required) - ค่าคงที่
++ randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
++ officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
++ message: `แพทย์เรียก` (string, required) - ข้อความ
+
+# CheckIn (object)
++ type: `CheckIn` (string, fixed, required) - ค่าคงที่
++ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ checkIn: true (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
+
+# PatternProtocal (enum)
++ DIRECT - อำนวยการตรง
++ GENERAL - อำนวยการทั่วไป
++ OTHER - อำนวยการอื่นๆ ที่แพทย์สั่ง เช่น ย้ายรถ เปลี่ยนรถ
 
 # Color (enum)
 + GREEN
