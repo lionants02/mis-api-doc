@@ -59,6 +59,9 @@
     <span class="hljs-number">3324</span>,
     <span class="hljs-number">3368</span>
   ]</span>,
+  "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
+    <span class="hljs-number">9998877</span>
+  ]</span>,
   "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -94,6 +97,13 @@
       ]</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
     </span>}</span>,
+    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+    </span>}</span>,
     "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
@@ -110,6 +120,7 @@
     <span class="hljs-string">"officeID"</span>,
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vehicleId"</span>,
+    <span class="hljs-string">"operatorID"</span>,
     <span class="hljs-string">"level"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
@@ -125,6 +136,9 @@
     "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">[
       <span class="hljs-number">3324</span>,
       <span class="hljs-number">3368</span>
+    ]</span>,
+    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
+      <span class="hljs-number">9998877</span>
     ]</span>,
     "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
   </span>}
@@ -176,6 +190,13 @@
           ]</span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
@@ -190,7 +211,8 @@
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
         <span class="hljs-string">"type"</span>,
         <span class="hljs-string">"officeID"</span>,
-        <span class="hljs-string">"vehicleId"</span>
+        <span class="hljs-string">"vehicleId"</span>,
+        <span class="hljs-string">"operatorID"</span>
       ]</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลรายเอียดห้อง MIS"</span>
     </span>}
@@ -229,6 +251,9 @@
     <span class="hljs-number">3324</span>,
     <span class="hljs-number">3368</span>
   ]</span>,
+  "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
+    <span class="hljs-number">9998877</span>
+  ]</span>,
   "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -264,6 +289,13 @@
       ]</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
     </span>}</span>,
+    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+    </span>}</span>,
     "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
@@ -280,6 +312,7 @@
     <span class="hljs-string">"officeID"</span>,
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vehicleId"</span>,
+    <span class="hljs-string">"operatorID"</span>,
     <span class="hljs-string">"level"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
@@ -293,6 +326,9 @@
     <span class="hljs-number">3324</span>,
     <span class="hljs-number">3368</span>
   ]</span>,
+  "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
+    <span class="hljs-number">9998877</span>
+  ]</span>,
   "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -328,6 +364,13 @@
       ]</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
     </span>}</span>,
+    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+    </span>}</span>,
     "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
@@ -344,6 +387,7 @@
     <span class="hljs-string">"officeID"</span>,
     <span class="hljs-string">"eventPatientId"</span>,
     <span class="hljs-string">"vehicleId"</span>,
+    <span class="hljs-string">"operatorID"</span>,
     <span class="hljs-string">"level"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
@@ -424,6 +468,9 @@
         <span class="hljs-number">3324</span>,
         <span class="hljs-number">3368</span>
       ]</span>,
+      "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
+        <span class="hljs-number">9998877</span>
+      ]</span>,
       "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
     </span>}
   </span>}
@@ -477,6 +524,13 @@
             ]</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
           </span>}</span>,
+          "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+          </span>}</span>,
           "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
             "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
@@ -491,7 +545,8 @@
         "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
           <span class="hljs-string">"type"</span>,
           <span class="hljs-string">"officeID"</span>,
-          <span class="hljs-string">"vehicleId"</span>
+          <span class="hljs-string">"vehicleId"</span>,
+          <span class="hljs-string">"operatorID"</span>
         ]</span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลรายเอียดห้อง MIS"</span>
       </span>}
@@ -2470,6 +2525,7 @@
 <span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`1010`</span> (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 <span class="hljs-bullet">+ </span>eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 <span class="hljs-bullet">+ </span>vehicleId: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+<span class="hljs-bullet">+ </span>operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
 <span class="hljs-bullet">+ </span>level (VehicleLevel) - ระดับปฏิบัติการ
 
 <span class="hljs-header"># MisRoomReturn (object)</span>
