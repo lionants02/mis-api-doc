@@ -6,6 +6,7 @@ Title Use case
   usecase (Operation) as Ops
   usecase (MIS\nLogin) as MISLogin
   usecase (Medicine) as Med
+  usecase (Check) as Check
   usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
   usecase (Recive\nInvite) as ReciveInvite
   usecase (Grant\nPermission) as GrantPermission
