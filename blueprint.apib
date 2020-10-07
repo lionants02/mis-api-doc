@@ -101,11 +101,33 @@ HOST: https://api.mis.tot.co.th/mis
     + Attributes (object , fixed-type)
       + message: `ชุดข้อมูล operationNumber ไม่ตรงกับที่ระบุ` (string)
 
+## ดึงข้อมูลห้อง MIS [GET /room/{misRoomId}]
+
+  ดูข้อมูลห้อง MIS
+
++ Parameters
+    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+      ``หมายเลขห้อง MIS``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
++ Response 200 (application/json)
+
+    + Attributes (MisRoomReturn , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
+
 ## ปิดห้อง MIS [DELETE /room/{misRoomId}]
 
 + Parameters
-    + misRoomId: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ``
+    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+      ``หมายเลขห้อง MIS``
 
 + Request (application/json)
 
