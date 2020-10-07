@@ -139,6 +139,10 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Request (application/json)
 
+    + Headers
+
+            Authorization: Bearer {token}
+
     + Attributes (MisRoom , fixed-type)
 
 + Response 200 (application/json)
@@ -160,6 +164,12 @@ HOST: https://api.mis.tot.co.th/mis
     + misRoomId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
 + Response 200 (application/json)
 
     + Attributes (object , fixed-type)
@@ -169,13 +179,13 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## รายการห้อง MIS อิงรหัสเหตุการณ์ [GET /room/{?eventId,officeID,operationNumber}]
+## ค้นหาห้อง MIS [GET /room/{?eventId,officeID,operationNumber}]
 
   ปรับเป็นใช้ query ทั้งหมด
 
   <img src="data\image\ois_get_room_in_event.svg">
 
-  รายการห้อง MIS คืนค่าแบบ Array โดยจะอ้างอิงจาก `รหัสเหตุการณ์` เดียวกัน
+  รายการห้อง MIS คืนค่าแบบ Array
 
   1 เหตุการณ์ อาจมีผู้ประสบเหตุได้หลายคน
 
@@ -187,6 +197,12 @@ HOST: https://api.mis.tot.co.th/mis
     + operationNumber: `5354` (number,required)
       ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
 + Response 200 (application/json)
 
     + Attributes (array[MisRoomReturn] , fixed-type)
@@ -195,7 +211,7 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [PUT /patient/{eventPatientId}/operation/{operationNumber}]
+## ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ [POST /patient/{eventPatientId}/operation/{operationNumber}]
 
   <img src="data\image\change_car.svg">
 
@@ -210,6 +226,12 @@ HOST: https://api.mis.tot.co.th/mis
       ``รหัสรายละเอียดผู้ประสบเหตุ``
     + operationNumber: `5354` (number,required)
       ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
 + Response 200 (application/json)
 
@@ -232,6 +254,10 @@ HOST: https://api.mis.tot.co.th/mis
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
     + Attributes (Report , fixed-type)
 
@@ -256,6 +282,10 @@ HOST: https://api.mis.tot.co.th/mis
 
 + Request (application/json)
 
+    + Headers
+
+            Authorization: Bearer {token}
+
     + Attributes (Report , fixed-type)
 
 + Response 200 (application/json)
@@ -275,6 +305,12 @@ HOST: https://api.mis.tot.co.th/mis
 + Parameters
     + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
 + Response 200 (application/json)
 
@@ -301,6 +337,10 @@ HOST: https://api.mis.tot.co.th/mis
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
     + Attributes (VictimStatus , fixed-type)
 
@@ -340,6 +380,12 @@ HOST: https://api.mis.tot.co.th/mis
     + misRoomId: `999888` (number,required)
       ``หมายเลขห้อง MIS``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
 + Response 200 (text/html)
 
 ## ลิงค์ข้อมูล Telemed [GET /telemed/link/{eventPatientId}]
@@ -351,6 +397,12 @@ HOST: https://api.mis.tot.co.th/mis
 + Parameters
     + eventPatientId: `2222` (number, fixed-type)
       ``รหัสรายละเอียดผู้ประสบเหตุ หรือก็คือ รหัสคนที่เกิดเหตุ``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
 + Response 200 (application/json)
 
@@ -481,6 +533,12 @@ HOST: https://api.mis.tot.co.th/mis
     + operatorID: `111222` (number, required)
       ``รหัสทะเบียนเจ้าหน้าที่``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
 + Response 200 (application/json)
 
     + Attributes (object , fixed-type)
@@ -502,6 +560,12 @@ HOST: https://api.mis.tot.co.th/mis
     + eventPatientId: `2222` (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
 + Response 200 (application/json)
 
     + Attributes (Victim , fixed-type)
@@ -521,6 +585,12 @@ HOST: https://api.mis.tot.co.th/mis
     + query: `กระดูก` (string)
       ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
 + Response 200 (application/json)
 
     + Attributes (array[Speciallist] , fixed-type)
@@ -534,6 +604,12 @@ HOST: https://api.mis.tot.co.th/mis
 + Parameters
     + id: `12346` (string)
       ``เลขใบ ว.``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
 + Response 200 (application/json)
 
@@ -549,6 +625,12 @@ HOST: https://api.mis.tot.co.th/mis
     + id_card: `3250400000001` (string, required)
       ``หมายเลขประจำตัวประชาชน``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
 + Response 200 (application/json)
     + Attributes (Person, fixed-type)
 
@@ -562,6 +644,12 @@ HOST: https://api.mis.tot.co.th/mis
   + Parameters
       + OperatingSetID: `23154` (number, required)
         ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
 + Response 200 (application/json)
     + Attributes (array[User], fixed-type)
@@ -578,6 +666,12 @@ HOST: https://api.mis.tot.co.th/mis
 + Parameters
     + query: `สระแก้ว` (string, optional)
       ``ข้อมูลที่ต้องการค้นหา``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
 
 + Response 200 (application/json)
     + Attributes (array, fixed-type)
@@ -596,6 +690,12 @@ HOST: https://api.mis.tot.co.th/mis
     + officeID: `1010` (string, required)
       ``รหัสหน่วยงาน``
 
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+            
 + Response 200 (application/json)
     + Attributes (Organization, fixed-type)
 
