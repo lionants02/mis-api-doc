@@ -1,7 +1,27 @@
 @startuml
   "OIS Platform"  as [OIS]
-  "MIS Platform" as [MIS]
   : MIS api gateway : as (gateway)
+
+  package "MIS Platform" as MIS{
+    [MIS Room]
+    [Telemed]
+    [Vital Sign]
+    [Conference]
+    [Protocol]
+    [Victim]
+    [MIS User] as User
+    [Vehicle\nCamera] as Vehicle
+
+    [MIS Room] -- [Telemed]
+    [MIS Room] -- [Conference]
+    [MIS Room] -- [Protocol]
+    [MIS Room] -- [Victim]
+    [MIS Room] -- User
+
+    [Telemed] - [Vital Sign]
+    [Telemed] -- Vehicle
+
+  }
 
   gateway <-- OIS : call api
   MIS <-- gateway
