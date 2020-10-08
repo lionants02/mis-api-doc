@@ -1,20 +1,45 @@
 @startuml
 Title Use case
-  usecase (Meeting\nRoom) as MeetingRoom
-  usecase (Close\nRoom) as CloseRoom
-  usecase (Protocol) as Protocol
-  usecase (Operation) as Ops
+
   usecase (MIS\nLogin) as MISLogin
-  usecase (Medicine) as Med
-  usecase (Check list) as Check
-  usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
-  usecase (Recive\nInvite) as ReciveInvite
-  usecase (Grant\nPermission) as GrantPermission
-  usecase (Recive\nGrant) as ReciveGrant
-  usecase (Telemed) as Telemed
-  usecase (Live\nVideo) as LiveVideo
-  usecase (Vital Sign) as VitalSign
-  usecase (Switch Partient\nVital Sign) as SwitchVS
+
+  rectangle {
+    usecase (Grant\nPermission) as GrantPermission
+    usecase (Recive\nGrant) as ReciveGrant
+  }
+  rectangle {
+    usecase (Meeting\nRoom) as MeetingRoom
+    usecase (Close\nRoom) as CloseRoom
+    usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
+    usecase (Recive\nInvite) as ReciveInvite
+  }
+
+  rectangle {
+    :Supervisor: as Supervisor
+    :Coordinator: as Coordinator
+    :Dispatcher: as Dispatcher
+    :CallTaker: as CallTaker
+  }
+
+  rectangle {
+    :Specialist: as Specialist
+    :ER: as ER
+  }
+
+  rectangle {
+    usecase (Protocol) as Protocol
+    usecase (Operation) as Ops
+    usecase (Medicine) as Med
+    usecase (Check list) as Check
+  }
+
+
+  rectangle {
+    usecase (Telemed) as Telemed
+    usecase (Live\nVideo) as LiveVideo
+    usecase (Vital Sign) as VitalSign
+    usecase (Switch Partient\nVital Sign) as SwitchVS
+  }
 
   package OIS{
     usecase (Update Patiant\nStatus) as UpdatePatiantStatus
@@ -22,15 +47,16 @@ Title Use case
     usecase (check in/out) as checkIn
     usecase (Assign\nAmbulance) as AssignAmbulance
     usecase (Switch\nAmbulance) as SwitchAmbulance
-    AssignAmbulance ....> SwitchAmbulance
+    AssignAmbulance ..> SwitchAmbulance
   }
 
-  MeetingRoom ------ CloseRoom
-  Protocol ....> Ops
-  Protocol ....> Med
-  Med ....> Check
-  InviteToMeetingRoom ....> ReciveInvite :<extend>
-  GrantPermission ....> ReciveGrant:<extend>
+  MeetingRoom -- CloseRoom
+  Protocol ..> Ops
+  Protocol ..> Med
+  Med ..> Check
+  InviteToMeetingRoom ..> ReciveInvite :<extend>
+  GrantPermission ..> ReciveGrant:<extend>
+
   Telemed -- LiveVideo
   Telemed -- VitalSign
   VitalSign -- SwitchVS
@@ -39,28 +65,28 @@ Title Use case
   Supervisor ..> Coordinator :<extend>
   Supervisor ..> Dispatcher :<extend>
 
-  CallTaker ---> UpdatePatiantStatus
-  CallTaker ---> AssignAmbulance
+  CallTaker --> UpdatePatiantStatus
+  CallTaker --> AssignAmbulance
 
-  Coordinator ------> ERSpecialistInfomation
-  Coordinator ------> MeetingRoom: Case G, Y
+  Coordinator --> ERSpecialistInfomation
+  Coordinator --> MeetingRoom: Case G, Y
   Coordinator --> checkIn
-  Coordinator ------> Protocol
-  Coordinator ------> CloseRoom
+  Coordinator ----> Protocol
+  Coordinator ----> CloseRoom
 
-  Dispatcher ------> ERSpecialistInfomation
-  Dispatcher ------> MeetingRoom : Case R
+  Dispatcher ---------> ERSpecialistInfomation
+  Dispatcher ---------> MeetingRoom : Case R
   Dispatcher --> checkIn
   Dispatcher ------> InviteToMeetingRoom
   Dispatcher ------> Protocol
   Dispatcher ------> CloseRoom
 
-  ER ------> ReciveInvite
-  ER ------> MISLogin
+  ER --> ReciveInvite
+  ER --> MISLogin
 
-  Specialist ....> ER :<extend>
+  Specialist ..> ER :<extend>
   Specialist ------> MeetingRoom
-  Specialist ------> ReciveGrant
+  Specialist --> ReciveGrant
   Specialist ------> ReciveInvite
 
   Paramedic ------> MISLogin
@@ -75,12 +101,12 @@ Title Use case
 
   :Medical Director: as MD
   MD ------> MISLogin
-  MD ------> MeetingRoom
-  MD ------> GrantPermission
-  MD ------> InviteToMeetingRoom
-  MD ------> ReciveInvite
+  MD -----> MeetingRoom
+  MD ---> GrantPermission
+  MD ----> InviteToMeetingRoom
+  MD ----> ReciveInvite
   MD ------> checkIn
-  MD ------> ERSpecialistInfomation
+  MD ----> ERSpecialistInfomation
   MD -up-> Ops
 
 @enduml
