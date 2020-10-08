@@ -295,7 +295,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # Group MIS UI
 
-## UI สำหรับแสดงผล MIS [GET /room/{misRoomId}]
+## UI สำหรับแสดงผล MIS [GET /room/ui/{misRoomId}]
 
   หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก กำหนดมาแล้ว เราจะใช้ขนาด 683 x 768 pixels
 
@@ -310,7 +310,6 @@ HOST: https://api.mis.tot.co.th/mis
     + Headers
 
             Authorization: Bearer {token}
-            Accept: text/html
 
 + Response 200 (text/html)
 
@@ -951,6 +950,7 @@ HOST: https://api.mis.tot.co.th/mis
 # OfflineProtocal (object)
 + type: `OfflineProtocal` (string, fixed, required) - ค่าคงที่
 + offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
++ pageNumber: 10 (number) - เลขหน้า
 + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
 
 # Protocol (object)
