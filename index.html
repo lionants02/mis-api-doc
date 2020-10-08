@@ -761,11 +761,12 @@
   "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"TreatmentInformation"</span></span>,
+      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
       "<span class="hljs-attribute">createBy</span>": <span class="hljs-value"><span class="hljs-number">2323</span></span>,
       "<span class="hljs-attribute">updateBy</span>": <span class="hljs-value"><span class="hljs-number">3424</span></span>,
       "<span class="hljs-attribute">procedureName</span>": <span class="hljs-value"><span class="hljs-string">"ดาม"</span></span>,
-      "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
-      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
+      "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
+      "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดูดีมีอาการดีขึ้น"</span></span>,
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span></span>,
       "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
@@ -808,6 +809,14 @@
             ]</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
           </span>}</span>,
+          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"DIRECT"</span>,
+              <span class="hljs-string">"GENERAL"</span>,
+              <span class="hljs-string">"OTHER"</span>
+            ]
+          </span>}</span>,
           "<span class="hljs-attribute">createBy</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สร้างโดยใคร"</span>
@@ -820,24 +829,20 @@
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"DIRECT"</span>,
-              <span class="hljs-string">"GENERAL"</span>,
-              <span class="hljs-string">"OTHER"</span>
-            ]
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
           "<span class="hljs-attribute">doIt</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
               <span class="hljs-string">"boolean"</span>,
               <span class="hljs-string">"null"</span>
             ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ"</span>
           </span>}</span>,
           "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -853,7 +858,8 @@
           <span class="hljs-string">"createBy"</span>,
           <span class="hljs-string">"updateBy"</span>,
           <span class="hljs-string">"procedureName"</span>,
-          <span class="hljs-string">"pDescription"</span>,
+          <span class="hljs-string">"createDescription"</span>,
+          <span class="hljs-string">"updateDescription"</span>,
           <span class="hljs-string">"update"</span>,
           <span class="hljs-string">"timestamp"</span>
         ]
@@ -886,11 +892,12 @@
   "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"TreatmentInformation"</span></span>,
+      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
       "<span class="hljs-attribute">createBy</span>": <span class="hljs-value"><span class="hljs-number">2323</span></span>,
       "<span class="hljs-attribute">updateBy</span>": <span class="hljs-value"><span class="hljs-number">3424</span></span>,
       "<span class="hljs-attribute">procedureName</span>": <span class="hljs-value"><span class="hljs-string">"ดาม"</span></span>,
-      "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
-      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
+      "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
+      "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดูดีมีอาการดีขึ้น"</span></span>,
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span></span>,
       "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
@@ -933,6 +940,14 @@
             ]</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
           </span>}</span>,
+          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"DIRECT"</span>,
+              <span class="hljs-string">"GENERAL"</span>,
+              <span class="hljs-string">"OTHER"</span>
+            ]
+          </span>}</span>,
           "<span class="hljs-attribute">createBy</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สร้างโดยใคร"</span>
@@ -945,24 +960,20 @@
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"DIRECT"</span>,
-              <span class="hljs-string">"GENERAL"</span>,
-              <span class="hljs-string">"OTHER"</span>
-            ]
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
           "<span class="hljs-attribute">doIt</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
               <span class="hljs-string">"boolean"</span>,
               <span class="hljs-string">"null"</span>
             ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ"</span>
           </span>}</span>,
           "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -978,7 +989,8 @@
           <span class="hljs-string">"createBy"</span>,
           <span class="hljs-string">"updateBy"</span>,
           <span class="hljs-string">"procedureName"</span>,
-          <span class="hljs-string">"pDescription"</span>,
+          <span class="hljs-string">"createDescription"</span>,
+          <span class="hljs-string">"updateDescription"</span>,
           <span class="hljs-string">"update"</span>,
           <span class="hljs-string">"timestamp"</span>
         ]
@@ -1028,11 +1040,12 @@
   "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"TreatmentInformation"</span></span>,
+      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
       "<span class="hljs-attribute">createBy</span>": <span class="hljs-value"><span class="hljs-number">2323</span></span>,
       "<span class="hljs-attribute">updateBy</span>": <span class="hljs-value"><span class="hljs-number">3424</span></span>,
       "<span class="hljs-attribute">procedureName</span>": <span class="hljs-value"><span class="hljs-string">"ดาม"</span></span>,
-      "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
-      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
+      "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
+      "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดูดีมีอาการดีขึ้น"</span></span>,
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span></span>,
       "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
@@ -1075,6 +1088,14 @@
             ]</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
           </span>}</span>,
+          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"DIRECT"</span>,
+              <span class="hljs-string">"GENERAL"</span>,
+              <span class="hljs-string">"OTHER"</span>
+            ]
+          </span>}</span>,
           "<span class="hljs-attribute">createBy</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สร้างโดยใคร"</span>
@@ -1087,24 +1108,20 @@
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"DIRECT"</span>,
-              <span class="hljs-string">"GENERAL"</span>,
-              <span class="hljs-string">"OTHER"</span>
-            ]
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
           "<span class="hljs-attribute">doIt</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
               <span class="hljs-string">"boolean"</span>,
               <span class="hljs-string">"null"</span>
             ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ"</span>
           </span>}</span>,
           "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -1120,7 +1137,8 @@
           <span class="hljs-string">"createBy"</span>,
           <span class="hljs-string">"updateBy"</span>,
           <span class="hljs-string">"procedureName"</span>,
-          <span class="hljs-string">"pDescription"</span>,
+          <span class="hljs-string">"createDescription"</span>,
+          <span class="hljs-string">"updateDescription"</span>,
           <span class="hljs-string">"update"</span>,
           <span class="hljs-string">"timestamp"</span>
         ]
@@ -1153,11 +1171,12 @@
   "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"TreatmentInformation"</span></span>,
+      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
       "<span class="hljs-attribute">createBy</span>": <span class="hljs-value"><span class="hljs-number">2323</span></span>,
       "<span class="hljs-attribute">updateBy</span>": <span class="hljs-value"><span class="hljs-number">3424</span></span>,
       "<span class="hljs-attribute">procedureName</span>": <span class="hljs-value"><span class="hljs-string">"ดาม"</span></span>,
-      "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
-      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
+      "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
+      "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดูดีมีอาการดีขึ้น"</span></span>,
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span></span>,
       "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
@@ -1200,6 +1219,14 @@
             ]</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
           </span>}</span>,
+          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"DIRECT"</span>,
+              <span class="hljs-string">"GENERAL"</span>,
+              <span class="hljs-string">"OTHER"</span>
+            ]
+          </span>}</span>,
           "<span class="hljs-attribute">createBy</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สร้างโดยใคร"</span>
@@ -1212,24 +1239,20 @@
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"DIRECT"</span>,
-              <span class="hljs-string">"GENERAL"</span>,
-              <span class="hljs-string">"OTHER"</span>
-            ]
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
           "<span class="hljs-attribute">doIt</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
               <span class="hljs-string">"boolean"</span>,
               <span class="hljs-string">"null"</span>
             ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ"</span>
           </span>}</span>,
           "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -1245,7 +1268,8 @@
           <span class="hljs-string">"createBy"</span>,
           <span class="hljs-string">"updateBy"</span>,
           <span class="hljs-string">"procedureName"</span>,
-          <span class="hljs-string">"pDescription"</span>,
+          <span class="hljs-string">"createDescription"</span>,
+          <span class="hljs-string">"updateDescription"</span>,
           <span class="hljs-string">"update"</span>,
           <span class="hljs-string">"timestamp"</span>
         ]
@@ -1295,11 +1319,12 @@
   "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"TreatmentInformation"</span></span>,
+      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
       "<span class="hljs-attribute">createBy</span>": <span class="hljs-value"><span class="hljs-number">2323</span></span>,
       "<span class="hljs-attribute">updateBy</span>": <span class="hljs-value"><span class="hljs-number">3424</span></span>,
       "<span class="hljs-attribute">procedureName</span>": <span class="hljs-value"><span class="hljs-string">"ดาม"</span></span>,
-      "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
-      "<span class="hljs-attribute">pattern</span>": <span class="hljs-value"><span class="hljs-string">"DIRECT"</span></span>,
+      "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดามคอ แขน และ ขา"</span></span>,
+      "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value"><span class="hljs-string">"ดูดีมีอาการดีขึ้น"</span></span>,
       "<span class="hljs-attribute">doIt</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">update</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span></span>,
       "<span class="hljs-attribute">timestamp</span>": <span class="hljs-value"><span class="hljs-string">"2020-04-23T18:25:43.511"</span>
@@ -1342,6 +1367,14 @@
             ]</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ค่าคงที่"</span>
           </span>}</span>,
+          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"DIRECT"</span>,
+              <span class="hljs-string">"GENERAL"</span>,
+              <span class="hljs-string">"OTHER"</span>
+            ]
+          </span>}</span>,
           "<span class="hljs-attribute">createBy</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"สร้างโดยใคร"</span>
@@ -1354,24 +1387,20 @@
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pDescription</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">createDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">pattern</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">updateDescription</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"DIRECT"</span>,
-              <span class="hljs-string">"GENERAL"</span>,
-              <span class="hljs-string">"OTHER"</span>
-            ]
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)"</span>
           </span>}</span>,
           "<span class="hljs-attribute">doIt</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value">[
               <span class="hljs-string">"boolean"</span>,
               <span class="hljs-string">"null"</span>
             ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ"</span>
           </span>}</span>,
           "<span class="hljs-attribute">update</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -1387,7 +1416,8 @@
           <span class="hljs-string">"createBy"</span>,
           <span class="hljs-string">"updateBy"</span>,
           <span class="hljs-string">"procedureName"</span>,
-          <span class="hljs-string">"pDescription"</span>,
+          <span class="hljs-string">"createDescription"</span>,
+          <span class="hljs-string">"updateDescription"</span>,
           <span class="hljs-string">"update"</span>,
           <span class="hljs-string">"timestamp"</span>
         ]
@@ -2732,12 +2762,13 @@
 
 <span class="hljs-header"># TreatmentInformation (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`TreatmentInformation`</span> (string, fixed, required) - ค่าคงที่
+<span class="hljs-bullet">+ </span>pattern (PatternProtocal)
 <span class="hljs-bullet">+ </span>createBy: <span class="hljs-code">`2323`</span> (number,required) - สร้างโดยใคร
 <span class="hljs-bullet">+ </span>updateBy: <span class="hljs-code">`3424`</span> (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 <span class="hljs-bullet">+ </span>procedureName: <span class="hljs-code">`ดาม`</span> (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-<span class="hljs-bullet">+ </span>pDescription: <span class="hljs-code">`ดามคอ แขน และ ขา`</span> (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-<span class="hljs-bullet">+ </span>pattern (PatternProtocal)
-<span class="hljs-bullet">+ </span>doIt: <span class="hljs-code">`true`</span> (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
+<span class="hljs-bullet">+ </span>createDescription: <span class="hljs-code">`ดามคอ แขน และ ขา`</span> (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+<span class="hljs-bullet">+ </span>updateDescription: <span class="hljs-code">`ดูดีมีอาการดีขึ้น`</span> (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+<span class="hljs-bullet">+ </span>doIt: <span class="hljs-code">`true`</span> (boolean, nullable) - ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ
 <span class="hljs-bullet">+ </span>update: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 <span class="hljs-bullet">+ </span>timestamp: <span class="hljs-code">`2020-04-23T18:25:43.511`</span> (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
