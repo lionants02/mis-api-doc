@@ -277,38 +277,6 @@ HOST: https://api.mis.tot.co.th/mis
 
     + Attributes (NotFound , fixed-type)
 
-# Group OIS ปฏิบัติการ
-
-  HOST และ link จะเป็นของทาง OIS
-
-  ทาง OIS จะต้องเป็นผู้พัฒนาให้ ใช้ Token ที่ได้มาจาก auth service เลย
-
-  https://api.ois.tot.co.th/ois/report/{eventPatientId}
-
-## อัพเดทสถานะผู้ป่วย [PUT /ois/victim/{eventPatientId}]
-
-  อัพเดทสถานะผู้ป่วย เขียน เหลือง แดง
-
-+ Parameters
-    + eventPatientId: `2222` (number, required)
-      ``รหัสรายละเอียดผู้ประสบเหตุ``
-
-+ Request (application/json)
-
-    + Headers
-
-            Authorization: Bearer {token}
-
-    + Attributes (VictimStatus , fixed-type)
-
-+ Response 200 (application/json)
-
-    + Attributes (VictimStatus , fixed-type)
-
-+ Response 404 (application/json)
-
-    + Attributes (NotFound , fixed-type)
-
 # Group MIS Protocol
 
 ## Offline protocol [GET /protocol/offline{?query}]
@@ -395,6 +363,38 @@ HOST: https://api.mis.tot.co.th/mis
 + Request (application/json)
 
     + Attributes (SendCenter , fixed-type)
+
+# Group OIS ปฏิบัติการ
+
+  HOST และ link จะเป็นของทาง OIS
+
+  ทาง OIS จะต้องเป็นผู้พัฒนาให้ ใช้ Token ที่ได้มาจาก auth service เลย
+
+  https://api.ois.tot.co.th/ois/report/{eventPatientId}
+
+## อัพเดทสถานะผู้ป่วย [PUT /ois/victim/{eventPatientId}]
+
+  อัพเดทสถานะผู้ป่วย เขียน เหลือง แดง
+
++ Parameters
+    + eventPatientId: `2222` (number, required)
+      ``รหัสรายละเอียดผู้ประสบเหตุ``
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer {token}
+
+    + Attributes (VictimStatus , fixed-type)
+
++ Response 200 (application/json)
+
+    + Attributes (VictimStatus , fixed-type)
+
++ Response 404 (application/json)
+
+    + Attributes (NotFound , fixed-type)
 
 # Group OIS จัดการเวร
 
@@ -1025,7 +1025,7 @@ HOST: https://api.mis.tot.co.th/mis
 
 # TelemedLink (object)
 + type: `TelemedLink` (string, fixed, required) - ค่าคงที่
-+ videoLink: `https://` (string) - ลิงค์วีดีโอ
++ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
 + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
 
