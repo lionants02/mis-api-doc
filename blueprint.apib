@@ -753,12 +753,13 @@ HOST: https://api.mis.tot.co.th/mis
 
 # TreatmentInformation (object)
 + type: `TreatmentInformation` (string, fixed, required) - ค่าคงที่
++ pattern (PatternProtocal)
 + createBy: `2323` (number,required) - สร้างโดยใคร
 + updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-+ pDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-+ pattern (PatternProtocal)
-+ doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
++ createDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
++ updateDescription: `ดูดีมีอาการดีขึ้น` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
++ doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
@@ -963,12 +964,13 @@ HOST: https://api.mis.tot.co.th/mis
 
 # TreatmentInformation (object)
 + type: `TreatmentInformation` (string, fixed, required) - ค่าคงที่
++ pattern (PatternProtocal)
 + createBy: `2323` (number,required) - สร้างโดยใคร
 + updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-+ pDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
-+ pattern (PatternProtocal)
-+ doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ null=ไม่ทราบ, true=ทำ, false=ไม่ได้ทำ
++ createDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
++ updateDescription: `ดูดีมีอาการดีขึ้น` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
++ doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
