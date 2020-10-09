@@ -741,6 +741,7 @@ HOST: https://gw.hii.in.th/mis
 # OfflineProtocal (object)
 + type: `OfflineProtocal` (string, fixed, required) - ค่าคงที่
 + offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
++ pageNumber: 10 (number) - เลขหน้า
 + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
 
 # Protocol (object)
@@ -775,10 +776,11 @@ HOST: https://gw.hii.in.th/mis
 + genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 + operationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
 + operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
++ tel: `0649899898` (string) - เบอร์โทรศัพท์
 
 # Speciallist
 + type: `Speciallist` (string, fixed, required) - ค่าคงที่
-+ id: `12346` (string, required) - เลขใบ ว.
++ id: `12346` (string, required) - เลขใบประกอบโรคศิลปะ ,เลขใบ ว.
 + nameTh: `สง กรานต์` (string) - ชือภาษาไทย
 + nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
 + officeID: `1010` (number) - หน่วยงานที่สังกัด
@@ -987,10 +989,11 @@ HOST: https://gw.hii.in.th/mis
 + genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 + operationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
 + operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
++ tel: `0649899898` (string) - เบอร์โทรศัพท์
 
 # Speciallist
 + type: `Speciallist` (string, fixed, required) - ค่าคงที่
-+ id: `12346` (string, required) - เลขใบ ว.
++ id: `12346` (string, required) - เลขใบประกอบโรคศิลปะ ,เลขใบ ว.
 + nameTh: `สง กรานต์` (string) - ชือภาษาไทย
 + nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
 + officeID: `1010` (number) - หน่วยงานที่สังกัด
