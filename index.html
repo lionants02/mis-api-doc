@@ -2100,7 +2100,7 @@
       </span>}</span>,
       "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลขใบ ว."</span>
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลขใบประกอบโรคศิลปะ ,เลขใบ ว."</span>
       </span>}</span>,
       "<span class="hljs-attribute">nameTh</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -2169,7 +2169,7 @@
     </span>}</span>,
     "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลขใบ ว."</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลขใบประกอบโรคศิลปะ ,เลขใบ ว."</span>
     </span>}</span>,
     "<span class="hljs-attribute">nameTh</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
@@ -2394,7 +2394,8 @@
     "<span class="hljs-attribute">familyName</span>": <span class="hljs-value"><span class="hljs-string">"แสนซน"</span></span>,
     "<span class="hljs-attribute">genderCode</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">operationStatusCode</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-    "<span class="hljs-attribute">operationTypeCode</span>": <span class="hljs-value"><span class="hljs-string">"10"</span>
+    "<span class="hljs-attribute">operationTypeCode</span>": <span class="hljs-value"><span class="hljs-string">"10"</span></span>,
+    "<span class="hljs-attribute">tel</span>": <span class="hljs-value"><span class="hljs-string">"0649899898"</span>
   </span>}
 ]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -2444,6 +2445,10 @@
       "<span class="hljs-attribute">operationTypeCode</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">tel</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+        "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เบอร์โทรศัพท์"</span>
       </span>}
     </span>}</span>,
     "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -2755,6 +2760,7 @@
 <span class="hljs-header"># OfflineProtocal (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`OfflineProtocal`</span> (string, fixed, required) - ค่าคงที่
 <span class="hljs-bullet">+ </span>offlinePotocalName: <span class="hljs-code">`example`</span> (string, required) - ชื่อแนวทางการปฏิบัติงาน
+<span class="hljs-bullet">+ </span>pageNumber: 10 (number) - เลขหน้า
 <span class="hljs-bullet">+ </span>AttechFile: <span class="hljs-code">`https://mis.tot.co.th/doc/offline/xxx.pdf`</span> (string, required) - เอกสารแนวทางปฏิบัติงาน
 
 <span class="hljs-header"># Protocol (object)</span>
@@ -2789,10 +2795,11 @@
 <span class="hljs-bullet">+ </span>genderCode: <span class="hljs-code">`1`</span> (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 <span class="hljs-bullet">+ </span>operationStatusCode: <span class="hljs-code">`1`</span> (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
 <span class="hljs-bullet">+ </span>operationTypeCode: <span class="hljs-code">`10`</span> (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
+<span class="hljs-bullet">+ </span>tel: <span class="hljs-code">`0649899898`</span> (string) - เบอร์โทรศัพท์
 
 <span class="hljs-header"># Speciallist</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`Speciallist`</span> (string, fixed, required) - ค่าคงที่
-<span class="hljs-bullet">+ </span>id: <span class="hljs-code">`12346`</span> (string, required) - เลขใบ ว.
+<span class="hljs-bullet">+ </span>id: <span class="hljs-code">`12346`</span> (string, required) - เลขใบประกอบโรคศิลปะ ,เลขใบ ว.
 <span class="hljs-bullet">+ </span>nameTh: <span class="hljs-code">`สง กรานต์`</span> (string) - ชือภาษาไทย
 <span class="hljs-bullet">+ </span>nameEn: <span class="hljs-code">`Song Kran`</span> (string) - ชื่อภาษาอังกฤษ
 <span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`1010`</span> (number) - หน่วยงานที่สังกัด
@@ -2880,7 +2887,7 @@
 
 <span class="hljs-header"># NotFound (object)</span>
 <span class="hljs-bullet">+ </span>message: <span class="hljs-code">`ไม่พบข้อมูลตามที่ระบุใน Link`</span> (string)</code></pre>
-</section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 08 Oct 2020</p><script>/* eslint-env browser */
+</section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 09 Oct 2020</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
