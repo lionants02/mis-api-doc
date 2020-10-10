@@ -661,7 +661,7 @@ HOST: https://gw.hii.in.th/mis
 
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
-+ officeID: `1010` (number, required) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
++ officeID: `1010` (array[number], required,fixed-type) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 + vehicleId: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
 + operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
@@ -711,7 +711,11 @@ HOST: https://gw.hii.in.th/mis
 + recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
 + recentHospName (string) - ชื่อโรงพยาบาลที่รักษาล่าสุด
 + bloodGroup: `AB` (string) - หมู่เลือด
-+ bloodGroupAH: `AB` (string) - หมู่เลือด RH
++ bloodGroupAH (BloodRH) - หมู่เลือด RH
+
+# BloodRH (enum)
++ NEGATIVE
++ POSITIVE
 
 # Drugallergy
 + type: `Drugallergy` (string, fixed, required) - ค่าคงที่
@@ -783,7 +787,7 @@ HOST: https://gw.hii.in.th/mis
 + id: `12346` (string, required) - เลขใบประกอบโรคศิลปะ ,เลขใบ ว.
 + nameTh: `สง กรานต์` (string) - ชือภาษาไทย
 + nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
-+ officeID: `1010` (number) - หน่วยงานที่สังกัด
++ officeID: `1010` (array[number]) - หน่วยงานที่สังกัด
 + genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 + tel: `0649999998` (string) - เบอร์โทรศัพท์
 + knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
