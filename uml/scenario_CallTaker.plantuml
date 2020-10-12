@@ -17,6 +17,6 @@ Title __CallTaker__
   User ---> CallTaker : แจ้งเหตุ
   CallTaker -left-> MISLogin
   CallTaker ---> AssignAmbulance : เปิดปฏิบัติการ\nสั่งพาหนะ
-  CallTaker ----> Coordinator : แดง
-  CallTaker ----> Dispatcher : เหลือง\nเขียว
+  CallTaker ----> Coordinator : เหลือง\nเขียว
+  CallTaker ----> Dispatcher : แดง
 @enduml
