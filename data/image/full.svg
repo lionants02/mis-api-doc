@@ -1,264 +1,264 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1516px" preserveAspectRatio="none" style="width:2728px;height:1516px;" version="1.1" viewBox="0 0 2728 1516" width="2728px" zoomAndPan="magnify">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1516px" preserveAspectRatio="none" style="width:2692px;height:1516px;" version="1.1" viewBox="0 0 2692 1516" width="2692px" zoomAndPan="magnify">
     <defs>
-        <filter height="300%" id="f15g7zvqi3z30t" width="300%" x="-1" y="-1">
+        <filter height="300%" id="f71x0h3vmt3l" width="300%" x="-1" y="-1">
             <feGaussianBlur result="blurOut" stdDeviation="2.0" />
             <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
             <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
             <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
         </filter>
     </defs>
-    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="75" x="1329.5" y="18.6855">Use case</text>
-        <rect fill="#FFFFFF" filter="url(#f15g7zvqi3z30t)" height="215" style="stroke: #000000; stroke-width: 1.5;" width="128" x="868" y="903.6406" />
-        <rect fill="#FFFFFF" filter="url(#f15g7zvqi3z30t)" height="238" style="stroke: #000000; stroke-width: 1.5;" width="282" x="584" y="1151.6406" />
-        <rect fill="#FFFFFF" filter="url(#f15g7zvqi3z30t)" height="276" style="stroke: #000000; stroke-width: 1.5;" width="221" x="1117" y="46.6406" />
-        <rect fill="#FFFFFF" filter="url(#f15g7zvqi3z30t)" height="276" style="stroke: #000000; stroke-width: 1.5;" width="124" x="550" y="479.6406" />
-        <rect fill="#FFFFFF" filter="url(#f15g7zvqi3z30t)" height="310.5" style="stroke: #000000; stroke-width: 1.5;" width="248" x="1504" y="797.1406" />
-        <rect fill="#FFFFFF" filter="url(#f15g7zvqi3z30t)" height="365" style="stroke: #000000; stroke-width: 1.5;" width="217" x="2252" y="505.6406" />
+    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="75" x="1311.5" y="18.6855">Use case</text>
+        <rect fill="#FFFFFF" filter="url(#f71x0h3vmt3l)" height="215" style="stroke: #000000; stroke-width: 1.5;" width="128" x="903" y="903.6406" />
+        <rect fill="#FFFFFF" filter="url(#f71x0h3vmt3l)" height="238" style="stroke: #000000; stroke-width: 1.5;" width="282" x="466" y="1151.6406" />
+        <rect fill="#FFFFFF" filter="url(#f71x0h3vmt3l)" height="276" style="stroke: #000000; stroke-width: 1.5;" width="221" x="1305" y="46.6406" />
+        <rect fill="#FFFFFF" filter="url(#f71x0h3vmt3l)" height="276" style="stroke: #000000; stroke-width: 1.5;" width="124" x="572" y="479.6406" />
+        <rect fill="#FFFFFF" filter="url(#f71x0h3vmt3l)" height="310.5" style="stroke: #000000; stroke-width: 1.5;" width="248" x="1747" y="797.1406" />
+        <rect fill="#FFFFFF" filter="url(#f71x0h3vmt3l)" height="365" style="stroke: #000000; stroke-width: 1.5;" width="217" x="2284" y="505.6406" />
         <!--MD5=[917b4abc6a241353bf80a0ce7e5ed3ff]
 cluster OIS-->
-        <polygon fill="#FFFFFF" filter="url(#f15g7zvqi3z30t)" points="1776,1284.6406,1806,1284.6406,1813,1308.25,2367,1308.25,2367,1504.6406,1776,1504.6406,1776,1284.6406" style="stroke: #000000; stroke-width: 1.5;" />
-        <line style="stroke: #000000; stroke-width: 1.5;" x1="1776" x2="1813" y1="1308.25" y2="1308.25" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="24" x="1780" y="1301.1738">OIS</text>
-        <ellipse cx="932.0733" cy="945.3916" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="47.5733" ry="25.7509" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="914.0733" y="938.6876">Grant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="69" x="897.5733" y="956.297">Permission</text>
-        <ellipse cx="920.1666" cy="1076.3739" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="32.6666" ry="26.7333" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="898.6666" y="1074.13">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="902.1666" y="1091.7394">Grant</text>
-        <ellipse cx="636.9159" cy="1194.1779" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="611.9159" y="1192.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="618.4159" y="1210.2789">Room</text>
-        <ellipse cx="632.0952" cy="1347.0168" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="31.5952" ry="25.8761" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="614.0952" y="1343.3509">Close</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="613.5952" y="1360.9603">Room</text>
-        <ellipse cx="779.146" cy="1193.9061" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="70.646" ry="25.2655" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="762.646" y="1186.4225">Invite</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="725.646" y="1204.0319">to Meeting Room</text>
-        <ellipse cx="742.7647" cy="1347.0524" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="32.2647" ry="26.4118" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="721.2647" y="1345.2787">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="726.2647" y="1362.8881">Invite</text>
+        <polygon fill="#FFFFFF" filter="url(#f71x0h3vmt3l)" points="1501,1284.6406,1531,1284.6406,1538,1308.25,2092,1308.25,2092,1504.6406,1501,1504.6406,1501,1284.6406" style="stroke: #000000; stroke-width: 1.5;" />
+        <line style="stroke: #000000; stroke-width: 1.5;" x1="1501" x2="1538" y1="1308.25" y2="1308.25" /><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="24" x="1505" y="1301.1738">OIS</text>
+        <ellipse cx="967.0733" cy="945.3916" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="47.5733" ry="25.7509" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="949.0733" y="938.6876">Grant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="69" x="932.5733" y="956.297">Permission</text>
+        <ellipse cx="954.1666" cy="1076.3739" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="32.6666" ry="26.7333" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="932.6666" y="1074.13">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="936.1666" y="1091.7394">Grant</text>
+        <ellipse cx="518.9159" cy="1194.1779" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="493.9159" y="1192.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="500.4159" y="1210.2789">Room</text>
+        <ellipse cx="514.0952" cy="1347.0168" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="31.5952" ry="25.8761" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="496.0952" y="1343.3509">Close</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="495.5952" y="1360.9603">Room</text>
+        <ellipse cx="661.146" cy="1193.9061" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="70.646" ry="25.2655" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="644.646" y="1186.4225">Invite</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="607.646" y="1204.0319">to Meeting Room</text>
+        <ellipse cx="624.7647" cy="1347.0524" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="32.2647" ry="26.4118" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="603.2647" y="1345.2787">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="608.2647" y="1362.8881">Invite</text>
         <!--MD5=[1dcae5ec17ace9dcc055d87e1424e99f]
 entity Supervisor-->
-        <ellipse cx="1179" cy="72.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M1179,80.1406 L1179,107.1406 M1166,88.1406 L1192,88.1406 M1179,107.1406 L1166,122.1406 M1179,107.1406 L1192,122.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="1145" y="142.1738">Supervisor</text>
+        <ellipse cx="1367" cy="72.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M1367,80.1406 L1367,107.1406 M1354,88.1406 L1380,88.1406 M1367,107.1406 L1354,122.1406 M1367,107.1406 L1380,122.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="1333" y="142.1738">Supervisor</text>
         <!--MD5=[dfd4219ae26b16e6e974a23a737c25b1]
 entity Coordinator-->
-        <ellipse cx="1284" cy="233.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M1284,241.1406 L1284,268.1406 M1271,249.1406 L1297,249.1406 M1284,268.1406 L1271,283.1406 M1284,268.1406 L1297,283.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="1246.5" y="303.1738">Coordinator</text>
+        <ellipse cx="1359" cy="233.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M1359,241.1406 L1359,268.1406 M1346,249.1406 L1372,249.1406 M1359,268.1406 L1346,283.1406 M1359,268.1406 L1372,283.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="1321.5" y="303.1738">Coordinator</text>
         <!--MD5=[8438b603195005c18d5011c1879083f4]
 entity Dispatcher-->
-        <ellipse cx="1167" cy="233.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M1167,241.1406 L1167,268.1406 M1154,249.1406 L1180,249.1406 M1167,268.1406 L1154,283.1406 M1167,268.1406 L1180,283.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="1133" y="303.1738">Dispatcher</text>
+        <ellipse cx="1466" cy="233.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M1466,241.1406 L1466,268.1406 M1453,249.1406 L1479,249.1406 M1466,268.1406 L1453,283.1406 M1466,268.1406 L1479,283.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="1432" y="303.1738">Dispatcher</text>
         <!--MD5=[8c69140241d2a8b22aee4c2edeaeb65f]
 entity CallTaker-->
-        <ellipse cx="1291" cy="72.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M1291,80.1406 L1291,107.1406 M1278,88.1406 L1304,88.1406 M1291,107.1406 L1278,122.1406 M1291,107.1406 L1304,122.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="1260.5" y="142.1738">CallTaker</text>
+        <ellipse cx="1479" cy="72.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M1479,80.1406 L1479,107.1406 M1466,88.1406 L1492,88.1406 M1479,107.1406 L1466,122.1406 M1479,107.1406 L1492,122.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="1448.5" y="142.1738">CallTaker</text>
         <!--MD5=[1263a788717e7841c6c3a70e1586692b]
 entity Specialist-->
-        <ellipse cx="597" cy="505.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M597,513.1406 L597,540.1406 M584,521.1406 L610,521.1406 M597,540.1406 L584,555.1406 M597,540.1406 L610,555.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="60" x="567" y="575.1738">Specialist</text>
+        <ellipse cx="622" cy="505.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M622,513.1406 L622,540.1406 M609,521.1406 L635,521.1406 M622,540.1406 L609,555.1406 M622,540.1406 L635,555.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="60" x="592" y="575.1738">Specialist</text>
         <!--MD5=[5feeba211306dae78a9255b1c0e912c7]
 entity ER-->
-        <ellipse cx="606" cy="666.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M606,674.1406 L606,701.1406 M593,682.1406 L619,682.1406 M606,701.1406 L593,716.1406 M606,701.1406 L619,716.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="19" x="596.5" y="736.1738">ER</text>
-        <ellipse cx="1567.7696" cy="828.5923" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="1541.7696" y="833.897">Protocol</text>
-        <ellipse cx="1568.0477" cy="945.5923" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="47.5477" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="63" x="1536.5477" y="950.897">Operation</text>
-        <ellipse cx="1693.098" cy="945.5923" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="42.598" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="1665.098" y="950.897">Medicine</text>
-        <ellipse cx="1690.1335" cy="1076.0923" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="46.1335" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="1659.6335" y="1081.397">Check list</text>
-        <ellipse cx="2333.8909" cy="537.0923" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="41.8909" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="55" x="2306.3909" y="542.397">Telemed</text>
-        <ellipse cx="2298.0946" cy="698.3163" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="30.0946" ry="24.6756" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="26" x="2285.0946" y="693.4079">Live</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="2280.0946" y="711.0173">Video</text>
-        <ellipse cx="2408.2193" cy="698.0923" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="44.7193" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="2378.7193" y="703.397">Vital Sign</text>
-        <ellipse cx="2351.0471" cy="828.7589" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="64.0471" ry="26.1183" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="2304.5471" y="827.8895">Switch Partient</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="2321.5471" y="845.4988">Vital Sign</text>
-        <ellipse cx="2155.9402" cy="1347.1504" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="62.4402" ry="25.5098" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="2109.4402" y="1347.2384">Update Patiant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="2135.9402" y="1364.8477">Status</text>
-        <ellipse cx="1850.9249" cy="1347.3708" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="58.9249" ry="26.7302" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="1809.4249" y="1345.5732">ER/Specialist</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="1818.4249" y="1363.1826">Infomation</text>
-        <ellipse cx="2002.2401" cy="1347.0923" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="56.7401" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="1964.2401" y="1352.397">check in/out</text>
-        <ellipse cx="2302.2095" cy="1347.1382" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="48.7095" ry="25.9976" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="2281.2095" y="1340.8207">Assign</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="2267.2095" y="1358.4301">Ambulance</text>
-        <ellipse cx="2302.0217" cy="1462.5437" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="48.5217" ry="25.9031" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="2282.0217" y="1456.0789">Switch</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="2267.0217" y="1473.6883">Ambulance</text>
-        <ellipse cx="1175.1021" cy="1346.9223" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="1163.6021" y="1341.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="1157.6021" y="1359.4507">Login</text>
+        <ellipse cx="623" cy="666.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M623,674.1406 L623,701.1406 M610,682.1406 L636,682.1406 M623,701.1406 L610,716.1406 M623,701.1406 L636,716.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="19" x="613.5" y="736.1738">ER</text>
+        <ellipse cx="1804.7696" cy="828.5923" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="1778.7696" y="833.897">Protocol</text>
+        <ellipse cx="1811.0477" cy="945.5923" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="47.5477" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="63" x="1779.5477" y="950.897">Operation</text>
+        <ellipse cx="1936.098" cy="945.5923" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="42.598" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="1908.098" y="950.897">Medicine</text>
+        <ellipse cx="1933.1335" cy="1076.0923" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="46.1335" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="1902.6335" y="1081.397">Check list</text>
+        <ellipse cx="2365.8909" cy="537.0923" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="41.8909" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="55" x="2338.3909" y="542.397">Telemed</text>
+        <ellipse cx="2330.0946" cy="698.3163" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="30.0946" ry="24.6756" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="26" x="2317.0946" y="693.4079">Live</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="2312.0946" y="711.0173">Video</text>
+        <ellipse cx="2440.2193" cy="698.0923" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="44.7193" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="2410.7193" y="703.397">Vital Sign</text>
+        <ellipse cx="2383.0471" cy="828.7589" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="64.0471" ry="26.1183" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="2336.5471" y="827.8895">Switch Partient</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="2353.5471" y="845.4988">Vital Sign</text>
+        <ellipse cx="1880.9402" cy="1347.1504" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="62.4402" ry="25.5098" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="1834.4402" y="1347.2384">Update Patiant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="1860.9402" y="1364.8477">Status</text>
+        <ellipse cx="1575.9249" cy="1347.3708" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="58.9249" ry="26.7302" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="1534.4249" y="1345.5732">ER/Specialist</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="65" x="1543.4249" y="1363.1826">Infomation</text>
+        <ellipse cx="1727.2401" cy="1347.0923" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="56.7401" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="1689.2401" y="1352.397">check in/out</text>
+        <ellipse cx="2027.2095" cy="1347.1382" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="48.7095" ry="25.9976" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="2006.2095" y="1340.8207">Assign</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="1992.2095" y="1358.4301">Ambulance</text>
+        <ellipse cx="2027.0217" cy="1462.5437" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="48.5217" ry="25.9031" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="2007.0217" y="1456.0789">Switch</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="1992.0217" y="1473.6883">Ambulance</text>
+        <ellipse cx="1210.1021" cy="1346.9223" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="1198.6021" y="1341.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="1192.6021" y="1359.4507">Login</text>
         <!--MD5=[6e645fe6a8da04c80cb1105d6cd79d8d]
 entity Paramedic-->
-        <ellipse cx="1931" cy="233.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M1931,241.1406 L1931,268.1406 M1918,249.1406 L1944,249.1406 M1931,268.1406 L1918,283.1406 M1931,268.1406 L1944,283.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="1897.5" y="303.1738">Paramedic</text>
+        <ellipse cx="2034" cy="233.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M2034,241.1406 L2034,268.1406 M2021,249.1406 L2047,249.1406 M2034,268.1406 L2021,283.1406 M2034,268.1406 L2047,283.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="2000.5" y="303.1738">Paramedic</text>
         <!--MD5=[e291d5aa2260f5663058080aae2b1552]
 entity MD-->
-        <ellipse cx="1080" cy="666.1406" fill="#FEFECE" filter="url(#f15g7zvqi3z30t)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M1080,674.1406 L1080,701.1406 M1067,682.1406 L1093,682.1406 M1080,701.1406 L1067,716.1406 M1080,701.1406 L1093,716.1406 " fill="none" filter="url(#f15g7zvqi3z30t)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="1029" y="736.1738">Medical Director</text>
-        <!--MD5=[99518f066654ff0ca3f3d2798510fa93]
-link AssignAmbulance to SwitchAmbulance-->
-        <path d="M2302,1373.3296 C2302,1390.3756 2302,1412.9906 2302,1431.0684 " fill="none" id="AssignAmbulance-&gt;SwitchAmbulance" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="2302,1436.5217,2306,1427.5217,2302,1431.5217,2298,1427.5217,2302,1436.5217" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[db48ff97b14e708f2e4a45b62773f7c1]
-link MeetingRoom to CloseRoom-->
-        <path d="M636.152,1220.7556 C635.227,1248.6906 633.756,1293.1186 632.836,1320.9036 " fill="none" id="MeetingRoom-CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[ee56ebc6e29b0d20aa9220c2d9d56048]
-link Protocol to Ops-->
-        <path d="M1568,844.2056 C1568,864.5726 1568,901.6376 1568,924.5966 " fill="none" id="Protocol-&gt;Ops" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="1568,929.8306,1572,920.8306,1568,924.8306,1564,920.8306,1568,929.8306" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[ec52306c40759acdcc016fdf461aa808]
-link Protocol to Med-->
-        <path d="M1582.83,843.2846 C1605.67,864.2926 1649.4,904.5326 1674.35,927.4846 " fill="none" id="Protocol-&gt;Med" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="1678.19,931.0146,1674.275,921.9773,1674.5104,927.6293,1668.8584,927.8647,1678.19,931.0146" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[36e00adda9d547800407b763e370433a]
-link Med to Check-->
-        <path d="M1692.66,961.3816 C1692.12,984.5226 1691.07,1029.4056 1690.46,1055.3396 " fill="none" id="Med-&gt;Check" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="1690.34,1060.5716,1694.5497,1051.6678,1690.4571,1055.573,1686.5519,1051.4804,1690.34,1060.5716" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[a9f7e0fd730e41fef76a67da7aff6299]
-link InviteToMeetingRoom to ReciveInvite-->
-        <path d="M773.136,1219.7376 C766.871,1246.0146 756.935,1287.6886 750.2,1315.9396 " fill="none" id="InviteToMeetingRoom-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="748.982,1321.0506,754.9606,1313.224,750.1418,1316.187,747.1788,1311.3682,748.982,1321.0506" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="767" y="1265.1357">&lt;extend&gt;</text>
+        <ellipse cx="1175" cy="666.1406" fill="#FEFECE" filter="url(#f71x0h3vmt3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M1175,674.1406 L1175,701.1406 M1162,682.1406 L1188,682.1406 M1175,701.1406 L1162,716.1406 M1175,701.1406 L1188,716.1406 " fill="none" filter="url(#f71x0h3vmt3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="1124" y="736.1738">Medical Director</text>
         <!--MD5=[6dcdfc8bbecb2f2054cce8805f035df2]
 link GrantPermission to ReciveGrant-->
-        <path d="M929.658,971.7216 C927.713,992.5476 924.939,1022.2536 922.862,1044.4886 " fill="none" id="GrantPermission-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="922.377,1049.6836,927.1954,1041.0939,922.8413,1044.7052,919.23,1040.3511,922.377,1049.6836" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="928" y="1016.1357">&lt;extend&gt;</text>
-        <!--MD5=[5a09b9336d7b1badde5bdbdc57b8158a]
-link Telemed to LiveVideo-->
-        <path d="M2330.68,552.8136 C2324.41,580.4906 2310.8,640.5996 2303.27,673.8506 " fill="none" id="Telemed-LiveVideo" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[09b560ea3da9a45eb59e7572d275dd60]
-link Telemed to VitalSign-->
-        <path d="M2340.7,552.5316 C2354.72,582.6506 2387.01,652.0486 2401.16,682.4376 " fill="none" id="Telemed-VitalSign" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[3b1dadcd7a9044100001f6b44cb0e8a9]
-link VitalSign to SwitchVS-->
-        <path d="M2401.46,713.8816 C2391.81,735.6356 2373.64,776.6056 2361.94,802.9836 " fill="none" id="VitalSign-SwitchVS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M964.463,971.7216 C962.356,992.5476 959.35,1022.2536 957.101,1044.4886 " fill="none" id="GrantPermission-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="956.575,1049.6836,961.4624,1041.133,957.0793,1044.7091,953.5032,1040.3261,956.575,1049.6836" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="963" y="1016.1357">&lt;extend&gt;</text>
+        <!--MD5=[db48ff97b14e708f2e4a45b62773f7c1]
+link MeetingRoom to CloseRoom-->
+        <path d="M518.152,1220.7556 C517.227,1248.6906 515.756,1293.1186 514.836,1320.9036 " fill="none" id="MeetingRoom-CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[a9f7e0fd730e41fef76a67da7aff6299]
+link InviteToMeetingRoom to ReciveInvite-->
+        <path d="M655.136,1219.7376 C648.871,1246.0146 638.935,1287.6886 632.2,1315.9396 " fill="none" id="InviteToMeetingRoom-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="630.982,1321.0506,636.9606,1313.224,632.1418,1316.187,629.1788,1311.3682,630.982,1321.0506" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="649" y="1265.1357">&lt;extend&gt;</text>
         <!--MD5=[39319b6c2da00a2fafb91dc5fb043224]
 link Supervisor to Coordinator-->
-        <path d="M1206.14,145.7406 C1212.66,155.5206 1219.59,165.9506 1226,175.6406 C1235.36,189.8106 1245.53,205.2806 1254.69,219.2706 " fill="none" id="Supervisor-&gt;Coordinator" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="1257.5,223.5606,1255.9128,213.8405,1254.7595,219.3785,1249.2215,218.2253,1257.5,223.5606" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="1239" y="190.1357">&lt;extend&gt;</text>
+        <path d="M1357.49,145.9406 C1355.62,155.6206 1353.95,165.9506 1353,175.6406 C1351.63,189.5606 1351.99,204.7506 1353.02,218.5506 " fill="none" id="Supervisor-&gt;Coordinator" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1353.43,223.5606,1356.6974,214.2696,1353.0301,218.5766,1348.7231,214.9093,1353.43,223.5606" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="1354" y="190.1357">&lt;extend&gt;</text>
         <!--MD5=[13e720b8bf22dd82b53d29d00be24dcb]
 link Supervisor to Dispatcher-->
-        <path d="M1169.49,145.9406 C1167.62,155.6206 1165.95,165.9506 1165,175.6406 C1163.63,189.5306 1163.49,204.7106 1163.87,218.5106 " fill="none" id="Supervisor-&gt;Dispatcher" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="1164.03,223.5306,1167.7453,214.4094,1163.8729,218.5331,1159.7493,214.6607,1164.03,223.5306" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="1166" y="190.1357">&lt;extend&gt;</text>
-        <!--MD5=[52f941608d78ca7abe17a1f85c0cfd28]
-link CallTaker to UpdatePatiantStatus-->
-        <path d="M1321.76,105.6206 C1516.88,109.0706 2574,133.7506 2574,264.1406 C2574,264.1406 2574,264.1406 2574,1195.1406 C2574,1349.6686 2373.35,1205.8396 2236,1276.6406 C2215.2,1287.3646 2195.31,1304.5936 2180.57,1319.2136 " fill="none" id="CallTaker-&gt;UpdatePatiantStatus" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="2176.94,1322.8696,2186.1238,1319.3118,2180.4669,1319.3255,2180.4532,1313.6687,2176.94,1322.8696" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[15f037edf9b9eb830d5ca8d6cf4e2d6b]
-link CallTaker to AssignAmbulance-->
-        <path d="M1321.5,105.4206 C1522.16,107.6306 2645,126.2006 2645,264.1406 C2645,264.1406 2645,264.1406 2645,1195.1406 C2645,1319.9446 2452.43,1342.4966 2355.87,1345.9596 " fill="none" id="CallTaker-&gt;AssignAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="2350.78,1346.1276,2359.9013,1349.8428,2355.7775,1345.9705,2359.6498,1341.8467,2350.78,1346.1276" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[aab6c96682c91123151a9eb54bdbc358]
-link Coordinator to ERSpecialistInfomation-->
-        <path d="M1321.89,272.3806 C1371.17,282.9006 1451,309.2706 1451,369.6406 C1451,369.6406 1451,369.6406 1451,463.6406 C1451,518.5206 1461.46,535.9866 1496,578.6406 C1594.13,699.8266 1789,615.7056 1789,771.6406 C1789,771.6406 1789,771.6406 1789,1195.1406 C1789,1240.3326 1813.06,1287.8156 1831.2,1317.1986 " fill="none" id="Coordinator-&gt;ERSpecialistInfomation" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1834.06,1321.7566,1832.6755,1312.0056,1831.4072,1317.5184,1825.8943,1316.2501,1834.06,1321.7566" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[5272508c55a89d82b7957e283d2e681d]
-link Coordinator to MeetingRoom-->
-        <path d="M1290.24,306.9506 C1293.5,343.7406 1292.1,397.3306 1264,432.6406 C1238.7,464.4306 1217.98,456.3906 1178,463.6406 C1143.67,469.8606 582.292,458.4206 550,471.6406 C440.034,516.6506 409.016,549.8106 357,656.6406 C312.027,749.0056 334,783.9086 334,886.6406 C334,886.6406 334,886.6406 334,1077.1406 C334,1132.6716 513.741,1171.4746 596.351,1186.3766 " fill="none" id="Coordinator-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="601.649,1187.3226,593.4936,1181.8009,596.7271,1186.4425,592.0854,1189.676,601.649,1187.3226" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="358" y="703.6357">Case G, Y</text>
-        <!--MD5=[5dd848c4d1376950c73c8212584afbee]
-link Coordinator to checkIn-->
-        <path d="M1321.71,266.1106 C1388.82,268.2406 1522,283.3606 1522,369.6406 C1522,369.6406 1522,369.6406 1522,463.6406 C1522,717.1156 2002,518.1606 2002,771.6406 C2002,771.6406 2002,771.6406 2002,1195.1406 C2002,1242.2776 2002,1297.6926 2002,1326.5016 " fill="none" id="Coordinator-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="2002,1331.5636,2006,1322.5636,2002,1326.5636,1998,1322.5636,2002,1331.5636" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[85b3fa37b778af4b3b31d3bd47d0066b]
-link Coordinator to Protocol-->
-        <path d="M1321.67,287.0406 C1348.56,305.0306 1380,333.7406 1380,369.6406 C1380,369.6406 1380,369.6406 1380,618.6406 C1380,713.1526 1487.58,784.2726 1539.98,813.3076 " fill="none" id="Coordinator-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1544.57,815.8206,1538.6147,807.9763,1540.1898,813.4094,1534.7567,814.9845,1544.57,815.8206" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[c026ff61d247cbc55291a5cf11e85969]
-link Coordinator to CloseRoom-->
-        <path d="M1260.26,306.7006 C1238.87,338.9506 1204.17,381.8306 1161,401.6406 C1005.242,473.1106 531.838,371.1806 393,471.6406 C275.274,556.8276 263,626.3266 263,771.6406 C263,771.6406 263,771.6406 263,1195.1406 C263,1266.7266 503.887,1321.2086 596.404,1339.4936 " fill="none" id="Coordinator-&gt;CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="601.489,1340.4916,593.4279,1334.8331,596.5826,1339.5286,591.8871,1342.6834,601.489,1340.4916" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[8c5db0d512f3aa2c073f6944be752e25]
-link Dispatcher to ERSpecialistInfomation-->
-        <path d="M1173.39,306.6706 C1178.15,327.3006 1186.29,351.9106 1200,370.6406 C1295,500.3706 1358.93,494.5906 1496,578.6406 C1652.1,674.3556 1860,588.5286 1860,771.6406 C1860,771.6406 1860,771.6406 1860,1135.6406 C1860,1199.6586 1855.79,1274.5276 1853.13,1315.4906 " fill="none" id="Dispatcher-&gt;ERSpecialistInfomation" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1852.8,1320.5576,1857.3807,1311.8388,1853.1274,1315.5684,1849.3979,1311.315,1852.8,1320.5576" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[c77f09a8438623b12595c1375f2cecfd]
-link Dispatcher to MeetingRoom-->
-        <path d="M1132.82,265.7706 C949.79,264.2106 94,262.6706 94,369.6406 C94,369.6406 94,369.6406 94,1077.1406 C94,1179.4706 467.464,1191.8536 594.947,1193.0996 " fill="none" id="Dispatcher-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="600.104,1193.1446,591.1398,1189.0651,595.1042,1193.1003,591.0689,1197.0648,600.104,1193.1446" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="95" y="703.6357">Case R</text>
-        <!--MD5=[2f0a8cba5a91d61a262041846568aa2e]
-link Dispatcher to checkIn-->
-        <path d="M1144.88,306.7006 C1140.03,316.8906 1135.36,327.9706 1132,338.6406 C1099.89,440.7106 1113.96,478.2606 1151,578.6406 C1163.54,612.6156 1475.61,1104.1616 1504,1126.6406 C1660.39,1250.4556 1756.33,1173.3906 1927,1276.6406 C1950.1,1290.6176 1972.23,1312.5216 1986.38,1327.9986 " fill="none" id="Dispatcher-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1989.81,1331.7856,1986.7306,1322.4305,1986.4526,1328.0806,1980.8025,1327.8025,1989.81,1331.7856" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[9304e6ed7e600334f48bb49f62366d05]
-link Dispatcher to InviteToMeetingRoom-->
-        <path d="M1132.87,266.1006 C960.303,266.3606 192,272.9306 192,369.6406 C192,369.6406 192,369.6406 192,1011.6406 C192,1241.0466 478.43,1057.3796 691,1143.6406 C707.928,1150.5096 725.657,1159.9896 740.73,1168.8166 " fill="none" id="Dispatcher-&gt;InviteToMeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="745.319,1171.5316,739.6099,1163.5063,741.0157,1168.9857,735.5364,1170.3915,745.319,1171.5316" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[1568eda5cc0f546f11e3f02df203e82d]
-link Dispatcher to Protocol-->
-        <path d="M1149.45,306.6806 C1137.14,341.1506 1125.41,391.4606 1141,432.6406 C1216.27,631.5056 1456.58,770.4536 1539.53,813.5176 " fill="none" id="Dispatcher-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1544.29,815.9766,1538.1169,808.3024,1539.8439,813.6892,1534.4571,815.4162,1544.29,815.9766" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[60805e60125b7e4d340108d194850b16]
-link Dispatcher to CloseRoom-->
-        <path d="M1132.88,267.3506 C941.111,274.3606 6,311.5206 6,369.6406 C6,369.6406 6,369.6406 6,1195.1406 C6,1317.2466 461.788,1340.9126 595.53,1345.2286 " fill="none" id="Dispatcher-&gt;CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="600.528,1345.3856,591.6582,1341.1047,595.5305,1345.2285,591.4067,1349.1008,600.528,1345.3856" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[a4bcead228a5ff90c13031c70d93dafd]
-link ER to ReciveInvite-->
-        <path d="M591.416,717.5126 C573.944,741.4196 547,785.1726 547,827.6406 C547,827.6406 547,827.6406 547,1195.1406 C547,1214.7476 566.469,1210.0976 583,1220.6406 C625.296,1247.6146 642.017,1245.0676 681,1276.6406 C696.6,1289.2756 711.652,1306.0026 723.018,1319.8796 " fill="none" id="ER-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="726.423,1324.0876,723.8707,1314.5752,723.2776,1320.2009,717.6519,1319.6078,726.423,1324.0876" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[57abf21f6cc8357b1216cd29ba3bc8dd]
-link ER to MISLogin-->
-        <path d="M620.683,714.2586 C635.052,728.4186 658.064,749.4666 681,763.6406 C810.127,843.4406 896.822,780.7256 996,895.6406 C1065.23,975.8586 1016.17,1028.0486 1055,1126.6406 C1084.06,1200.4196 1132.71,1280.6096 1158.22,1320.5376 " fill="none" id="ER-&gt;MISLogin" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1161.21,1325.2046,1159.7229,1315.4687,1158.5127,1320.9946,1152.9868,1319.7844,1161.21,1325.2046" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1394.73,145.8906 C1401.17,155.5706 1407.91,165.9206 1414,175.6406 C1422.67,189.4806 1431.8,204.7506 1439.94,218.6606 " fill="none" id="Supervisor-&gt;Dispatcher" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1442.66,223.3206,1441.5843,213.5307,1440.1424,219.0007,1434.6724,217.5588,1442.66,223.3206" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="1426" y="190.1357">&lt;extend&gt;</text>
         <!--MD5=[3cf2959151ffc682140aad190f327c71]
 link Specialist to ER-->
-        <path d="M599.294,578.6746 C600.548,600.8286 602.106,628.3466 603.404,651.2836 " fill="none" id="Specialist-&gt;ER" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="603.694,656.4046,607.1785,647.1928,603.4112,651.4126,599.1913,647.6453,603.694,656.4046" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="603" y="623.1357">&lt;extend&gt;</text>
+        <path d="M620.338,578.6736 C619.916,593.7356 619.667,610.9686 620,626.6406 C620.17,634.6536 620.45,643.1746 620.771,651.4216 " fill="none" id="Specialist-&gt;ER" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="620.976,656.5146,624.6128,647.3618,620.776,651.5186,616.6192,647.6818,620.976,656.5146" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="621" y="623.1357">&lt;extend&gt;</text>
+        <!--MD5=[ee56ebc6e29b0d20aa9220c2d9d56048]
+link Protocol to Ops-->
+        <path d="M1805.76,844.2056 C1806.82,864.5726 1808.76,901.6376 1809.95,924.5966 " fill="none" id="Protocol-&gt;Ops" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1810.23,929.8306,1813.7559,920.6345,1809.9696,924.8374,1805.7667,921.0512,1810.23,929.8306" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[ec52306c40759acdcc016fdf461aa808]
+link Protocol to Med-->
+        <path d="M1820.28,843.0576 C1844.12,863.9796 1890.12,904.3596 1916.37,927.4076 " fill="none" id="Protocol-&gt;Med" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1920.41,930.9526,1916.2684,922.0169,1916.6462,927.6611,1911.002,928.0389,1920.41,930.9526" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[36e00adda9d547800407b763e370433a]
+link Med to Check-->
+        <path d="M1935.66,961.3816 C1935.12,984.5226 1934.07,1029.4056 1933.46,1055.3396 " fill="none" id="Med-&gt;Check" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="1933.34,1060.5716,1937.5497,1051.6678,1933.4571,1055.573,1929.5519,1051.4804,1933.34,1060.5716" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5a09b9336d7b1badde5bdbdc57b8158a]
+link Telemed to LiveVideo-->
+        <path d="M2362.68,552.8136 C2356.41,580.4906 2342.8,640.5996 2335.27,673.8506 " fill="none" id="Telemed-LiveVideo" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[09b560ea3da9a45eb59e7572d275dd60]
+link Telemed to VitalSign-->
+        <path d="M2372.7,552.5316 C2386.72,582.6506 2419.01,652.0486 2433.16,682.4376 " fill="none" id="Telemed-VitalSign" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[3b1dadcd7a9044100001f6b44cb0e8a9]
+link VitalSign to SwitchVS-->
+        <path d="M2433.46,713.8816 C2423.81,735.6356 2405.64,776.6056 2393.94,802.9836 " fill="none" id="VitalSign-SwitchVS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[99518f066654ff0ca3f3d2798510fa93]
+link AssignAmbulance to SwitchAmbulance-->
+        <path d="M2027,1373.3296 C2027,1390.3756 2027,1412.9906 2027,1431.0684 " fill="none" id="AssignAmbulance-&gt;SwitchAmbulance" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="2027,1436.5217,2031,1427.5217,2027,1431.5217,2023,1427.5217,2027,1436.5217" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[52f941608d78ca7abe17a1f85c0cfd28]
+link CallTaker to UpdatePatiantStatus-->
+        <path d="M1509.52,106.1306 C1689.92,112.3706 2609,149.7906 2609,264.1406 C2609,264.1406 2609,264.1406 2609,1195.1406 C2609,1294.0536 2268.4,1258.5616 2170,1268.6406 C2146.88,1271.0086 1982.61,1268.0906 1961,1276.6406 C1938.61,1285.5016 1918.2,1303.4736 1903.6,1318.9216 " fill="none" id="CallTaker-&gt;UpdatePatiantStatus" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1900.01,1322.7876,1909.0676,1318.9197,1903.4144,1319.1257,1903.2085,1313.4726,1900.01,1322.7876" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[15f037edf9b9eb830d5ca8d6cf4e2d6b]
+link CallTaker to AssignAmbulance-->
+        <path d="M1509.72,104.9706 C1631.08,104.8006 2088.48,108.9006 2457,175.6406 C2561.92,194.6406 2680,157.5106 2680,264.1406 C2680,264.1406 2680,264.1406 2680,1135.6406 C2680,1178.3856 2669.19,1194.9856 2635,1220.6406 C2546.78,1286.8366 2211.02,1327.4026 2079.9,1341.0106 " fill="none" id="CallTaker-&gt;AssignAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="2074.57,1341.5606,2083.9337,1344.6136,2079.5435,1341.0463,2083.1108,1336.656,2074.57,1341.5606" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[aab6c96682c91123151a9eb54bdbc358]
+link Coordinator to ERSpecialistInfomation-->
+        <path d="M1321.36,299.0906 C1296.69,324.7106 1269.88,362.3906 1275,401.6406 C1296.51,566.6946 1317.13,606.1506 1371,763.6406 C1390.21,819.7966 1423,827.2896 1423,886.6406 C1423,886.6406 1423,886.6406 1423,1195.1406 C1423,1256.2986 1485.69,1301.0326 1530.82,1325.3096 " fill="none" id="Coordinator-&gt;ERSpecialistInfomation" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1535.4,1327.7386,1529.3224,1319.9886,1530.9826,1325.3964,1525.5748,1327.0565,1535.4,1327.7386" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5272508c55a89d82b7957e283d2e681d]
+link Coordinator to MeetingRoom-->
+        <path d="M1321.26,267.0906 C1126.32,272.1606 240.85,297.4006 201,338.6406 C78.8222,465.0706 150.573,999.4856 272,1126.6406 C300.191,1156.1616 415.262,1177.5756 477.9,1187.3036 " fill="none" id="Coordinator-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="483.056,1188.0966,474.7684,1182.7753,478.1141,1187.3368,473.5527,1190.6824,483.056,1188.0966" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="61" x="150" y="703.6357">Case G, Y</text>
+        <!--MD5=[5dd848c4d1376950c73c8212584afbee]
+link Coordinator to checkIn-->
+        <path d="M1380.15,306.8206 C1387.99,325.4606 1395,348.1406 1395,369.6406 C1395,369.6406 1395,369.6406 1395,463.6406 C1395,656.7206 1494,693.5606 1494,886.6406 C1494,886.6406 1494,886.6406 1494,1195.1406 C1494,1274.1546 1587.32,1231.2606 1652,1276.6406 C1673.84,1291.9606 1695.88,1313.2416 1710.36,1328.2066 " fill="none" id="Coordinator-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1713.88,1331.8676,1710.5419,1322.6017,1710.4209,1328.2573,1704.7653,1328.1363,1713.88,1331.8676" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[85b3fa37b778af4b3b31d3bd47d0066b]
+link Coordinator to Protocol-->
+        <path d="M1387.63,306.7806 C1395.37,315.6106 1404.31,324.2106 1414,330.6406 C1461.78,362.3506 1537,312.2906 1537,369.6406 C1537,369.6406 1537,369.6406 1537,463.6406 C1537,618.2256 1596.33,662.2306 1713,763.6406 C1734.12,781.9966 1760.54,799.9266 1779.65,812.1156 " fill="none" id="Coordinator-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1784.34,815.0876,1778.8714,806.8965,1780.1141,812.4152,1774.5955,813.6579,1784.34,815.0876" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[c026ff61d247cbc55291a5cf11e85969]
+link Coordinator to CloseRoom-->
+        <path d="M1321.4,267.0006 C1102.88,272.2106 6,301.7606 6,369.6406 C6,369.6406 6,369.6406 6,1195.1406 C6,1233.4436 19.2503,1247.2146 51,1268.6406 C120.936,1315.8356 380.601,1337.3846 477.354,1343.8996 " fill="none" id="Coordinator-&gt;CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="482.389,1344.2356,473.6753,1339.6453,477.4001,1343.9027,473.1427,1347.6276,482.389,1344.2356" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[8c5db0d512f3aa2c073f6944be752e25]
+link Dispatcher to ERSpecialistInfomation-->
+        <path d="M1466,306.9406 C1466,325.9906 1466,348.9806 1466,369.6406 C1466,369.6406 1466,369.6406 1466,463.6406 C1466,656.7206 1565,693.5606 1565,886.6406 C1565,886.6406 1565,886.6406 1565,1135.6406 C1565,1199.6876 1570.14,1274.5456 1573.39,1315.4996 " fill="none" id="Dispatcher-&gt;ERSpecialistInfomation" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1573.8,1320.5646,1577.0653,1311.2728,1573.399,1315.5807,1569.0911,1311.9144,1573.8,1320.5646" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[c77f09a8438623b12595c1375f2cecfd]
+link Dispatcher to MeetingRoom-->
+        <path d="M1442.03,306.7106 C1434.34,316.2306 1424.94,325.1706 1414,330.6406 C1358.51,358.3806 298,307.6006 298,369.6406 C298,369.6406 298,369.6406 298,1011.6406 C298,1105.0296 417.313,1159.1686 480.605,1181.3186 " fill="none" id="Dispatcher-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="485.435,1182.9846,478.233,1176.2667,480.7087,1181.353,475.6224,1183.8287,485.435,1182.9846" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="43" x="299" y="703.6357">Case R</text>
+        <!--MD5=[2f0a8cba5a91d61a262041846568aa2e]
+link Dispatcher to checkIn-->
+        <path d="M1500.01,274.7406 C1542.02,287.6606 1608,316.4106 1608,369.6406 C1608,369.6406 1608,369.6406 1608,463.6406 C1608,812.2406 1700.32,1231.4056 1722.33,1326.3746 " fill="none" id="Dispatcher-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1723.5,1331.4106,1725.3512,1321.7373,1722.3643,1326.5413,1717.5603,1323.5544,1723.5,1331.4106" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[9304e6ed7e600334f48bb49f62366d05]
+link Dispatcher to InviteToMeetingRoom-->
+        <path d="M1437.55,306.6606 C1430.46,315.1906 1422.44,323.7006 1414,330.6406 C1361.64,373.7006 1343.93,382.1606 1279,401.6406 C1127.78,447.0006 684.256,360.6206 572,471.6406 C439.964,602.2186 496.402,705.5836 533,887.6406 C554.563,994.9036 614.774,1111.4716 644.277,1164.2676 " fill="none" id="Dispatcher-&gt;InviteToMeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="646.863,1168.8716,645.9423,1159.0659,644.4141,1164.5124,638.9676,1162.9842,646.863,1168.8716" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[1568eda5cc0f546f11e3f02df203e82d]
+link Dispatcher to Protocol-->
+        <path d="M1500.22,267.5806 C1560.43,272.1506 1679,291.1106 1679,369.6406 C1679,369.6406 1679,369.6406 1679,463.6406 C1679,602.8816 1762.35,756.4166 1793.47,808.8826 " fill="none" id="Dispatcher-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1796.14,813.3536,1794.9658,803.575,1793.5791,809.0593,1788.0948,807.6725,1796.14,813.3536" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[60805e60125b7e4d340108d194850b16]
+link Dispatcher to CloseRoom-->
+        <path d="M1442.12,306.9006 C1434.44,316.4206 1425.01,325.3206 1414,330.6406 C1391.67,341.4406 545.744,336.8806 521,338.6406 C417.675,346.0106 377.922,314.8706 290,369.6406 C118.381,476.5506 77,569.4436 77,771.6406 C77,771.6406 77,771.6406 77,1195.1406 C77,1279.7016 373.007,1327.3536 477.782,1341.5716 " fill="none" id="Dispatcher-&gt;CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="482.922,1342.2636,474.5349,1337.1007,477.9665,1341.5978,473.4695,1345.0294,482.922,1342.2636" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[a4bcead228a5ff90c13031c70d93dafd]
+link ER to ReciveInvite-->
+        <path d="M608.379,728.8886 C574.828,799.0106 493.044,981.0116 465,1143.6406 C459.184,1177.3646 447.823,1191.0416 465,1220.6406 C490.179,1264.0286 524.017,1245.0676 563,1276.6406 C578.6,1289.2756 593.652,1306.0026 605.018,1319.8796 " fill="none" id="ER-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="608.423,1324.0876,605.8707,1314.5752,605.2776,1320.2009,599.6519,1319.6078,608.423,1324.0876" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[57abf21f6cc8357b1216cd29ba3bc8dd]
+link ER to MISLogin-->
+        <path d="M637.544,702.1116 C695.534,714.6836 912.822,768.8066 1031,895.6406 C1092.17,961.2946 1175.64,1230.1756 1201.81,1318.1426 " fill="none" id="ER-&gt;MISLogin" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1203.31,1323.1816,1204.5819,1313.4152,1201.8864,1318.3886,1196.9131,1315.693,1203.31,1323.1816" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[ae6d7be87561fe24c220e42bdbae8f97]
 link Specialist to MeetingRoom-->
-        <path d="M572.95,578.6616 C537.662,642.0616 476,769.5956 476,886.6406 C476,886.6406 476,886.6406 476,1077.1406 C476,1136.9266 549.985,1168.9616 597.648,1183.3966 " fill="none" id="Specialist-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="602.461,1184.8216,594.9675,1178.4304,597.6669,1183.4017,592.6956,1186.101,602.461,1184.8216" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M591.873,578.0796 C558.177,625.4836 505.619,708.3266 485,789.1406 C450.233,925.4046 490.443,1095.0506 509.775,1162.9746 " fill="none" id="Specialist-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="511.242,1168.0736,512.5972,1158.3185,509.8593,1163.2686,504.9092,1160.5307,511.242,1168.0736" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[f91ed9a4c0a4916a8afbd12ca74343b8]
 link Specialist to ReciveGrant-->
-        <path d="M627.037,561.7336 C641.101,574.2616 656.935,590.7526 667,608.6406 C727.632,716.3926 674.66,770.1716 734,878.6406 C774.895,953.3916 851.219,1020.8656 892.234,1053.8456 " fill="none" id="Specialist-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="896.573,1057.3116,892.0381,1048.5689,892.6666,1054.1908,887.0447,1054.8192,896.573,1057.3116" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M652.276,565.8626 C663.341,577.8546 674.684,592.7736 681,608.6406 C726.946,724.0616 638.468,778.6036 698,887.6406 C747.686,978.6456 862.684,1037.1836 920.105,1061.8046 " fill="none" id="Specialist-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="924.809,1063.8006,918.088,1056.6014,920.2067,1061.8466,914.9615,1063.9652,924.809,1063.8006" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[6393b41e6076f631591caddc251726fd]
 link Specialist to ReciveInvite-->
-        <path d="M566.949,564.8026 C543.105,587.3036 510.344,621.4046 489,656.6406 C432.618,749.7226 405,777.8146 405,886.6406 C405,886.6406 405,886.6406 405,1195.1406 C405,1302.0326 530.162,1243.2756 634,1268.6406 C654.584,1273.6686 662.461,1266.3796 681,1276.6406 C699.104,1286.6606 714.601,1304.0296 725.573,1318.8966 " fill="none" id="Specialist-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="728.547,1323.0146,726.5218,1313.3762,725.6202,1318.9608,720.0356,1318.0592,728.547,1323.0146" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M591.869,555.1896 C559.72,575.1056 510.047,611.1976 485,656.6406 C363.741,876.6416 355.622,987.0376 448,1220.6406 C458.754,1247.8336 466.872,1255.5086 493,1268.6406 C520.979,1282.7026 535.197,1262.2336 563,1276.6406 C581.503,1286.2286 597.09,1303.7776 608.007,1318.8416 " fill="none" id="Specialist-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="610.961,1323.0166,609.0268,1313.3596,608.0725,1318.9354,602.4968,1317.9811,610.961,1323.0166" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[fc03e660e42cea0fb5473c7fb14ea1a8]
 link Paramedic to MISLogin-->
-        <path d="M1897.45,271.8406 C1825.74,284.9806 1664,320.1106 1664,369.6406 C1664,369.6406 1664,369.6406 1664,463.6406 C1664,710.1116 1388,698.1696 1388,944.6406 C1388,944.6406 1388,944.6406 1388,1135.6406 C1388,1236.7786 1265.01,1305.7586 1205.94,1333.0536 " fill="none" id="Paramedic-&gt;MISLogin" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1201.12,1335.2566,1210.9684,1335.1669,1205.6704,1333.1844,1207.6529,1327.8863,1201.12,1335.2566" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2000.25,267.5506 C1940.19,272.0506 1821,290.9106 1821,369.6406 C1821,369.6406 1821,369.6406 1821,463.6406 C1821,609.6056 1707,625.6756 1707,771.6406 C1707,771.6406 1707,771.6406 1707,1011.6406 C1707,1235.3456 1356.17,1319.2696 1244.03,1340.3816 " fill="none" id="Paramedic-&gt;MISLogin" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1238.87,1341.3396,1248.4432,1343.6534,1243.7882,1340.4392,1247.0025,1335.7842,1238.87,1341.3396" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[1ba1e146088e54cd8979da42cdd04062]
 link Paramedic to MeetingRoom-->
-        <path d="M1897.36,269.2106 C1811.86,277.9306 1593,306.4306 1593,369.6406 C1593,369.6406 1593,369.6406 1593,463.6406 C1593,736.1586 1257.26,539.9206 1011,656.6406 C911.616,703.7466 872.58,704.7916 802,789.1406 C703.716,906.5986 657.767,1090.4656 642.785,1162.6226 " fill="none" id="Paramedic-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="641.759,1167.6226,647.4855,1159.6097,642.7635,1162.7246,639.6486,1158.0025,641.759,1167.6226" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2000.31,271.1206 C1925.08,283.1706 1750,316.9006 1750,369.6406 C1750,369.6406 1750,369.6406 1750,463.6406 C1750,762.4396 1387.45,556.3126 1106,656.6406 C961.391,708.1886 904.873,690.7806 787,789.1406 C747.388,822.1956 724,835.0486 724,886.6406 C724,886.6406 724,886.6406 724,1077.1406 C724,1150.4716 634.403,1103.5516 573,1143.6406 C562.284,1150.6366 551.649,1159.7806 542.688,1168.3036 " fill="none" id="Paramedic-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="538.954,1171.9096,548.2057,1168.5325,542.5497,1168.4353,542.6469,1162.7793,538.954,1171.9096" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[64aa5dcbdac2a3f57315b050104d28bb]
 link Paramedic to Protocol-->
-        <path d="M1897.31,268.8006 C1841.27,275.2706 1735,297.1006 1735,369.6406 C1735,369.6406 1735,369.6406 1735,463.6406 C1735,608.6996 1624.08,759.0846 1583.04,809.7666 " fill="none" id="Paramedic-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1579.74,813.8026,1588.5308,809.3616,1582.9025,809.9298,1582.3343,804.3016,1579.74,813.8026" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2000.35,274.6306 C1958.36,287.4906 1892,316.2506 1892,369.6406 C1892,369.6406 1892,369.6406 1892,699.1406 C1892,745.9396 1851.94,788.3926 1826.19,810.8496 " fill="none" id="Paramedic-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1822.19,814.2796,1831.631,811.4748,1825.9915,811.0318,1826.4345,805.3923,1822.19,814.2796" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[fb010cc91a2b41c6b0304e090f1656e5]
 link Paramedic to SwitchVS-->
-        <path d="M1964.69,271.1206 C2039.92,283.1706 2215,316.9006 2215,369.6406 C2215,369.6406 2215,369.6406 2215,699.1406 C2215,749.2396 2264.36,785.6136 2303.61,806.6166 " fill="none" id="Paramedic-&gt;SwitchVS" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="2308.34,809.1016,2302.2377,801.371,2303.9151,806.7735,2298.5127,808.4509,2308.34,809.1016" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2067.75,267.5506 C2127.81,272.0506 2247,290.9106 2247,369.6406 C2247,369.6406 2247,369.6406 2247,699.1406 C2247,749.2396 2296.36,785.6136 2335.61,806.6166 " fill="none" id="Paramedic-&gt;SwitchVS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="2340.34,809.1016,2334.2377,801.371,2335.9151,806.7735,2330.5127,808.4509,2340.34,809.1016" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[f0a667a4e6874697ed81780c0c90425d]
 link Paramedic to Med-->
-        <path d="M1897.17,277.5106 C1860.15,292.3506 1806,322.1706 1806,369.6406 C1806,369.6406 1806,369.6406 1806,463.6406 C1806,647.5656 1726.73,860.8166 1700.98,925.2466 " fill="none" id="Paramedic-&gt;Med" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1699.08,929.9756,1706.1547,923.1237,1700.9493,925.3382,1698.7348,920.1328,1699.08,929.9756" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2000.16,295.2206 C1981.88,314.2606 1963,340.8806 1963,369.6406 C1963,369.6406 1963,369.6406 1963,829.6406 C1963,863.9596 1951.46,902.5516 1943.47,925.1646 " fill="none" id="Paramedic-&gt;Med" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1941.73,930.0126,1948.5363,922.894,1943.4198,925.3068,1941.007,920.1903,1941.73,930.0126" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[6bde3c1ab56a55973f184f59e1433428]
 link Paramedic to Check-->
-        <path d="M1931,306.9406 C1931,325.9906 1931,348.9806 1931,369.6406 C1931,369.6406 1931,369.6406 1931,946.6406 C1931,1032.8836 1809.35,1061.4436 1738.9,1070.7516 " fill="none" id="Paramedic-&gt;Check" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1733.92,1071.3886,1743.3516,1074.225,1738.8803,1070.7598,1742.3455,1066.2886,1733.92,1071.3886" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2034,306.9406 C2034,325.9906 2034,348.9806 2034,369.6406 C2034,369.6406 2034,369.6406 2034,946.6406 C2034,995.8626 1987.62,1037.3796 1957.72,1059.0326 " fill="none" id="Paramedic-&gt;Check" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1953.44,1062.0826,1963.0915,1060.1208,1957.513,1059.1825,1958.4513,1053.604,1953.44,1062.0826" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[5a8af6b1b26d464cbd39c7c00cf9f5a0]
 link Paramedic to checkIn-->
-        <path d="M1964.65,274.6306 C2006.64,287.4906 2073,316.2506 2073,369.6406 C2073,369.6406 2073,369.6406 2073,1195.1406 C2073,1247.1106 2038.13,1300.3976 2017.27,1327.6326 " fill="none" id="Paramedic-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="2014.04,1331.7766,2022.7243,1327.1308,2017.1109,1327.8308,2016.4109,1322.2174,2014.04,1331.7766" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2067.84,295.2206 C2086.12,314.2606 2105,340.8806 2105,369.6406 C2105,369.6406 2105,369.6406 2105,1195.1406 C2105,1335.0226 1923.22,1208.5986 1801,1276.6406 C1777.43,1289.7606 1755.6,1312.0296 1741.85,1327.8216 " fill="none" id="Paramedic-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1738.53,1331.6876,1747.432,1327.474,1741.791,1327.8974,1741.3677,1322.2564,1738.53,1331.6876" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[ba32fffafa6430a49a0cfc65700cc5ca]
 link Paramedic to SwitchAmbulance-->
-        <path d="M1964.65,268.6406 C2087.26,278.1706 2503,314.5806 2503,369.6406 C2503,369.6406 2503,369.6406 2503,463.6406 C2503,630.0746 2716,605.2066 2716,771.6406 C2716,771.6406 2716,771.6406 2716,1348.1406 C2716,1422.0535 2467.46,1449.567 2355.53,1458.2104 " fill="none" id="Paramedic-&gt;SwitchAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="2350.3,1458.6078,2359.5817,1461.9017,2355.2851,1458.2221,2358.9646,1453.9255,2350.3,1458.6078" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2067.85,265.8606 C2180.85,265.8406 2538,273.3906 2538,369.6406 C2538,369.6406 2538,369.6406 2538,1135.6406 C2538,1352.0486 2208.24,1431.1419 2078.53,1453.8829 " fill="none" id="Paramedic-&gt;SwitchAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="2073.25,1454.7963,2082.7956,1457.2214,2078.1784,1453.9532,2081.4466,1449.3359,2073.25,1454.7963" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[23191dde4dc5d67be91171ea12bcf9dd]
 link Paramedic to UpdatePatiantStatus-->
-        <path d="M1964.75,267.5506 C2024.81,272.0506 2144,290.9106 2144,369.6406 C2144,369.6406 2144,369.6406 2144,1195.1406 C2144,1237.4026 2148.73,1286.1086 2152.25,1316.5146 " fill="none" id="Paramedic-&gt;UpdatePatiantStatus" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="2152.85,1321.6026,2155.769,1312.1963,2152.2647,1316.637,2147.824,1313.1327,2152.85,1321.6026" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M2067.65,274.6306 C2109.64,287.4906 2176,316.2506 2176,369.6406 C2176,369.6406 2176,369.6406 2176,1195.1406 C2176,1233.4436 2163.97,1249.1376 2131,1268.6406 C2098.45,1287.8976 1996.11,1262.5726 1961,1276.6406 C1938.64,1285.5996 1918.23,1303.5696 1903.62,1318.9916 " fill="none" id="Paramedic-&gt;UpdatePatiantStatus" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1900.04,1322.8506,1909.1,1318.9884,1903.4467,1319.1908,1903.2443,1313.5376,1900.04,1322.8506" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[3948f154c6598bf838ec7e66f6f94600]
 link MD to MISLogin-->
-        <path d="M1101.08,740.1046 C1129.07,798.3796 1175,909.2966 1175,1009.6406 C1175,1009.6406 1175,1009.6406 1175,1195.1406 C1175,1237.7646 1175,1287.1576 1175,1317.5266 " fill="none" id="MD-&gt;MISLogin" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1175,1322.6006,1179,1313.6006,1175,1317.6006,1171,1313.6006,1175,1322.6006" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1191.99,739.7536 C1200.9,764.6636 1210,797.4666 1210,827.6406 C1210,827.6406 1210,827.6406 1210,1195.1406 C1210,1237.7646 1210,1287.1576 1210,1317.5266 " fill="none" id="MD-&gt;MISLogin" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1210,1322.6006,1214,1313.6006,1210,1317.6006,1206,1313.6006,1210,1322.6006" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[780da28ebf1be06832b68d4fa50a0428]
 link MD to MeetingRoom-->
-        <path d="M1028.81,710.0266 C982.277,722.2506 914.316,746.2396 870,789.1406 C747.858,907.3826 828.058,1015.2816 708,1135.6406 C702.103,1141.5526 697.934,1138.9886 691,1143.6406 C680.465,1150.7076 669.941,1159.7836 661.02,1168.2286 " fill="none" id="MD-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="657.299,1171.8016,666.561,1168.4526,660.9053,1168.3383,661.0196,1162.6826,657.299,1171.8016" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1123.75,713.7376 C1020.03,743.6406 795,810.4916 795,827.6406 C795,827.6406 795,827.6406 795,1011.6406 C795,1071.4016 796.052,1108.1296 743,1135.6406 C709.426,1153.0506 607.915,1129.1056 573,1143.6406 C560.775,1148.7306 549.561,1157.8686 540.558,1166.9206 " fill="none" id="MD-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="536.839,1170.7816,545.9633,1167.074,540.3075,1167.1803,540.2012,1161.5244,536.839,1170.7816" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[05211c8b26ed5c19b2d767f79b3c73b5]
 link MD to GrantPermission-->
-        <path d="M1042.1,739.9236 C1033.67,749.9276 1025.13,760.8666 1018,771.6406 C986.605,819.1016 959.051,879.6366 944.036,915.0726 " fill="none" id="MD-&gt;GrantPermission" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="941.913,920.1146,949.094,913.3742,943.8546,915.507,941.7218,910.2676,941.913,920.1146" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1140.19,739.7466 C1131.31,750.1326 1121.79,761.2906 1113,771.6406 C1069.23,823.1596 1018.37,883.5496 989.702,917.6296 " fill="none" id="MD-&gt;GrantPermission" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="986.318,921.6536,995.172,917.3402,989.5362,917.827,989.0494,912.1911,986.318,921.6536" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[858c63aed9326116e7d2d6abccbf98cc]
 link MD to InviteToMeetingRoom-->
-        <path d="M1028.97,730.5206 C1004.733,746.5896 976.084,767.3376 953,789.1406 C908.973,830.7236 895.999,841.9406 868,895.6406 C816.573,994.2756 829.395,1029.2256 797,1135.6406 C794.224,1144.7596 791.144,1154.6716 788.327,1163.6576 " fill="none" id="MD-&gt;InviteToMeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="786.793,1168.5436,793.306,1161.1557,788.2912,1163.7734,785.6736,1158.7586,786.793,1168.5436" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1123.86,720.8976 C1060.84,750.5786 955.638,810.0386 903,895.6406 C844.733,990.3956 909.197,1055.5526 832,1135.6406 C805.999,1162.6146 766.963,1176.9356 732.749,1184.5376 " fill="none" id="MD-&gt;InviteToMeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="727.738,1185.6116,737.3767,1187.6351,732.6268,1184.563,735.6989,1179.8131,727.738,1185.6116" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[2d032cbfb510cb54f1ff16f6bcb8d217]
 link MD to ReciveInvite-->
-        <path d="M1089.14,739.7276 C1104.87,819.6076 1129.01,1000.4116 1059,1126.6406 C995.88,1240.4466 845.815,1308.1606 777.698,1334.0246 " fill="none" id="MD-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="772.938,1335.8146,782.77,1336.3906,777.618,1334.0546,779.954,1328.9026,772.938,1335.8146" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1157.53,739.7096 C1148.35,764.6046 1139,797.4066 1139,827.6406 C1139,827.6406 1139,827.6406 1139,1011.6406 C1139,1239.5556 779.594,1320.1986 661.854,1340.5016 " fill="none" id="MD-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="656.765,1341.3676,666.3084,1343.8013,661.6942,1340.529,664.9666,1335.9147,656.765,1341.3676" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[dd831f050c044493fa32b7c79b2ef305]
 link MD to checkIn-->
-        <path d="M1131.02,722.9236 C1159.7,738.4176 1194.38,760.9836 1218,789.1406 C1322.82,914.0736 1248.67,1009.3706 1362,1126.6406 C1524.91,1295.2166 1638.11,1234.2406 1870,1268.6406 C1895.3,1272.3946 1903.89,1265.6656 1927,1276.6406 C1951.83,1288.4356 1974.07,1311.3966 1987.76,1327.6956 " fill="none" id="MD-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1991.06,1331.6846,1988.417,1322.197,1987.8777,1327.8281,1982.2466,1327.2888,1991.06,1331.6846" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M1226.2,725.3736 C1278.47,756.2376 1352,812.7776 1352,886.6406 C1352,886.6406 1352,886.6406 1352,1195.1406 C1352,1256.1736 1409.77,1250.3646 1468,1268.6406 C1507.05,1280.8966 1614.23,1260.8766 1652,1276.6406 C1677.67,1287.3566 1700.02,1310.9986 1713.49,1327.7246 " fill="none" id="MD-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1716.72,1331.8156,1714.2871,1322.272,1713.6236,1327.8898,1708.0058,1327.2262,1716.72,1331.8156" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[7b84873b7ea2f1f359b46b24032402f9]
 link MD to ERSpecialistInfomation-->
-        <path d="M1124.35,739.7586 C1138.4,754.3116 1153.1,771.5036 1164,789.1406 C1218.96,878.0876 1246,905.0836 1246,1009.6406 C1246,1009.6406 1246,1009.6406 1246,1195.1406 C1246,1305.6726 1630.95,1335.9466 1786.72,1343.6716 " fill="none" id="MD-&gt;ERSpecialistInfomation" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1792.16,1343.9376,1783.3649,1339.5052,1787.1659,1343.6948,1782.9763,1347.4958,1792.16,1343.9376" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[b762de6486526762a767509aea067f0b]
-reverse link Ops to MD-->
-        <path d="M1547.14,927.6556 C1502.08,891.9856 1390.96,809.4576 1283,771.6406 C1256.78,762.4556 1247.71,771.2836 1221,763.6406 C1190.07,754.7916 1157.3,740.1496 1131.13,727.0506 " fill="none" id="Ops&lt;-MD" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="1551.29,930.9586,1546.7391,922.2242,1547.3779,927.8449,1541.7572,928.4837,1551.29,930.9586" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[c00d508c680d30978f547364d278d03a]
+        <path d="M1226.14,734.0346 C1253.24,756.9946 1281,789.7556 1281,827.6406 C1281,827.6406 1281,827.6406 1281,1195.1406 C1281,1298.5136 1426.31,1331.1636 1512.96,1341.4436 " fill="none" id="MD-&gt;ERSpecialistInfomation" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1518.07,1342.0316,1509.5861,1337.0292,1513.1028,1341.4602,1508.6718,1344.9768,1518.07,1342.0316" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[fb902c7647ef0dfd519f6eb23e16ccc6]
+reverse link Protocol to MD-->
+        <path d="M1764.51,820.1256 C1709.05,809.7686 1606.37,790.3726 1519,772.6406 C1414.86,751.5046 1293.37,725.1446 1226.22,710.4276 " fill="none" id="Protocol&lt;-MD" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="1769.73,821.0986,1761.6292,815.4972,1764.8169,820.1703,1760.1438,823.3581,1769.73,821.0986" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[9cfd6bcf2bfe031ba734b31a8457101b]
 @startuml
 Title Use case
 
@@ -267,12 +267,15 @@ Title Use case
   rectangle {
     usecase (Grant\nPermission) as GrantPermission
     usecase (Recive\nGrant) as ReciveGrant
+    GrantPermission ..> ReciveGrant:<extend>
   }
   rectangle {
     usecase (Meeting\nRoom) as MeetingRoom
     usecase (Close\nRoom) as CloseRoom
     usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
     usecase (Recive\nInvite) as ReciveInvite
+    MeetingRoom - - CloseRoom
+    InviteToMeetingRoom ..> ReciveInvite :<extend>
   }
 
   rectangle {
@@ -280,11 +283,14 @@ Title Use case
     :Coordinator: as Coordinator
     :Dispatcher: as Dispatcher
     :CallTaker: as CallTaker
+    Supervisor ..> Coordinator :<extend>
+    Supervisor ..> Dispatcher :<extend>
   }
 
   rectangle {
     :Specialist: as Specialist
     :ER: as ER
+    Specialist ..> ER :<extend>
   }
 
   rectangle {
@@ -292,6 +298,9 @@ Title Use case
     usecase (Operation) as Ops
     usecase (Medicine) as Med
     usecase (Check list) as Check
+    Protocol ..> Ops
+    Protocol ..> Med
+    Med ..> Check
   }
 
 
@@ -300,6 +309,9 @@ Title Use case
     usecase (Live\nVideo) as LiveVideo
     usecase (Vital Sign) as VitalSign
     usecase (Switch Partient\nVital Sign) as SwitchVS
+    Telemed - - LiveVideo
+    Telemed - - VitalSign
+    VitalSign - - SwitchVS
   }
 
   package OIS{
@@ -310,21 +322,6 @@ Title Use case
     usecase (Switch\nAmbulance) as SwitchAmbulance
     AssignAmbulance ..> SwitchAmbulance
   }
-
-  MeetingRoom - - CloseRoom
-  Protocol ..> Ops
-  Protocol ..> Med
-  Med ..> Check
-  InviteToMeetingRoom ..> ReciveInvite :<extend>
-  GrantPermission ..> ReciveGrant:<extend>
-
-  Telemed - - LiveVideo
-  Telemed - - VitalSign
-  VitalSign - - SwitchVS
-
-
-  Supervisor ..> Coordinator :<extend>
-  Supervisor ..> Dispatcher :<extend>
 
   CallTaker - -> UpdatePatiantStatus
   CallTaker - -> AssignAmbulance
@@ -345,7 +342,6 @@ Title Use case
   ER - -> ReciveInvite
   ER - -> MISLogin
 
-  Specialist ..> ER :<extend>
   Specialist - - - - - -> MeetingRoom
   Specialist - -> ReciveGrant
   Specialist - - - - - -> ReciveInvite
@@ -368,7 +364,7 @@ Title Use case
   MD - - - -> ReciveInvite
   MD - - - - - -> checkIn
   MD - - - -> ERSpecialistInfomation
-  MD -up-> Ops
+  MD -up-> Protocol
 
 @enduml
 
@@ -376,9 +372,9 @@ PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
 (GPL source distribution)
 Java Runtime: Java(TM) SE Runtime Environment
 JVM: Java HotSpot(TM) 64-Bit Server VM
-Java Version: 1.8.0_181-b13
+Java Version: 1.8.0_261-b12
 Operating System: Windows 10
-Default Encoding: MS874
+Default Encoding: Cp1252
 Language: en
 Country: US
 -->
