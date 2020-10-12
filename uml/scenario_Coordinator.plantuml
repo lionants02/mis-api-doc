@@ -13,7 +13,6 @@ Title __Coordinator__
   usecase (Meeting\nRoom) as MeetingRoom
   usecase (ER/Specialist\nInfomation) as ERSpecialistInfomation
   usecase (Close\nRoom) as CloseRoom
-  usecase (Update Patiant\nStatus) as UpdatePatiantStatus
 
   Coordinator -right-> checkIn : เข้าเวร\nออกเวร
   Coordinator -left-> MISLogin
@@ -21,6 +20,5 @@ Title __Coordinator__
   Coordinator --> ERSpecialistInfomation
   Coordinator --> CloseRoom
   Coordinator --> Protocol
-  Coordinator --> UpdatePatiantStatus
 
 @enduml

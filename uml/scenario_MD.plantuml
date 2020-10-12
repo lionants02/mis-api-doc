@@ -25,6 +25,7 @@ Title __Medical Director__
   MD --> ERSpecialistInfomation
   MD --> Protocol
   MD --> InviteToMeetingRoom
+  note top of InviteToMeetingRoom : เรียกหมอท่านอื่นได้
 
   MD --> ReciveInvite
   MD --> GrantPermission

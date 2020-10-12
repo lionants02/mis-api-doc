@@ -24,8 +24,8 @@ Title __Paramedic__
   Paramedic --> SwitchVS
   Paramedic --> SwitchAmbulance
   Paramedic --> UpdatePatiantStatus
-  Paramedic --> Protocol: ดู
+  Paramedic ---> Protocol: ทำรายงาน
   Paramedic --> Med: ดู
-  Paramedic --> Check:ทำ
+  Paramedic --> Check: ทำรายงาน
 
 @enduml

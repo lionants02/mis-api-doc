@@ -21,6 +21,6 @@ Title __Dispatcher__
   Dispatcher --> ERSpecialistInfomation
   Dispatcher --> CloseRoom
   Dispatcher --> Protocol
-  Dispatcher --> InviteToMeetingRoom
+  Dispatcher --> InviteToMeetingRoom : เรียกหมอได้
 
 @enduml
