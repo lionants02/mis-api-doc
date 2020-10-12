@@ -1,0 +1,26 @@
+@startuml
+Title __Coordinator__
+  :Coordinator: as Coordinator
+
+  usecase (Protocol) as Protocol
+  usecase (Operation) as Ops
+  usecase (Medicine) as Med
+  Protocol ..> Ops
+  Protocol ..> Med
+
+  usecase (MIS\nLogin) as MISLogin
+  usecase (check\nin/out) as checkIn
+  usecase (Meeting\nRoom) as MeetingRoom
+  usecase (ER/Specialist\nInfomation) as ERSpecialistInfomation
+  usecase (Close\nRoom) as CloseRoom
+  usecase (Update Patiant\nStatus) as UpdatePatiantStatus
+
+  Coordinator -right-> checkIn : เข้าเวร\nออกเวร
+  Coordinator -left-> MISLogin
+  Coordinator --> MeetingRoom
+  Coordinator --> ERSpecialistInfomation
+  Coordinator --> CloseRoom
+  Coordinator --> Protocol
+  Coordinator --> UpdatePatiantStatus
+
+@enduml

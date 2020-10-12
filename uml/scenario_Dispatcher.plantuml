@@ -1,0 +1,26 @@
+@startuml
+Title __Dispatcher__
+  :Dispatcher: as Dispatcher
+
+  usecase (Protocol) as Protocol
+  usecase (Operation) as Ops
+  usecase (Medicine) as Med
+  Protocol ..> Ops
+  Protocol ..> Med
+
+  usecase (check\nin/out) as checkIn
+  usecase (MIS\nLogin) as MISLogin
+  usecase (Meeting\nRoom) as MeetingRoom
+  usecase (ER/Specialist\nInfomation) as ERSpecialistInfomation
+  usecase (Close\nRoom) as CloseRoom
+  usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
+
+  Dispatcher -right-> checkIn : เข้าเวร\nออกเวร
+  Dispatcher -left-> MISLogin
+  Dispatcher --> MeetingRoom
+  Dispatcher --> ERSpecialistInfomation
+  Dispatcher --> CloseRoom
+  Dispatcher --> Protocol
+  Dispatcher --> InviteToMeetingRoom
+
+@enduml

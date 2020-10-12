@@ -1,0 +1,32 @@
+@startuml
+Title __Medical Director__
+  :Medical Director: as MD
+
+  usecase (Protocol) as Protocol
+  usecase (Operation) as Ops
+  usecase (Medicine) as Med
+  Protocol ..> Ops
+  Protocol ..> Med
+
+  usecase (check\nin/out) as checkIn
+  usecase (MIS\nLogin) as MISLogin
+  usecase (ER/Specialist\nInfomation) as ERSpecialistInfomation
+
+  usecase (Meeting\nRoom) as MeetingRoom
+  usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
+  usecase (Recive\nInvite) as ReciveInvite
+  InviteToMeetingRoom ..> ReciveInvite :<extend>
+
+  usecase (Grant\nPermission) as GrantPermission
+
+  MD -right-> checkIn : เข้าเวร\nออกเวร
+  MD -left-> MISLogin
+  MD --> MeetingRoom
+  MD --> ERSpecialistInfomation
+  MD --> Protocol
+  MD --> InviteToMeetingRoom
+
+  MD --> ReciveInvite
+  MD --> GrantPermission
+
+@enduml

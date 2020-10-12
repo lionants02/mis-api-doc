@@ -6,12 +6,15 @@ Title Use case
   rectangle {
     usecase (Grant\nPermission) as GrantPermission
     usecase (Recive\nGrant) as ReciveGrant
+    GrantPermission ..> ReciveGrant:<extend>
   }
   rectangle {
     usecase (Meeting\nRoom) as MeetingRoom
     usecase (Close\nRoom) as CloseRoom
     usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
     usecase (Recive\nInvite) as ReciveInvite
+    MeetingRoom -- CloseRoom
+    InviteToMeetingRoom ..> ReciveInvite :<extend>
   }
 
   rectangle {
@@ -19,11 +22,14 @@ Title Use case
     :Coordinator: as Coordinator
     :Dispatcher: as Dispatcher
     :CallTaker: as CallTaker
+    Supervisor ..> Coordinator :<extend>
+    Supervisor ..> Dispatcher :<extend>
   }
 
   rectangle {
     :Specialist: as Specialist
     :ER: as ER
+    Specialist ..> ER :<extend>
   }
 
   rectangle {
@@ -31,6 +37,9 @@ Title Use case
     usecase (Operation) as Ops
     usecase (Medicine) as Med
     usecase (Check list) as Check
+    Protocol ..> Ops
+    Protocol ..> Med
+    Med ..> Check
   }
 
 
@@ -39,6 +48,9 @@ Title Use case
     usecase (Live\nVideo) as LiveVideo
     usecase (Vital Sign) as VitalSign
     usecase (Switch Partient\nVital Sign) as SwitchVS
+    Telemed -- LiveVideo
+    Telemed -- VitalSign
+    VitalSign -- SwitchVS
   }
 
   package OIS{
@@ -49,21 +61,6 @@ Title Use case
     usecase (Switch\nAmbulance) as SwitchAmbulance
     AssignAmbulance ..> SwitchAmbulance
   }
-
-  MeetingRoom -- CloseRoom
-  Protocol ..> Ops
-  Protocol ..> Med
-  Med ..> Check
-  InviteToMeetingRoom ..> ReciveInvite :<extend>
-  GrantPermission ..> ReciveGrant:<extend>
-
-  Telemed -- LiveVideo
-  Telemed -- VitalSign
-  VitalSign -- SwitchVS
-
-
-  Supervisor ..> Coordinator :<extend>
-  Supervisor ..> Dispatcher :<extend>
 
   CallTaker --> UpdatePatiantStatus
   CallTaker --> AssignAmbulance
@@ -84,7 +81,6 @@ Title Use case
   ER --> ReciveInvite
   ER --> MISLogin
 
-  Specialist ..> ER :<extend>
   Specialist ------> MeetingRoom
   Specialist --> ReciveGrant
   Specialist ------> ReciveInvite
@@ -107,6 +103,6 @@ Title Use case
   MD ----> ReciveInvite
   MD ------> checkIn
   MD ----> ERSpecialistInfomation
-  MD -up-> Ops
+  MD -up-> Protocol
 
 @enduml

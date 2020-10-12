@@ -1,0 +1,32 @@
+@startuml
+Title __Specialist and ER__
+
+  usecase (MIS\nLogin) as MISLogin
+  rectangle {
+    :Specialist: as Specialist
+    :ER: as ER
+    Specialist ..> ER :<extend>
+  }
+
+  rectangle {
+    usecase (Meeting\nRoom) as MeetingRoom
+    usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
+    usecase (Recive\nInvite) as ReciveInvite
+    InviteToMeetingRoom ..> ReciveInvite :<extend>
+  }
+
+  rectangle {
+    usecase (Grant\nPermission) as GrantPermission
+    usecase (Recive\nGrant) as ReciveGrant
+    GrantPermission ..> ReciveGrant:<extend>
+  }
+
+  ER ----> MISLogin
+  ER --> ReciveInvite
+  ER --> MeetingRoom : ดู
+
+  Specialist ----> ReciveGrant : รับหน้าที่จาก\nMedical Director
+  Specialist --> MeetingRoom
+  Specialist --> ReciveInvite
+
+@enduml

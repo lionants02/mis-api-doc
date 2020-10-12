@@ -1,0 +1,31 @@
+@startuml
+Title __Paramedic__
+  :Paramedic: as Paramedic
+
+
+  usecase (Protocol) as Protocol
+  usecase (Medicine) as Med
+  usecase (Check list) as Check
+  Protocol ..> Med
+  Med ..> Check
+
+
+  usecase (check\nin/out) as checkIn
+  usecase (MIS\nLogin) as MISLogin
+  usecase (Meeting\nRoom) as MeetingRoom
+
+  usecase (Switch Partient\nVital Sign) as SwitchVS
+  usecase (Switch\nAmbulance) as SwitchAmbulance
+  usecase (Update Patiant\nStatus) as UpdatePatiantStatus
+
+  Paramedic -right-> checkIn : เข้าเวร\nออกเวร
+  Paramedic -left-> MISLogin
+  Paramedic --> MeetingRoom
+  Paramedic --> SwitchVS
+  Paramedic --> SwitchAmbulance
+  Paramedic --> UpdatePatiantStatus
+  Paramedic --> Protocol: ดู
+  Paramedic --> Med: ดู
+  Paramedic --> Check:ทำ
+
+@enduml

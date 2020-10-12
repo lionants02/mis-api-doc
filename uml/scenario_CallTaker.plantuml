@@ -1,0 +1,22 @@
+@startuml
+Title __CallTaker__
+  rectangle {
+    :Supervisor: as Supervisor
+    :Coordinator: as Coordinator
+    :Dispatcher: as Dispatcher
+  }
+  :CallTaker: as CallTaker
+  Supervisor ..> Coordinator :<extend>
+  Supervisor ..> Dispatcher :<extend>
+  note top of Supervisor : ถ้าสายเต็มฉันช่วยได้นะ
+
+  :ผู้แจ้งเหตุ: as User
+  usecase (Assign\nAmbulance) as AssignAmbulance
+  usecase (MIS\nLogin) as MISLogin
+
+  User ---> CallTaker : แจ้งเหตุ
+  CallTaker -left-> MISLogin
+  CallTaker ---> AssignAmbulance : เปิดปฏิบัติการ\nสั่งพาหนะ
+  CallTaker ----> Coordinator : แดง
+  CallTaker ----> Dispatcher : เหลือง\nเขียว
+@enduml
