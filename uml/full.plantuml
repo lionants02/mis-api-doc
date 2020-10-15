@@ -24,6 +24,7 @@ Title Use case
     :CallTaker: as CallTaker
     Supervisor ..> Coordinator :<extend>
     Supervisor ..> Dispatcher :<extend>
+    note top of Supervisor : ถ้าสายเต็มฉันช่วยได้นะ
   }
 
   rectangle {
@@ -66,8 +67,10 @@ Title Use case
     AssignAmbulance ..> SwitchAmbulance
   }
 
-  CallTaker --> UpdatePatiantStatus
+  CallTaker --> UpdatePatiantStatus : สถานะตอนรับแจ้ง
   CallTaker --> AssignAmbulance
+  CallTaker ----> Coordinator : เหลือง\nเขียว
+  CallTaker ----> Dispatcher : แดง
 
   Coordinator --> ERSpecialistInfomation
   Coordinator --> MeetingRoom: Case G, Y
