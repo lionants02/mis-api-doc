@@ -1,80 +1,75 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="607px" preserveAspectRatio="none" style="width:732px;height:607px;" version="1.1" viewBox="0 0 732 607" width="732px" zoomAndPan="magnify">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="701px" preserveAspectRatio="none" style="width:665px;height:701px;" version="1.1" viewBox="0 0 665 701" width="665px" zoomAndPan="magnify">
     <defs>
-        <filter height="300%" id="f1am00zr5h5wt5" width="300%" x="-1" y="-1">
+        <filter height="300%" id="fgxcx3qb58i3l" width="300%" x="-1" y="-1">
             <feGaussianBlur result="blurOut" stdDeviation="2.0" />
             <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
             <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
             <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
         </filter>
     </defs>
-    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="85" x="327.5" y="18.6855">Paramedic</text>
+    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="85" x="294" y="18.6855">Paramedic</text>
         <!--MD5=[6e645fe6a8da04c80cb1105d6cd79d8d]
 entity Paramedic-->
-        <ellipse cx="365.5" cy="40.1406" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M365.5,48.1406 L365.5,75.1406 M352.5,56.1406 L378.5,56.1406 M365.5,75.1406 L352.5,90.1406 M365.5,75.1406 L378.5,90.1406 " fill="none" filter="url(#f1am00zr5h5wt5)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="332" y="110.1738">Paramedic</text>
-        <ellipse cx="81.2696" cy="304.0923" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="55.2696" y="309.397">Protocol</text>
-        <ellipse cx="61.3259" cy="396.0923" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="24.3259" y="401.397">Offline Note</text>
-        <ellipse cx="207.3259" cy="396.0923" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="170.3259" y="401.397">Online Note</text>
-        <ellipse cx="122.6311" cy="488.6668" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="68.1311" ry="16.0262" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="96" x="74.6311" y="493.9715">Operation Note</text>
-        <ellipse cx="291.5964" cy="488.6599" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="65.5964" ry="15.5193" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="247.0964" y="493.9646">Medicine Note</text>
-        <ellipse cx="291.669" cy="581.0923" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="49.669" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="258.669" y="586.397">Check List</text>
-        <ellipse cx="509.4417" cy="71.894" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="31.4417" ry="25.7534" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="490.9417" y="68.7211">check</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="491.9417" y="86.3305">in/out</text>
-        <ellipse cx="267.6021" cy="71.9223" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="256.1021" y="66.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="250.1021" y="84.4507">Login</text>
-        <ellipse cx="229.4159" cy="201.1779" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="204.4159" y="199.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="210.9159" y="217.2789">Room</text>
-        <ellipse cx="365.5471" cy="201.2589" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="64.0471" ry="26.1183" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="319.0471" y="200.3895">Switch Partient</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="336.0471" y="217.9988">Vital Sign</text>
-        <ellipse cx="513.5217" cy="201.0437" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="48.5217" ry="25.9031" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="493.5217" y="194.5789">Switch</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="478.5217" y="212.1883">Ambulance</text>
-        <ellipse cx="659.4402" cy="201.1504" fill="#FEFECE" filter="url(#f1am00zr5h5wt5)" rx="62.4402" ry="25.5098" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="612.9402" y="201.2384">Update Patiant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="639.4402" y="218.8477">Status</text>
-        <path d="M376.5,568.1406 L376.5,577.1406 L341.305,581.1406 L376.5,585.1406 L376.5,594.4922 A0,0 0 0 0 376.5,594.4922 L456.5,594.4922 A0,0 0 0 0 456.5,594.4922 L456.5,578.1406 L446.5,568.1406 L376.5,568.1406 A0,0 0 0 0 376.5,568.1406 " fill="#FBFB77" filter="url(#f1am00zr5h5wt5)" style="stroke: #A80036; stroke-width: 1.0;" />
-        <path d="M446.5,568.1406 L446.5,578.1406 L456.5,578.1406 L446.5,568.1406 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="382.5" y="586.6357">ทำรายงาน</text>
+        <ellipse cx="301.5" cy="40.1406" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M301.5,48.1406 L301.5,75.1406 M288.5,56.1406 L314.5,56.1406 M301.5,75.1406 L288.5,90.1406 M301.5,75.1406 L314.5,90.1406 " fill="none" filter="url(#fgxcx3qb58i3l)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="67" x="268" y="110.1738">Paramedic</text>
+        <ellipse cx="78.2696" cy="351.0923" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="52.2696" y="356.397">Protocol</text>
+        <ellipse cx="61.3259" cy="490.0923" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="24.3259" y="495.397">Offline Note</text>
+        <ellipse cx="217.3259" cy="490.0923" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="180.3259" y="495.397">Online Note</text>
+        <ellipse cx="132.6311" cy="582.6668" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="68.1311" ry="16.0262" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="96" x="84.6311" y="587.9715">Operation Note</text>
+        <ellipse cx="301.5964" cy="582.6599" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="65.5964" ry="15.5193" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="257.0964" y="587.9646">Medicine Note</text>
+        <ellipse cx="301.669" cy="675.0923" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="49.669" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="268.669" y="680.397">Check List</text>
+        <path d="M170.5,321.6406 L170.5,380.6953 A0,0 0 0 0 170.5,380.6953 L222.194,380.6953 L218.685,474.3876 L230.194,380.6953 L286.5,380.6953 A0,0 0 0 0 286.5,380.6953 L286.5,331.6406 L276.5,321.6406 L170.5,321.6406 A0,0 0 0 0 170.5,321.6406 " fill="#FBFB77" filter="url(#fgxcx3qb58i3l)" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M276.5,321.6406 L276.5,331.6406 L286.5,331.6406 L276.5,321.6406 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="176.5" y="340.1357">ทำรายงาน</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="69" x="176.5" y="356.4873">ที่รับคำสั่งมา</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="95" x="176.5" y="372.8389">หรือบันทึกเพิ่มได้</text>
+        <ellipse cx="203.6021" cy="71.9223" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="192.1021" y="66.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="186.1021" y="84.4507">Login</text>
+        <ellipse cx="168.4159" cy="234.1779" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="143.4159" y="232.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="149.9159" y="250.2789">Room</text>
+        <ellipse cx="301.6016" cy="233.8936" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="61.1016" ry="26.253" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="88" x="257.6016" y="232.8171">Switch Patient</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="59" x="272.1016" y="250.4265">Vital Sign</text>
+        <ellipse cx="446.5217" cy="234.0437" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="48.5217" ry="25.9031" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="426.5217" y="227.5789">Switch</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="411.5217" y="245.1883">Ambulance</text>
+        <ellipse cx="592.4402" cy="234.1504" fill="#FEFECE" filter="url(#fgxcx3qb58i3l)" rx="62.4402" ry="25.5098" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="93" x="545.9402" y="234.2384">Update Patiant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="572.4402" y="251.8477">Status</text>
         <!--MD5=[6699f799ed5c7232dc727eb440bc4cc6]
 link Protocol to Offline-->
-        <path d="M78.2867,319.6006 C74.9243,334.7306 69.6239,358.5826 65.8799,375.4306 " fill="none" id="Protocol-&gt;Offline" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="64.7718,380.4176,70.6305,372.5009,65.8575,375.5369,62.8214,370.7638,64.7718,380.4176" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M72.0187,366.6986 C67.2133,378.3286 61.0695,395.1816 58.5,410.6406 C56.0223,425.5476 57.9915,429.5376 58.5,444.6406 C58.771,452.6886 59.3169,461.5426 59.8697,469.2186 " fill="none" id="Protocol-&gt;Offline" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="60.2501,474.3196,63.5705,465.0473,59.8787,469.3334,55.5926,465.6416,60.2501,474.3196" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="59.5" y="433.1357">ทำบันทึก</text>
         <!--MD5=[c82ce4d3f9a0489352c7a9acf8805ad6]
 link Protocol to Online-->
-        <path d="M99.5527,318.0356 C121.809,333.9326 159.683,360.9856 184.137,378.4526 " fill="none" id="Protocol-&gt;Online" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="188.241,381.3846,183.2424,372.8985,184.1723,378.4784,178.5924,379.4084,188.241,381.3846" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M89.9147,366.2866 C105.3205,385.0326 134.014,418.7526 161.5,444.6406 C171.874,454.4116 184.202,464.3656 194.646,472.3746 " fill="none" id="Protocol-&gt;Online" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="198.697,475.4556,193.9551,466.8235,194.7173,472.4287,189.1121,473.1909,198.697,475.4556" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="165.5" y="425.1357">รับคำสั่ง</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="162.5" y="441.4873">ทำบันทึก</text>
         <!--MD5=[dfdacabff06845ff468c7a479416b68f]
 link Online to Ops-->
-        <path d="M194.219,411.2816 C179.633,426.8106 156.149,451.8136 140.054,468.9506 " fill="none" id="Online-&gt;Ops" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="136.536,472.6966,145.6132,468.8749,139.9591,469.0521,139.7819,463.398,136.536,472.6966" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M204.219,505.2816 C189.633,520.8106 166.149,545.8136 150.054,562.9506 " fill="none" id="Online-&gt;Ops" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="146.536,566.6966,155.6132,562.8749,149.9591,563.0521,149.7819,557.398,146.536,566.6966" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[fa1f797b2a007678447862d188341364]
 link Online to Med-->
-        <path d="M220.625,411.2816 C235.21,426.9956 258.8,452.4106 274.717,469.5596 " fill="none" id="Online-&gt;Med" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="278.19,473.3006,274.9986,463.9832,274.7883,469.6361,269.1354,469.4258,278.19,473.3006" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M230.625,505.2816 C245.21,520.9956 268.8,546.4106 284.717,563.5596 " fill="none" id="Online-&gt;Med" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="288.19,567.3006,284.9986,557.9832,284.7883,563.6361,279.1354,563.4258,288.19,567.3006" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[36e00adda9d547800407b763e370433a]
 link Med to Check-->
-        <path d="M291.5,504.181 C291.5,519.486 291.5,543.6657 291.5,560.6233 " fill="none" id="Med-&gt;Check" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="291.5,565.6363,295.5,556.6363,291.5,560.6363,287.5,556.6363,291.5,565.6363" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[5a8af6b1b26d464cbd39c7c00cf9f5a0]
-link Paramedic to checkIn-->
-        <path d="M399.262,72.1406 C421.365,72.1406 450.241,72.1406 472.895,72.1406 " fill="none" id="Paramedic-&gt;checkIn" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="477.922,72.1406,468.922,68.1406,472.922,72.1406,468.922,76.1406,477.922,72.1406" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="37" x="420" y="49.6357">เข้าเวร</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="42" x="417.5" y="65.9873">ออกเวร</text>
+        <path d="M301.5,598.181 C301.5,613.486 301.5,637.6657 301.5,654.6233 " fill="none" id="Med-&gt;Check" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="301.5,659.6363,305.5,650.6363,301.5,654.6363,297.5,650.6363,301.5,659.6363" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[7044f03ffb6979f55da06edf3d17408c]
 reverse link MISLogin to Paramedic-->
-        <path d="M302.496,72.1406 C312.318,72.1406 322.14,72.1406 331.962,72.1406 " fill="none" id="MISLogin&lt;-Paramedic" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="297.359,72.1406,306.359,76.1406,302.359,72.1406,306.359,68.1406,297.359,72.1406" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M238.496,72.1406 C248.318,72.1406 258.14,72.1406 267.962,72.1406 " fill="none" id="MISLogin&lt;-Paramedic" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="233.359,72.1406,242.359,76.1406,238.359,72.1406,242.359,68.1406,233.359,72.1406" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[1ba1e146088e54cd8979da42cdd04062]
 link Paramedic to MeetingRoom-->
-        <path d="M331.882,104.5336 C308.088,126.7536 276.671,156.0906 254.945,176.3796 " fill="none" id="Paramedic-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="251.275,179.8066,260.5827,176.587,254.9292,176.3939,255.1223,170.7403,251.275,179.8066" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M267.938,113.5156 C243.541,142.8656 211.231,181.7356 190.162,207.0816 " fill="none" id="Paramedic-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="186.88,211.0296,195.7094,206.666,190.0764,207.1848,189.5577,201.5518,186.88,211.0296" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[fb010cc91a2b41c6b0304e090f1656e5]
 link Paramedic to SwitchVS-->
-        <path d="M365.5,113.6736 C365.5,131.9626 365.5,153.1886 365.5,170.0336 " fill="none" id="Paramedic-&gt;SwitchVS" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="365.5,175.1126,369.5,166.1126,365.5,170.1126,361.5,166.1126,365.5,175.1126" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M301.5,113.9296 C301.5,141.4166 301.5,177.1086 301.5,202.2486 " fill="none" id="Paramedic-&gt;SwitchVS" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="301.5,207.4466,305.5,198.4466,301.5,202.4466,297.5,198.4466,301.5,207.4466" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[ba32fffafa6430a49a0cfc65700cc5ca]
 link Paramedic to SwitchAmbulance-->
-        <path d="M399.083,101.9586 C424.827,124.0496 459.984,154.2186 484.508,175.2626 " fill="none" id="Paramedic-&gt;SwitchAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="488.349,178.5586,484.1235,169.6622,484.5544,175.3027,478.914,175.7336,488.349,178.5586" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M335.13,110.2496 C361.923,139.8136 398.77,180.4736 422.612,206.7816 " fill="none" id="Paramedic-&gt;SwitchAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="426.033,210.5556,422.9549,201.2001,422.676,206.8501,417.0261,206.5713,426.033,210.5556" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="66" x="396.5" y="158.1357">รับคำสั่งจาก</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="22" x="418.5" y="174.4873">OIS</text>
         <!--MD5=[23191dde4dc5d67be91171ea12bcf9dd]
 link Paramedic to UpdatePatiantStatus-->
-        <path d="M399.226,87.7096 C451.746,110.3966 553.214,154.2276 612.759,179.9496 " fill="none" id="Paramedic-&gt;UpdatePatiantStatus" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="617.679,182.0756,611.0033,174.8345,613.089,180.0928,607.8307,182.1785,617.679,182.0756" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M335.209,84.3646 C370.342,96.6866 426.453,118.1476 471.5,143.6406 C504.39,162.2536 538.738,188.4026 562.399,207.6316 " fill="none" id="Paramedic-&gt;UpdatePatiantStatus" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="566.396,210.8966,561.9573,202.1047,562.5241,207.7331,556.8957,208.2998,566.396,210.8966" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[64aa5dcbdac2a3f57315b050104d28bb]
 link Paramedic to Protocol-->
-        <path d="M331.923,102.7716 C326.345,106.8046 320.436,110.5966 314.5,113.6406 C226.115,158.9606 164.752,99.7536 99.5,174.6406 C73.1396,204.8936 74.7479,255.2576 78.1657,283.1006 " fill="none" id="Paramedic-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="78.8656,288.3556,81.6426,278.9064,78.2056,283.3994,73.7126,279.9624,78.8656,288.3556" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="126" y="198.6357">ดูได้</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="100.5" y="214.9873">ทำรายงานได้</text>
-        <!--MD5=[9bc768af26eacdea957a533c533fbca5]
+        <path d="M267.727,100.4716 C262.026,104.9376 256.131,109.4656 250.5,113.6406 C191.475,157.4006 156.396,147.2776 114.5,207.6406 C88.2019,245.5306 81.0931,300.9536 79.1862,330.2626 " fill="none" id="Paramedic-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="78.8872,335.4216,83.4025,326.6688,79.1772,330.43,75.4159,326.2048,78.8872,335.4216" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[2471501574dd449287b94384afe98d62]
 @startuml
 Title __Paramedic__
   :Paramedic: as Paramedic
@@ -85,28 +80,26 @@ Title __Paramedic__
   usecase (Operation Note) as Ops
   usecase (Medicine Note) as Med
   usecase (Check List) as Check
-  Protocol ..> Offline
-  Protocol ..> Online
+  Protocol ..> Offline : ทำบันทึก
+  Protocol ..> Online : รับคำสั่ง\nทำบันทึก
+  note top of Online : ทำรายงาน\nที่รับคำสั่งมา\nหรือบันทึกเพิ่มได้
   Online ..> Ops
   Online ..> Med
   Med ..> Check
 
-  usecase (check\nin/out) as checkIn
   usecase (MIS\nLogin) as MISLogin
   usecase (Meeting\nRoom) as MeetingRoom
 
-  usecase (Switch Partient\nVital Sign) as SwitchVS
+  usecase (Switch Patient\nVital Sign) as SwitchVS
   usecase (Switch\nAmbulance) as SwitchAmbulance
   usecase (Update Patiant\nStatus) as UpdatePatiantStatus
 
-  Paramedic -right-> checkIn : เข้าเวร\nออกเวร
   Paramedic -left-> MISLogin
   Paramedic - -> MeetingRoom
   Paramedic - -> SwitchVS
-  Paramedic - -> SwitchAmbulance
+  Paramedic - -> SwitchAmbulance: รับคำสั่งจาก\nOIS
   Paramedic - -> UpdatePatiantStatus
-  Paramedic - - -> Protocol: ดูได้\nทำรายงานได้
-  note right of Check : ทำรายงาน
+  Paramedic - - -> Protocol
 
 @enduml
 

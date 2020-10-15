@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="798px" preserveAspectRatio="none" style="width:537px;height:798px;" version="1.1" viewBox="0 0 537 798" width="537px" zoomAndPan="magnify">
     <defs>
-        <filter height="300%" id="ffqfxz7isi0vd" width="300%" x="-1" y="-1">
+        <filter height="300%" id="f1c59iquojt7v7" width="300%" x="-1" y="-1">
             <feGaussianBlur result="blurOut" stdDeviation="2.0" />
             <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
             <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
@@ -8,31 +8,30 @@
         </filter>
     </defs>
     <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="78" x="224.5" y="18.6855">CallTaker</text>
-        <rect fill="#FFFFFF" filter="url(#ffqfxz7isi0vd)" height="276" style="stroke: #000000; stroke-width: 1.5;" width="221" x="22" y="511.6406" />
+        <rect fill="#FFFFFF" filter="url(#f1c59iquojt7v7)" height="276" style="stroke: #000000; stroke-width: 1.5;" width="221" x="22" y="511.6406" />
         <!--MD5=[1dcae5ec17ace9dcc055d87e1424e99f]
 entity Supervisor-->
-        <ellipse cx="111" cy="537.1406" fill="#FEFECE" filter="url(#ffqfxz7isi0vd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M111,545.1406 L111,572.1406 M98,553.1406 L124,553.1406 M111,572.1406 L98,587.1406 M111,572.1406 L124,587.1406 " fill="none" filter="url(#ffqfxz7isi0vd)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="77" y="607.1738">Supervisor</text>
+        <ellipse cx="111" cy="537.1406" fill="#FEFECE" filter="url(#f1c59iquojt7v7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M111,545.1406 L111,572.1406 M98,553.1406 L124,553.1406 M111,572.1406 L98,587.1406 M111,572.1406 L124,587.1406 " fill="none" filter="url(#f1c59iquojt7v7)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="77" y="607.1738">Supervisor</text>
         <!--MD5=[dfd4219ae26b16e6e974a23a737c25b1]
 entity Coordinator-->
-        <ellipse cx="81" cy="698.1406" fill="#FEFECE" filter="url(#ffqfxz7isi0vd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M81,706.1406 L81,733.1406 M68,714.1406 L94,714.1406 M81,733.1406 L68,748.1406 M81,733.1406 L94,748.1406 " fill="none" filter="url(#ffqfxz7isi0vd)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="43.5" y="768.1738">Coordinator</text>
+        <ellipse cx="81" cy="698.1406" fill="#FEFECE" filter="url(#f1c59iquojt7v7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M81,706.1406 L81,733.1406 M68,714.1406 L94,714.1406 M81,733.1406 L68,748.1406 M81,733.1406 L94,748.1406 " fill="none" filter="url(#f1c59iquojt7v7)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="75" x="43.5" y="768.1738">Coordinator</text>
         <!--MD5=[8438b603195005c18d5011c1879083f4]
 entity Dispatcher-->
-        <ellipse cx="190" cy="698.1406" fill="#FEFECE" filter="url(#ffqfxz7isi0vd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M190,706.1406 L190,733.1406 M177,714.1406 L203,714.1406 M190,733.1406 L177,748.1406 M190,733.1406 L203,748.1406 " fill="none" filter="url(#ffqfxz7isi0vd)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="156" y="768.1738">Dispatcher</text>
+        <ellipse cx="190" cy="698.1406" fill="#FEFECE" filter="url(#f1c59iquojt7v7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M190,706.1406 L190,733.1406 M177,714.1406 L203,714.1406 M190,733.1406 L177,748.1406 M190,733.1406 L203,748.1406 " fill="none" filter="url(#f1c59iquojt7v7)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="156" y="768.1738">Dispatcher</text>
         <!--MD5=[8c69140241d2a8b22aee4c2edeaeb65f]
 entity CallTaker-->
-        <ellipse cx="423" cy="263.1406" fill="#FEFECE" filter="url(#ffqfxz7isi0vd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M423,271.1406 L423,298.1406 M410,279.1406 L436,279.1406 M423,298.1406 L410,313.1406 M423,298.1406 L436,313.1406 " fill="none" filter="url(#ffqfxz7isi0vd)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="392.5" y="333.1738">CallTaker</text>
-        <path d="M36,401.6406 L36,427.9922 A0,0 0 0 0 36,427.9922 L107,427.9922 L111,527.4756 L115,427.9922 L186,427.9922 A0,0 0 0 0 186,427.9922 L186,411.6406 L176,401.6406 L36,401.6406 A0,0 0 0 0 36,401.6406 " fill="#FBFB77" filter="url(#ffqfxz7isi0vd)" style="stroke: #A80036; stroke-width: 1.0;" />
+        <ellipse cx="423" cy="263.1406" fill="#FEFECE" filter="url(#f1c59iquojt7v7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M423,271.1406 L423,298.1406 M410,279.1406 L436,279.1406 M423,298.1406 L410,313.1406 M423,298.1406 L436,313.1406 " fill="none" filter="url(#f1c59iquojt7v7)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="61" x="392.5" y="333.1738">CallTaker</text>
+        <path d="M36,401.6406 L36,427.9922 A0,0 0 0 0 36,427.9922 L107,427.9922 L111,527.4756 L115,427.9922 L186,427.9922 A0,0 0 0 0 186,427.9922 L186,411.6406 L176,401.6406 L36,401.6406 A0,0 0 0 0 36,401.6406 " fill="#FBFB77" filter="url(#f1c59iquojt7v7)" style="stroke: #A80036; stroke-width: 1.0;" />
         <path d="M176,401.6406 L176,411.6406 L186,411.6406 L176,401.6406 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="129" x="42" y="420.1357">ถ้าสายเต็มฉันช่วยได้นะ</text>
         <!--MD5=[fee662a292a0353a69bd162820bae93b]
 entity User-->
-        <ellipse cx="423" cy="40.1406" fill="#FEFECE" filter="url(#ffqfxz7isi0vd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M423,48.1406 L423,75.1406 M410,56.1406 L436,56.1406 M423,75.1406 L410,90.1406 M423,75.1406 L436,90.1406 " fill="none" filter="url(#ffqfxz7isi0vd)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="53" x="396.5" y="110.1738">ผู้แจ้งเหตุ</text>
-        <ellipse cx="308.2095" cy="569.1382" fill="#FEFECE" filter="url(#ffqfxz7isi0vd)" rx="48.7095" ry="25.9976" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="287.2095" y="562.8207">Assign</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="273.2095" y="580.4301">Ambulance</text>
-        <ellipse cx="328.1021" cy="294.9223" fill="#FEFECE" filter="url(#ffqfxz7isi0vd)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="316.6021" y="289.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="310.6021" y="307.4507">Login</text>
+        <ellipse cx="423" cy="40.1406" fill="#FEFECE" filter="url(#f1c59iquojt7v7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M423,48.1406 L423,75.1406 M410,56.1406 L436,56.1406 M423,75.1406 L410,90.1406 M423,75.1406 L436,90.1406 " fill="none" filter="url(#f1c59iquojt7v7)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="53" x="396.5" y="110.1738">ผู้แจ้งเหตุ</text>
+        <ellipse cx="308.2095" cy="569.1382" fill="#FEFECE" filter="url(#f1c59iquojt7v7)" rx="48.7095" ry="25.9976" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="287.2095" y="562.8207">Assign</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="273.2095" y="580.4301">Ambulance</text>
         <!--MD5=[39319b6c2da00a2fafb91dc5fb043224]
 link Supervisor to Coordinator-->
         <path d="M82.6412,610.6566 C77.4284,620.0916 72.7646,630.3876 70,640.6406 C66.3024,654.3536 66.6672,669.6036 68.6578,683.5266 " fill="none" id="Supervisor-&gt;Coordinator" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
@@ -45,13 +44,9 @@ link Supervisor to Dispatcher-->
 link User to CallTaker-->
         <path d="M423,113.6756 C423,151.7186 423,208.5566 423,248.2496 " fill="none" id="User-&gt;CallTaker" style="stroke: #A80036; stroke-width: 1.0;" />
         <polygon fill="#A80036" points="423,253.4896,427,244.4896,423,248.4896,419,244.4896,423,253.4896" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="40" x="424" y="189.1357">แจ้งเหตุ</text>
-        <!--MD5=[aba0b31485b1539c28def4ef766d81f4]
-reverse link MISLogin to CallTaker-->
-        <path d="M362.838,295.1406 C372.687,295.1406 382.536,295.1406 392.385,295.1406 " fill="none" id="MISLogin&lt;-CallTaker" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="357.688,295.1406,366.688,299.1406,362.688,295.1406,366.688,291.1406,357.688,295.1406" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[15f037edf9b9eb830d5ca8d6cf4e2d6b]
 link CallTaker to AssignAmbulance-->
-        <path d="M392.461,322.1756 C365.482,345.9076 329.184,379.8876 321,397.6406 C300.032,443.1226 301.054,502.7036 304.189,538.0496 " fill="none" id="CallTaker-&gt;AssignAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M392.121,317.1646 C368.152,335.3856 336.48,364.0636 321,397.6406 C300.032,443.1226 301.054,502.7036 304.189,538.0496 " fill="none" id="CallTaker-&gt;AssignAmbulance" style="stroke: #A80036; stroke-width: 1.0;" />
         <polygon fill="#A80036" points="304.665,543.0846,307.8014,533.7485,304.1951,538.1068,299.8368,534.5004,304.665,543.0846" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="322" y="412.1357">เปิดปฏิบัติการ</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="331.5" y="428.4873">สั่งพาหนะ</text>
         <!--MD5=[2411cf5240a05e3f0f5d9eb11dcb20b5]
 link CallTaker to Coordinator-->
@@ -61,7 +56,7 @@ link CallTaker to Coordinator-->
 link CallTaker to Dispatcher-->
         <path d="M442.192,336.9266 C473.574,410.3226 525.158,565.6496 449,658.6406 C421.23,692.5486 294.44,714.6893 229.136,724.0488 " fill="none" id="CallTaker-&gt;Dispatcher" style="stroke: #A80036; stroke-width: 1.0;" />
         <polygon fill="#A80036" points="224.16,724.7543,233.6329,727.4495,229.1104,724.0515,232.5084,719.5289,224.16,724.7543" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="487" y="484.1357">แดง</text>
-        <!--MD5=[f21dc042e11ae11ad5453b0302ebdd62]
+        <!--MD5=[434aa21aa9c697a8a28b3a1775bc6144]
 @startuml
 Title __CallTaker__
   rectangle {
@@ -76,10 +71,8 @@ Title __CallTaker__
 
   :ผู้แจ้งเหตุ: as User
   usecase (Assign\nAmbulance) as AssignAmbulance
-  usecase (MIS\nLogin) as MISLogin
 
   User - - -> CallTaker : แจ้งเหตุ
-  CallTaker -left-> MISLogin
   CallTaker - - -> AssignAmbulance : เปิดปฏิบัติการ\nสั่งพาหนะ
   CallTaker - - - -> Coordinator : เหลือง\nเขียว
   CallTaker - - - -> Dispatcher : แดง

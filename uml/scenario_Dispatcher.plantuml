@@ -12,15 +12,13 @@ Title __Dispatcher__
   Online ..> Ops
   Online ..> Med
 
-  usecase (MIS\nLogin) as MISLogin
   usecase (Meeting\nRoom) as MeetingRoom
   usecase (Close\nRoom) as CloseRoom
   usecase (Invite\nMedical Director) as InviteMD
 
-  Dispatcher -left-> MISLogin
   Dispatcher --> MeetingRoom
   Dispatcher --> CloseRoom
-  Dispatcher --> Protocol : สั่งการ
+  Dispatcher --> Protocol : ดูได้\nทำบันทึกได้
   Dispatcher --> InviteMD : เรียก\nMedical Director
 
 @enduml

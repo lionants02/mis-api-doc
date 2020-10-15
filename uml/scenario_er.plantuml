@@ -1,0 +1,25 @@
+@startuml
+Title __ER__
+  :ER: as ER
+
+  usecase (Protocol) as Protocol
+  usecase (Offline Note) as Offline
+  usecase (Online Note) as Online
+  usecase (Operation Note) as Ops
+  usecase (Medicine Note) as Med
+  usecase (Check List) as Check
+  Protocol ..> Offline : ดู
+  Protocol ..> Online : รับคำสั่ง\nทำบันทึก
+  note top of Online : ทำรายงาน\nที่รับคำสั่งมา\nหรือบันทึกเพิ่มได้ ไหมมมมมมมมมม
+  Online ..> Ops
+  Online ..> Med
+  Med ..> Check
+
+  usecase (MIS\nLogin) as MISLogin
+  usecase (Meeting\nRoom) as MeetingRoom
+
+  ER -left-> MISLogin
+  ER --> MeetingRoom
+  ER ---> Protocol
+
+@enduml

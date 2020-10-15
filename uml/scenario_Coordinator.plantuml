@@ -6,18 +6,19 @@ Title __Coordinator__
   usecase (Offline Note) as Offline
   usecase (Online Note) as Online
   usecase (Operation Note) as Ops
+  usecase (Medicine Note) as Med
   Protocol ..> Offline
   Protocol ..> Online
   Online ..> Ops
+  Online ..> Med
 
-  usecase (MIS\nLogin) as MISLogin
   usecase (Meeting\nRoom) as MeetingRoom
   usecase (Close\nRoom) as CloseRoom
-  usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
+  usecase (Invite\nMedical Director) as InviteMD
 
-  Coordinator -left-> MISLogin
   Coordinator --> MeetingRoom
   Coordinator --> CloseRoom
-  Coordinator --> Protocol : ดูได้
+  Coordinator --> Protocol : ดูได้\nทำบันทึกได้
+  Coordinator --> InviteMD : เรียก\nMedical Director
 
 @enduml

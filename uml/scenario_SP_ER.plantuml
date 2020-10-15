@@ -1,11 +1,8 @@
 @startuml
-Title __Specialist and ER__
+Title __Specialist__
 
-  usecase (MIS\nLogin) as MISLogin
   rectangle {
     :Specialist: as Specialist
-    :ER: as ER
-    Specialist ..> ER :<extend>
   }
 
   rectangle {
@@ -20,10 +17,6 @@ Title __Specialist and ER__
     usecase (Recive\nGrant) as ReciveGrant
     GrantPermission ..> ReciveGrant:<extend>
   }
-
-  ER ----> MISLogin
-  ER --> ReciveInvite
-  ER --> MeetingRoom : ดู
 
   Specialist ----> ReciveGrant : รับหน้าที่จาก\nMedical Director
   Specialist --> MeetingRoom

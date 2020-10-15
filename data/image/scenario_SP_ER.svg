@@ -1,75 +1,51 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="711px" preserveAspectRatio="none" style="width:681px;height:711px;" version="1.1" viewBox="0 0 681 711" width="681px" zoomAndPan="magnify">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="572px" preserveAspectRatio="none" style="width:588px;height:572px;" version="1.1" viewBox="0 0 588 572" width="588px" zoomAndPan="magnify">
     <defs>
-        <filter height="300%" id="f13fuijds7cwvm" width="300%" x="-1" y="-1">
+        <filter height="300%" id="fanvnxp862zlo" width="300%" x="-1" y="-1">
             <feGaussianBlur result="blurOut" stdDeviation="2.0" />
             <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
             <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
             <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
         </filter>
     </defs>
-    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="142" x="273" y="18.6855">Specialist and ER</text>
-        <rect fill="#FFFFFF" filter="url(#f13fuijds7cwvm)" height="276" style="stroke: #000000; stroke-width: 1.5;" width="124" x="266" y="46.6406" />
-        <rect fill="#FFFFFF" filter="url(#f13fuijds7cwvm)" height="216" style="stroke: #000000; stroke-width: 1.5;" width="282" x="22" y="388.6406" />
-        <rect fill="#FFFFFF" filter="url(#f13fuijds7cwvm)" height="215.5" style="stroke: #000000; stroke-width: 1.5;" width="128" x="449" y="389.1406" />
+    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="77" x="267" y="18.6855">Specialist</text>
+        <rect fill="#FFFFFF" filter="url(#fanvnxp862zlo)" height="115" style="stroke: #000000; stroke-width: 1.5;" width="92" x="295" y="47.1406" />
+        <rect fill="#FFFFFF" filter="url(#fanvnxp862zlo)" height="233.5" style="stroke: #000000; stroke-width: 1.5;" width="282" x="22" y="195.1406" />
+        <rect fill="#FFFFFF" filter="url(#fanvnxp862zlo)" height="217.5" style="stroke: #000000; stroke-width: 1.5;" width="128" x="449" y="344.1406" />
         <!--MD5=[1263a788717e7841c6c3a70e1586692b]
 entity Specialist-->
-        <ellipse cx="314" cy="72.1406" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M314,80.1406 L314,107.1406 M301,88.1406 L327,88.1406 M314,107.1406 L301,122.1406 M314,107.1406 L327,122.1406 " fill="none" filter="url(#f13fuijds7cwvm)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="60" x="284" y="142.1738">Specialist</text>
-        <!--MD5=[5feeba211306dae78a9255b1c0e912c7]
-entity ER-->
-        <ellipse cx="333" cy="233.1406" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M333,241.1406 L333,268.1406 M320,249.1406 L346,249.1406 M333,268.1406 L320,283.1406 M333,268.1406 L346,283.1406 " fill="none" filter="url(#f13fuijds7cwvm)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="19" x="323.5" y="303.1738">ER</text>
-        <ellipse cx="250.9159" cy="431.1779" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="225.9159" y="429.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="232.4159" y="447.2789">Room</text>
-        <ellipse cx="109.146" cy="430.9061" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="70.646" ry="25.2655" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="92.646" y="423.4225">Invite</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="55.646" y="441.0319">to Meeting Room</text>
-        <ellipse cx="108.7647" cy="562.0524" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="32.2647" ry="26.4118" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="87.2647" y="560.2787">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="92.2647" y="577.8881">Invite</text>
-        <ellipse cx="513.0733" cy="430.8916" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="47.5733" ry="25.7509" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="495.0733" y="424.1876">Grant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="69" x="478.5733" y="441.797">Permission</text>
-        <ellipse cx="516.1666" cy="562.3739" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="32.6666" ry="26.7333" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="494.6666" y="560.13">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="498.1666" y="577.7394">Grant</text>
-        <ellipse cx="412.1021" cy="675.9223" fill="#FEFECE" filter="url(#f13fuijds7cwvm)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="400.6021" y="670.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="394.6021" y="688.4507">Login</text>
-        <!--MD5=[3cf2959151ffc682140aad190f327c71]
-link Specialist to ER-->
-        <path d="M318.844,145.6746 C321.491,167.8286 324.779,195.3466 327.52,218.2836 " fill="none" id="Specialist-&gt;ER" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="328.132,223.4046,331.0365,213.9938,327.5391,218.4399,323.093,214.9425,328.132,223.4046" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="326" y="190.1357">&lt;extend&gt;</text>
+        <ellipse cx="341" cy="72.6406" fill="#FEFECE" filter="url(#fanvnxp862zlo)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M341,80.6406 L341,107.6406 M328,88.6406 L354,88.6406 M341,107.6406 L328,122.6406 M341,107.6406 L354,122.6406 " fill="none" filter="url(#fanvnxp862zlo)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="60" x="311" y="142.6738">Specialist</text>
+        <ellipse cx="250.9159" cy="237.6779" fill="#FEFECE" filter="url(#fanvnxp862zlo)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="225.9159" y="236.1695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="232.4159" y="253.7789">Room</text>
+        <ellipse cx="109.146" cy="237.4061" fill="#FEFECE" filter="url(#fanvnxp862zlo)" rx="70.646" ry="25.2655" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="92.646" y="229.9225">Invite</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="107" x="55.646" y="247.5319">to Meeting Room</text>
+        <ellipse cx="211.7647" cy="386.0524" fill="#FEFECE" filter="url(#fanvnxp862zlo)" rx="32.2647" ry="26.4118" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="190.2647" y="384.2787">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="195.2647" y="401.8881">Invite</text>
+        <ellipse cx="513.0733" cy="385.8916" fill="#FEFECE" filter="url(#fanvnxp862zlo)" rx="47.5733" ry="25.7509" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="495.0733" y="379.1876">Grant</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="69" x="478.5733" y="396.797">Permission</text>
+        <ellipse cx="500.1666" cy="519.3739" fill="#FEFECE" filter="url(#fanvnxp862zlo)" rx="32.6666" ry="26.7333" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="43" x="478.6666" y="517.13">Recive</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="482.1666" y="534.7394">Grant</text>
         <!--MD5=[a9f7e0fd730e41fef76a67da7aff6299]
 link InviteToMeetingRoom to ReciveInvite-->
-        <path d="M109,456.7086 C109,477.5526 109,507.5696 109,530.0786 " fill="none" id="InviteToMeetingRoom-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="109,535.3386,113,526.3386,109,530.3386,105,526.3386,109,535.3386" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="110" y="502.1357">&lt;extend&gt;</text>
+        <path d="M125.778,262.5046 C144.283,288.8256 173.985,331.0706 193.245,358.4656 " fill="none" id="InviteToMeetingRoom-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="196.244,362.7296,194.3396,353.0666,193.3682,358.6394,187.7953,357.668,196.244,362.7296" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="171" y="316.6357">&lt;extend&gt;</text>
         <!--MD5=[6dcdfc8bbecb2f2054cce8805f035df2]
 link GrantPermission to ReciveGrant-->
-        <path d="M513.586,457.3196 C514.072,478.2266 514.765,508.0476 515.284,530.3686 " fill="none" id="GrantPermission-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
-        <polygon fill="#A80036" points="515.406,535.5846,519.1966,526.4945,515.2903,530.586,511.1988,526.6796,515.406,535.5846" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="516" y="502.1357">&lt;extend&gt;</text>
-        <!--MD5=[57abf21f6cc8357b1216cd29ba3bc8dd]
-link ER to MISLogin-->
-        <path d="M347.574,296.5946 C353.149,309.3366 359.098,324.4556 363,338.6406 C393.63,449.9766 406.059,587.6196 410.219,646.3748 " fill="none" id="ER-&gt;MISLogin" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="410.574,651.4762,413.9406,642.2206,410.2275,646.4882,405.9599,642.7751,410.574,651.4762" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[a4bcead228a5ff90c13031c70d93dafd]
-link ER to ReciveInvite-->
-        <path d="M337.151,306.6556 C339.278,348.3066 336.408,413.1846 305,457.6406 C266.516,512.1126 190.301,540.2676 145.085,552.7716 " fill="none" id="ER-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="139.999,554.1486,149.7316,555.6572,144.8252,552.8417,147.6406,547.9353,139.999,554.1486" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[dd75ddc79692eb4881abc289679c5eb0]
-link ER to MeetingRoom-->
-        <path d="M318.34,295.4606 C303.385,325.3696 280.323,371.4946 265.446,401.2486 " fill="none" id="ER-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="263.131,405.8786,270.7336,399.6176,265.3671,401.4065,263.5782,396.0399,263.131,405.8786" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="296" y="361.1357">ดู</text>
+        <path d="M510.493,412.3986 C508.367,433.8266 505.31,464.6356 503.043,487.4752 " fill="none" id="GrantPermission-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="502.543,492.513,507.4126,483.9522,503.037,487.5375,499.4517,483.1619,502.543,492.513" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="55" x="508" y="459.1357">&lt;extend&gt;</text>
         <!--MD5=[f91ed9a4c0a4916a8afbd12ca74343b8]
 link Specialist to ReciveGrant-->
-        <path d="M344.104,124.4876 C402.621,164.1296 530.157,261.0056 578,380.6406 C598.631,432.2306 603.072,455.0946 580,505.6406 C572.977,521.0266 559.349,533.7896 546.467,543.1806 " fill="none" id="Specialist-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="542.137,546.2346,551.7968,544.3142,546.2224,543.352,547.1846,537.7776,542.137,546.2346" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="587" y="353.1357">รับหน้าที่จาก</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="575" y="369.4873">Medical Director</text>
+        <path d="M352.738,146.3336 C374.959,222.5596 423.161,383.9196 448,436.6406 C457.089,455.9316 469.965,476.1496 480.63,491.622 " fill="none" id="Specialist-&gt;ReciveGrant" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="483.574,495.8556,481.7199,486.1829,480.7195,491.7506,475.1518,490.7501,483.574,495.8556" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="70" x="422" y="308.6357">รับหน้าที่จาก</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="410" y="324.9873">Medical Director</text>
         <!--MD5=[ae6d7be87561fe24c220e42bdbae8f97]
 link Specialist to MeetingRoom-->
-        <path d="M306.148,145.6446 C293.373,211.5496 268.368,340.5446 256.946,399.4656 " fill="none" id="Specialist-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="255.95,404.6056,261.5895,396.5312,256.9014,399.697,253.7357,395.0089,255.95,404.6056" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M313.017,146.3716 C299.031,166.7286 282.474,190.8286 269.987,209.0036 " fill="none" id="Specialist-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="266.904,213.4916,275.2972,208.3385,269.7352,209.3705,268.7033,203.8085,266.904,213.4916" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[6393b41e6076f631591caddc251726fd]
 link Specialist to ReciveInvite-->
-        <path d="M283.665,121.8956 C220.402,158.8166 75.7262,254.0646 21,380.6406 C7.4188,412.0526 9.1908,425.5206 21,457.6406 C33.1825,490.7756 61.2038,520.5466 82.3771,539.5596 " fill="none" id="Specialist-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="86.2455,542.9826,82.1564,534.0228,82.5011,539.6691,76.8548,540.0138,86.2455,542.9826" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[e3d45e1db79e218cc611a117c0e1e250]
+        <path d="M336.669,146.2866 C332.02,179.2736 322.763,226.3436 305,264.1406 C287.423,301.5426 256.741,338.2856 235.448,361.2886 " fill="none" id="Specialist-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="231.851,365.1406,240.9173,361.2933,235.2638,361.4864,235.0706,355.8329,231.851,365.1406" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[5d5c90b62787ca21b5af6e041bed6d5a]
 @startuml
-Title __Specialist and ER__
+Title __Specialist__
 
-  usecase (MIS\nLogin) as MISLogin
   rectangle {
     :Specialist: as Specialist
-    :ER: as ER
-    Specialist ..> ER :<extend>
   }
 
   rectangle {
@@ -84,10 +60,6 @@ Title __Specialist and ER__
     usecase (Recive\nGrant) as ReciveGrant
     GrantPermission ..> ReciveGrant:<extend>
   }
-
-  ER - - - -> MISLogin
-  ER - -> ReciveInvite
-  ER - -> MeetingRoom : ดู
 
   Specialist - - - -> ReciveGrant : รับหน้าที่จาก\nMedical Director
   Specialist - -> MeetingRoom

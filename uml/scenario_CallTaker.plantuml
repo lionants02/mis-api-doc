@@ -12,10 +12,8 @@ Title __CallTaker__
 
   :ผู้แจ้งเหตุ: as User
   usecase (Assign\nAmbulance) as AssignAmbulance
-  usecase (MIS\nLogin) as MISLogin
 
   User ---> CallTaker : แจ้งเหตุ
-  CallTaker -left-> MISLogin
   CallTaker ---> AssignAmbulance : เปิดปฏิบัติการ\nสั่งพาหนะ
   CallTaker ----> Coordinator : เหลือง\nเขียว
   CallTaker ----> Dispatcher : แดง

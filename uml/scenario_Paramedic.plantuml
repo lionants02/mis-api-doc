@@ -8,27 +8,25 @@ Title __Paramedic__
   usecase (Operation Note) as Ops
   usecase (Medicine Note) as Med
   usecase (Check List) as Check
-  Protocol ..> Offline
-  Protocol ..> Online
+  Protocol ..> Offline : ทำบันทึก
+  Protocol ..> Online : รับคำสั่ง\nทำบันทึก
+  note top of Online : ทำรายงาน\nที่รับคำสั่งมา\nหรือบันทึกเพิ่มได้
   Online ..> Ops
   Online ..> Med
   Med ..> Check
 
-  usecase (check\nin/out) as checkIn
   usecase (MIS\nLogin) as MISLogin
   usecase (Meeting\nRoom) as MeetingRoom
 
-  usecase (Switch Partient\nVital Sign) as SwitchVS
+  usecase (Switch Patient\nVital Sign) as SwitchVS
   usecase (Switch\nAmbulance) as SwitchAmbulance
   usecase (Update Patiant\nStatus) as UpdatePatiantStatus
 
-  Paramedic -right-> checkIn : เข้าเวร\nออกเวร
   Paramedic -left-> MISLogin
   Paramedic --> MeetingRoom
   Paramedic --> SwitchVS
-  Paramedic --> SwitchAmbulance
+  Paramedic --> SwitchAmbulance: รับคำสั่งจาก\nOIS
   Paramedic --> UpdatePatiantStatus
-  Paramedic ---> Protocol: ดูได้\nทำรายงานได้
-  note right of Check : ทำรายงาน
+  Paramedic ---> Protocol
 
 @enduml

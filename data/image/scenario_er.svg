@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="668px" preserveAspectRatio="none" style="width:397px;height:668px;" version="1.1" viewBox="0 0 397 668" width="397px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f18h6mo8acw0q7" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0" />
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal" />
+        </filter>
+    </defs>
+    <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="25" x="189.5" y="18.6855">ER</text>
+        <!--MD5=[5feeba211306dae78a9255b1c0e912c7]
+entity ER-->
+        <ellipse cx="114.5" cy="40.1406" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M114.5,48.1406 L114.5,75.1406 M101.5,56.1406 L127.5,56.1406 M114.5,75.1406 L101.5,90.1406 M114.5,75.1406 L127.5,90.1406 " fill="none" filter="url(#f18h6mo8acw0q7)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="19" x="105" y="110.1738">ER</text>
+        <ellipse cx="69.2696" cy="318.0923" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="43.2696" y="323.397">Protocol</text>
+        <ellipse cx="69.3259" cy="457.0923" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="32.3259" y="462.397">Offline Note</text>
+        <ellipse cx="236.3259" cy="457.0923" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="199.3259" y="462.397">Online Note</text>
+        <ellipse cx="151.6311" cy="549.6668" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="68.1311" ry="16.0262" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="96" x="103.6311" y="554.9715">Operation Note</text>
+        <ellipse cx="320.5964" cy="549.6599" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="65.5964" ry="15.5193" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="276.0964" y="554.9646">Medicine Note</text>
+        <ellipse cx="320.669" cy="642.0923" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="49.669" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="287.669" y="647.397">Check List</text>
+        <path d="M145,288.6406 L145,347.6953 A0,0 0 0 0 145,347.6953 L249.098,347.6953 L238.761,441.3876 L257.098,347.6953 L370,347.6953 A0,0 0 0 0 370,347.6953 L370,298.6406 L360,288.6406 L145,288.6406 A0,0 0 0 0 145,288.6406 " fill="#FBFB77" filter="url(#f18h6mo8acw0q7)" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M360,288.6406 L360,298.6406 L370,298.6406 L360,288.6406 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="59" x="151" y="307.1357">ทำรายงาน</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="69" x="151" y="323.4873">ที่รับคำสั่งมา</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="204" x="151" y="339.8389">หรือบันทึกเพิ่มได้ ไหมมมมมมมมมม</text>
+        <ellipse cx="35.6021" cy="71.9223" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="24.1021" y="66.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="18.1021" y="84.4507">Login</text>
+        <ellipse cx="159.4159" cy="201.1779" fill="#FEFECE" filter="url(#f18h6mo8acw0q7)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="134.4159" y="199.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="140.9159" y="217.2789">Room</text>
+        <!--MD5=[6699f799ed5c7232dc727eb440bc4cc6]
+link Protocol to Offline-->
+        <path d="M69.5,333.8016 C69.5,358.5226 69.5,408.5146 69.5,436.3316 " fill="none" id="Protocol-&gt;Offline" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="69.5,441.5846,73.5,432.5846,69.5,436.5846,65.5,432.5846,69.5,441.5846" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="70.5" y="400.1357">ดู</text>
+        <!--MD5=[c82ce4d3f9a0489352c7a9acf8805ad6]
+link Protocol to Online-->
+        <path d="M85.8167,332.5266 C116.26,357.5006 181.678,411.1666 215.417,438.8456 " fill="none" id="Protocol-&gt;Online" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="219.37,442.0886,214.949,433.2878,215.5044,438.9173,209.8749,439.4727,219.37,442.0886" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="44" x="181.5" y="392.1357">รับคำสั่ง</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="178.5" y="408.4873">ทำบันทึก</text>
+        <!--MD5=[dfdacabff06845ff468c7a479416b68f]
+link Online to Ops-->
+        <path d="M223.219,472.2816 C208.633,487.8106 185.149,512.8136 169.054,529.9506 " fill="none" id="Online-&gt;Ops" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="165.536,533.6966,174.6132,529.8749,168.9591,530.0521,168.7819,524.398,165.536,533.6966" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[fa1f797b2a007678447862d188341364]
+link Online to Med-->
+        <path d="M249.625,472.2816 C264.21,487.9956 287.8,513.4106 303.717,530.5596 " fill="none" id="Online-&gt;Med" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="307.19,534.3006,303.9986,524.9832,303.7883,530.6361,298.1354,530.4258,307.19,534.3006" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[36e00adda9d547800407b763e370433a]
+link Med to Check-->
+        <path d="M320.5,565.181 C320.5,580.486 320.5,604.6657 320.5,621.6233 " fill="none" id="Med-&gt;Check" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
+        <polygon fill="#A80036" points="320.5,626.6363,324.5,617.6363,320.5,621.6363,316.5,617.6363,320.5,626.6363" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[0efa9026de5c6bcb483939ebf2ff3f41]
+reverse link MISLogin to ER-->
+        <path d="M70.2783,72.1406 C80.1328,72.1406 89.9873,72.1406 99.8418,72.1406 " fill="none" id="MISLogin&lt;-ER" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="65.125,72.1406,74.125,76.1406,70.125,72.1406,74.125,68.1406,65.125,72.1406" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[dd75ddc79692eb4881abc289679c5eb0]
+link ER to MeetingRoom-->
+        <path d="M128.862,113.6736 C135.342,131.9626 142.863,153.1886 148.832,170.0336 " fill="none" id="ER-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="150.632,175.1126,151.3963,165.2935,148.962,170.3998,143.8557,167.9655,150.632,175.1126" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[28bb78d18d9c4039fd07ad2cedc967eb]
+link ER to Protocol-->
+        <path d="M107.019,113.7066 C97.2361,166.7496 80.4828,257.5896 73.1346,297.4326 " fill="none" id="ER-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="72.2032,302.4836,77.7697,294.3587,73.1103,297.5666,69.9024,292.9073,72.2032,302.4836" style="stroke: #A80036; stroke-width: 1.0;" />
+        <!--MD5=[ac9e941d7a99c9cb7f1eab4a06fb0e6b]
+@startuml
+Title __ER__
+  :ER: as ER
+
+  usecase (Protocol) as Protocol
+  usecase (Offline Note) as Offline
+  usecase (Online Note) as Online
+  usecase (Operation Note) as Ops
+  usecase (Medicine Note) as Med
+  usecase (Check List) as Check
+  Protocol ..> Offline : ดู
+  Protocol ..> Online : รับคำสั่ง\nทำบันทึก
+  note top of Online : ทำรายงาน\nที่รับคำสั่งมา\nหรือบันทึกเพิ่มได้ ไหมมมมมมมมมม
+  Online ..> Ops
+  Online ..> Med
+  Med ..> Check
+
+  usecase (MIS\nLogin) as MISLogin
+  usecase (Meeting\nRoom) as MeetingRoom
+
+  ER -left-> MISLogin
+  ER - -> MeetingRoom
+  ER - - -> Protocol
+
+@enduml
+
+PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_181-b13
+Operating System: Windows 10
+Default Encoding: MS874
+Language: en
+Country: US
+-->
+    </g>
+</svg>
