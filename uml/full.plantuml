@@ -67,47 +67,44 @@ Title Use case
     AssignAmbulance ..> SwitchAmbulance
   }
 
-  CallTaker --> UpdatePatiantStatus : สถานะตอนรับแจ้ง
   CallTaker --> AssignAmbulance
   CallTaker ----> Coordinator : เหลือง\nเขียว
   CallTaker ----> Dispatcher : แดง
 
-  Coordinator --> ERSpecialistInfomation
+  usecase (Invite\nMedical Director) as InviteMD
   Coordinator --> MeetingRoom: Case G, Y
-  Coordinator ----> Protocol
-  Coordinator ----> CloseRoom
+  Coordinator --> CloseRoom
+  Coordinator --> Protocol
+  Coordinator --> InviteMD
 
-  Dispatcher ---------> ERSpecialistInfomation
-  Dispatcher ---------> MeetingRoom : Case R
-  Dispatcher ------> InviteToMeetingRoom
-  Dispatcher ------> Protocol
-  Dispatcher ------> CloseRoom
+  Dispatcher ----> MeetingRoom: Case R
+  Dispatcher ----> CloseRoom
+  Dispatcher ----> Protocol
+  Dispatcher ----> InviteMD
 
-  ER --> ReciveInvite
-  ER --> MISLogin
+  ER ---> MISLogin
+  ER ---> MeetingRoom
+  ER ---> Protocol
 
-  Specialist ------> MeetingRoom
   Specialist --> ReciveGrant
-  Specialist ------> ReciveInvite
+  Specialist --> MeetingRoom
+  Specialist --> ReciveInvite
 
-  Paramedic ------> MISLogin
-  Paramedic ------> MeetingRoom
-  Paramedic ------> Protocol
-  Paramedic ------> SwitchVS
-  Paramedic ------> Med
-  Paramedic ------> Check
-  Paramedic ------> checkIn
-  Paramedic ------> SwitchAmbulance
-  Paramedic ------> UpdatePatiantStatus
+  Paramedic ---> MISLogin
+  Paramedic ---> MeetingRoom
+  Paramedic ---> SwitchVS
+  Paramedic ---> SwitchAmbulance
+  Paramedic ---> UpdatePatiantStatus
+  Paramedic ---> Protocol
 
   :Medical Director: as MD
-  MD ------> MISLogin
-  MD -----> MeetingRoom
+  MD ---> checkIn
+  MD ---> MISLogin
+  MD ---> MeetingRoom
+  MD ---> ERSpecialistInfomation
+  MD ---> Protocol
+  MD ---> InviteToMeetingRoom
+  MD ---> ReciveInvite
   MD ---> GrantPermission
-  MD ----> InviteToMeetingRoom
-  MD ----> ReciveInvite
-  MD ------> checkIn
-  MD ----> ERSpecialistInfomation
-  MD -up-> Protocol
 
 @enduml
