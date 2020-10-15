@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="456px" preserveAspectRatio="none" style="width:509px;height:456px;" version="1.1" viewBox="0 0 509 456" width="509px" zoomAndPan="magnify">
     <defs>
-        <filter height="300%" id="fu3kubs7niox3" width="300%" x="-1" y="-1">
+        <filter height="300%" id="f1h9gvh4vp901a" width="300%" x="-1" y="-1">
             <feGaussianBlur result="blurOut" stdDeviation="2.0" />
             <feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0" />
             <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3" />
@@ -10,17 +10,16 @@
     <g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="86" x="215" y="18.6855">Dispatcher</text>
         <!--MD5=[8438b603195005c18d5011c1879083f4]
 entity Dispatcher-->
-        <ellipse cx="245.5" cy="40.1406" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
-        <path d="M245.5,48.1406 L245.5,75.1406 M232.5,56.1406 L258.5,56.1406 M245.5,75.1406 L232.5,90.1406 M245.5,75.1406 L258.5,90.1406 " fill="none" filter="url(#fu3kubs7niox3)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="211.5" y="110.1738">Dispatcher</text>
-        <ellipse cx="81.2696" cy="234.0923" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="55.2696" y="239.397">Protocol</text>
-        <ellipse cx="61.3259" cy="337.0923" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="24.3259" y="342.397">Offline Note</text>
-        <ellipse cx="207.3259" cy="337.0923" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="170.3259" y="342.397">Online Note</text>
-        <ellipse cx="122.6311" cy="429.6668" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="68.1311" ry="16.0262" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="96" x="74.6311" y="434.9715">Operation Note</text>
-        <ellipse cx="291.5964" cy="429.6599" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="65.5964" ry="15.5193" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="247.0964" y="434.9646">Medicine Note</text>
-        <ellipse cx="146.6021" cy="71.9223" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="29.6021" ry="24.2817" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="23" x="135.1021" y="66.8413">MIS</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="129.1021" y="84.4507">Login</text>
-        <ellipse cx="193.4159" cy="234.1779" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="168.4159" y="232.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="174.9159" y="250.2789">Room</text>
-        <ellipse cx="296.5952" cy="234.0168" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="31.5952" ry="25.8761" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="278.5952" y="230.3509">Close</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="278.0952" y="247.9603">Room</text>
-        <ellipse cx="430.5596" cy="233.9319" fill="#FEFECE" filter="url(#fu3kubs7niox3)" rx="67.5596" ry="25.2912" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="414.0596" y="226.4903">Invite</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="379.5596" y="244.0997">Medical Director</text>
+        <ellipse cx="244.5" cy="40.1406" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.5;" />
+        <path d="M244.5,48.1406 L244.5,75.1406 M231.5,56.1406 L257.5,56.1406 M244.5,75.1406 L231.5,90.1406 M244.5,75.1406 L257.5,90.1406 " fill="none" filter="url(#f1h9gvh4vp901a)" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="68" x="210.5" y="110.1738">Dispatcher</text>
+        <ellipse cx="81.2696" cy="234.0923" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="39.7696" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="55.2696" y="239.397">Protocol</text>
+        <ellipse cx="61.3259" cy="337.0923" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="24.3259" y="342.397">Offline Note</text>
+        <ellipse cx="207.3259" cy="337.0923" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="55.3259" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="74" x="170.3259" y="342.397">Online Note</text>
+        <ellipse cx="122.6311" cy="429.6668" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="68.1311" ry="16.0262" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="96" x="74.6311" y="434.9715">Operation Note</text>
+        <ellipse cx="291.5964" cy="429.6599" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="65.5964" ry="15.5193" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="247.0964" y="434.9646">Medicine Note</text>
+        <ellipse cx="193.4159" cy="234.1779" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="36.4159" ry="26.5373" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="50" x="168.4159" y="232.6695">Meeting</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="174.9159" y="250.2789">Room</text>
+        <ellipse cx="296.5952" cy="234.0168" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="31.5952" ry="25.8761" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="278.5952" y="230.3509">Close</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="37" x="278.0952" y="247.9603">Room</text>
+        <ellipse cx="430.5596" cy="233.9319" fill="#FEFECE" filter="url(#f1h9gvh4vp901a)" rx="67.5596" ry="25.2912" style="stroke: #A80036; stroke-width: 1.5;" /><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="33" x="414.0596" y="226.4903">Invite</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="102" x="379.5596" y="244.0997">Medical Director</text>
         <!--MD5=[6699f799ed5c7232dc727eb440bc4cc6]
 link Protocol to Offline-->
         <path d="M78.6345,249.6116 C75.1642,267.1366 69.3021,296.7406 65.4164,316.3626 " fill="none" id="Protocol-&gt;Offline" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
@@ -37,27 +36,23 @@ link Online to Ops-->
 link Online to Med-->
         <path d="M220.625,352.2812 C235.21,367.9952 258.8,393.4106 274.717,410.5593 " fill="none" id="Online-&gt;Med" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;" />
         <polygon fill="#A80036" points="278.19,414.3006,274.9986,404.9832,274.7883,410.6361,269.1354,410.4258,278.19,414.3006" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[7030f06f9b003a7fea23ad8575e533e6]
-reverse link MISLogin to Dispatcher-->
-        <path d="M181.495,72.1406 C191.473,72.1406 201.451,72.1406 211.429,72.1406 " fill="none" id="MISLogin&lt;-Dispatcher" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="176.277,72.1406,185.277,76.1406,181.277,72.1406,185.277,68.1406,176.277,72.1406" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[c77f09a8438623b12595c1375f2cecfd]
 link Dispatcher to MeetingRoom-->
-        <path d="M232.244,113.9296 C223.217,141.7056 211.466,177.8596 203.284,203.0366 " fill="none" id="Dispatcher-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="201.697,207.9206,208.2837,200.5984,203.2429,203.1656,200.6757,198.1249,201.697,207.9206" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M231.499,113.9296 C222.645,141.7056 211.121,177.8596 203.096,203.0366 " fill="none" id="Dispatcher-&gt;MeetingRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="201.539,207.9206,208.0833,200.5604,203.0574,203.1568,200.4611,198.1309,201.539,207.9206" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[60805e60125b7e4d340108d194850b16]
 link Dispatcher to CloseRoom-->
-        <path d="M258.501,113.9296 C267.466,142.0526 279.168,178.7646 287.204,203.9756 " fill="none" id="Dispatcher-&gt;CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="288.76,208.8586,289.8379,199.0689,287.2416,204.0948,282.2157,201.4984,288.76,208.8586" style="stroke: #A80036; stroke-width: 1.0;" />
+        <path d="M257.756,113.9296 C266.896,142.0526 278.828,178.7646 287.022,203.9756 " fill="none" id="Dispatcher-&gt;CloseRoom" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="288.609,208.8586,289.6303,199.0629,287.0631,204.1036,282.0223,201.5364,288.609,208.8586" style="stroke: #A80036; stroke-width: 1.0;" />
         <!--MD5=[1568eda5cc0f546f11e3f02df203e82d]
 link Dispatcher to Protocol-->
-        <path d="M211.11,102.7286 C197.042,115.1146 180.754,129.8216 166.5,143.6406 C141.754,167.6306 114.551,196.8036 97.7463,215.1776 " fill="none" id="Dispatcher-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="94.1174,219.1546,103.1385,215.2025,97.4876,215.4611,97.2289,209.8102,94.1174,219.1546" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="36" x="167.5" y="166.1357">สั่งการ</text>
+        <path d="M210.054,90.4276 C187.319,103.0106 157.893,121.6556 136.5,143.6406 C115.981,164.7276 99.4812,194.7806 90.0836,214.1246 " fill="none" id="Dispatcher-&gt;Protocol" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="87.8493,218.8006,95.3387,212.4046,90.005,214.2892,88.1204,208.9555,87.8493,218.8006" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="23" x="158.5" y="158.1357">ดูได้</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="137.5" y="174.4873">ทำบันทึกได้</text>
         <!--MD5=[af390b68db2fae8715f2d86c32764def]
 link Dispatcher to InviteMD-->
-        <path d="M279.864,102.8606 C314.506,132.8206 367.442,178.6046 400.458,207.1576 " fill="none" id="Dispatcher-&gt;InviteMD" style="stroke: #A80036; stroke-width: 1.0;" />
-        <polygon fill="#A80036" points="404.383,210.5526,400.1937,201.6392,400.6017,207.2813,394.9596,207.6893,404.383,210.5526" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="399.5" y="158.1357">เรียก</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="365.5" y="174.4873">Medical Director</text>
-        <!--MD5=[8c664f410b507f496e70a21e01f6752c]
+        <path d="M278.615,102.4866 C313.384,132.3956 366.807,178.3506 400.149,207.0326 " fill="none" id="Dispatcher-&gt;InviteMD" style="stroke: #A80036; stroke-width: 1.0;" />
+        <polygon fill="#A80036" points="404.113,210.4416,399.9002,201.5392,400.3231,207.1803,394.682,207.6031,404.113,210.4416" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="400.5" y="158.1357">เรียก</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="94" x="366.5" y="174.4873">Medical Director</text>
+        <!--MD5=[6cce410beee2ce47be66f9b0c8150a31]
 @startuml
 Title __Dispatcher__
   :Dispatcher: as Dispatcher
@@ -72,15 +67,13 @@ Title __Dispatcher__
   Online ..> Ops
   Online ..> Med
 
-  usecase (MIS\nLogin) as MISLogin
   usecase (Meeting\nRoom) as MeetingRoom
   usecase (Close\nRoom) as CloseRoom
   usecase (Invite\nMedical Director) as InviteMD
 
-  Dispatcher -left-> MISLogin
   Dispatcher - -> MeetingRoom
   Dispatcher - -> CloseRoom
-  Dispatcher - -> Protocol : สั่งการ
+  Dispatcher - -> Protocol : ดูได้\nทำบันทึกได้
   Dispatcher - -> InviteMD : เรียก\nMedical Director
 
 @enduml
