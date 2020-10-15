@@ -2,13 +2,17 @@
 Title __Paramedic__
   :Paramedic: as Paramedic
 
-
   usecase (Protocol) as Protocol
-  usecase (Medicine) as Med
-  usecase (Check list) as Check
-  Protocol ..> Med
+  usecase (Offline Note) as Offline
+  usecase (Online Note) as Online
+  usecase (Operation Note) as Ops
+  usecase (Medicine Note) as Med
+  usecase (Check List) as Check
+  Protocol ..> Offline
+  Protocol ..> Online
+  Online ..> Ops
+  Online ..> Med
   Med ..> Check
-
 
   usecase (check\nin/out) as checkIn
   usecase (MIS\nLogin) as MISLogin
@@ -24,8 +28,7 @@ Title __Paramedic__
   Paramedic --> SwitchVS
   Paramedic --> SwitchAmbulance
   Paramedic --> UpdatePatiantStatus
-  Paramedic ---> Protocol: ทำรายงาน
-  Paramedic --> Med: ดู
-  Paramedic --> Check: ทำรายงาน
+  Paramedic ---> Protocol: ดูได้\nทำรายงานได้
+  note right of Check : ทำรายงาน
 
 @enduml

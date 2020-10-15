@@ -3,10 +3,14 @@ Title __Medical Director__
   :Medical Director: as MD
 
   usecase (Protocol) as Protocol
-  usecase (Operation) as Ops
-  usecase (Medicine) as Med
-  Protocol ..> Ops
-  Protocol ..> Med
+  usecase (Offline Note) as Offline
+  usecase (Online Note) as Online
+  usecase (Operation Note) as Ops
+  usecase (Medicine Note) as Med
+  Protocol ..> Offline
+  Protocol ..> Online
+  Online ..> Ops
+  Online ..> Med
 
   usecase (check\nin/out) as checkIn
   usecase (MIS\nLogin) as MISLogin
@@ -23,11 +27,11 @@ Title __Medical Director__
   MD -left-> MISLogin
   MD --> MeetingRoom
   MD --> ERSpecialistInfomation
-  MD --> Protocol
+  MD --> Protocol : สั่งการได้
   MD --> InviteToMeetingRoom
   note top of InviteToMeetingRoom : เรียกหมอท่านอื่นได้
 
   MD --> ReciveInvite
-  MD --> GrantPermission
+  MD --> GrantPermission : โยกสิทธิ์การอำนวยการ
 
 @enduml

@@ -3,24 +3,24 @@ Title __Dispatcher__
   :Dispatcher: as Dispatcher
 
   usecase (Protocol) as Protocol
-  usecase (Operation) as Ops
-  usecase (Medicine) as Med
-  Protocol ..> Ops
-  Protocol ..> Med
+  usecase (Offline Note) as Offline
+  usecase (Online Note) as Online
+  usecase (Operation Note) as Ops
+  usecase (Medicine Note) as Med
+  Protocol ..> Offline
+  Protocol ..> Online
+  Online ..> Ops
+  Online ..> Med
 
-  usecase (check\nin/out) as checkIn
   usecase (MIS\nLogin) as MISLogin
   usecase (Meeting\nRoom) as MeetingRoom
-  usecase (ER/Specialist\nInfomation) as ERSpecialistInfomation
   usecase (Close\nRoom) as CloseRoom
-  usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
+  usecase (Invite\nMedical Director) as InviteMD
 
-  Dispatcher -right-> checkIn : เข้าเวร\nออกเวร
   Dispatcher -left-> MISLogin
   Dispatcher --> MeetingRoom
-  Dispatcher --> ERSpecialistInfomation
   Dispatcher --> CloseRoom
-  Dispatcher --> Protocol
-  Dispatcher --> InviteToMeetingRoom : เรียกหมอได้
+  Dispatcher --> Protocol : สั่งการ
+  Dispatcher --> InviteMD : เรียก\nMedical Director
 
 @enduml

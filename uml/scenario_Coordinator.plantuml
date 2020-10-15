@@ -3,22 +3,21 @@ Title __Coordinator__
   :Coordinator: as Coordinator
 
   usecase (Protocol) as Protocol
-  usecase (Operation) as Ops
-  usecase (Medicine) as Med
-  Protocol ..> Ops
-  Protocol ..> Med
+  usecase (Offline Note) as Offline
+  usecase (Online Note) as Online
+  usecase (Operation Note) as Ops
+  Protocol ..> Offline
+  Protocol ..> Online
+  Online ..> Ops
 
   usecase (MIS\nLogin) as MISLogin
-  usecase (check\nin/out) as checkIn
   usecase (Meeting\nRoom) as MeetingRoom
-  usecase (ER/Specialist\nInfomation) as ERSpecialistInfomation
   usecase (Close\nRoom) as CloseRoom
+  usecase (Invite\nto Meeting Room) as InviteToMeetingRoom
 
-  Coordinator -right-> checkIn : เข้าเวร\nออกเวร
   Coordinator -left-> MISLogin
   Coordinator --> MeetingRoom
-  Coordinator --> ERSpecialistInfomation
   Coordinator --> CloseRoom
-  Coordinator --> Protocol
+  Coordinator --> Protocol : ดูได้
 
 @enduml

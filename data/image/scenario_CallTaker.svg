@@ -61,7 +61,7 @@ link CallTaker to Coordinator-->
 link CallTaker to Dispatcher-->
         <path d="M442.192,336.9266 C473.574,410.3226 525.158,565.6496 449,658.6406 C421.23,692.5486 294.44,714.6893 229.136,724.0488 " fill="none" id="CallTaker-&gt;Dispatcher" style="stroke: #A80036; stroke-width: 1.0;" />
         <polygon fill="#A80036" points="224.16,724.7543,233.6329,727.4495,229.1104,724.0515,232.5084,719.5289,224.16,724.7543" style="stroke: #A80036; stroke-width: 1.0;" /><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="21" x="487" y="484.1357">แดง</text>
-        <!--MD5=[1ae717be7b6ad851ea9bcae9cf8c2500]
+        <!--MD5=[f21dc042e11ae11ad5453b0302ebdd62]
 @startuml
 Title __CallTaker__
   rectangle {
@@ -89,9 +89,9 @@ PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
 (GPL source distribution)
 Java Runtime: Java(TM) SE Runtime Environment
 JVM: Java HotSpot(TM) 64-Bit Server VM
-Java Version: 1.8.0_261-b12
+Java Version: 1.8.0_181-b13
 Operating System: Windows 10
-Default Encoding: Cp1252
+Default Encoding: MS874
 Language: en
 Country: US
 -->

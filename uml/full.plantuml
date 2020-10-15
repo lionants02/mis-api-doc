@@ -34,11 +34,15 @@ Title Use case
 
   rectangle {
     usecase (Protocol) as Protocol
-    usecase (Operation) as Ops
-    usecase (Medicine) as Med
-    usecase (Check list) as Check
-    Protocol ..> Ops
-    Protocol ..> Med
+    usecase (Offline Note) as Offline
+    usecase (Online Note) as Online
+    usecase (Operation Note) as Ops
+    usecase (Medicine Note) as Med
+    usecase (Check List) as Check
+    Protocol ..> Offline
+    Protocol ..> Online
+    Online ..> Ops
+    Online ..> Med
     Med ..> Check
   }
 
@@ -67,13 +71,11 @@ Title Use case
 
   Coordinator --> ERSpecialistInfomation
   Coordinator --> MeetingRoom: Case G, Y
-  Coordinator --> checkIn
   Coordinator ----> Protocol
   Coordinator ----> CloseRoom
 
   Dispatcher ---------> ERSpecialistInfomation
   Dispatcher ---------> MeetingRoom : Case R
-  Dispatcher --> checkIn
   Dispatcher ------> InviteToMeetingRoom
   Dispatcher ------> Protocol
   Dispatcher ------> CloseRoom

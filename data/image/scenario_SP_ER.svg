@@ -61,7 +61,7 @@ link Specialist to MeetingRoom-->
 link Specialist to ReciveInvite-->
         <path d="M283.665,121.8956 C220.402,158.8166 75.7262,254.0646 21,380.6406 C7.4188,412.0526 9.1908,425.5206 21,457.6406 C33.1825,490.7756 61.2038,520.5466 82.3771,539.5596 " fill="none" id="Specialist-&gt;ReciveInvite" style="stroke: #A80036; stroke-width: 1.0;" />
         <polygon fill="#A80036" points="86.2455,542.9826,82.1564,534.0228,82.5011,539.6691,76.8548,540.0138,86.2455,542.9826" style="stroke: #A80036; stroke-width: 1.0;" />
-        <!--MD5=[a9e3ccba9478af5d73d70a3adf36479a]
+        <!--MD5=[e3d45e1db79e218cc611a117c0e1e250]
 @startuml
 Title __Specialist and ER__
 
@@ -99,9 +99,9 @@ PlantUML version 1.2020.02(Sun Mar 01 17:22:07 ICT 2020)
 (GPL source distribution)
 Java Runtime: Java(TM) SE Runtime Environment
 JVM: Java HotSpot(TM) 64-Bit Server VM
-Java Version: 1.8.0_261-b12
+Java Version: 1.8.0_181-b13
 Operating System: Windows 10
-Default Encoding: Cp1252
+Default Encoding: MS874
 Language: en
 Country: US
 -->
