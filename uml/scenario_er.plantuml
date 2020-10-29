@@ -9,8 +9,7 @@ Title __ER__
   usecase (Medicine Note) as Med
   usecase (Check List) as Check
   Protocol ..> Offline : ดู
-  Protocol ..> Online : รับคำสั่ง\nทำบันทึก
-  note top of Online : ทำรายงาน\nที่รับคำสั่งมา\nหรือบันทึกเพิ่มได้ ไหมมมมมมมมมม
+  Protocol ..> Online : ดู
   Online ..> Ops
   Online ..> Med
   Med ..> Check
