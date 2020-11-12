@@ -26,7 +26,6 @@ paths:
                   - 2222
                 vehicleId:
                   - 3324
-                  - 3368
                 operatorID:
                   - 9998877
                 level: ALS
@@ -62,8 +61,7 @@ paths:
                   vehicleId:
                     type: array
                     items:
-                      - type: number
-                      - type: number
+                      type: number
                     description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
                   operatorID:
                     type: array
@@ -139,8 +137,7 @@ paths:
               vehicleId:
                 type: array
                 items:
-                  - type: number
-                  - type: number
+                  type: number
                 description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
               operatorID:
                 type: array
@@ -171,7 +168,6 @@ paths:
                 - 2222
               vehicleId:
                 - 3324
-                - 3368
               operatorID:
                 - 9998877
               level: ALS
@@ -194,7 +190,6 @@ paths:
                 - 2222
               vehicleId:
                 - 3324
-                - 3368
               operatorID:
                 - 9998877
               level: ALS
@@ -219,8 +214,7 @@ paths:
               vehicleId:
                 type: array
                 items:
-                  - type: number
-                  - type: number
+                  type: number
                 description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
               operatorID:
                 type: array
@@ -313,8 +307,7 @@ paths:
               vehicleId:
                 type: array
                 items:
-                  - type: number
-                  - type: number
+                  type: number
                 description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
               operatorID:
                 type: array
@@ -345,7 +338,6 @@ paths:
                 - 2222
               vehicleId:
                 - 3324
-                - 3368
               operatorID:
                 - 9998877
               level: ALS
@@ -370,7 +362,6 @@ paths:
                   - 2222
                 vehicleId:
                   - 3324
-                  - 3368
                 operatorID:
                   - 9998877
                 level: ALS
@@ -406,8 +397,7 @@ paths:
                   vehicleId:
                     type: array
                     items:
-                      - type: number
-                      - type: number
+                      type: number
                     description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
                   operatorID:
                     type: array
@@ -532,7 +522,6 @@ paths:
                     - 2222
                   vehicleId:
                     - 3324
-                    - 3368
                   operatorID:
                     - 9998877
                   level: ALS
@@ -570,8 +559,7 @@ paths:
                     vehicleId:
                       type: array
                       items:
-                        - type: number
-                        - type: number
+                        type: number
                       description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
                     operatorID:
                       type: array
@@ -1553,7 +1541,49 @@ paths:
         - oauth2: []
   /notification:
     put:
-      responses: {}
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: SendCenter
+              randomNumber: 124
+              operatorID: 111222
+              misRoomId: 999888
+              officeID: 1010
+              message: แพทย์เรียก
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - SendCenter
+                description: ค่าคงที่
+              randomNumber:
+                type: number
+                description: ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+              operatorID:
+                type: number
+                description: รหัสทะเบียนเจ้าหน้าที่
+              misRoomId:
+                type: number
+                description: หมายเลขห้อง MIS เลขห้อง=operationNumber
+              officeID:
+                type: number
+                description: หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
+              message:
+                type: string
+                description: ข้อความ
+            required:
+              - type
+              - randomNumber
+              - operatorID
+              - misRoomId
+              - officeID
+              - message
+            additionalProperties: false
       summary: แพทย์เรียกศูนย์เข้าห้อง
       operationId: แพทย์เรียกศูนย์เข้าห้อง
       description: >-
@@ -1611,6 +1641,8 @@ paths:
               misRoomId: 999888
               officeID: 1010
               message: แพทย์เรียก
+      produces:
+        - application/json
   '/ois/victim/{eventPatientId}':
     put:
       responses:
@@ -1927,7 +1959,6 @@ paths:
                 operatingSetID: 23154
                 eventPatientId:
                   - 2222
-                  - 2345
                 category: Boat
                 vehicleNumber: 6กจ9999
                 province: สระแก้ว
@@ -1955,8 +1986,7 @@ paths:
                 eventPatientId:
                   type: array
                   items:
-                    - type: number
-                    - type: number
+                    type: number
                   description: >-
                     รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
                     ที่อยู่บนพาหนะ
@@ -2052,7 +2082,6 @@ paths:
               operatingSetID: 23154
               eventPatientId:
                 - 2222
-                - 2345
               category: Boat
               vehicleNumber: 6กจ9999
               province: สระแก้ว
@@ -2076,8 +2105,7 @@ paths:
               eventPatientId:
                 type: array
                 items:
-                  - type: number
-                  - type: number
+                  type: number
                 description: >-
                   รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
                   ที่อยู่บนพาหนะ
@@ -2899,9 +2927,7 @@ definitions:
       vehicleId:
         type: array
         items:
-          anyOf:
-            - type: number
-            - type: number
+          type: number
         description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
       operatorID:
         type: array
@@ -3340,9 +3366,7 @@ definitions:
       eventPatientId:
         type: array
         items:
-          anyOf:
-            - type: number
-            - type: number
+          type: number
         description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
       category:
         allOf:
@@ -3556,7 +3580,7 @@ securityDefinitions:
 tags:
   - name: Introduction
     description: |-
-      # MIS API 1.0
+      # MIS API 1.1alpha1
 
       เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS
 
