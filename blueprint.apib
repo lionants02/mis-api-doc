@@ -3,7 +3,7 @@ HOST: https://gw.hii.in.th/mis
 
 # Group Introduction
 
-# MIS API 1.0
+# MIS API 1.1alpha1
 
   เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS
 
@@ -221,7 +221,7 @@ HOST: https://gw.hii.in.th/mis
   ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ หลังส่งข้อมูลมา ฝั่ง MIS จะเรียก api
 
 + Parameters
-    + eventPatientId: `2222` (number, required)
+    + eventPatientId: 2222 (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -249,7 +249,7 @@ HOST: https://gw.hii.in.th/mis
   ส่งรายงานปฏิบัติงาน ต่อ 1 ผู้ประสบเหตุ
 
 + Parameters
-    + eventPatientId: `2222` (number, required)
+    + eventPatientId: 2222 (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -276,7 +276,7 @@ HOST: https://gw.hii.in.th/mis
   หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม. หลังปิดเคส
 
 + Parameters
-    + eventPatientId: `2222` (number, required)
+    + eventPatientId: 2222 (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -302,7 +302,7 @@ HOST: https://gw.hii.in.th/mis
   เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
 
 + Parameters
-    + eventPatientId: `2222` (number, required)
+    + eventPatientId: 2222 (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -362,7 +362,7 @@ HOST: https://gw.hii.in.th/mis
   ต้องประสานพี่โจ้ ด่วน
 
 + Parameters
-    + eventPatientId: `2222` (number, fixed-type)
+    + eventPatientId: 2222 (number, fixed-type)
       ``รหัสรายละเอียดผู้ประสบเหตุ หรือก็คือ รหัสคนที่เกิดเหตุ``
 
 + Request (application/json)
@@ -391,6 +391,10 @@ HOST: https://gw.hii.in.th/mis
 
     + Attributes (SendOperator , fixed-type)
 
++ Response 200 (application/json)
+
+    + Attributes (SendOperator, fixed-type)
+
 ## แพทย์เรียกศูนย์เข้าห้อง [PUT /notification]
 
   **ยังไม่ต้องพัฒนา จะใช้จอ MIS เลย**
@@ -405,6 +409,10 @@ HOST: https://gw.hii.in.th/mis
 
     + Attributes (SendCenter , fixed-type)
 
++ Response 200 (application/json)
+
+    + Attributes (SendCenter, fixed-type)
+
 # Group OIS ปฏิบัติการ
 
   HOST และ link จะเป็นของทาง OIS
@@ -418,7 +426,7 @@ HOST: https://gw.hii.in.th/mis
   อัพเดทสถานะผู้ป่วย เขียน เหลือง แดง
 
 + Parameters
-    + eventPatientId: `2222` (number, required)
+    + eventPatientId: 2222 (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -446,7 +454,7 @@ HOST: https://gw.hii.in.th/mis
 ## เข้าเวร [POST /operator/{operatorID}/checkin]
 
 + Parameters
-    + operatorID: `111222` (number, required)
+    + operatorID: 111222 (number, required)
       ``รหัสทะเบียนเจ้าหน้าที่``
 
 + Response 200 (application/json)
@@ -456,7 +464,7 @@ HOST: https://gw.hii.in.th/mis
 ## เข้าเวร [POST /operator/{operatorID}/checkout]
 
 + Parameters
-    + operatorID: `111222` (number, required)
+    + operatorID: 111222 (number, required)
       ``รหัสทะเบียนเจ้าหน้าที่``
 
 + Request (application/json)
@@ -483,7 +491,7 @@ HOST: https://gw.hii.in.th/mis
   ข้อมูลการรับแจ้งเหตุ ของผู้ประสบเหตุ
 
 + Parameters
-    + eventPatientId: `2222` (number, required)
+    + eventPatientId: 2222 (number, required)
       ``รหัสรายละเอียดผู้ประสบเหตุ``
 
 + Request (application/json)
@@ -509,7 +517,7 @@ HOST: https://gw.hii.in.th/mis
       ``รหัสรถ``
     + operatingSetID: `23154` (number, optional)
       ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่``
-    + eventPatientId: `2222` (number, optional)
+    + eventPatientId: 2222 (number, optional)
       ``รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ``
     + operationNumber: `5354` (number,optional)
       ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่``
@@ -702,7 +710,7 @@ HOST: https://gw.hii.in.th/mis
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 + officeID: `1010` (array[number], required,fixed-type) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-+ vehicleId: 3324, 3368 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
++ vehicleId: 3324 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
 + operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
 + level (VehicleLevel) - ระดับปฏิบัติการ
 
@@ -713,7 +721,7 @@ HOST: https://gw.hii.in.th/mis
 
 # Victim (object)
 + type: `Victim` (string, fixed, required) - ค่าคงที่
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + vehicle: 3324 (number,nullable, optional) - พาหนะที่ผู้ประสบเหตุ กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น ยังไม่ต้องกำหนดค่า
 + eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
@@ -723,7 +731,7 @@ HOST: https://gw.hii.in.th/mis
 
 # VictimStatus (object)
 + type: `VictimStatus` (string, fixed, required) - ค่าคงที่
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
 + timestamp : `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
@@ -789,7 +797,7 @@ HOST: https://gw.hii.in.th/mis
 
 # Protocol (object)
 + type: `Protocol` (string, fixed, required) - ค่าคงที่
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
 + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
 + detail (array[TreatmentInformation],fixed-type)
@@ -804,14 +812,14 @@ HOST: https://gw.hii.in.th/mis
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + createDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
 + updateDescription: `ดูดีมีอาการดีขึ้น` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
-+ doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ
++ doIt: true (boolean, nullable) - ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ
 + update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # User (object)
 + type: `User` (string, fixed, required) - ค่าคงที่
 + personId: `1354` (number, required) - รหัสข้อมูลบุคคล
-+ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
 + officeID: `1010` (number, required) - หน่วยงานที่สังกัด
 + prefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
 + givenName: `แสม` (string, required) - ชื่อตัว
@@ -836,14 +844,14 @@ HOST: https://gw.hii.in.th/mis
 + vehicleId: `3324` (number, required) - รหัสพาหนะ
 + operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
 + operatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
-+ eventPatientId: 2222,2345 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
++ eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
 + category: `Boat` (VehicleCategory) - ประเภทพาหนะ
 + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
 + province: `สระแก้ว` (string) - จัดหวัด
 
 # ChangeVehicle (object)
 + type: `ChangeVehicle` (string, fixed, required) - ค่าคงที่
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + vehicleId: `3324` (number,nullable , optional) - รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
 
 # Gps (object)
@@ -862,7 +870,7 @@ HOST: https://gw.hii.in.th/mis
 
 # TelemedLink (object)
 + type: `TelemedLink` (string, fixed, required) - ค่าคงที่
-+ eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
 + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
 + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
 
@@ -871,20 +879,20 @@ HOST: https://gw.hii.in.th/mis
 + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
 + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
-+ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
 + message: `ศูนย์เรียก` (string, required) - ข้อความ
 
 # SendCenter (object)
 + type: `SendCenter` (string, fixed, required) - ค่าคงที่
 + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-+ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
 + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
 + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
 + message: `แพทย์เรียก` (string, required) - ข้อความ
 
 # CheckIn (object)
 + type: `CheckIn` (string, fixed, required) - ค่าคงที่
-+ operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
 + checkIn: true (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
 
 # PatternProtocal (enum)
