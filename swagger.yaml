@@ -1,0 +1,4148 @@
+swagger: '2.0'
+info:
+  title: ''
+  version: ''
+  description: ''
+host: gw.hii.in.th
+basePath: /mis
+schemes:
+  - https
+paths:
+  /room:
+    post:
+      responses:
+        '201':
+          description: Created
+          headers: {}
+          examples:
+            application/json:
+              type: MisRoomReturn
+              misRoomId: 999888
+              detail:
+                type: MisRoom
+                officeID:
+                  - 1010
+                eventPatientId:
+                  - 2222
+                vehicleId:
+                  - 3324
+                  - 3368
+                operatorID:
+                  - 9998877
+                level: ALS
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - MisRoomReturn
+                description: ค่าคงที่
+              misRoomId:
+                type: number
+                description: หมายเลขห้อง MIS
+              detail:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - MisRoom
+                    description: ค่าคงที่
+                  officeID:
+                    type: array
+                    items:
+                      type: number
+                    description: หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+                  eventPatientId:
+                    type: array
+                    items:
+                      type: number
+                    description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+                  vehicleId:
+                    type: array
+                    items:
+                      - type: number
+                      - type: number
+                    description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+                  operatorID:
+                    type: array
+                    items:
+                      type: number
+                    description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                  level:
+                    type: string
+                    enum:
+                      - ALS
+                      - ILS
+                      - BLS
+                      - FR
+                    description: ระดับปฏิบัติการ
+                required:
+                  - type
+                  - officeID
+                  - vehicleId
+                  - operatorID
+                description: ข้อมูลรายเอียดห้อง MIS
+            required:
+              - type
+              - misRoomId
+              - detail
+            additionalProperties: false
+        '409':
+          description: Conflict
+          headers: {}
+          examples:
+            application/json:
+              message: พบการสร้างห้องซ้ำ
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: เปิดห้อง MIS
+      operationId: เปิดห้อง MIS
+      description: |-
+        <img src="data\image\create_dispatch.svg">
+
+        1 ห้อง MIS ต่อ ผู้ป่วย 1 คน
+
+        โครงสร้างที่ใช้
+
+        - ใช้โครงสร้าง `ชุดข้อมูลการรับแจ้งเหตุ` มาปรับ
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - MisRoom
+                description: ค่าคงที่
+              officeID:
+                type: array
+                items:
+                  type: number
+                description: หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+              eventPatientId:
+                type: array
+                items:
+                  type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+              vehicleId:
+                type: array
+                items:
+                  - type: number
+                  - type: number
+                description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+              operatorID:
+                type: array
+                items:
+                  type: number
+                description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+              level:
+                type: string
+                enum:
+                  - ALS
+                  - ILS
+                  - BLS
+                  - FR
+                description: ระดับปฏิบัติการ
+            required:
+              - type
+              - officeID
+              - eventPatientId
+              - vehicleId
+              - operatorID
+              - level
+            additionalProperties: false
+            example:
+              type: MisRoom
+              officeID:
+                - 1010
+              eventPatientId:
+                - 2222
+              vehicleId:
+                - 3324
+                - 3368
+              operatorID:
+                - 9998877
+              level: ALS
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/room/{misRoomId}':
+    put:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: MisRoom
+              officeID:
+                - 1010
+              eventPatientId:
+                - 2222
+              vehicleId:
+                - 3324
+                - 3368
+              operatorID:
+                - 9998877
+              level: ALS
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - MisRoom
+                description: ค่าคงที่
+              officeID:
+                type: array
+                items:
+                  type: number
+                description: หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+              eventPatientId:
+                type: array
+                items:
+                  type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+              vehicleId:
+                type: array
+                items:
+                  - type: number
+                  - type: number
+                description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+              operatorID:
+                type: array
+                items:
+                  type: number
+                description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+              level:
+                type: string
+                enum:
+                  - ALS
+                  - ILS
+                  - BLS
+                  - FR
+                description: ระดับปฏิบัติการ
+            required:
+              - type
+              - officeID
+              - eventPatientId
+              - vehicleId
+              - operatorID
+              - level
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+        '409':
+          description: Conflict
+          headers: {}
+          examples:
+            application/json:
+              message: ชุดข้อมูล operationNumber ไม่ตรงกับที่ระบุ
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: อัพเดทข้อมูลห้อง MIS
+      operationId: อัพเดทข้อมูลห้อง MIS
+      description: >-
+        <img src="data\image\update_dispatch.svg">
+
+
+        ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน
+        จะใช้เลข `misRoomId` ในการอ้างอิงชุดข้อมูล
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: misRoomId
+          in: path
+          description: |
+            หมายเลขห้อง MIS
+            ``หมายเลขห้อง MIS``
+          required: true
+          x-example: '999888'
+          type: number
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - MisRoom
+                description: ค่าคงที่
+              officeID:
+                type: array
+                items:
+                  type: number
+                description: หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+              eventPatientId:
+                type: array
+                items:
+                  type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+              vehicleId:
+                type: array
+                items:
+                  - type: number
+                  - type: number
+                description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+              operatorID:
+                type: array
+                items:
+                  type: number
+                description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+              level:
+                type: string
+                enum:
+                  - ALS
+                  - ILS
+                  - BLS
+                  - FR
+                description: ระดับปฏิบัติการ
+            required:
+              - type
+              - officeID
+              - eventPatientId
+              - vehicleId
+              - operatorID
+              - level
+            additionalProperties: false
+            example:
+              type: MisRoom
+              officeID:
+                - 1010
+              eventPatientId:
+                - 2222
+              vehicleId:
+                - 3324
+                - 3368
+              operatorID:
+                - 9998877
+              level: ALS
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: MisRoomReturn
+              misRoomId: 999888
+              detail:
+                type: MisRoom
+                officeID:
+                  - 1010
+                eventPatientId:
+                  - 2222
+                vehicleId:
+                  - 3324
+                  - 3368
+                operatorID:
+                  - 9998877
+                level: ALS
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - MisRoomReturn
+                description: ค่าคงที่
+              misRoomId:
+                type: number
+                description: หมายเลขห้อง MIS
+              detail:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - MisRoom
+                    description: ค่าคงที่
+                  officeID:
+                    type: array
+                    items:
+                      type: number
+                    description: หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+                  eventPatientId:
+                    type: array
+                    items:
+                      type: number
+                    description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+                  vehicleId:
+                    type: array
+                    items:
+                      - type: number
+                      - type: number
+                    description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+                  operatorID:
+                    type: array
+                    items:
+                      type: number
+                    description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                  level:
+                    type: string
+                    enum:
+                      - ALS
+                      - ILS
+                      - BLS
+                      - FR
+                    description: ระดับปฏิบัติการ
+                required:
+                  - type
+                  - officeID
+                  - vehicleId
+                  - operatorID
+                description: ข้อมูลรายเอียดห้อง MIS
+            required:
+              - type
+              - misRoomId
+              - detail
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ดึงข้อมูลห้อง MIS
+      operationId: ดึงข้อมูลห้อง MIS
+      description: ดูข้อมูลห้อง MIS
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: misRoomId
+          in: path
+          description: |
+            หมายเลขห้อง MIS
+            ``หมายเลขห้อง MIS``
+          required: true
+          x-example: '999888'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+    delete:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              status: '200'
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                description: status code
+            required:
+              - status
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ปิดห้อง MIS
+      operationId: ปิดห้อง MIS
+      description: ''
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: misRoomId
+          in: path
+          description: |
+            หมายเลขห้อง MIS
+            ``หมายเลขห้อง MIS``
+          required: true
+          x-example: '999888'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  /room/:
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              - type: MisRoomReturn
+                misRoomId: 999888
+                detail:
+                  type: MisRoom
+                  officeID:
+                    - 1010
+                  eventPatientId:
+                    - 2222
+                  vehicleId:
+                    - 3324
+                    - 3368
+                  operatorID:
+                    - 9998877
+                  level: ALS
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - MisRoomReturn
+                  description: ค่าคงที่
+                misRoomId:
+                  type: number
+                  description: หมายเลขห้อง MIS
+                detail:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - MisRoom
+                      description: ค่าคงที่
+                    officeID:
+                      type: array
+                      items:
+                        type: number
+                      description: หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+                    eventPatientId:
+                      type: array
+                      items:
+                        type: number
+                      description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+                    vehicleId:
+                      type: array
+                      items:
+                        - type: number
+                        - type: number
+                      description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+                    operatorID:
+                      type: array
+                      items:
+                        type: number
+                      description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                    level:
+                      type: string
+                      enum:
+                        - ALS
+                        - ILS
+                        - BLS
+                        - FR
+                      description: ระดับปฏิบัติการ
+                  required:
+                    - type
+                    - officeID
+                    - vehicleId
+                    - operatorID
+                  description: ข้อมูลรายเอียดห้อง MIS
+              required:
+                - type
+                - misRoomId
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ค้นหาห้อง MIS
+      operationId: ค้นหาห้อง MIS
+      description: |-
+        ปรับเป็นใช้ query ทั้งหมด
+
+        <img src="data\image\ois_get_room_in_event.svg">
+
+        รายการห้อง MIS คืนค่าแบบ Array
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: officeID
+          in: query
+          description: |
+
+            ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
+          required: false
+          x-example: '1010'
+          type: number
+        - name: operationNumber
+          in: query
+          description: |
+
+            ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
+          required: true
+          x-example: '5354'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/patient/changevehicle/{eventPatientId}':
+    post:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: ChangeVehicle
+              eventPatientId: 2222
+              vehicleId: 3324
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - ChangeVehicle
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vehicleId:
+                type:
+                  - number
+                  - 'null'
+                description: >-
+                  รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ
+                  เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
+            required:
+              - type
+              - eventPatientId
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบเลข operationNumber ที่ระบุ
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ
+      operationId: ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ
+      description: >-
+        <img src="data\image\change_car.svg">
+
+
+        ในกรณีที่มีพาหนะ หลายอย่างออกไปรับผู้ประสบเหตุ 1 คน เช่น
+        มีการใช้รถรวมกันระว่าง FR กับ ALS ประสานงานกันรับผู้ประสบเหตุ
+        หลังส่งข้อมูลมา ฝั่ง MIS จะเรียก api
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: eventPatientId
+          in: path
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ``
+          required: true
+          x-example: '2222'
+          type: number
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+            example:
+              message: OK
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/protocol/{eventPatientId}':
+    post:
+      responses:
+        '201':
+          description: Created
+          headers: {}
+          examples:
+            application/json:
+              type: Protocol
+              eventPatientId: 2222
+              vitalsignsLink: 'https://'
+              ekgLink: 'https://'
+              detail:
+                - type: TreatmentInformation
+                  pattern: DIRECT
+                  createBy: 2323
+                  updateBy: 3424
+                  procedureName: ดาม
+                  createDescription: ดามคอ แขน และ ขา
+                  updateDescription: ดูดีมีอาการดีขึ้น
+                  doIt: true
+                  update: '2020-04-23T18:25:43.511'
+                  timestamp: '2020-04-23T18:25:43.511'
+              note: ดาม แขน ขา คอ
+              update: '2020-04-23T18:25:43.511'
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Protocol
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vitalsignsLink:
+                type: string
+                description: ลิงค์สัญญาณชีพ
+              ekgLink:
+                type: string
+                description: ลิงค์ EKG/ECG
+              detail:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - TreatmentInformation
+                      description: ค่าคงที่
+                    pattern:
+                      type: string
+                      enum:
+                        - DIRECT
+                        - GENERAL
+                        - OTHER
+                    createBy:
+                      type: number
+                      description: สร้างโดยใคร
+                    updateBy:
+                      type: number
+                      description: อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
+                    procedureName:
+                      type: string
+                      description: ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+                    createDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้
+                        อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    updateDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่รับคำสั่งหัตถการ 
+                        โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    doIt:
+                      type:
+                        - boolean
+                        - 'null'
+                      description: 'ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ'
+                    update:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                    timestamp:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                  required:
+                    - type
+                    - createBy
+                    - updateBy
+                    - procedureName
+                    - createDescription
+                    - updateDescription
+                    - update
+                    - timestamp
+              note:
+                type: string
+                description: note อื่นๆ
+              update:
+                type: string
+                description: 'วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s'
+            required:
+              - type
+              - eventPatientId
+              - vitalsignsLink
+              - ekgLink
+              - detail
+              - note
+              - update
+            additionalProperties: false
+        '409':
+          description: Conflict
+          headers: {}
+          examples:
+            application/json:
+              message: พบความผิดพลาด ชุดข้อมูลอาจถูกสร้างไปแล้ว
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ส่งรายปฏิบัติงาน
+      operationId: ส่งรายปฏิบัติงาน
+      description: |-
+        <img src="data\image\send_report_to_mis.svg">
+
+        ส่งรายงานปฏิบัติงาน ต่อ 1 ผู้ประสบเหตุ
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: eventPatientId
+          in: path
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ``
+          required: true
+          x-example: '2222'
+          type: number
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Protocol
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vitalsignsLink:
+                type: string
+                description: ลิงค์สัญญาณชีพ
+              ekgLink:
+                type: string
+                description: ลิงค์ EKG/ECG
+              detail:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - TreatmentInformation
+                      description: ค่าคงที่
+                    pattern:
+                      type: string
+                      enum:
+                        - DIRECT
+                        - GENERAL
+                        - OTHER
+                    createBy:
+                      type: number
+                      description: สร้างโดยใคร
+                    updateBy:
+                      type: number
+                      description: อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
+                    procedureName:
+                      type: string
+                      description: ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+                    createDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้
+                        อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    updateDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่รับคำสั่งหัตถการ 
+                        โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    doIt:
+                      type:
+                        - boolean
+                        - 'null'
+                      description: 'ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ'
+                    update:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                    timestamp:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                  required:
+                    - type
+                    - createBy
+                    - updateBy
+                    - procedureName
+                    - createDescription
+                    - updateDescription
+                    - update
+                    - timestamp
+              note:
+                type: string
+                description: note อื่นๆ
+              update:
+                type: string
+                description: 'วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s'
+            required:
+              - type
+              - eventPatientId
+              - vitalsignsLink
+              - ekgLink
+              - detail
+              - note
+              - update
+            additionalProperties: false
+            example:
+              type: Protocol
+              eventPatientId: 2222
+              vitalsignsLink: 'https://'
+              ekgLink: 'https://'
+              detail:
+                - type: TreatmentInformation
+                  pattern: DIRECT
+                  createBy: 2323
+                  updateBy: 3424
+                  procedureName: ดาม
+                  createDescription: ดามคอ แขน และ ขา
+                  updateDescription: ดูดีมีอาการดีขึ้น
+                  doIt: true
+                  update: '2020-04-23T18:25:43.511'
+                  timestamp: '2020-04-23T18:25:43.511'
+              note: ดาม แขน ขา คอ
+              update: '2020-04-23T18:25:43.511'
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+    put:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: Protocol
+              eventPatientId: 2222
+              vitalsignsLink: 'https://'
+              ekgLink: 'https://'
+              detail:
+                - type: TreatmentInformation
+                  pattern: DIRECT
+                  createBy: 2323
+                  updateBy: 3424
+                  procedureName: ดาม
+                  createDescription: ดามคอ แขน และ ขา
+                  updateDescription: ดูดีมีอาการดีขึ้น
+                  doIt: true
+                  update: '2020-04-23T18:25:43.511'
+                  timestamp: '2020-04-23T18:25:43.511'
+              note: ดาม แขน ขา คอ
+              update: '2020-04-23T18:25:43.511'
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Protocol
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vitalsignsLink:
+                type: string
+                description: ลิงค์สัญญาณชีพ
+              ekgLink:
+                type: string
+                description: ลิงค์ EKG/ECG
+              detail:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - TreatmentInformation
+                      description: ค่าคงที่
+                    pattern:
+                      type: string
+                      enum:
+                        - DIRECT
+                        - GENERAL
+                        - OTHER
+                    createBy:
+                      type: number
+                      description: สร้างโดยใคร
+                    updateBy:
+                      type: number
+                      description: อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
+                    procedureName:
+                      type: string
+                      description: ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+                    createDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้
+                        อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    updateDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่รับคำสั่งหัตถการ 
+                        โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    doIt:
+                      type:
+                        - boolean
+                        - 'null'
+                      description: 'ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ'
+                    update:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                    timestamp:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                  required:
+                    - type
+                    - createBy
+                    - updateBy
+                    - procedureName
+                    - createDescription
+                    - updateDescription
+                    - update
+                    - timestamp
+              note:
+                type: string
+                description: note อื่นๆ
+              update:
+                type: string
+                description: 'วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s'
+            required:
+              - type
+              - eventPatientId
+              - vitalsignsLink
+              - ekgLink
+              - detail
+              - note
+              - update
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: แก้ไขรายงานปฏิบัติงาน
+      operationId: แก้ไขรายงานปฏิบัติงาน
+      description: >-
+        <img src="data\image\update_report_to_mis.svg">
+
+
+        หลังจากส่งรายงานการปฏิบัติงานแล้วอนุญาติให้แก้ไขได้ภายใน 24 ชม.
+        หลังปิดเคส
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: eventPatientId
+          in: path
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ``
+          required: true
+          x-example: '2222'
+          type: number
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Protocol
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vitalsignsLink:
+                type: string
+                description: ลิงค์สัญญาณชีพ
+              ekgLink:
+                type: string
+                description: ลิงค์ EKG/ECG
+              detail:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - TreatmentInformation
+                      description: ค่าคงที่
+                    pattern:
+                      type: string
+                      enum:
+                        - DIRECT
+                        - GENERAL
+                        - OTHER
+                    createBy:
+                      type: number
+                      description: สร้างโดยใคร
+                    updateBy:
+                      type: number
+                      description: อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
+                    procedureName:
+                      type: string
+                      description: ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+                    createDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้
+                        อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    updateDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่รับคำสั่งหัตถการ 
+                        โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    doIt:
+                      type:
+                        - boolean
+                        - 'null'
+                      description: 'ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ'
+                    update:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                    timestamp:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                  required:
+                    - type
+                    - createBy
+                    - updateBy
+                    - procedureName
+                    - createDescription
+                    - updateDescription
+                    - update
+                    - timestamp
+              note:
+                type: string
+                description: note อื่นๆ
+              update:
+                type: string
+                description: 'วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s'
+            required:
+              - type
+              - eventPatientId
+              - vitalsignsLink
+              - ekgLink
+              - detail
+              - note
+              - update
+            additionalProperties: false
+            example:
+              type: Protocol
+              eventPatientId: 2222
+              vitalsignsLink: 'https://'
+              ekgLink: 'https://'
+              detail:
+                - type: TreatmentInformation
+                  pattern: DIRECT
+                  createBy: 2323
+                  updateBy: 3424
+                  procedureName: ดาม
+                  createDescription: ดามคอ แขน และ ขา
+                  updateDescription: ดูดีมีอาการดีขึ้น
+                  doIt: true
+                  update: '2020-04-23T18:25:43.511'
+                  timestamp: '2020-04-23T18:25:43.511'
+              note: ดาม แขน ขา คอ
+              update: '2020-04-23T18:25:43.511'
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: Protocol
+              eventPatientId: 2222
+              vitalsignsLink: 'https://'
+              ekgLink: 'https://'
+              detail:
+                - type: TreatmentInformation
+                  pattern: DIRECT
+                  createBy: 2323
+                  updateBy: 3424
+                  procedureName: ดาม
+                  createDescription: ดามคอ แขน และ ขา
+                  updateDescription: ดูดีมีอาการดีขึ้น
+                  doIt: true
+                  update: '2020-04-23T18:25:43.511'
+                  timestamp: '2020-04-23T18:25:43.511'
+              note: ดาม แขน ขา คอ
+              update: '2020-04-23T18:25:43.511'
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Protocol
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vitalsignsLink:
+                type: string
+                description: ลิงค์สัญญาณชีพ
+              ekgLink:
+                type: string
+                description: ลิงค์ EKG/ECG
+              detail:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - TreatmentInformation
+                      description: ค่าคงที่
+                    pattern:
+                      type: string
+                      enum:
+                        - DIRECT
+                        - GENERAL
+                        - OTHER
+                    createBy:
+                      type: number
+                      description: สร้างโดยใคร
+                    updateBy:
+                      type: number
+                      description: อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
+                    procedureName:
+                      type: string
+                      description: ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+                    createDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้
+                        อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    updateDescription:
+                      type: string
+                      description: >-
+                        คำอธิบายการทำหัตถการหรือการรักษา
+                        โดยจะเป็นของคนที่รับคำสั่งหัตถการ 
+                        โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+                    doIt:
+                      type:
+                        - boolean
+                        - 'null'
+                      description: 'ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ'
+                    update:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                    timestamp:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                  required:
+                    - type
+                    - createBy
+                    - updateBy
+                    - procedureName
+                    - createDescription
+                    - updateDescription
+                    - update
+                    - timestamp
+              note:
+                type: string
+                description: note อื่นๆ
+              update:
+                type: string
+                description: 'วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s'
+            required:
+              - type
+              - eventPatientId
+              - vitalsignsLink
+              - ekgLink
+              - detail
+              - note
+              - update
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ดึงรายงานปฏิบัติงาน
+      operationId: ดึงรายงานปฏิบัติงาน
+      description: |-
+        <img src="data\image\get_report_from_mis.svg">
+
+        เรียกดูข้อมูลการปฏิบัติงาน ของผู้ประสบเหตุ
+      tags:
+        - MIS ปฏิบัติการ
+      parameters:
+        - name: eventPatientId
+          in: path
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ``
+          required: true
+          x-example: '2222'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  /protocol/offline:
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              - type: OfflineProtocal
+                offlinePotocalName: example
+                pageNumber: 10
+                AttechFile: 'https://mis.tot.co.th/doc/offline/xxx.pdf'
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - OfflineProtocal
+                  description: ค่าคงที่
+                offlinePotocalName:
+                  type: string
+                  description: ชื่อแนวทางการปฏิบัติงาน
+                pageNumber:
+                  type: number
+                  description: เลขหน้า
+                AttechFile:
+                  type: string
+                  description: เอกสารแนวทางปฏิบัติงาน
+              required:
+                - type
+                - offlinePotocalName
+                - AttechFile
+      summary: Offline protocol
+      operationId: Offline protocol
+      description: |-
+        <img src="data\image\ois_get_offline_doc.svg">
+
+        ประสานกับคุณ เอ ว่าได้เก็บข้อมูล offline protocol แยกเป็นหัวข้อหรือปล่าว
+      tags:
+        - MIS Protocol
+      parameters:
+        - name: query
+          in: query
+          description: |
+
+            ``หัวข้อ หรือ คำค้นหา``
+          required: true
+          x-example: หมดสติ
+          type: string
+      produces:
+        - application/json
+  '/room/ui/{misRoomId}':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            text/html: ''
+      summary: UI สำหรับแสดงผล MIS
+      operationId: UI สำหรับแสดงผล MIS
+      description: >-
+        หน้าจอส่วนแสดงผลที่จะนำไปใส่ในระบบ OIS ความกว้าง ขนาดหน้าจอ ถูก
+        กำหนดมาแล้ว เราจะใช้ขนาด 683 x 768 pixels
+
+
+        <img src="data\image\LINE_b9WEtafJT4.png">
+      tags:
+        - MIS UI
+      parameters:
+        - name: misRoomId
+          in: path
+          description: |
+
+            ``หมายเลขห้อง MIS``
+          required: true
+          x-example: '999888'
+          type: number
+      produces:
+        - text/html
+      security:
+        - oauth2: []
+  '/telemed/link/{eventPatientId}':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: TelemedLink
+              eventPatientId: 2222
+              vitalsignsLink: 'https://'
+              ekgLink: 'https://'
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - TelemedLink
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vitalsignsLink:
+                type: string
+                description: ลิงค์สัญญาณชีพ
+              ekgLink:
+                type: string
+                description: ลิงค์ EKG/ECG
+            required:
+              - type
+              - eventPatientId
+              - vitalsignsLink
+              - ekgLink
+            additionalProperties: false
+      summary: ลิงค์ข้อมูล Telemed
+      operationId: ลิงค์ข้อมูล Telemed
+      description: >-
+        ลิงค์ข้อมูล Telemed จะใส่ไปกับข้อมูลตอนส่งรายงานด้วย
+        ส่วนเรื่องโครงสร้างข้อมูลจะปรับตามหลัง ตามที่ทีมพัฒนาต้องการ
+
+
+        ต้องประสานพี่โจ้ ด่วน
+      tags:
+        - MIS UI
+      parameters:
+        - name: eventPatientId
+          in: path
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ หรือก็คือ รหัสคนที่เกิดเหตุ``
+          required: true
+          x-example: '2222'
+          type: string
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  /notification:
+    put:
+      responses: {}
+      summary: แพทย์เรียกศูนย์เข้าห้อง
+      operationId: แพทย์เรียกศูนย์เข้าห้อง
+      description: >-
+        **ยังไม่ต้องพัฒนา จะใช้จอ MIS เลย**
+
+
+        <img src="data\image\medical_call_center.svg">
+
+
+        <img src="data\image\medical_call_center_001.svg">
+
+
+        ใช้เมื่อแพทย์ ต้องการส่งข้อความหาศูนย์ ในที่นี้จะใช้สำหรับ
+        ในกรณีที่แพทย์ ต้องการเรียกศูนย์เข้าห้อง
+      tags:
+        - MIS Notification
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - SendCenter
+                description: ค่าคงที่
+              randomNumber:
+                type: number
+                description: ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+              operatorID:
+                type: number
+                description: รหัสทะเบียนเจ้าหน้าที่
+              misRoomId:
+                type: number
+                description: หมายเลขห้อง MIS เลขห้อง=operationNumber
+              officeID:
+                type: number
+                description: หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
+              message:
+                type: string
+                description: ข้อความ
+            required:
+              - type
+              - randomNumber
+              - operatorID
+              - misRoomId
+              - officeID
+              - message
+            additionalProperties: false
+            example:
+              type: SendCenter
+              randomNumber: 124
+              operatorID: 111222
+              misRoomId: 999888
+              officeID: 1010
+              message: แพทย์เรียก
+  '/ois/victim/{eventPatientId}':
+    put:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: VictimStatus
+              eventPatientId: 2222
+              color: GREEN
+              timestamp: '2020-04-23T18:25:43.511'
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - VictimStatus
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              color:
+                type: string
+                enum:
+                  - GREEN
+                  - YELLOW
+                  - RED
+                  - WHITE
+                  - BLACK
+                description: สถานะ เขียว เหลือง แดง
+              timestamp:
+                type: string
+                description: >-
+                  เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+                  Introduction
+            required:
+              - type
+              - eventPatientId
+              - color
+              - timestamp
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: อัพเดทสถานะผู้ป่วย
+      operationId: อัพเดทสถานะผู้ป่วย
+      description: อัพเดทสถานะผู้ป่วย เขียน เหลือง แดง
+      tags:
+        - OIS ปฏิบัติการ
+      parameters:
+        - name: eventPatientId
+          in: path
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ``
+          required: true
+          x-example: '2222'
+          type: number
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - VictimStatus
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              color:
+                type: string
+                enum:
+                  - GREEN
+                  - YELLOW
+                  - RED
+                  - WHITE
+                  - BLACK
+                description: สถานะ เขียว เหลือง แดง
+              timestamp:
+                type: string
+                description: >-
+                  เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+                  Introduction
+            required:
+              - type
+              - eventPatientId
+              - color
+              - timestamp
+            additionalProperties: false
+            example:
+              type: VictimStatus
+              eventPatientId: 2222
+              color: GREEN
+              timestamp: '2020-04-23T18:25:43.511'
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/operator/{operatorID}/checkin':
+    post:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: CheckIn
+              operatorID: 111222
+              checkIn: true
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - CheckIn
+                description: ค่าคงที่
+              operatorID:
+                type: number
+                description: รหัสทะเบียนเจ้าหน้าที่
+              checkIn:
+                type: boolean
+                description: 'สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร'
+            required:
+              - type
+              - operatorID
+              - checkIn
+            additionalProperties: false
+      summary: เข้าเวร
+      operationId: เข้าเวร
+      description: ''
+      tags:
+        - OIS จัดการเวร
+      parameters:
+        - name: operatorID
+          in: path
+          description: |
+
+            ``รหัสทะเบียนเจ้าหน้าที่``
+          required: true
+          x-example: '111222'
+          type: number
+      produces:
+        - application/json
+  '/operator/{operatorID}/checkout':
+    post:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: CheckIn
+              operatorID: 111222
+              checkIn: false
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - CheckIn
+                description: ค่าคงที่
+              operatorID:
+                type: number
+                description: รหัสทะเบียนเจ้าหน้าที่
+              checkIn:
+                type: boolean
+                description: 'สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร'
+            required:
+              - type
+              - operatorID
+              - checkIn
+            additionalProperties: false
+      summary: เข้าเวร
+      operationId: เข้าเวร
+      description: ''
+      tags:
+        - OIS จัดการเวร
+      parameters:
+        - name: operatorID
+          in: path
+          description: |
+
+            ``รหัสทะเบียนเจ้าหน้าที่``
+          required: true
+          x-example: '111222'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/eventpatient/{eventPatientId}':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: Victim
+              eventPatientId: 2222
+              vehicle: 3324
+              eventDateTime: '2020-04-23T18:25:43.511'
+              cbdCode: CBD25
+              patientName: 2321
+              citizenID: '3250400000001'
+              emergencyLevelCode: '02'
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Victim
+                description: ค่าคงที่
+              eventPatientId:
+                type: number
+                description: รหัสรายละเอียดผู้ประสบเหตุ
+              vehicle:
+                type:
+                  - number
+                  - 'null'
+                description: >-
+                  พาหนะที่ผู้ประสบเหตุ กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น
+                  ยังไม่ต้องกำหนดค่า
+              eventDateTime:
+                type: string
+                description: >-
+                  เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+                  Introduction
+              cbdCode:
+                type: string
+                description: อาการผู้ประสบเหตุที่แจ้ง
+              patientName:
+                type: number
+                description: ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
+              citizenID:
+                type: string
+                description: หมายเลขประจำตัวประชาชน
+              emergencyLevelCode:
+                type: string
+                description: 'ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ'
+            required:
+              - type
+              - eventPatientId
+              - eventDateTime
+              - cbdCode
+              - patientName
+              - citizenID
+              - emergencyLevelCode
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ข้อมูลการรับแจ้งเหตุ
+      operationId: ข้อมูลการรับแจ้งเหตุ
+      description: |-
+        <img src="data\image\mis_get_eventn_patient_from_ois.svg">
+
+        ข้อมูลการรับแจ้งเหตุ ของผู้ประสบเหตุ
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: eventPatientId
+          in: path
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ``
+          required: true
+          x-example: '2222'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  /car:
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              - type: Vehicle
+                vehicleId: 3324
+                operationNumber: 5354
+                operatingSetID: 23154
+                eventPatientId:
+                  - 2222
+                  - 2345
+                category: Boat
+                vehicleNumber: 6กจ9999
+                province: สระแก้ว
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - Vehicle
+                  description: ค่าคงที่
+                vehicleId:
+                  type: number
+                  description: รหัสพาหนะ
+                operationNumber:
+                  type: number
+                  description: >-
+                    เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน
+                    ที่ผูกกับพาหนะนี้อยู่
+                operatingSetID:
+                  type: number
+                  description: เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
+                eventPatientId:
+                  type: array
+                  items:
+                    - type: number
+                    - type: number
+                  description: >-
+                    รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+                    ที่อยู่บนพาหนะ
+                category:
+                  type: string
+                  enum:
+                    - Boat
+                    - Car
+                    - Aircraft
+                    - Other
+                    - Boat
+                  description: ประเภทพาหนะ
+                vehicleNumber:
+                  type: string
+                  description: เลขทะเบียนรถ
+                province:
+                  type: string
+                  description: จัดหวัด
+              required:
+                - type
+                - vehicleId
+                - operationNumber
+                - operatingSetID
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ค้นหาข้อมูลรถปฏิบัติการ
+      operationId: ค้นหาข้อมูลรถปฏิบัติการ
+      description: >-
+        ค้นหาข้อมูลรถปฏิบัติการ ตามพารามิเตอร์ที่ระบุ ต้องใส่ค่ามาอย่างน้อย 1
+        ค่า
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: vehicleId
+          in: query
+          description: |
+
+            ``รหัสรถ``
+          required: false
+          x-example: '3324'
+          type: number
+        - name: operatingSetID
+          in: query
+          description: |
+
+            ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่``
+          required: false
+          x-example: '23154'
+          type: number
+        - name: eventPatientId
+          in: query
+          description: |
+
+            ``รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ``
+          required: false
+          x-example: '2222'
+          type: number
+        - name: operationNumber
+          in: query
+          description: |
+
+            ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่``
+          required: false
+          x-example: '5354'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/car/{vehicleId}':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: Vehicle
+              vehicleId: 3324
+              operationNumber: 5354
+              operatingSetID: 23154
+              eventPatientId:
+                - 2222
+                - 2345
+              category: Boat
+              vehicleNumber: 6กจ9999
+              province: สระแก้ว
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Vehicle
+                description: ค่าคงที่
+              vehicleId:
+                type: number
+                description: รหัสพาหนะ
+              operationNumber:
+                type: number
+                description: เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
+              operatingSetID:
+                type: number
+                description: เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
+              eventPatientId:
+                type: array
+                items:
+                  - type: number
+                  - type: number
+                description: >-
+                  รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+                  ที่อยู่บนพาหนะ
+              category:
+                type: string
+                enum:
+                  - Boat
+                  - Car
+                  - Aircraft
+                  - Other
+                  - Boat
+                description: ประเภทพาหนะ
+              vehicleNumber:
+                type: string
+                description: เลขทะเบียนรถ
+              province:
+                type: string
+                description: จัดหวัด
+            required:
+              - type
+              - vehicleId
+              - operationNumber
+              - operatingSetID
+              - eventPatientId
+              - category
+              - vehicleNumber
+              - province
+            additionalProperties: false
+      summary: ข้อมูลรถปฏิบัติการ
+      operationId: ข้อมูลรถปฏิบัติการ
+      description: คืนค่าข้อมูล `รถปฏิบัติการ` ที่ระบุ
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: vehicleId
+          in: path
+          description: |
+
+            ``รหัสรถ``
+          required: true
+          x-example: '3324'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  /specialist:
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              - type: Speciallist
+                id: '12346'
+                nameTh: สง กรานต์
+                nameEn: Song Kran
+                officeID:
+                  - 1010
+                genderCode: 1
+                tel: 0649999998
+                knowledge:
+                  - สาขา ออร์โธปิดิกส์ ( Orthopedics )
+                  - สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - Speciallist
+                  description: ค่าคงที่
+                id:
+                  type: string
+                  description: 'เลขใบประกอบโรคศิลปะ ,เลขใบ ว.'
+                nameTh:
+                  type: string
+                  description: ชือภาษาไทย
+                nameEn:
+                  type: string
+                  description: ชื่อภาษาอังกฤษ
+                officeID:
+                  type: array
+                  description: หน่วยงานที่สังกัด
+                genderCode:
+                  type: number
+                  description: >-
+                    เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not
+                    applicable)
+                tel:
+                  type: string
+                  description: เบอร์โทรศัพท์
+                knowledge:
+                  type: array
+                  items:
+                    - type: string
+                    - type: string
+                  description: รายการความรู้เฉพาะทาง
+              required:
+                - type
+                - id
+                - genderCode
+      summary: Speciallist Search
+      operationId: Speciallist Search
+      description: |-
+        <img src="data\image\mis_get_specialist_from_ois.svg">
+
+        ค้นหารายการการ Speciallist
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: province
+          in: query
+          description: |
+
+            ``ชื่อจังหวัด``
+          required: true
+          x-example: สระแก้ว
+          type: string
+        - name: query
+          in: query
+          description: |
+
+            ``ข้อมูล query อื่นๆ เช่น กระดูก, หัวใจ, สมอง``
+          required: true
+          x-example: กระดูก
+          type: string
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/specialist/{id}':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: Speciallist
+              id: '12346'
+              nameTh: สง กรานต์
+              nameEn: Song Kran
+              officeID:
+                - 1010
+              genderCode: 1
+              tel: 0649999998
+              knowledge:
+                - สาขา ออร์โธปิดิกส์ ( Orthopedics )
+                - สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Speciallist
+                description: ค่าคงที่
+              id:
+                type: string
+                description: 'เลขใบประกอบโรคศิลปะ ,เลขใบ ว.'
+              nameTh:
+                type: string
+                description: ชือภาษาไทย
+              nameEn:
+                type: string
+                description: ชื่อภาษาอังกฤษ
+              officeID:
+                type: array
+                description: หน่วยงานที่สังกัด
+                items: {}
+              genderCode:
+                type: number
+                description: >-
+                  เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not
+                  applicable)
+              tel:
+                type: string
+                description: เบอร์โทรศัพท์
+              knowledge:
+                type: array
+                items:
+                  - type: string
+                  - type: string
+                description: รายการความรู้เฉพาะทาง
+            required:
+              - type
+              - id
+              - nameTh
+              - nameEn
+              - officeID
+              - genderCode
+              - tel
+              - knowledge
+            additionalProperties: false
+      summary: Speciallist
+      operationId: Speciallist
+      description: |-
+        <img src="data\image\mis_get_specialist_from_ois.svg">
+
+        ดึงข้อมูล Speciallist
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: id
+          in: path
+          description: |
+
+            ``เลขใบ ว.``
+          required: true
+          x-example: '12346'
+          type: string
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  /patient/:
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: Person
+              personId: 2321
+              citizenID: '3250400000001'
+              prefixCode: '001'
+              givenName: แสม
+              familyName: แสนซน
+              genderCode: 1
+              birthDate: '1990-01-25'
+              birthJurisdiction: ลพบุรี
+              nationalityCode: TH
+              lifeStatusCode: LI
+              disabilityCode: '00'
+              medicalInformation:
+                type: MedicalInformation
+                personId: 2321
+                instype: ''
+                drugallergy:
+                  - type: Drugallergy
+                    personId: 2321
+                    typeDX: '1'
+                    aLevel: '1'
+                    symptom: ''
+                recentHospCode: ''
+                recentHospName: ''
+                bloodGroup: AB
+                bloodGroupAH: NEGATIVE
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Person
+                description: ค่าคงที่
+              personId:
+                type: number
+                description: รหัสข้อมูลบุคคล
+              citizenID:
+                type: string
+                description: หมายเลขประจำตัวประชาชน
+              prefixCode:
+                type: string
+                description: คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+              givenName:
+                type: string
+                description: ชื่อตัว
+              familyName:
+                type: string
+                description: ชื่อสกุล
+              genderCode:
+                type: number
+                description: >-
+                  เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not
+                  applicable)
+              birthDate:
+                type: string
+                description: วันเกิด
+              birthJurisdiction:
+                type: string
+                description: สถานที่เกิด จังหวัด
+              nationalityCode:
+                type: string
+                description: สัญชาติ File Nationality.xlsx
+              lifeStatusCode:
+                type: string
+                description: 'สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต'
+              disabilityCode:
+                type: string
+                description: ความพิการ File Disability.xlsx
+              medicalInformation:
+                type: object
+                properties:
+                  type:
+                    type: string
+                    enum:
+                      - MedicalInformation
+                    description: ค่าคงที่
+                  personId:
+                    type: number
+                    description: รหัสข้อมูลบุคคล
+                  instype:
+                    type: string
+                    description: >-
+                      สิทธิการรักษา 52file(Service)
+                      http://www.thcc.or.th/treatment.php
+                  drugallergy:
+                    type: array
+                    description: ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
+                    items: {}
+                  recentHospCode:
+                    type: string
+                    description: รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
+                  recentHospName:
+                    type: string
+                    description: ชื่อโรงพยาบาลที่รักษาล่าสุด
+                  bloodGroup:
+                    type: string
+                    description: หมู่เลือด
+                  bloodGroupAH:
+                    type: string
+                    enum:
+                      - NEGATIVE
+                      - POSITIVE
+                    description: หมู่เลือด RH
+                required:
+                  - type
+                  - personId
+                description: ข้อมูลทางการแพทย์
+            required:
+              - type
+              - personId
+              - citizenID
+              - prefixCode
+              - givenName
+              - familyName
+              - genderCode
+              - birthDate
+              - birthJurisdiction
+              - nationalityCode
+              - lifeStatusCode
+              - disabilityCode
+              - medicalInformation
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล
+      operationId: สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล
+      description: |-
+        <img src="data\image\mis_get_person_from_ois.svg">
+
+        สิทธิ์/ประวัดิการรักษา รวมถึงข้อมูลส่วนบุคคลอื่นๆ
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: id_card
+          in: query
+          description: |
+
+            ``หมายเลขประจำตัวประชาชน``
+          required: true
+          x-example: '3250400000001'
+          type: string
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/operating/{operatingSetID}':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              - type: User
+                personId: 1354
+                operatorID: 111222
+                officeID: 1010
+                prefixCode: '001'
+                givenName: แสม
+                familyName: แสนซน
+                genderCode: 1
+                operationStatusCode: 1
+                operationTypeCode: '10'
+                tel: 0649899898
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - User
+                  description: ค่าคงที่
+                personId:
+                  type: number
+                  description: รหัสข้อมูลบุคคล
+                operatorID:
+                  type: number
+                  description: รหัสทะเบียนเจ้าหน้าที่
+                officeID:
+                  type: number
+                  description: หน่วยงานที่สังกัด
+                prefixCode:
+                  type: string
+                  description: คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+                givenName:
+                  type: string
+                  description: ชื่อตัว
+                familyName:
+                  type: string
+                  description: ชื่อสกุล
+                genderCode:
+                  type: number
+                  description: >-
+                    เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not
+                    applicable)
+                operationStatusCode:
+                  type: number
+                  description: >-
+                    สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน,
+                    2=กำลังปฏิบัติงาน, 3=พัก
+                operationTypeCode:
+                  type: string
+                  description: >-
+                    หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น,
+                    02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By
+                    Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก,
+                    06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ,
+                    08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน,
+                    09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS),
+                    11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน,
+                    13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง,
+                    15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
+                tel:
+                  type: string
+                  description: เบอร์โทรศัพท์
+              required:
+                - type
+                - personId
+                - operatorID
+                - officeID
+                - prefixCode
+                - givenName
+                - familyName
+                - genderCode
+                - operationStatusCode
+                - operationTypeCode
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: สมาชิกในทีมปฏิบัติการ
+      operationId: สมาชิกในทีมปฏิบัติการ
+      description: <img src="data\image\mis_get_team_from_ois.svg">
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: operatingSetID
+          in: path
+          description: |
+
+            ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ)``
+          required: true
+          x-example: '23154'
+          type: number
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  /organization:
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              - type: ShortOrganization
+                officeID: 1010
+                OfficeNameTh: โรงพยาบาลวิภาวดี
+                OfficeNameEn: Vipa
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                type:
+                  type: string
+                  enum:
+                    - ShortOrganization
+                  description: ค่าคงที่
+                officeID:
+                  type: number
+                  description: รหัสหน่วยงาน
+                OfficeNameTh:
+                  type: string
+                  description: ชื่อหน่วยงานไทย
+                OfficeNameEn:
+                  type: string
+                  description: ชื่อหน่วยงานอังกฤษ
+              required:
+                - type
+                - officeID
+                - OfficeNameTh
+                - OfficeNameEn
+      summary: ค้นหาหน่วยงาน
+      operationId: ค้นหาหน่วยงาน
+      description: >-
+        <img src="data\image\ois_search_org.svg">
+
+
+        ดึงข้อมูลชื่อหน่วยงานจาก OIS ถ้าไม่ใส่ query
+        จะส่งกลับรายชื่อหน่วยงานทั้งหมด
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: query
+          in: query
+          description: |
+
+            ``ข้อมูลที่ต้องการค้นหา``
+          required: false
+          x-example: สระแก้ว
+          type: string
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/organization/{officeID}':
+    get:
+      responses:
+        '200':
+          description: OK
+          headers: {}
+          examples:
+            application/json:
+              type: Organization
+              officeID: '1010'
+              OfficeNameTh: โรงพยาบาลวิภาวดี
+              OfficeNameEn: Vipa
+              ministryCode: '17'
+              officeTypeCode: ''
+              typeOfWorkCode: '02'
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - Organization
+                description: ค่าคงที่
+              officeID:
+                type: string
+                description: รหัสหน่วยงาน
+              OfficeNameTh:
+                type: string
+                description: ชื่อหน่วยงาน(ไทย)
+              OfficeNameEn:
+                type: string
+                description: ชื่อหน่วยงาน(อังกฤษ)
+              ministryCode:
+                type: string
+                description: >-
+                  สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The
+                  Government Public Relations Department (PRD)
+              officeTypeCode:
+                type: string
+                description: ประเภทหน่วยงาน
+              typeOfWorkCode:
+                type: string
+                description: >-
+                  ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง
+                  (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี),
+                  02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์,
+                  03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง
+                  เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ,
+                  05=หน่วยสนับสนุนอื่นๆ
+            required:
+              - type
+              - officeID
+              - OfficeNameTh
+              - OfficeNameEn
+              - ministryCode
+              - officeTypeCode
+              - typeOfWorkCode
+            additionalProperties: false
+        '404':
+          description: Not Found
+          headers: {}
+          examples:
+            application/json:
+              message: ไม่พบข้อมูลตามที่ระบุใน Link
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+            required:
+              - message
+            additionalProperties: false
+      summary: ข้อมูลหน่วยงาน
+      operationId: ข้อมูลหน่วยงาน
+      description: |-
+        <img src="data\image\ois_get_org.svg">
+
+        ดึงข้อมูลหน่วยงานจาก OIS
+      tags:
+        - OIS Lookup
+      parameters:
+        - name: officeID
+          in: path
+          description: |
+
+            ``รหัสหน่วยงาน``
+          required: true
+          x-example: '1010'
+          type: string
+      produces:
+        - application/json
+      security:
+        - oauth2: []
+  '/gps/{personId}/':
+    put:
+      responses: {}
+      summary: Send GPS
+      operationId: Send GPS
+      description: >-
+        ส่งข้อมูล GPS เข้าระบบ ผ่านระบบ Message Queue โดยสามารถใช้ Body
+        เดียวกันส่งแบบ Restful api ได้
+      tags:
+        - OIS GPS
+      parameters:
+        - name: personId
+          in: path
+          description: |
+
+            ``รหัสข้อมูลบุคคล``
+          required: true
+          x-example: '1354'
+          type: number
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                  - GpsMessageQueue
+                description: ค่าคงที่
+              randomNumber:
+                type: number
+                description: ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+              personId:
+                type: number
+                description: รหัสข้อมูลบุคคล
+              gps:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - Gps
+                      description: ค่าคงที่
+                    personId:
+                      type: number
+                      description: รหัสข้อมูลบุคคล
+                    lat:
+                      type: string
+                    lon:
+                      type: string
+                    accuracy:
+                      type: number
+                    timestamp:
+                      type: string
+                      description: >-
+                        วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ
+                        YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+                  required:
+                    - type
+                    - personId
+                    - lat
+                    - lon
+                    - timestamp
+                description: ข้อมูล gps
+            required:
+              - type
+              - randomNumber
+              - personId
+              - gps
+            additionalProperties: false
+            example:
+              type: GpsMessageQueue
+              randomNumber: 6324
+              personId: 1354
+              gps:
+                - type: Gps
+                  personId: 1354
+                  lat: '14.077756'
+                  lon: '100.601302'
+                  accuracy: 4
+                  timestamp: '2020-04-23T18:25:43.511'
+definitions:
+  เปิดห้อง MIS: {}
+  อัพเดทข้อมูลห้อง MIS: {}
+  ดึงข้อมูลห้อง MIS: {}
+  ปิดห้อง MIS: {}
+  ค้นหาห้อง MIS: {}
+  ผู้ประสบเหตุ ขึ้น/เปลี่ยน พาหนะ: {}
+  ส่งรายปฏิบัติงาน: {}
+  แก้ไขรายงานปฏิบัติงาน: {}
+  ดึงรายงานปฏิบัติงาน: {}
+  Offline protocol: {}
+  UI สำหรับแสดงผล MIS: {}
+  ลิงค์ข้อมูล Telemed: {}
+  ศูนย์เรียกแพทย์เข้าห้อง: {}
+  แพทย์เรียกศูนย์เข้าห้อง: {}
+  อัพเดทสถานะผู้ป่วย: {}
+  เข้าเวร: {}
+  ข้อมูลการรับแจ้งเหตุ: {}
+  ค้นหาข้อมูลรถปฏิบัติการ: {}
+  ข้อมูลรถปฏิบัติการ: {}
+  Speciallist Search: {}
+  Speciallist:
+    type: object
+    required:
+      - type
+      - id
+      - genderCode
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      id:
+        type: string
+        description: 'เลขใบประกอบโรคศิลปะ ,เลขใบ ว.'
+      nameTh:
+        type: string
+        description: ชือภาษาไทย
+      nameEn:
+        type: string
+        description: ชื่อภาษาอังกฤษ
+      officeID:
+        type: array
+        items: {}
+        description: หน่วยงานที่สังกัด
+      genderCode:
+        type: number
+        description: 'เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)'
+      tel:
+        type: string
+        description: เบอร์โทรศัพท์
+      knowledge:
+        type: array
+        items:
+          anyOf:
+            - type: string
+            - type: string
+        description: รายการความรู้เฉพาะทาง
+  สิทธิ์การรักษา/ประวัติการรักษา/ข้อมูลส่วนบุคคล: {}
+  สมาชิกในทีมปฏิบัติการ: {}
+  ค้นหาหน่วยงาน: {}
+  ข้อมูลหน่วยงาน: {}
+  Send GPS: {}
+  MisRoom:
+    type: object
+    required:
+      - type
+      - officeID
+      - vehicleId
+      - operatorID
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      officeID:
+        type: array
+        items:
+          type: number
+        description: หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+      eventPatientId:
+        type: array
+        items:
+          type: number
+        description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+      vehicleId:
+        type: array
+        items:
+          anyOf:
+            - type: number
+            - type: number
+        description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
+      operatorID:
+        type: array
+        items:
+          type: number
+        description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+      level:
+        $ref: '#/definitions/VehicleLevel'
+        description: ระดับปฏิบัติการ
+  MisRoomReturn:
+    type: object
+    required:
+      - type
+      - misRoomId
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      misRoomId:
+        type: number
+        description: หมายเลขห้อง MIS
+      detail:
+        $ref: '#/definitions/MisRoom'
+        description: ข้อมูลรายเอียดห้อง MIS
+  Victim:
+    type: object
+    required:
+      - type
+      - eventPatientId
+      - eventDateTime
+      - emergencyLevelCode
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      eventPatientId:
+        type: number
+        description: รหัสรายละเอียดผู้ประสบเหตุ
+      vehicle:
+        type:
+          - number
+          - 'null'
+        description: พาหนะที่ผู้ประสบเหตุ กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น ยังไม่ต้องกำหนดค่า
+      eventDateTime:
+        type: string
+        description: >-
+          เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+          Introduction
+      cbdCode:
+        type: string
+        description: อาการผู้ประสบเหตุที่แจ้ง
+      patientName:
+        type: number
+        description: ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
+      citizenID:
+        type: string
+        description: หมายเลขประจำตัวประชาชน
+      emergencyLevelCode:
+        type: string
+        description: 'ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ'
+  VictimStatus:
+    type: object
+    required:
+      - type
+      - eventPatientId
+      - color
+      - timestamp
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      eventPatientId:
+        type: number
+        description: รหัสรายละเอียดผู้ประสบเหตุ
+      color:
+        $ref: '#/definitions/Color'
+        description: สถานะ เขียว เหลือง แดง
+      timestamp:
+        type: string
+        description: >-
+          เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+          Introduction
+  Person:
+    type: object
+    required:
+      - type
+      - personId
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      personId:
+        type: number
+        description: รหัสข้อมูลบุคคล
+      citizenID:
+        type: string
+        description: หมายเลขประจำตัวประชาชน
+      prefixCode:
+        type: string
+        description: คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+      givenName:
+        type: string
+        description: ชื่อตัว
+      familyName:
+        type: string
+        description: ชื่อสกุล
+      genderCode:
+        type: number
+        description: 'เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)'
+      birthDate:
+        type: string
+        description: วันเกิด
+      birthJurisdiction:
+        type: string
+        description: สถานที่เกิด จังหวัด
+      nationalityCode:
+        type: string
+        description: สัญชาติ File Nationality.xlsx
+      lifeStatusCode:
+        type: string
+        description: 'สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต'
+      disabilityCode:
+        type: string
+        description: ความพิการ File Disability.xlsx
+      medicalInformation:
+        $ref: '#/definitions/MedicalInformation'
+        description: ข้อมูลทางการแพทย์
+  MedicalInformation:
+    type: object
+    required:
+      - type
+      - personId
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      personId:
+        type: number
+        description: รหัสข้อมูลบุคคล
+      instype:
+        type: string
+        description: 'สิทธิการรักษา 52file(Service) http://www.thcc.or.th/treatment.php'
+      drugallergy:
+        type: array
+        items: {}
+        description: ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
+      recentHospCode:
+        type: string
+        description: รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
+      recentHospName:
+        type: string
+        description: ชื่อโรงพยาบาลที่รักษาล่าสุด
+      bloodGroup:
+        type: string
+        description: หมู่เลือด
+      bloodGroupAH:
+        $ref: '#/definitions/BloodRH'
+        description: หมู่เลือด RH
+  BloodRH:
+    type: string
+    enum:
+      - NEGATIVE
+      - POSITIVE
+  Drugallergy:
+    type: object
+    required:
+      - type
+      - personId
+      - symptom
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      personId:
+        type: number
+        description: รหัสข้อมูลบุคคล
+      drugCode:
+        type: string
+        description: 'รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php'
+      drugName:
+        type: string
+        description: ชื่อยาที่แพ้
+      typeDX:
+        type: string
+        description: |-
+          ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
+
+          3= possible, 4= unlikely, 5= unclassified)
+      aLevel:
+        type: string
+        description: >-
+          ระดบความรัุนแรงของการแพ้ยา 8 ระดับ  1.ไม่ร้ายแรง (Non-serious),
+          2.ร้ายแรง - เสียชีวิต (Death), 3.ร้ายแรง - อันตรายถึงชีวิต
+          (Life-threatening), 4.ร้ายแรง - ต้องเข้ารับการรักษาในโรงพยาบาล
+          (Hospitalization-initial), 5.ร้ายแรง -
+          ทําให้เพิ่มระยะเวลาในการรักษานานขึ้น (Hospitalization-prolonged),
+          6.ร้ายแรง - พิการ (Disability), 7.ร้ายแรง -
+          เป็นเหตุให้เกิดความผิดปกติแต่กำเนิด (Congenital anomaly),
+          8.ร้ายแรง-อื่นๆ(คือ เหตุการณ์ร้ายแรงอื่น ๆ ที่สำคัญทางการแพทย์
+          ซึ่งส่งผลให้ผู้ป่วยต้องได้รับการรักษาด้วยวิธีอื่น เช่น การผ่านตัด
+          กรณีนี้รวมถึงผู้ป่วย ซึ่งเกิดปัญหาการหายใจติดขัดอย่างรุ่นแรง
+          และต้องรักษาในห้องฉุกเฉิน ผู้ป่วยเกิดการอาการชักหมดสติ
+          ระบบเลือดผิดปกติเป็นต้น
+      symptom:
+        type: string
+        description: ลักษณะอาการของการแพ้ยา
+  Organization:
+    type: object
+    required:
+      - type
+      - officeID
+      - OfficeNameTh
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      officeID:
+        type: string
+        description: รหัสหน่วยงาน
+      OfficeNameTh:
+        type: string
+        description: ชื่อหน่วยงาน(ไทย)
+      OfficeNameEn:
+        type: string
+        description: ชื่อหน่วยงาน(อังกฤษ)
+      ministryCode:
+        type: string
+        description: >-
+          สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government
+          Public Relations Department (PRD)
+      officeTypeCode:
+        type: string
+        description: ประเภทหน่วยงาน
+      typeOfWorkCode:
+        type: string
+        description: >-
+          ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา
+          เลขบัญชี ประเภทบัญชี ชื่อบัญชี),
+          02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์,
+          03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง
+          เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
+  ShortOrganization:
+    type: object
+    required:
+      - type
+      - officeID
+      - OfficeNameTh
+      - OfficeNameEn
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      officeID:
+        type: number
+        description: รหัสหน่วยงาน
+      OfficeNameTh:
+        type: string
+        description: ชื่อหน่วยงานไทย
+      OfficeNameEn:
+        type: string
+        description: ชื่อหน่วยงานอังกฤษ
+  OfflineProtocal:
+    type: object
+    required:
+      - type
+      - offlinePotocalName
+      - AttechFile
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      offlinePotocalName:
+        type: string
+        description: ชื่อแนวทางการปฏิบัติงาน
+      pageNumber:
+        type: number
+        description: เลขหน้า
+      AttechFile:
+        type: string
+        description: เอกสารแนวทางปฏิบัติงาน
+  Protocol:
+    type: object
+    required:
+      - type
+      - eventPatientId
+      - update
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      eventPatientId:
+        type: number
+        description: รหัสรายละเอียดผู้ประสบเหตุ
+      vitalsignsLink:
+        type: string
+        description: ลิงค์สัญญาณชีพ
+      ekgLink:
+        type: string
+        description: ลิงค์ EKG/ECG
+      detail:
+        type: array
+        items:
+          $ref: '#/definitions/TreatmentInformation'
+      note:
+        type: string
+        description: note อื่นๆ
+      update:
+        type: string
+        description: 'วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s'
+  TreatmentInformation:
+    type: object
+    required:
+      - type
+      - createBy
+      - updateBy
+      - procedureName
+      - createDescription
+      - updateDescription
+      - update
+      - timestamp
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      pattern:
+        $ref: '#/definitions/PatternProtocal'
+      createBy:
+        type: number
+        description: สร้างโดยใคร
+      updateBy:
+        type: number
+        description: อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
+      procedureName:
+        type: string
+        description: ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
+      createDescription:
+        type: string
+        description: >-
+          คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ
+          โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+      updateDescription:
+        type: string
+        description: >-
+          คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ 
+          โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+      doIt:
+        type:
+          - boolean
+          - 'null'
+        description: 'ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ'
+      update:
+        type: string
+        description: >-
+          วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s
+          มีคำอธิบายในส่วน Introduction
+      timestamp:
+        type: string
+        description: >-
+          วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s
+          มีคำอธิบายในส่วน Introduction
+  User:
+    type: object
+    required:
+      - type
+      - personId
+      - operatorID
+      - officeID
+      - prefixCode
+      - givenName
+      - familyName
+      - genderCode
+      - operationStatusCode
+      - operationTypeCode
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      personId:
+        type: number
+        description: รหัสข้อมูลบุคคล
+      operatorID:
+        type: number
+        description: รหัสทะเบียนเจ้าหน้าที่
+      officeID:
+        type: number
+        description: หน่วยงานที่สังกัด
+      prefixCode:
+        type: string
+        description: คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+      givenName:
+        type: string
+        description: ชื่อตัว
+      familyName:
+        type: string
+        description: ชื่อสกุล
+      genderCode:
+        type: number
+        description: 'เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)'
+      operationStatusCode:
+        type: number
+        description: 'สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก'
+      operationTypeCode:
+        type: string
+        description: >-
+          หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น,
+          02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander,
+          05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์,
+          07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน,
+          09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS),
+          11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน,
+          13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง,
+          15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
+      tel:
+        type: string
+        description: เบอร์โทรศัพท์
+  Vehicle:
+    type: object
+    required:
+      - type
+      - vehicleId
+      - operationNumber
+      - operatingSetID
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      vehicleId:
+        type: number
+        description: รหัสพาหนะ
+      operationNumber:
+        type: number
+        description: เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
+      operatingSetID:
+        type: number
+        description: เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
+      eventPatientId:
+        type: array
+        items:
+          anyOf:
+            - type: number
+            - type: number
+        description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
+      category:
+        allOf:
+          - $ref: '#/definitions/VehicleCategory'
+          - type: object
+            properties: {}
+        description: ประเภทพาหนะ
+      vehicleNumber:
+        type: string
+        description: เลขทะเบียนรถ
+      province:
+        type: string
+        description: จัดหวัด
+  ChangeVehicle:
+    type: object
+    required:
+      - type
+      - eventPatientId
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      eventPatientId:
+        type: number
+        description: รหัสรายละเอียดผู้ประสบเหตุ
+      vehicleId:
+        type:
+          - number
+          - 'null'
+        description: >-
+          รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ
+          เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
+  Gps:
+    type: object
+    required:
+      - type
+      - personId
+      - lat
+      - lon
+      - timestamp
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      personId:
+        type: number
+        description: รหัสข้อมูลบุคคล
+      lat:
+        type: string
+      lon:
+        type: string
+      accuracy:
+        type: number
+      timestamp:
+        type: string
+        description: >-
+          วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s
+          มีคำอธิบายในส่วน Introduction
+  GpsMessageQueue:
+    type: object
+    required:
+      - type
+      - randomNumber
+      - personId
+      - gps
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      randomNumber:
+        type: number
+        description: ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+      personId:
+        type: number
+        description: รหัสข้อมูลบุคคล
+      gps:
+        type: array
+        items:
+          $ref: '#/definitions/Gps'
+        description: ข้อมูล gps
+  TelemedLink:
+    type: object
+    required:
+      - type
+      - eventPatientId
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      eventPatientId:
+        type: number
+        description: รหัสรายละเอียดผู้ประสบเหตุ
+      vitalsignsLink:
+        type: string
+        description: ลิงค์สัญญาณชีพ
+      ekgLink:
+        type: string
+        description: ลิงค์ EKG/ECG
+  SendOperator:
+    type: object
+    required:
+      - type
+      - randomNumber
+      - misRoomId
+      - officeID
+      - operatorID
+      - message
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      randomNumber:
+        type: number
+        description: ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+      misRoomId:
+        type: number
+        description: หมายเลขห้อง MIS
+      officeID:
+        type: number
+        description: หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
+      operatorID:
+        type: number
+        description: รหัสทะเบียนเจ้าหน้าที่
+      message:
+        type: string
+        description: ข้อความ
+  SendCenter:
+    type: object
+    required:
+      - type
+      - randomNumber
+      - operatorID
+      - misRoomId
+      - officeID
+      - message
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      randomNumber:
+        type: number
+        description: ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+      operatorID:
+        type: number
+        description: รหัสทะเบียนเจ้าหน้าที่
+      misRoomId:
+        type: number
+        description: หมายเลขห้อง MIS เลขห้อง=operationNumber
+      officeID:
+        type: number
+        description: หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
+      message:
+        type: string
+        description: ข้อความ
+  CheckIn:
+    type: object
+    required:
+      - type
+      - operatorID
+      - checkIn
+    properties:
+      type:
+        type: string
+        description: ค่าคงที่
+      operatorID:
+        type: number
+        description: รหัสทะเบียนเจ้าหน้าที่
+      checkIn:
+        type: boolean
+        description: 'สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร'
+  PatternProtocal:
+    type: string
+    enum:
+      - DIRECT
+      - GENERAL
+      - OTHER
+  Color:
+    type: string
+    enum:
+      - GREEN
+      - YELLOW
+      - RED
+      - WHITE
+      - BLACK
+  VehicleCategory:
+    type: string
+    enum:
+      - Boat
+      - Car
+      - Aircraft
+      - Other
+  VehicleLevel:
+    type: string
+    enum:
+      - ALS
+      - ILS
+      - BLS
+      - FR
+  NotFound:
+    type: object
+    properties:
+      message:
+        type: string
+securityDefinitions:
+  oauth2:
+    type: oauth2
+    flow: accessCode
+    authorizationUrl: ''
+    tokenUrl: ''
+    scopes: {}
+tags:
+  - name: Introduction
+    description: |-
+      # MIS API 1.0
+
+      เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS
+
+      ชื่อ และ type ตัวแปรจะใช้ตามโครงสร้างที่เกษตรกำหนดมา
+
+      ตัวโครงสร้างส่วนใหญ่จะมี field ที่ใช้ link หากันได้หมด
+
+      ไฟล์โครงการเอกสาร https://github.com/lionants02/mis-api-doc/releases
+
+      <img src="data\image\api_gateway.svg" width="100%">
+
+      ภาพแสดงการเชื่อมต่อกับระบบ OIS
+
+      - การเรียกใช้ api ภายใน MIS จะเชื่อมผ่าน MIS api gateway ทั้งหมด
+
+      - สำหรับการส่ง Notification จะทำผ่านระบบ Message Queue
+
+
+        รูปแบบวันที่เวลาที่ใช้ `YYYY-MM-DDThh:mm:ss.s`
+
+      - YYYY = four-digit year
+
+      - MM   = two-digit month (01=January, etc.)
+
+      - DD   = two-digit day of month (01 through 31)
+
+      - hh   = two digits of hour (00 through 23) (am/pm NOT allowed)
+
+      - mm   = two digits of minute (00 through 59)
+
+      - ss   = two digits of second (00 through 59)
+
+      - s    = one or more digits representing a decimal fraction of a second
+
+
+        รูปแบบรหัสสิทธิ์การรักษาพยาบาลที่ใช้ http://www.thcc.or.th/treatment.php
+
+
+        Use Case Diagram
+        <a href="data\image\full.svg">
+          <img src="data\image\full.svg" width="100%">
+        </a>
+
+        <style>
+        #scenario {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        </style>
+
+        <table id="scenario">
+          <tr>
+            <td><a href="data\image\scenario_CallTaker.svg">
+              <img src="data\image\scenario_CallTaker.svg" width="100%">
+            </a></td>
+            <td><a href="data\image\scenario_Coordinator.svg">
+              <img src="data\image\scenario_Coordinator.svg" width="100%">
+            </a></td>
+          </tr>
+          <tr>
+            <td><a href="data\image\scenario_Dispatcher.svg">
+              <img src="data\image\scenario_Dispatcher.svg" width="100%">
+            </a></td>
+            <td><a href="data\image\scenario_MD.svg">
+              <img src="data\image\scenario_MD.svg" width="100%">
+            </a></td>
+          </tr>
+          <tr>
+            <td><a href="data\image\scenario_Paramedic.svg">
+              <img src="data\image\scenario_Paramedic.svg" width="100%">
+            </a></td>
+            <td><a href="data\image\scenario_SP_ER.svg">
+              <img src="data\image\scenario_SP_ER.svg" width="100%">
+            </a></td>
+          </tr>
+          <tr>
+            <td><a href="data\image\scenario_er.svg">
+              <img src="data\image\scenario_er.svg" width="100%">
+            </a></td>
+            <td><a> </a></td>
+          </tr>
+        </table>
+  - name: Authorization
+    description: |-
+      การใช้งาน จำเป็นต้องมี api key
+
+      `Authorization: Bearer {token}`
+  - name: MIS ปฏิบัติการ
+  - name: MIS Protocol
+  - name: MIS UI
+  - name: MIS Notification
+  - name: OIS ปฏิบัติการ
+    description: |-
+      HOST และ link จะเป็นของทาง OIS
+
+      ทาง OIS จะต้องเป็นผู้พัฒนาให้ ใช้ Token ที่ได้มาจาก auth service เลย
+
+      https://api.ois.tot.co.th/ois/report/{eventPatientId}
+  - name: OIS จัดการเวร
+    description: |-
+      HOST และ link จะเป็นของทาง OIS
+
+      ทาง OIS จะต้องเป็นผู้พัฒนาให้
+  - name: OIS Lookup
+    description: |-
+      HOST และ link จะเป็นของทาง OIS
+
+      ทาง OIS จะต้องเป็นผู้พัฒนาให้
+  - name: OIS GPS
+  - name: Data Structures
+    description: >-
+      เป็นโครงสร้างในรูปแบบ **API Blueprint** หรือไม่ อาจจะดูที่ json schema
+      ของตัว api เลยก็ได้
+
+
+      ```
+
+      ## Data Structures
+
+
+      # MisRoom (object)
+
+      + type: `MisRoom` (string, fixed, required) - ค่าคงที่
+
+      + officeID: `1010` (array[number], required,fixed-type) - หน่วยปฏิบัติการ
+      (ทะเบียนหน่วยงาน)
+
+      + eventPatientId: 2222 (array[number], fixed-type) -
+      รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+
+      + vehicleId: 3324, 3368 (array[number], fixed-type, required) - รายการ
+      รหัสพาหนะ ที่ออกปฏิบัติการ
+
+      + operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน
+      Medical Director ที่ดูแลห้อง MIS นี้
+
+      + level (VehicleLevel) - ระดับปฏิบัติการ
+
+
+      # MisRoomReturn (object)
+
+      + type: `MisRoomReturn` (string, fixed, required) - ค่าคงที่
+
+      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+
+      + detail (MisRoom) - ข้อมูลรายเอียดห้อง MIS
+
+
+      # Victim (object)
+
+      + type: `Victim` (string, fixed, required) - ค่าคงที่
+
+      + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+
+      + vehicle: 3324 (number,nullable, optional) - พาหนะที่ผู้ประสบเหตุ
+      กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น ยังไม่ต้องกำหนดค่า
+
+      + eventDateTime: `2020-04-23T18:25:43.511` (string, required) -
+      เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+      + cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
+
+      + patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล
+      personId ให้ดู object Person
+
+      + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
+
+      + emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว,
+      02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
+
+
+      # VictimStatus (object)
+
+      + type: `VictimStatus` (string, fixed, required) - ค่าคงที่
+
+      + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+
+      + color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
+
+      + timestamp : `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง
+      มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+
+      # Person (object)
+
+      + type: `Person` (string, fixed, required) - ค่าคงที่
+
+      + personId: `002321` (number, required) - รหัสข้อมูลบุคคล
+
+      + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
+
+      + prefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+
+      + givenName: `แสม` (string) - ชื่อตัว
+
+      + familyName: `แสนซน` (string) - ชื่อสกุล
+
+      + genderCode: `1` (number) - เพศ 1=ชาย (male), 2=หญิง (Female),
+      9=ไม่สามารถระบุได้ (not applicable)
+
+      + birthDate: `1990-01-25` (string) - วันเกิด
+
+      + birthJurisdiction: `ลพบุรี` (string) - สถานที่เกิด จังหวัด
+
+      + nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
+
+      + lifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
+
+      + disabilityCode: `00` (string) - ความพิการ File Disability.xlsx
+
+      + medicalInformation (MedicalInformation) - ข้อมูลทางการแพทย์
+
+
+      # MedicalInformation
+
+      + type: `MedicalInformation` (string, fixed, required) - ค่าคงที่
+
+      + personId: `002321` (number, required) - รหัสข้อมูลบุคคล
+
+      + instype (string) - สิทธิการรักษา 52file(Service)
+      http://www.thcc.or.th/treatment.php
+
+      + drugallergy (array[Drugallergy], optional) - ประวัติการแพ้ยา
+      โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
+
+      + recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด
+      52file(PROCEDURE_REFER)
+
+      + recentHospName (string) - ชื่อโรงพยาบาลที่รักษาล่าสุด
+
+      + bloodGroup: `AB` (string) - หมู่เลือด
+
+      + bloodGroupAH (BloodRH) - หมู่เลือด RH
+
+
+      # BloodRH (enum)
+
+      + NEGATIVE
+
+      + POSITIVE
+
+
+      # Drugallergy
+
+      + type: `Drugallergy` (string, fixed, required) - ค่าคงที่
+
+      + personId: `002321` (number, required) - รหัสข้อมูลบุคคล
+
+      + drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก
+      http://thcc.or.th/homemedicin.php
+
+      + drugName (string, optional) - ชื่อยาที่แพ้
+
+      + typeDX: `1` (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1=
+      certain, 2= probable,
+       3= possible, 4= unlikely, 5= unclassified)
+      + aLevel: `1` (string, optional) - ระดบความรัุนแรงของการแพ้ยา 8 ระดับ 
+      1.ไม่ร้ายแรง (Non-serious), 2.ร้ายแรง - เสียชีวิต (Death), 3.ร้ายแรง -
+      อันตรายถึงชีวิต (Life-threatening), 4.ร้ายแรง -
+      ต้องเข้ารับการรักษาในโรงพยาบาล (Hospitalization-initial), 5.ร้ายแรง -
+      ทําให้เพิ่มระยะเวลาในการรักษานานขึ้น (Hospitalization-prolonged),
+      6.ร้ายแรง - พิการ (Disability), 7.ร้ายแรง -
+      เป็นเหตุให้เกิดความผิดปกติแต่กำเนิด (Congenital anomaly),
+      8.ร้ายแรง-อื่นๆ(คือ เหตุการณ์ร้ายแรงอื่น ๆ ที่สำคัญทางการแพทย์
+      ซึ่งส่งผลให้ผู้ป่วยต้องได้รับการรักษาด้วยวิธีอื่น เช่น การผ่านตัด
+      กรณีนี้รวมถึงผู้ป่วย ซึ่งเกิดปัญหาการหายใจติดขัดอย่างรุ่นแรง
+      และต้องรักษาในห้องฉุกเฉิน ผู้ป่วยเกิดการอาการชักหมดสติ
+      ระบบเลือดผิดปกติเป็นต้น
+
+      + symptom (string, required) - ลักษณะอาการของการแพ้ยา
+
+
+      # Organization (object)
+
+      + type: `Organization` (string, fixed, required) - ค่าคงที่
+
+      + officeID: `1010` (string, required) - รหัสหน่วยงาน
+
+      + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string, required) - ชื่อหน่วยงาน(ไทย)
+
+      + OfficeNameEn: `Vipa` (string) - ชื่อหน่วยงาน(อังกฤษ)
+
+      + ministryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx
+      กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
+
+      + officeTypeCode (string) - ประเภทหน่วยงาน
+
+      + typeOfWorkCode: `02` (string) - ประเภทงาน
+      01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี
+      ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์,
+      03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง
+      เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
+
+
+      # ShortOrganization (object)
+
+      + type: `ShortOrganization` (string, fixed, required) - ค่าคงที่
+
+      + officeID: `1010` (number ,required) - รหัสหน่วยงาน
+
+      + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
+
+      + OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
+
+
+      # OfflineProtocal (object)
+
+      + type: `OfflineProtocal` (string, fixed, required) - ค่าคงที่
+
+      + offlinePotocalName: `example` (string, required) -
+      ชื่อแนวทางการปฏิบัติงาน
+
+      + pageNumber: 10 (number) - เลขหน้า
+
+      + AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string,
+      required) - เอกสารแนวทางปฏิบัติงาน
+
+
+      # Protocol (object)
+
+      + type: `Protocol` (string, fixed, required) - ค่าคงที่
+
+      + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+
+      + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
+
+      + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
+
+      + detail (array[TreatmentInformation],fixed-type)
+
+      + note: `ดาม แขน ขา คอ` (string) - note อื่นๆ
+
+      + update: `2020-04-23T18:25:43.511` (string, required) -
+      วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s
+
+
+      # TreatmentInformation (object)
+
+      + type: `TreatmentInformation` (string, fixed, required) - ค่าคงที่
+
+      + pattern (PatternProtocal)
+
+      + createBy: `2323` (number,required) - สร้างโดยใคร
+
+      + updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก
+      จะเป็นอันเดียวกับ createBy
+
+      + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา
+      52file(PROCEDURE_REFER)
+
+      + createDescription: `ดามคอ แขน และ ขา` (string, required) -
+      คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ
+      โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+
+      + updateDescription: `ดูดีมีอาการดีขึ้น` (string, required) -
+      คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ 
+      โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
+
+      + doIt: `true` (boolean, nullable) - ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ
+
+      + update: `2020-04-23T18:25:43.511` (string, required) -
+      วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+      Introduction
+
+      + timestamp: `2020-04-23T18:25:43.511` (string, required) -
+      วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+      Introduction
+
+
+      # User (object)
+
+      + type: `User` (string, fixed, required) - ค่าคงที่
+
+      + personId: `1354` (number, required) - รหัสข้อมูลบุคคล
+
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+
+      + officeID: `1010` (number, required) - หน่วยงานที่สังกัด
+
+      + prefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
+
+      + givenName: `แสม` (string, required) - ชื่อตัว
+
+      + familyName: `แสนซน` (string, required) - ชื่อสกุล
+
+      + genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female),
+      9=ไม่สามารถระบุได้ (not applicable)
+
+      + operationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา,
+      1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
+
+      + operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่
+      01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS),
+      03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander,
+      05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์,
+      07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน,
+      09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ,
+      12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์,
+      14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน,
+      16=แพทย์ฉุกเฉิน
+
+      + tel: `0649899898` (string) - เบอร์โทรศัพท์
+
+
+      # Speciallist
+
+      + type: `Speciallist` (string, fixed, required) - ค่าคงที่
+
+      + id: `12346` (string, required) - เลขใบประกอบโรคศิลปะ ,เลขใบ ว.
+
+      + nameTh: `สง กรานต์` (string) - ชือภาษาไทย
+
+      + nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
+
+      + officeID: `1010` (array[number]) - หน่วยงานที่สังกัด
+
+      + genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female),
+      9=ไม่สามารถระบุได้ (not applicable)
+
+      + tel: `0649999998` (string) - เบอร์โทรศัพท์
+
+      + knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา
+      หมอคนแก่ (Geriatrician)` (array[string], fixed-type) -
+      รายการความรู้เฉพาะทาง
+
+
+      # Vehicle (object)
+
+      + type: `Vehicle` (string, fixed, required) - ค่าคงที่
+
+      + vehicleId: `3324` (number, required) - รหัสพาหนะ
+
+      + operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ
+      เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
+
+      + operatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ
+      (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
+
+      + eventPatientId: 2222,2345 (array[number], fixed-type) -
+      รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
+
+      + category: `Boat` (VehicleCategory) - ประเภทพาหนะ
+
+      + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
+
+      + province: `สระแก้ว` (string) - จัดหวัด
+
+
+      # ChangeVehicle (object)
+
+      + type: `ChangeVehicle` (string, fixed, required) - ค่าคงที่
+
+      + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+
+      + vehicleId: `3324` (number,nullable , optional) - รหัสพาหนะที่ขึ้น โดย
+      MIS จะใช้ api ดึงข้อมูลรถ เพื่อขอรายระเอียดอีกครั้ง
+      หากไม่กำหนดมาหมายถึงลงรถ
+
+
+      # Gps (object)
+
+      + type: `Gps` (string, fixed, required) - ค่าคงที่
+
+      + personId: `1354` (number, required) - รหัสข้อมูลบุคคล
+
+      + lat: `14.077756` (string,required)
+
+      + lon: `100.601302` (string,required)
+
+      + accuracy: `4` (number, optional)
+
+      + timestamp: `2020-04-23T18:25:43.511` (string, required) -
+      วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน
+      Introduction
+
+
+      # GpsMessageQueue (object)
+
+      + type: `GpsMessageQueue` (string, fixed, required) - ค่าคงที่
+
+      + randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+
+      + personId: `1354` (number, required) - รหัสข้อมูลบุคคล
+
+      + gps (array[Gps], fixed-type, required) - ข้อมูล gps
+
+
+      # TelemedLink (object)
+
+      + type: `TelemedLink` (string, fixed, required) - ค่าคงที่
+
+      + eventPatientId: `2222` (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
+
+      + vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
+
+      + ekgLink: `https://` (string) - ลิงค์ EKG/ECG
+
+
+      # SendOperator (object)
+
+      + type: `SendOperator` (string, fixed, required) - ค่าคงที่
+
+      + randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+
+      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+
+      + officeID: `1010` (number, required) - หน่วยปฏิบัติการ
+      (เลขทะเบียนหน่วยงาน)
+
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+
+      + message: `ศูนย์เรียก` (string, required) - ข้อความ
+
+
+      # SendCenter (object)
+
+      + type: `SendCenter` (string, fixed, required) - ค่าคงที่
+
+      + randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
+
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+
+      + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+      เลขห้อง=operationNumber
+
+      + officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง
+      (เลขทะเบียนหน่วยงาน)
+
+      + message: `แพทย์เรียก` (string, required) - ข้อความ
+
+
+      # CheckIn (object)
+
+      + type: `CheckIn` (string, fixed, required) - ค่าคงที่
+
+      + operatorID: `111222` (number, required) - รหัสทะเบียนเจ้าหน้าที่
+
+      + checkIn: true (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร,
+      false=ออกเวร
+
+
+      # PatternProtocal (enum)
+
+      + DIRECT - อำนวยการตรง
+
+      + GENERAL - อำนวยการทั่วไป
+
+      + OTHER - อำนวยการอื่นๆ ที่แพทย์สั่ง เช่น ย้ายรถ เปลี่ยนรถ
+
+
+      # Color (enum)
+
+      + GREEN
+
+      + YELLOW
+
+      + RED
+
+      + WHITE
+
+      + BLACK
+
+
+      # VehicleCategory (enum)
+
+      + Boat - เรื่อ
+
+      + Car - รถ
+
+      + Aircraft - ทางอากาศ
+
+      + Other - อื่นๆ
+
+
+      # VehicleLevel (enum)
+
+      + ALS - ปฏิบัติการฉุกเฉินระดับสูง
+
+      + ILS - ปฏิบัติการฉุกเฉินระดับกลาง
+
+      + BLS - ปฏิบัติการฉุกเฉินระดับต้น
+
+      + FR - ปฏิบัติการฉุกเฉินเบื้องต้น
+
+
+      # NotFound (object)
+
+      + message: `ไม่พบข้อมูลตามที่ระบุใน Link` (string)
+        ```
