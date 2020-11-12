@@ -7,6 +7,8 @@ HOST: https://gw.hii.in.th/mis
 
   เอกสารการสเปค **MIS API.** สำหรับแลกเปลี่ยนข้อมูลกับ OIS
 
+  [**Beta swagger build**](https://github.com/lionants02/mis-api-doc/blob/gh-pages/swagger.yaml)
+
   ชื่อ และ type ตัวแปรจะใช้ตามโครงสร้างที่เกษตรกำหนดมา
 
   ตัวโครงสร้างส่วนใหญ่จะมี field ที่ใช้ link หากันได้หมด
@@ -119,7 +121,7 @@ HOST: https://gw.hii.in.th/mis
   ในกรณี OIS ต้องการอัพเดทข้อมูลปฏิบัติการ ในระหว่างกำลังปฏิบัติงาน จะใช้เลข `misRoomId` ในการอ้างอิงชุดข้อมูล
 
 + Parameters
-    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+    + misRoomId: 999888 (number,required) - หมายเลขห้อง MIS
       ``หมายเลขห้อง MIS``
 
 + Request (application/json)
@@ -148,7 +150,7 @@ HOST: https://gw.hii.in.th/mis
   ดูข้อมูลห้อง MIS
 
 + Parameters
-    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+    + misRoomId: 999888 (number,required) - หมายเลขห้อง MIS
       ``หมายเลขห้อง MIS``
 
 + Request (application/json)
@@ -168,7 +170,7 @@ HOST: https://gw.hii.in.th/mis
 ## ปิดห้อง MIS [DELETE /room/{misRoomId}]
 
 + Parameters
-    + misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
+    + misRoomId: 999888 (number,required) - หมายเลขห้อง MIS
       ``หมายเลขห้อง MIS``
 
 + Request (application/json)
@@ -195,9 +197,9 @@ HOST: https://gw.hii.in.th/mis
   รายการห้อง MIS คืนค่าแบบ Array
 
 + Parameters
-    + officeID: `1010` (number, optional)
+    + officeID: 1010 (number, optional)
       ``หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)``
-    + operationNumber: `5354` (number,required)
+    + operationNumber: 5354 (number,required)
       ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน``
 
 + Request (application/json)
@@ -344,7 +346,7 @@ HOST: https://gw.hii.in.th/mis
   <img src="data\image\LINE_b9WEtafJT4.png">
 
 + Parameters
-    + misRoomId: `999888` (number,required)
+    + misRoomId: 999888 (number,required)
       ``หมายเลขห้อง MIS``
 
 + Request ()
@@ -513,13 +515,13 @@ HOST: https://gw.hii.in.th/mis
   ค้นหาข้อมูลรถปฏิบัติการ ตามพารามิเตอร์ที่ระบุ ต้องใส่ค่ามาอย่างน้อย 1 ค่า
 
 + Parameters
-    + vehicleId: `3324` (number, optional)
+    + vehicleId: 3324 (number, optional)
       ``รหัสรถ``
-    + operatingSetID: `23154` (number, optional)
+    + operatingSetID: 23154 (number, optional)
       ``เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่``
     + eventPatientId: 2222 (number, optional)
       ``รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ``
-    + operationNumber: `5354` (number,optional)
+    + operationNumber: 5354 (number,optional)
       ``เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่``
 
 
@@ -693,7 +695,7 @@ HOST: https://gw.hii.in.th/mis
   ส่งข้อมูล GPS เข้าระบบ ผ่านระบบ Message Queue โดยสามารถใช้ Body เดียวกันส่งแบบ Restful api ได้
 
 + Parameters
-    + personId: `1354` (number, required)
+    + personId: 1354 (number, required)
       ``รหัสข้อมูลบุคคล``
 
 + Request (application/json)
@@ -704,11 +706,12 @@ HOST: https://gw.hii.in.th/mis
 
   เป็นโครงสร้างในรูปแบบ **API Blueprint** หรือไม่ อาจจะดูที่ json schema ของตัว api เลยก็ได้
 
+```
 ## Data Structures
 
 # MisRoom (object)
 + type: `MisRoom` (string, fixed, required) - ค่าคงที่
-+ officeID: `1010` (array[number], required,fixed-type) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
++ officeID: 1010 (array[number], required,fixed-type) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 + eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 + vehicleId: 3324 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
 + operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
@@ -716,7 +719,7 @@ HOST: https://gw.hii.in.th/mis
 
 # MisRoomReturn (object)
 + type: `MisRoomReturn` (string, fixed, required) - ค่าคงที่
-+ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
++ misRoomId: 999888 (number,required) - หมายเลขห้อง MIS
 + detail (MisRoom) - ข้อมูลรายเอียดห้อง MIS
 
 # Victim (object)
@@ -725,7 +728,7 @@ HOST: https://gw.hii.in.th/mis
 + vehicle: 3324 (number,nullable, optional) - พาหนะที่ผู้ประสบเหตุ กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น ยังไม่ต้องกำหนดค่า
 + eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 + cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
-+ patientName: `002321` (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
++ patientName: 002321 (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
 + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
 
@@ -737,12 +740,12 @@ HOST: https://gw.hii.in.th/mis
 
 # Person (object)
 + type: `Person` (string, fixed, required) - ค่าคงที่
-+ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
++ personId: 002321 (number, required) - รหัสข้อมูลบุคคล
 + citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
 + prefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
 + givenName: `แสม` (string) - ชื่อตัว
 + familyName: `แสนซน` (string) - ชื่อสกุล
-+ genderCode: `1` (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ genderCode: 1 (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 + birthDate: `1990-01-25` (string) - วันเกิด
 + birthJurisdiction: `ลพบุรี` (string) - สถานที่เกิด จังหวัด
 + nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
@@ -752,7 +755,7 @@ HOST: https://gw.hii.in.th/mis
 
 # MedicalInformation
 + type: `MedicalInformation` (string, fixed, required) - ค่าคงที่
-+ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
++ personId: 2321 (number, required) - รหัสข้อมูลบุคคล
 + instype (string) - สิทธิการรักษา 52file(Service) http://www.thcc.or.th/treatment.php
 + drugallergy (array[Drugallergy], optional) - ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
 + recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
@@ -766,7 +769,7 @@ HOST: https://gw.hii.in.th/mis
 
 # Drugallergy
 + type: `Drugallergy` (string, fixed, required) - ค่าคงที่
-+ personId: `002321` (number, required) - รหัสข้อมูลบุคคล
++ personId: 2321 (number, required) - รหัสข้อมูลบุคคล
 + drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php
 + drugName (string, optional) - ชื่อยาที่แพ้
 + typeDX: `1` (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
@@ -785,7 +788,7 @@ HOST: https://gw.hii.in.th/mis
 
 # ShortOrganization (object)
 + type: `ShortOrganization` (string, fixed, required) - ค่าคงที่
-+ officeID: `1010` (number ,required) - รหัสหน่วยงาน
++ officeID: 1010 (number ,required) - รหัสหน่วยงาน
 + OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
 + OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
 
@@ -807,8 +810,8 @@ HOST: https://gw.hii.in.th/mis
 # TreatmentInformation (object)
 + type: `TreatmentInformation` (string, fixed, required) - ค่าคงที่
 + pattern (PatternProtocal)
-+ createBy: `2323` (number,required) - สร้างโดยใคร
-+ updateBy: `3424` (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
++ createBy: 2323 (number,required) - สร้างโดยใคร
++ updateBy: 3424 (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
 + procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
 + createDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
 + updateDescription: `ดูดีมีอาการดีขึ้น` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
@@ -818,14 +821,14 @@ HOST: https://gw.hii.in.th/mis
 
 # User (object)
 + type: `User` (string, fixed, required) - ค่าคงที่
-+ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ personId: 1354 (number, required) - รหัสข้อมูลบุคคล
 + operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
-+ officeID: `1010` (number, required) - หน่วยงานที่สังกัด
++ officeID: 1010 (number, required) - หน่วยงานที่สังกัด
 + prefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
 + givenName: `แสม` (string, required) - ชื่อตัว
 + familyName: `แสนซน` (string, required) - ชื่อสกุล
-+ genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
-+ operationStatusCode: `1` (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
++ genderCode: 1 (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ operationStatusCode: 1 (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
 + operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
 + tel: `0649899898` (string) - เบอร์โทรศัพท์
 
@@ -834,16 +837,16 @@ HOST: https://gw.hii.in.th/mis
 + id: `12346` (string, required) - เลขใบประกอบโรคศิลปะ ,เลขใบ ว.
 + nameTh: `สง กรานต์` (string) - ชือภาษาไทย
 + nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
-+ officeID: `1010` (array[number]) - หน่วยงานที่สังกัด
-+ genderCode: `1` (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ officeID: 1010 (array[number]) - หน่วยงานที่สังกัด
++ genderCode: 1 (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
 + tel: `0649999998` (string) - เบอร์โทรศัพท์
 + knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
 
 # Vehicle (object)
 + type: `Vehicle` (string, fixed, required) - ค่าคงที่
-+ vehicleId: `3324` (number, required) - รหัสพาหนะ
-+ operationNumber: `5354` (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
-+ operatingSetID: `23154` (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
++ vehicleId: 3324 (number, required) - รหัสพาหนะ
++ operationNumber: 5354 (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
++ operatingSetID: 23154 (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
 + eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
 + category: `Boat` (VehicleCategory) - ประเภทพาหนะ
 + vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
@@ -852,20 +855,20 @@ HOST: https://gw.hii.in.th/mis
 # ChangeVehicle (object)
 + type: `ChangeVehicle` (string, fixed, required) - ค่าคงที่
 + eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
-+ vehicleId: `3324` (number,nullable , optional) - รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
++ vehicleId: 3324 (number,nullable , optional) - รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
 
 # Gps (object)
 + type: `Gps` (string, fixed, required) - ค่าคงที่
-+ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ personId: 1354 (number, required) - รหัสข้อมูลบุคคล
 + lat: `14.077756` (string,required)
 + lon: `100.601302` (string,required)
-+ accuracy: `4` (number, optional)
++ accuracy: 4 (number, optional)
 + timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
 
 # GpsMessageQueue (object)
 + type: `GpsMessageQueue` (string, fixed, required) - ค่าคงที่
-+ randomNumber: `6324` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-+ personId: `1354` (number, required) - รหัสข้อมูลบุคคล
++ randomNumber: 6324 (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ personId: 1354 (number, required) - รหัสข้อมูลบุคคล
 + gps (array[Gps], fixed-type, required) - ข้อมูล gps
 
 # TelemedLink (object)
@@ -876,18 +879,237 @@ HOST: https://gw.hii.in.th/mis
 
 # SendOperator (object)
 + type: `SendOperator` (string, fixed, required) - ค่าคงที่
-+ randomNumber: `965` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
-+ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS
-+ officeID: `1010` (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
++ randomNumber: 965 (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ misRoomId: 999888 (number,required) - หมายเลขห้อง MIS
++ officeID: 1010 (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
 + operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
 + message: `ศูนย์เรียก` (string, required) - ข้อความ
 
 # SendCenter (object)
 + type: `SendCenter` (string, fixed, required) - ค่าคงที่
-+ randomNumber: `124` (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ randomNumber: 124 (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
 + operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
-+ misRoomId: `999888` (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
-+ officeID: `1010` (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
++ misRoomId: 999888 (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
++ officeID: 1010 (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
++ message: `แพทย์เรียก` (string, required) - ข้อความ
+
+# CheckIn (object)
++ type: `CheckIn` (string, fixed, required) - ค่าคงที่
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ checkIn: true (boolean, required) - สถานะเข้าเวร/ออกเวร true=เข้าเวร, false=ออกเวร
+
+# PatternProtocal (enum)
++ DIRECT - อำนวยการตรง
++ GENERAL - อำนวยการทั่วไป
++ OTHER - อำนวยการอื่นๆ ที่แพทย์สั่ง เช่น ย้ายรถ เปลี่ยนรถ
+
+# Color (enum)
++ GREEN
++ YELLOW
++ RED
++ WHITE
++ BLACK
+
+# VehicleCategory (enum)
++ Boat - เรื่อ
++ Car - รถ
++ Aircraft - ทางอากาศ
++ Other - อื่นๆ
+
+# VehicleLevel (enum)
++ ALS - ปฏิบัติการฉุกเฉินระดับสูง
++ ILS - ปฏิบัติการฉุกเฉินระดับกลาง
++ BLS - ปฏิบัติการฉุกเฉินระดับต้น
++ FR - ปฏิบัติการฉุกเฉินเบื้องต้น
+
+# NotFound (object)
++ message: `ไม่พบข้อมูลตามที่ระบุใน Link` (string)
+```
+
+## Data Structures
+
+# MisRoom (object)
++ type: `MisRoom` (string, fixed, required) - ค่าคงที่
++ officeID: 1010 (array[number], required,fixed-type) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
++ eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
++ vehicleId: 3324 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
++ operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
++ level (VehicleLevel) - ระดับปฏิบัติการ
+
+# MisRoomReturn (object)
++ type: `MisRoomReturn` (string, fixed, required) - ค่าคงที่
++ misRoomId: 999888 (number,required) - หมายเลขห้อง MIS
++ detail (MisRoom) - ข้อมูลรายเอียดห้อง MIS
+
+# Victim (object)
++ type: `Victim` (string, fixed, required) - ค่าคงที่
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vehicle: 3324 (number,nullable, optional) - พาหนะที่ผู้ประสบเหตุ กำลังโดยสารอยู่ ถ้ายังไม่ขึ้น ยังไม่ต้องกำหนดค่า
++ eventDateTime: `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ cbdCode: `CBD25` (string) - อาการผู้ประสบเหตุที่แจ้ง
++ patientName: 002321 (number) - ชื่อผู้ประสบเหตุ ชุดข้อมูลบุคคล personId ให้ดู object Person
++ citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
++ emergencyLevelCode: `02` (string, required) - ระดับความรุนแรง 01=ขาว, 02=เขียว, 03=เหลือง, 04=แดง, 05=ดำ
+
+# VictimStatus (object)
++ type: `VictimStatus` (string, fixed, required) - ค่าคงที่
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ color (Color, fixed-type, required) - สถานะ เขียว เหลือง แดง
++ timestamp : `2020-04-23T18:25:43.511` (string, required) - เวลารับแจ้ง มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# Person (object)
++ type: `Person` (string, fixed, required) - ค่าคงที่
++ personId: 002321 (number, required) - รหัสข้อมูลบุคคล
++ citizenID: `3250400000001` (string) - หมายเลขประจำตัวประชาชน
++ prefixCode: `001` (string) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ givenName: `แสม` (string) - ชื่อตัว
++ familyName: `แสนซน` (string) - ชื่อสกุล
++ genderCode: 1 (number) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ birthDate: `1990-01-25` (string) - วันเกิด
++ birthJurisdiction: `ลพบุรี` (string) - สถานที่เกิด จังหวัด
++ nationalityCode: `TH` (string) - สัญชาติ File Nationality.xlsx
++ lifeStatusCode: `LI` (string) - สถานะการมีชีวิต EN=เสียชีวิต, LI=มีชีวิต
++ disabilityCode: `00` (string) - ความพิการ File Disability.xlsx
++ medicalInformation (MedicalInformation) - ข้อมูลทางการแพทย์
+
+# MedicalInformation
++ type: `MedicalInformation` (string, fixed, required) - ค่าคงที่
++ personId: 2321 (number, required) - รหัสข้อมูลบุคคล
++ instype (string) - สิทธิการรักษา 52file(Service) http://www.thcc.or.th/treatment.php
++ drugallergy (array[Drugallergy], optional) - ประวัติการแพ้ยา โครงสร้างปรับตามไฟล์ 52file(DRUGALLERGY)
++ recentHospCode (string) - รหัสโรงพยาบาลที่รักษาล่าสุด 52file(PROCEDURE_REFER)
++ recentHospName (string) - ชื่อโรงพยาบาลที่รักษาล่าสุด
++ bloodGroup: `AB` (string) - หมู่เลือด
++ bloodGroupAH (BloodRH) - หมู่เลือด RH
+
+# BloodRH (enum)
++ NEGATIVE
++ POSITIVE
+
+# Drugallergy
++ type: `Drugallergy` (string, fixed, required) - ค่าคงที่
++ personId: 2321 (number, required) - รหัสข้อมูลบุคคล
++ drugCode (string, optional) - รหัสมาตราฐานด้านยา 24 หลัก http://thcc.or.th/homemedicin.php
++ drugName (string, optional) - ชื่อยาที่แพ้
++ typeDX: `1` (string, optional) -  ประเภทการวินิจฉยการแพ้ยา 5 ประเภท (1= certain, 2= probable,
+ 3= possible, 4= unlikely, 5= unclassified)
++ aLevel: `1` (string, optional) - ระดบความรัุนแรงของการแพ้ยา 8 ระดับ  1.ไม่ร้ายแรง (Non-serious), 2.ร้ายแรง - เสียชีวิต (Death), 3.ร้ายแรง - อันตรายถึงชีวิต (Life-threatening), 4.ร้ายแรง - ต้องเข้ารับการรักษาในโรงพยาบาล (Hospitalization-initial), 5.ร้ายแรง - ทําให้เพิ่มระยะเวลาในการรักษานานขึ้น (Hospitalization-prolonged), 6.ร้ายแรง - พิการ (Disability), 7.ร้ายแรง - เป็นเหตุให้เกิดความผิดปกติแต่กำเนิด (Congenital anomaly), 8.ร้ายแรง-อื่นๆ(คือ เหตุการณ์ร้ายแรงอื่น ๆ ที่สำคัญทางการแพทย์ ซึ่งส่งผลให้ผู้ป่วยต้องได้รับการรักษาด้วยวิธีอื่น เช่น การผ่านตัด กรณีนี้รวมถึงผู้ป่วย ซึ่งเกิดปัญหาการหายใจติดขัดอย่างรุ่นแรง และต้องรักษาในห้องฉุกเฉิน ผู้ป่วยเกิดการอาการชักหมดสติ ระบบเลือดผิดปกติเป็นต้น
++ symptom (string, required) - ลักษณะอาการของการแพ้ยา
+
+# Organization (object)
++ type: `Organization` (string, fixed, required) - ค่าคงที่
++ officeID: `1010` (string, required) - รหัสหน่วยงาน
++ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string, required) - ชื่อหน่วยงาน(ไทย)
++ OfficeNameEn: `Vipa` (string) - ชื่อหน่วยงาน(อังกฤษ)
++ ministryCode: `17` (string) - สังกัดกระทรวง/ทบวง File Ministry.xlsx กรมประชาสัมพันธ์ The Government Public Relations Department (PRD)
++ officeTypeCode (string) - ประเภทหน่วยงาน
++ typeOfWorkCode: `02` (string) - ประเภทงาน 01=หน่วยปฏิบัติการดูแลผู้ประสบเหตุและขนส่ง (ชื่อธนาคาร สาขา เลขบัญชี ประเภทบัญชี ชื่อบัญชี), 02=หน่วยรับแจ้งภาวะฉุกเฉินและสั่งการทางการแพทย์, 03=โรงพยาบาลหรือสถานพยาบาล(จำนวน ความเชี่ยวชาญเฉพาะทาง เลือกประเภทโรงพยาบาล), 04=หน่วยบริหารจัดการระบบ, 05=หน่วยสนับสนุนอื่นๆ
+
+# ShortOrganization (object)
++ type: `ShortOrganization` (string, fixed, required) - ค่าคงที่
++ officeID: 1010 (number ,required) - รหัสหน่วยงาน
++ OfficeNameTh: `โรงพยาบาลวิภาวดี` (string ,required) - ชื่อหน่วยงานไทย
++ OfficeNameEn: `Vipa` (string ,required) - ชื่อหน่วยงานอังกฤษ
+
+# OfflineProtocal (object)
++ type: `OfflineProtocal` (string, fixed, required) - ค่าคงที่
++ offlinePotocalName: `example` (string, required) - ชื่อแนวทางการปฏิบัติงาน
++ pageNumber: 10 (number) - เลขหน้า
++ AttechFile: `https://mis.tot.co.th/doc/offline/xxx.pdf` (string, required) - เอกสารแนวทางปฏิบัติงาน
+
+# Protocol (object)
++ type: `Protocol` (string, fixed, required) - ค่าคงที่
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
++ ekgLink: `https://` (string) - ลิงค์ EKG/ECG
++ detail (array[TreatmentInformation],fixed-type)
++ note: `ดาม แขน ขา คอ` (string) - note อื่นๆ
++ update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s
+
+# TreatmentInformation (object)
++ type: `TreatmentInformation` (string, fixed, required) - ค่าคงที่
++ pattern (PatternProtocal)
++ createBy: 2323 (number,required) - สร้างโดยใคร
++ updateBy: 3424 (number,required) - อัพเดทโดยใคร ตอนแรก จะเป็นอันเดียวกับ createBy
++ procedureName: `ดาม` (string, required) - ชื่อหัตถการหรือการรักษา 52file(PROCEDURE_REFER)
++ createDescription: `ดามคอ แขน และ ขา` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่สร้างคำสั่งหัตถการ โดยผู้ อัพเดทไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
++ updateDescription: `ดูดีมีอาการดีขึ้น` (string, required) - คำอธิบายการทำหัตถการหรือการรักษา โดยจะเป็นของคนที่รับคำสั่งหัตถการ  โดยผู้สร้างไม่มีสิทธิ์แก้ไข 52file(PROCEDURE_REFER)
++ doIt: true (boolean, nullable) - ได้ทำหรือไม่ true=ทำ, false=ไม่ได้ทำ
++ update: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
++ timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# User (object)
++ type: `User` (string, fixed, required) - ค่าคงที่
++ personId: 1354 (number, required) - รหัสข้อมูลบุคคล
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ officeID: 1010 (number, required) - หน่วยงานที่สังกัด
++ prefixCode: `001` (string, required) - คำนำหน้าชื่อ ไฟล์ prefix.xlsx
++ givenName: `แสม` (string, required) - ชื่อตัว
++ familyName: `แสนซน` (string, required) - ชื่อสกุล
++ genderCode: 1 (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ operationStatusCode: 1 (number, required) - สถานะหยุดปฏิบัติการ 0=ลา, 1=พร้อมปฏิบัติงาน, 2=กำลังปฏิบัติงาน, 3=พัก
++ operationTypeCode: `10` (string, required) - หน้าที่ของเจ้าหน้าที่ 01=พนักงานช่วยเหลือผู้ป่วยเบื้องต้น, 02=พนักงานกู้ชีพ (BLS), 03=นักกู้ชีพวิชาชีพ (ALS), 04=By Stander, 05=พยาบาลควบคุมการรับแจ้งและคัดแยก, 06=พยาบาลถ่ายทอดคำสั่งแพทย์, 07=แพทย์ผู้อำนวยการ, 08=พยาบาลคัดแยกผู้ป่วยฉุกเฉิน, 09=ผู้ช่วยเหลือผู้ป่วยขับรถได้, 10=พยักงานกู้ชีพ (ILS), 11=พยาบาลกู้ชีพ, 12=พนักงานรับแจ้งและคัดแยกภาวะฉุกเฉิน, 13=พนักงานถ่ายทอดคำสั่งแพทย์, 14=แพทย์ผู้สั่งการเชื่อมตรง, 15=พนักงานคัดแยกผู้ป่วยฉุกเฉิน, 16=แพทย์ฉุกเฉิน
++ tel: `0649899898` (string) - เบอร์โทรศัพท์
+
+# Speciallist
++ type: `Speciallist` (string, fixed, required) - ค่าคงที่
++ id: `12346` (string, required) - เลขใบประกอบโรคศิลปะ ,เลขใบ ว.
++ nameTh: `สง กรานต์` (string) - ชือภาษาไทย
++ nameEn: `Song Kran` (string) - ชื่อภาษาอังกฤษ
++ officeID: 1010 (array[number]) - หน่วยงานที่สังกัด
++ genderCode: 1 (number, required) - เพศ 1=ชาย (male), 2=หญิง (Female), 9=ไม่สามารถระบุได้ (not applicable)
++ tel: `0649999998` (string) - เบอร์โทรศัพท์
++ knowledge: `สาขา ออร์โธปิดิกส์ ( Orthopedics )`,`สาขา แพทย์คนชรา หมอคนแก่ (Geriatrician)` (array[string], fixed-type) - รายการความรู้เฉพาะทาง
+
+# Vehicle (object)
++ type: `Vehicle` (string, fixed, required) - ค่าคงที่
++ vehicleId: 3324 (number, required) - รหัสพาหนะ
++ operationNumber: 5354 (number,required) - เลขปฏิบัติงาน คือ เลขสั่งรถออกปฏิบัติงาน ที่ผูกกับพาหนะนี้อยู่
++ operatingSetID: 23154 (number, required) - เลขชุดปฏิบัติการ (ทะเบียนชุดปฏิบัติการ) ที่ใช้ พาหนะนี้อยู่
++ eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ ที่อยู่บนพาหนะ
++ category: `Boat` (VehicleCategory) - ประเภทพาหนะ
++ vehicleNumber: `6กจ9999` (string) - เลขทะเบียนรถ
++ province: `สระแก้ว` (string) - จัดหวัด
+
+# ChangeVehicle (object)
++ type: `ChangeVehicle` (string, fixed, required) - ค่าคงที่
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vehicleId: 3324 (number,nullable , optional) - รหัสพาหนะที่ขึ้น โดย MIS จะใช้ api ดึงข้อมูลรถ เพื่อขอรายระเอียดอีกครั้ง หากไม่กำหนดมาหมายถึงลงรถ
+
+# Gps (object)
++ type: `Gps` (string, fixed, required) - ค่าคงที่
++ personId: 1354 (number, required) - รหัสข้อมูลบุคคล
++ lat: `14.077756` (string,required)
++ lon: `100.601302` (string,required)
++ accuracy: 4 (number, optional)
++ timestamp: `2020-04-23T18:25:43.511` (string, required) - วันเวลาที่มีการแก้ไขข้อมูล มีรูปแบบ YYYY-MM-DDThh:mm:ss.s มีคำอธิบายในส่วน Introduction
+
+# GpsMessageQueue (object)
++ type: `GpsMessageQueue` (string, fixed, required) - ค่าคงที่
++ randomNumber: 6324 (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ personId: 1354 (number, required) - รหัสข้อมูลบุคคล
++ gps (array[Gps], fixed-type, required) - ข้อมูล gps
+
+# TelemedLink (object)
++ type: `TelemedLink` (string, fixed, required) - ค่าคงที่
++ eventPatientId: 2222 (number, required) - รหัสรายละเอียดผู้ประสบเหตุ
++ vitalsignsLink: `https://` (string) - ลิงค์สัญญาณชีพ
++ ekgLink: `https://` (string) - ลิงค์ EKG/ECG
+
+# SendOperator (object)
++ type: `SendOperator` (string, fixed, required) - ค่าคงที่
++ randomNumber: 965 (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ misRoomId: 999888 (number,required) - หมายเลขห้อง MIS
++ officeID: 1010 (number, required) - หน่วยปฏิบัติการ (เลขทะเบียนหน่วยงาน)
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ message: `ศูนย์เรียก` (string, required) - ข้อความ
+
+# SendCenter (object)
++ type: `SendCenter` (string, fixed, required) - ค่าคงที่
++ randomNumber: 124 (number,required) - ให้สุ่มตัวเลขใส่ค่าในช่องนี้
++ operatorID: 111222 (number, required) - รหัสทะเบียนเจ้าหน้าที่
++ misRoomId: 999888 (number,required) - หมายเลขห้อง MIS เลขห้อง=operationNumber
++ officeID: 1010 (number, required) - หน่วยปฏิบัติการที่จะส่งข้อความถึง (เลขทะเบียนหน่วยงาน)
 + message: `แพทย์เรียก` (string, required) - ข้อความ
 
 # CheckIn (object)
