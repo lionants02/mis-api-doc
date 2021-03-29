@@ -11,13 +11,13 @@ Title การสร้างห้อง __MIS__
   "OIS api"<-- "MIS api": Reponse 201\nหมายเลขห้อง MIS
   OIS <-- "OIS api": Link เข้าห้อง
 
-  "MIS api" -> "Vehicle api": Query telemed link with car_id
+  "MIS api" -> "Vehicle api": Query telemed link with vehicleId
   "MIS api" <-- "Vehicle api": Camera link key, Virtual sign link key
 
   "MIS api" -> "Call alert": เรียกเข้าห้อง แพทย์, ER
 
-  actor "MIS App\nEmergency physician" as MD
-  actor "MIS App\nEmergencyRoom" as ER
+  actor "MIS User\nEmergency physician" as MD
+  actor "MIS User\nEmergencyRoom" as ER
 
   "Call alert" --> MD: Call alert mis room
   "Call alert" --> ER: Call alert mis room
