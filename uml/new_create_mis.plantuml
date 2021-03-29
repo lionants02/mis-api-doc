@@ -3,10 +3,11 @@ Title การสร้างห้อง __MIS__
   actor "OIS ผู้ปฏิบัติงาน" as OIS
   OIS -> "OIS api": กดรับงาน
   "OIS api"-> "MIS api": POST /ROOM\nส่งคำสั่งเปิดห้อง MIS
-  "MIS api" -> "MIS api": สร้างห้อง MIS
+  "MIS api" -> "MIS api": สร้างห้อง MIS\nRandom Media api link
 
-  "MIS api" -> "Media api": Create vdo conference
-  "MIS api" <-- "Media api": Session ห้อง vdo conference
+  collections "Media api" as MediaApi
+  "MIS api" -> MediaApi: Create vdo conference
+  "MIS api" <-- MediaApi: Session ห้อง vdo conference
 
   "OIS api"<-- "MIS api": Reponse 201\nหมายเลขห้อง MIS
   OIS <-- "OIS api": Link เข้าห้อง
