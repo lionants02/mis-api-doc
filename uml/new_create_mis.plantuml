@@ -30,12 +30,6 @@ Title การสร้างห้อง __MIS__
 
   "OIS api"<-- "MIS api": Reponse 201 Return MIS room object.\nหมายเลขห้อง MIS
   OIS <-- "OIS api": Link เข้าห้อง
-
-  group ถ้ามีพาหนะคันเดียว
-    "MIS api" -> "Vehicle api": Query telemed link with vehicleId
-    "MIS api" <-- "Vehicle api": Camera link key, Virtual sign link key
-    "MIS api" -> misdb: ถ้ามีข้อมูล Telemed link key -> save
-  end
   "MIS api" -> "Call alert": เรียกเข้าห้อง แพทย์, ER
 
   actor "MIS User\nEmergency physician" as MD
