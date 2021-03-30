@@ -4,12 +4,14 @@ Title การสร้างห้อง __MIS__
   OIS -> "OIS api": กดรับงาน
   "OIS api"-> "MIS api": POST /ROOM\nส่งคำสั่งเปิดห้อง MIS
 
-  hnote over "MIS api"
-    check รหัสประเมินต้องไม่ซ้ำกัน
-  endnote
-  "MIS api" -> "MIS api": สร้างห้อง MIS\nRandom Media api link
-
   database "MIS\nDatabase" as misdb
+  group check รหัสประเมิน
+    "MIS api" -> misdb: Query with slcus050_id
+    hnote over "MIS api"
+      check รหัสประเมินต้องไม่ซ้ำกัน
+    endnote
+  end
+  "MIS api" -> "MIS api": สร้างห้อง MIS\nRandom Media api link
 
   collections "Media api" as MediaApi
   "MIS api" -> MediaApi: Create vdo conference

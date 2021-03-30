@@ -1,0 +1,22 @@
+@startuml
+Title การปิดห้อง __MIS__
+  actor "OIS\nเจ้าหน้าที่" as OIS
+  OIS -> "OIS api": จบปฏิบัติการ
+  "OIS api"-> "MIS api": DELETE /ROOM{misRoomId}
+
+  database "MIS\nDatabase" as misdb
+  "MIS api" -> misdb: Change\nmisRoomId,statusroom=ปิดห้อง MIS -> save
+  "MIS api" -> misdb: Query with misRoomId
+  "MIS api" <-- misdb: MIS room object.
+
+  collections "Media api" as MediaApi
+  "MIS api" -> MediaApi: สั่งปิดห้อง vdo conference
+
+  "MIS api" -> "Panel PC api": \nUnactive\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:false\nactive:**false**
+  note left: กำหนดค่า active ของรายการพาหนะทั้งหมด\nactive:false
+  database "Panel PC\nDatabase" as paneldb
+  "Panel PC api" -> paneldb: save
+
+  "OIS api" <-- "MIS api": 200 OK
+
+@enduml
