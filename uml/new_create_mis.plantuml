@@ -16,7 +16,7 @@ Title การสร้างห้อง __MIS__
   "MIS api" <-- MediaApi: Session ห้อง vdo conference
   "MIS api" -> misdb: save
 
-  "OIS api"<-- "MIS api": Reponse 201\nหมายเลขห้อง MIS
+  "OIS api"<-- "MIS api": Reponse 201 Return MIS room object.\nหมายเลขห้อง MIS
   OIS <-- "OIS api": Link เข้าห้อง
 
   "MIS api" -> "Vehicle api": Query telemed link with vehicleId
@@ -30,8 +30,18 @@ Title การสร้างห้อง __MIS__
   "Call alert" -> MD: Call alert mis room
   "Call alert" -> ER: Call alert mis room
 
-  "MIS api" -> "Panel PC api": \nRegister\nkey:{vehicleId=slcus050_id=slcus020_id}\npriority:1\nstatusRoom:เปิดห้อง
-  note left: priority\nถ้าเป็น 1 เรียกเข้าห้องอัตโนมัติ
+  "MIS api" -> "Panel PC api": \nRegister\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:true
+  note left: autojoin\nถ้าเป็น true เรียกเข้าห้องอัตโนมัติ
   database "Panel PC\nDatabase" as paneldb
   "Panel PC api" -> paneldb: save
+  note left
+    Body
+    {
+      vehicleId
+      slcus050_id
+      slcus020_id
+      active
+      autojoin
+    }
+  endnote
 @enduml

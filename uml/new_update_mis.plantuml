@@ -1,0 +1,54 @@
+@startuml
+Title การอัพเดทข้อมูลห้อง __MIS__
+  actor "OIS\nเจ้าหน้าที่" as OIS
+  OIS -> "OIS api": มีการปรับสถานะห้อง MIS
+  "OIS api"-> "MIS api": GET /ROOM{misRoomId}
+  "OIS api"<-- "MIS api":Response 200 MIS room object data.
+
+  rnote over "OIS api"
+    มีการที่สามารถอัพเดทได้
+    - รายการพาหนะ ที่เข้าร่วม
+    - รายการเจ้าหน้าที่ ที่เข้าร่วม
+    - รพ. ปลายทาง
+  endnote
+  "OIS api"-> "MIS api": PUT /ROOM{misRoomId} with MIS room object.\nส่งข้อมูล update ห้อง MIS
+  database "MIS\nDatabase" as misdb
+  "MIS api" -> misdb: Query with misRoomId
+  "MIS api" <-- misdb: MIS room object.
+
+  hnote over "MIS api"
+    ตรวจสอบ สถานะพาหนะ
+    มีการถอดพาหนะหรือไม่
+    มีการเพิ่มพาหนะหรือไม่
+  endnote
+
+  "MIS api" -> "Panel PC api": Update ข้อมูลรายการ list พาหนะ\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:**false/true**
+
+  note left
+    หากมีการเพิ่มพาหนะ active:true
+    หากมีการถอดภาหนะ active:false
+    การเพิ่มพาหนะถ้า autojoin:true ให้ panel pc เข้าห้องเลย
+  endnote
+  database "Panel PC\nDatabase" as paneldb
+  "Panel PC api" -> paneldb: save
+  note left
+    Body
+    {
+      vehicleId
+      slcus050_id
+      slcus020_id
+      active
+      autojoin
+    }
+  endnote
+
+  rnote over "MIS api"
+    update MIS room object
+    ถามบอลเพิ่ม เรื่องการเปลี่ยนรถ
+  endnote
+
+  "MIS api" -> misdb: save
+  "OIS api" <-- "MIS api": 200 OK Return body mis room object.
+
+
+@enduml
