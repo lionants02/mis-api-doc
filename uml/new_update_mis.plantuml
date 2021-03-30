@@ -2,20 +2,15 @@
 Title การอัพเดทข้อมูลห้อง __MIS__
   actor "OIS\nเจ้าหน้าที่" as OIS
   OIS -> "OIS api": มีการปรับสถานะห้อง MIS
-  "OIS api"-> "MIS api": PUT /Room/{misRoomId}
-  database "MIS\nDatabase" as misdb
-  "MIS api" -> misdb: Query with misRoomId
-  "MIS api" <-- misdb: MIS room object.
-  "OIS api"<-- "MIS api":Response 200 MIS room object data.
 
+  "OIS api"-> "MIS api": PUT /Room/{misRoomId} with MIS room object.\nส่งข้อมูล update ห้อง MIS
   rnote over "OIS api"
     มีการที่สามารถอัพเดทได้
     - รายการพาหนะ ที่เข้าร่วม
     - รายการเจ้าหน้าที่ ที่เข้าร่วม
     - รพ. ปลายทาง
   endnote
-  "OIS api"-> "MIS api": PUT /Room/{misRoomId} with MIS room object.\nส่งข้อมูล update ห้อง MIS
-
+  database "MIS\nDatabase" as misdb
   "MIS api" -> misdb: Query with misRoomId
   "MIS api" <-- misdb: MIS room object.
 
@@ -31,29 +26,33 @@ Title การอัพเดทข้อมูลห้อง __MIS__
   endnote
 
   "OIS api" <-- "MIS api": 200 OK Return body mis room object.
-
-  "MIS api" -> "Panel PC api": Update ข้อมูลรายการพาหนะ\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:**false/true**
+  rnote over "MIS api"
+    - ถอดกล้องทั้งหมด
+      แล้วเสียบกล้องอันล่างสุดใน
+      รายการ vehicleId เข้าไปแทน
+    - เปลี่ยน link ไวทัลไซ
+  endnote
+  "MIS api" -> "Panel PC api": \nUpdate ข้อมูลรายการพาหนะ\nkey:{vehicleId=slcus050_id=slcus020_id}\nBody ...\nautojoin:true\nactive:**false/true**
 
   note left
-    - ถอดกล้องทั้งหมด แล้ว เสียงกล้องอันล่าสุดเข้เสียงกล้องอันล่าสุดเข้าไปแทน
-    - เปลี่ยน link ไวทัลไซ
-    - หากมีการเพิ่มพาหนะ active:true
-    - หากมีการถอดภาหนะ active:false
-    - การเพิ่มพาหนะถ้า autojoin:true
-      ให้ panel pc เข้าห้องเลย
-    - ถามบอลเพิ่มเรื่องการเปลี่ยนภาหนะ
+    - หากมีการเพิ่มพาหนะใหม่ active:true
+      หากภาหนะไหนหายไปจากรายการ vehicleId ให้กำหนด **active:false**
+    - เมื่อเพิ่มพาหนะถ้ากำหนด **autojoin:true** ให้ขึ้นเตือนเข้าห้อง
+      Body
+      {
+        vehicleId รหัสพาหนะ
+        operatorID คนที่กดรับงาน
+        misRoomId
+        slcus050_id
+        slcus020_id
+        autojoin
+        active
+      }
   endnote
   database "Panel PC\nDatabase" as paneldb
   "Panel PC api" -> paneldb: save
-  note left
-    Body
-    {
-      vehicleId
-      slcus050_id
-      slcus020_id
-      active
-      autojoin
-    }
-  endnote
+
+  queue "Panel PC\nQueue" as panelq
+  "Panel PC api" -> panelq: Send body to topic vehicleId
 
 @enduml

@@ -13,10 +13,11 @@ Title การปิดห้อง __MIS__
   "MIS api" -> MediaApi: สั่งปิดห้อง vdo conference
 
   "MIS api" -> "Panel PC api": \nUnactive\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:false\nactive:**false**
-  note left: กำหนดค่า active ของรายการพาหนะทั้งหมด\nactive:false
+  note left: กำหนดค่า active ของรายการพาหนะทั้งหมด\n**active:false**
   database "Panel PC\nDatabase" as paneldb
   "Panel PC api" -> paneldb: save
-
+  queue "Panel PC\nQueue" as panelq
+  "Panel PC api" -> panelq: Send body to topic vehicleId
   "OIS api" <-- "MIS api": 200 OK
 
 @enduml

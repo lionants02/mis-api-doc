@@ -38,18 +38,22 @@ Title การสร้างห้อง __MIS__
   "Call alert" -> MD: Call alert mis room
   "Call alert" -> ER: Call alert mis room
 
-  queue "Panel PC\nDatabase" as paneldb
-  "MIS api" -> paneldb: \nRegister save topic vehicleId\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:true
+  "MIS api" -> "Panel PC api": \nRegister save topic vehicleId\nkey:{vehicleId=slcus050_id=slcus020_id}\nBody ...\nautojoin:true\nactive:true
   note left
+    autojoin\nถ้าเป็น true เรียกเข้าห้องอัตโนมัติ
     Body
-    autojoin\nถ้าเป็น true เรียกเข้าห้องอัตโนมัต
     {
-      vehicleId
+      vehicleId รหัสพาหนะ
       operatorID คนที่กดรับงาน
       misRoomId
       slcus050_id
       slcus020_id
       autojoin
+      active:true
     }
   endnote
+  database "Panel PC\nDatabase" as paneldb
+  queue "Panel PC\nQueue" as panelq
+  "Panel PC api" -> paneldb: Save
+  "Panel PC api" -> panelq: Send body to topic vehicleId
 @enduml

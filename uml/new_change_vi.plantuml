@@ -1,43 +1,4 @@
 @startuml
-Title เมื่อผู้ป่วยขึ้นพาหนะ __MIS__
-  actor "OIS ผู้ปฏิบัติงาน" as OIS
-  OIS -> "OIS api": เมื่อรับผู้ป่วยขึ้นพาหนะ
-  "OIS api"-> "MIS api": PUT /vehicle\nเมื่อขึ้นพาหนะ
-  note left
-    Body{
-      vehicleId
-      slcus050_id
-    }
-  endnote
-
-  database "MIS\nDatabase" as misdb
-  "MIS api" -> misdb: Query with slcus050_id
-  "MIS api" <-- misdb: mis room object.
-  "MIS api" -> "MIS api"
-  note left
-    ปรับค่าตัวแปร
-    - สถานะการขึ้นภาหนะปัจจุบันของผู้ป่วย
-  endnote
-
-  "MIS api" -> "Vehicle api": Query telemed link with vehicleId
-  "MIS api" <-- "Vehicle api": Camera link key, Virtual sign link key
-  "MIS api" -> misdb: Save
-  "OIS api"<-- "MIS api":Response 200
-
-
-  "MIS api" -> "Panel PC api": \nRegister\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:true
-  note left: autojoin\nถ้าเป็น true เรียกเข้าห้องอัตโนมัติ
-  database "Panel PC\nDatabase" as paneldb
-  "Panel PC api" -> paneldb: save
-  note left
-    Body
-    {
-      vehicleId
-      slcus050_id
-      slcus020_id
-      active
-      autojoin
-    }
-  endnote
+Title เมื่อกดขึ้นพาหนะ __MIS__
 
 @enduml
