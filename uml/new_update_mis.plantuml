@@ -2,7 +2,7 @@
 Title การอัพเดทข้อมูลห้อง __MIS__
   actor "OIS\nเจ้าหน้าที่" as OIS
   OIS -> "OIS api": มีการปรับสถานะห้อง MIS
-  "OIS api"-> "MIS api": GET /Room/{misRoomId}
+  "OIS api"-> "MIS api": PUT /Room/{misRoomId}
   database "MIS\nDatabase" as misdb
   "MIS api" -> misdb: Query with misRoomId
   "MIS api" <-- misdb: MIS room object.
@@ -35,6 +35,8 @@ Title การอัพเดทข้อมูลห้อง __MIS__
   "MIS api" -> "Panel PC api": Update ข้อมูลรายการพาหนะ\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:**false/true**
 
   note left
+    - ถอดกล้องทั้งหมด แล้ว เสียงกล้องอันล่าสุดเข้เสียงกล้องอันล่าสุดเข้าไปแทน
+    - เปลี่ยน link ไวทัลไซ
     - หากมีการเพิ่มพาหนะ active:true
     - หากมีการถอดภาหนะ active:false
     - การเพิ่มพาหนะถ้า autojoin:true

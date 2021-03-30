@@ -22,7 +22,7 @@ Title การสร้างห้อง __MIS__
       misRoomId เลขห้อง mis
       slcus050_id รหัสประเมินผู้ป่วย
       mediaApiLink link media api ที่ได้จากการ random
-      ...
+      vehicleId ล่าสุดจะเป็นอันที่ผู้ป่วยอยู่
       ...
     }
   endnote
@@ -38,17 +38,17 @@ Title การสร้างห้อง __MIS__
   "Call alert" -> MD: Call alert mis room
   "Call alert" -> ER: Call alert mis room
 
-  "MIS api" -> "Panel PC api": \nRegister\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:true
-  note left: autojoin\nถ้าเป็น true เรียกเข้าห้องอัตโนมัติ
-  database "Panel PC\nDatabase" as paneldb
-  "Panel PC api" -> paneldb: save
+  queue "Panel PC\nDatabase" as paneldb
+  "MIS api" -> paneldb: \nRegister save topic vehicleId\nkey:{vehicleId=slcus050_id=slcus020_id}\nautojoin:true\nactive:true
   note left
     Body
+    autojoin\nถ้าเป็น true เรียกเข้าห้องอัตโนมัต
     {
       vehicleId
+      operatorID คนที่กดรับงาน
+      misRoomId
       slcus050_id
       slcus020_id
-      active
       autojoin
     }
   endnote
