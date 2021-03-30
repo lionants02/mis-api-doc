@@ -2,7 +2,7 @@
 Title การอัพเดทข้อมูลห้อง __MIS__
   actor "OIS\nเจ้าหน้าที่" as OIS
   OIS -> "OIS api": มีการปรับสถานะห้อง MIS
-  "OIS api"-> "MIS api": GET /ROOM{misRoomId}
+  "OIS api"-> "MIS api": GET /Room/{misRoomId}
   database "MIS\nDatabase" as misdb
   "MIS api" -> misdb: Query with misRoomId
   "MIS api" <-- misdb: MIS room object.
@@ -14,7 +14,7 @@ Title การอัพเดทข้อมูลห้อง __MIS__
     - รายการเจ้าหน้าที่ ที่เข้าร่วม
     - รพ. ปลายทาง
   endnote
-  "OIS api"-> "MIS api": PUT /ROOM{misRoomId} with MIS room object.\nส่งข้อมูล update ห้อง MIS
+  "OIS api"-> "MIS api": PUT /Room/{misRoomId} with MIS room object.\nส่งข้อมูล update ห้อง MIS
 
   "MIS api" -> misdb: Query with misRoomId
   "MIS api" <-- misdb: MIS room object.

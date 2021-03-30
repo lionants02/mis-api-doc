@@ -2,7 +2,7 @@
 Title การปิดห้อง __MIS__
   actor "OIS\nเจ้าหน้าที่" as OIS
   OIS -> "OIS api": จบปฏิบัติการ
-  "OIS api"-> "MIS api": DELETE /ROOM{misRoomId}
+  "OIS api"-> "MIS api": DELETE /Room/{misRoomId}
 
   database "MIS\nDatabase" as misdb
   "MIS api" -> misdb: Change\nmisRoomId,statusroom=ปิดห้อง MIS -> save

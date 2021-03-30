@@ -2,7 +2,7 @@
 Title การสร้างห้อง __MIS__
   actor "OIS ผู้ปฏิบัติงาน" as OIS
   OIS -> "OIS api": กดรับงาน
-  "OIS api"-> "MIS api": POST /ROOM\nส่งคำสั่งเปิดห้อง MIS
+  "OIS api"-> "MIS api": POST /Room\nส่งคำสั่งเปิดห้อง MIS
 
   database "MIS\nDatabase" as misdb
   group check รหัสประเมิน
@@ -16,14 +16,26 @@ Title การสร้างห้อง __MIS__
   collections "Media api" as MediaApi
   "MIS api" -> MediaApi: Create vdo conference
   "MIS api" <-- MediaApi: Session ห้อง vdo conference
+  rnote over "MIS api"
+    Body
+    {
+      misRoomId เลขห้อง mis
+      slcus050_id รหัสประเมินผู้ป่วย
+      mediaApiLink link media api ที่ได้จากการ random
+      ...
+      ...
+    }
+  endnote
   "MIS api" -> misdb: save
 
   "OIS api"<-- "MIS api": Reponse 201 Return MIS room object.\nหมายเลขห้อง MIS
   OIS <-- "OIS api": Link เข้าห้อง
 
-  "MIS api" -> "Vehicle api": Query telemed link with vehicleId
-  "MIS api" <-- "Vehicle api": Camera link key, Virtual sign link key
-  "MIS api" -> misdb: ถ้ามีข้อมูล Telemed link key -> save
+  group ถ้ามีพาหนะคันเดียว
+    "MIS api" -> "Vehicle api": Query telemed link with vehicleId
+    "MIS api" <-- "Vehicle api": Camera link key, Virtual sign link key
+    "MIS api" -> misdb: ถ้ามีข้อมูล Telemed link key -> save
+  end
   "MIS api" -> "Call alert": เรียกเข้าห้อง แพทย์, ER
 
   actor "MIS User\nEmergency physician" as MD
