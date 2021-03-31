@@ -1,0 +1,83 @@
+@startuml
+Title Panel PC __MIS__
+  actor "OIS ผู้ปฏิบัติงาน" as OIS
+  OIS -> "Panel PC" :เมื่อเปิดระบบ Telemed หรือ สตาร์ทรถ
+  queue "Panel PC\nQueue" as panelq
+  "Panel PC" -> panelq : Subscribe with vehicleId
+  ...
+  
+  group เมื่อได้รับ message
+    "Panel PC" <-- panelq : Message
+    note left
+      Body
+      {
+        vehicleId รหัสพาหนะ
+        operatorID คนที่กดรับงาน
+        misRoomId
+        slcus050_id
+        slcus020_id
+        autojoin
+        active:true
+      }
+    endnote
+    participant "MIS api"
+    "Panel PC" -> "OIS api" : \ngetStaffInfoById ด้วย operatorID
+    "Panel PC" <-- "OIS api": ข้อมูลพนักงานปฏิบัติการ
+    note left
+      --ข้อมูลผู้ที่กดรับงาน--
+      name ชื่อพนักงานที่กดรับงาน
+      center_name ศูนย์ที่สังกัด
+    end note
+
+    "Panel PC" -> "OIS api" : \ngetPatient ด้วย slcus050_id
+    "Panel PC" <-- "OIS api": ข้อมูลผู้ประสบเหตุ
+    note left
+      --ข้อมูลผู้ป่วย--
+      patient.current_symtom  อาการล่าสุด
+      case.crdt วันที่รับแจ้ง
+      case.address สถานที่เกิดเหตุ
+      case.lat_lng พิกัด
+      jobs.stat สถานะ case
+    end note
+
+    "Panel PC" -> "OIS api" : \ngetContact เรียกข้อมูลการติดต่อบุคคล ด้วย slcus050_id
+    "Panel PC" <-- "OIS api": ข้อมูลส่วนตัวผู้ประสบเหตุ
+    note left
+      --ข้อมูลผู้ป่วย--
+      Patient.name ชื่อผู้ป่วย
+      Patient.teln เบอร์บ้านผู้ป่วย
+      Patient.mobl เบอร์มือถือผู้ป่วย
+      Patient.emal E-MAIL ผู้ป่วย
+      ---
+      --ข้อมูลผู้รับแจ้งไม่ต้องทำก็ได้ไม่มีใน TOR--
+      --เจ้าหน้าที่ ที่รับแจ้งเหตุ--
+      CallReceivers.cis_summary_id รหัสสาย IPPBX
+      CallReceivers.name ชื่อเจ้าหน้าที่ ที่รับแจ้งเหตุ
+      CallReceivers.ext_no เบอร์ภายในผู้ปฏิบัติการ
+    end note
+    ...
+
+    OIS -> "Panel PC" : \nผู้ปฏิบัติงาน\nเปลี่ยนสถานะ เช่น ถึงจุด, รับขึ้น ...
+    "Panel PC" -> "MIS api": setActions
+    rnote over "MIS api"
+      ทำกระบวนการของ mis เช่น
+      - หากกดรับผู้ป่วย
+        ให้เปลี่ยนกล้อง
+    end note
+
+    "MIS api" -> "OIS api": \nsetActions
+
+  end
+
+@enduml
+
+@startuml
+queue "Panel PC\nQueue" as panelq
+
+
+
+
+database "Panel PC\nDatabase" as paneldb
+"Panel PC" -> "Panel PC api" : Query
+"Panel PC api" -> paneldb: Save
+@enduml
