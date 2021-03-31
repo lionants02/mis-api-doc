@@ -1,4 +1,15 @@
 @startuml
 Title เมื่อกดขึ้นพาหนะ __MIS__
+    actor "MIS\nเจ้าหน้าที่" as misapp
+    misapp -> "MIS api": กด "รับผู้ป่วย"
+    "MIS api" -> "OIS api": เปลี่ยนสถานะสั่งการ
+
+    collections "Media api" as MediaApi
+    "MIS api" -> MediaApi:\nถอดกล้องเดิม ใส่กล้องใหม่
+    rnote over "MIS api"
+      เปลี่ยน Link ไวทัลไซ
+    endnote
+
+    misapp <-- "MIS api"
 
 @enduml
