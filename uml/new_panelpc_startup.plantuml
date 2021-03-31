@@ -2,10 +2,15 @@
 Title Panel PC __MIS__
   actor "OIS ผู้ปฏิบัติงาน" as OIS
   OIS -> "Panel PC" :เมื่อเปิดระบบ Telemed หรือ สตาร์ทรถ
+  "Panel PC" -> "Panel PC": Load รหัสรถ C:\\ telemed\car.txt
+  note left
+    currentVehicleId=12344
+  end note
+
   queue "Panel PC\nQueue" as panelq
-  "Panel PC" -> panelq : Subscribe with vehicleId
+  "Panel PC" -> panelq : Subscribe with currentVehicleId
   ...
-  
+
   group เมื่อได้รับ message
     "Panel PC" <-- panelq : Message
     note left
@@ -20,64 +25,81 @@ Title Panel PC __MIS__
         active:true
       }
     endnote
-    participant "MIS api"
+
+    "Panel PC" -> "Panel PC": บันทึก Body ลงใน Local disk.
+    note left
+      # ป้องกันหากเครื่องมีการเปิด
+      # ปิดโดยไม่ได้ตั้งใจ
+      # อื่นๆ
+      หากใน Queue ไม่มีให้มาอ่านใน Local disk. ต่อ
+    end note
+    participant "Panel API"
+    participant "OIS api"
     "Panel PC" -> "OIS api" : \ngetStaffInfoById ด้วย operatorID
     "Panel PC" <-- "OIS api": ข้อมูลพนักงานปฏิบัติการ
     note left
       --ข้อมูลผู้ที่กดรับงาน--
-      name ชื่อพนักงานที่กดรับงาน
-      center_name ศูนย์ที่สังกัด
-    end note
-
-    "Panel PC" -> "OIS api" : \ngetPatient ด้วย slcus050_id
-    "Panel PC" <-- "OIS api": ข้อมูลผู้ประสบเหตุ
-    note left
-      --ข้อมูลผู้ป่วย--
-      patient.current_symtom  อาการล่าสุด
-      case.crdt วันที่รับแจ้ง
-      case.address สถานที่เกิดเหตุ
-      case.lat_lng พิกัด
-      jobs.stat สถานะ case
-    end note
-
-    "Panel PC" -> "OIS api" : \ngetContact เรียกข้อมูลการติดต่อบุคคล ด้วย slcus050_id
-    "Panel PC" <-- "OIS api": ข้อมูลส่วนตัวผู้ประสบเหตุ
-    note left
-      --ข้อมูลผู้ป่วย--
-      Patient.name ชื่อผู้ป่วย
-      Patient.teln เบอร์บ้านผู้ป่วย
-      Patient.mobl เบอร์มือถือผู้ป่วย
-      Patient.emal E-MAIL ผู้ป่วย
+      duty รถที่ Check In **ใช้ในการตรวจสอบ**
       ---
-      --ข้อมูลผู้รับแจ้งไม่ต้องทำก็ได้ไม่มีใน TOR--
-      --เจ้าหน้าที่ ที่รับแจ้งเหตุ--
-      CallReceivers.cis_summary_id รหัสสาย IPPBX
-      CallReceivers.name ชื่อเจ้าหน้าที่ ที่รับแจ้งเหตุ
-      CallReceivers.ext_no เบอร์ภายในผู้ปฏิบัติการ
+      เก็บ object ไว้ใช้ต่อ เพราะ Panel PC ไม่มี Login
+      ใช้ในการแสดงข้อมูลเจ้าหน้าที่ ที่กดรับงาน ของพาหนะคันนี้
     end note
+
+    hnote over "Panel PC"
+      ทำการตรวจสอบว่า เจ้าหน้าที่ กำลังอยู่บนรถนี้จริง
+      เพื่อป้องกันหากเจ้าหน้าที่ checkOut ไปแล้ว
+      หรือ checkIn เข้ารถคันอื่นไปแล้ว
+      --เงื่อนไข--
+      ตรวจสอบ duty == currentVehicleId
+      ถ้าตรงทำต่อ
+      ถ้าไม่ตรงออกรอ Message Queue ใหม่
+
+      อย่าลืมตรวจสอบ สถานะเจ้าหน้าที่ด้วย status == Active
+    end note
+
+    "Panel PC" -> "Panel API" : \nJoin MIS with misRoomId
+    note left
+      อาจจะต้องสร้าง Window app เฉพาะ
+    end note
+    "Panel PC" <-- "Panel API": \nข้อมูลห้อง MIS แล้วแต่ออกแบบ
+  end
+  ...
+
+  group เมื่อเข้าห้อง MIS แล้วมีการ เปลี่ยนสถานะ
+
+      OIS -> "Panel PC" : \nผู้ปฏิบัติงาน\nเปลี่ยนสถานะ เช่น ถึงจุด, รับขึ้น ...
+      "Panel PC" -> "OIS api" :getJob ด้วย woord020_id
+      "Panel PC" <-- "OIS api":
+      note left
+        job_details.id เก็บไว้ใช้เรียก setActions
+      end note
+
+      "Panel PC" -> "Panel API": setActions
+      rnote over "Panel API"
+        ทำกระบวนการของ mis เช่น
+        - หากกดรับผู้ป่วย
+          ให้เปลี่ยนกล้อง
+      end note
+
+      "Panel API" -> "OIS api": \nsetActions
+
+    end
     ...
 
-    OIS -> "Panel PC" : \nผู้ปฏิบัติงาน\nเปลี่ยนสถานะ เช่น ถึงจุด, รับขึ้น ...
-    "Panel PC" -> "MIS api": setActions
-    rnote over "MIS api"
-      ทำกระบวนการของ mis เช่น
-      - หากกดรับผู้ป่วย
-        ให้เปลี่ยนกล้อง
-    end note
+    group เมื่อมี Message เข้ามาระหว่างที่เข้าห้อง MIS
+      rnote over "Panel PC"
+        ให้แจ้งเตือนบริเวณมุมบนขวา ว่ามีเคสใหม่ จะเข้าห้องหรือไม่
+        ให้เจ้าหน้าที่ปฏิบัติงานเลือกเองว่าจะเข้าหรือไม่
+      end note
+    end
 
-    "MIS api" -> "OIS api": \nsetActions
+    group เมื่อมีผู้ปฏิบัติงานในรถ กดดูรายการห้องทั้งหมด
+      OIS -> "Panel PC" : กดออกห้อง ดูรายการห้อง MIS ทั้งหมด
+      "Panel PC" -> "Panel API" : \nQuery with operatorID\nถามบอลก่อนว่าออกแบบ Database ไว้กรณีแบบนี้หรือไม่
+      "Panel PC" <-- "Panel API": ข้อมูลที่รายการห้อง และ ข้อมูลที่ใช้สำหรับ Join ห้อง mis
+      OIS <--"Panel PC" : แสดงรายการห้อง MIS
 
-  end
+      OIS -> "Panel PC" : เลือกห้องใหม่
+    end
 
-@enduml
-
-@startuml
-queue "Panel PC\nQueue" as panelq
-
-
-
-
-database "Panel PC\nDatabase" as paneldb
-"Panel PC" -> "Panel PC api" : Query
-"Panel PC api" -> paneldb: Save
 @enduml
