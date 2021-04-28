@@ -2,17 +2,35 @@
 Title Panel PC __MIS__
   actor "OIS ผู้ปฏิบัติงาน" as OIS
   OIS -> "Panel PC" :เมื่อเปิดระบบ Telemed หรือ สตาร์ทรถ
-  "Panel PC" -> "Panel PC": Load รหัสรถ C:\\ telemed\car.txt
+  "Panel PC" -> "Panel PC": Load รหัสรถจากที่บันทึกในดิส
   note left
     currentVehicleId=12344
   end note
+  hnote over "Panel PC"
+    หากไม่มี currentVehicleId ให้เปิดหน้าสำหรับกรอกเลขทะเบียนรถ
+    เมื่อกรอกเสร็จแล้ว ให้ไป lookup getVehicle ที่ ois
+    ว่าทะเบียนนี้ หรือ VehicleId นี้ มีการ ลงทเบียนอยู่
+  end note
 
   queue "Panel PC\nQueue" as panelq
-  "Panel PC" -> panelq : Subscribe with currentVehicleId
+  "Panel PC" -> panelq : Subscribe mqtt with currentVehicleId
+
   ...
 
+  group ในกระบวนการ เปิดเครื่องหาก Subscribe mqtt with currentVehicleId\nแล้วในครั้งแรกของการเปิดไม่พบ mqtt message ให้ทำโฟลนี้
+
+    "Panel PC" -> "Panel PC": Load ข้อมูล mqtt Body เก่าที่เคยบันทึกไว้ในดิส
+    hnote over "Panel PC"
+      ถ้าไม่มีบันทึก ให้กลับสู่กระบวนการ รอ mqtt message
+      ถ้ามีบันทึกให้ข้ามไปกระบวนการ "เริ่มกระบวนการเข้าห้อง mis"
+    end note
+
+  end
+
+
+  ...
   group เมื่อได้รับ message
-    "Panel PC" <-- panelq : Message
+    "Panel PC" <-- panelq : mqtt message
     note left
       Body
       {
@@ -26,13 +44,17 @@ Title Panel PC __MIS__
       }
     endnote
 
-    "Panel PC" -> "Panel PC": บันทึก Body ลงใน Local disk.
+    "Panel PC" -> "Panel PC": บันทึก Body ด้านบนลงใน Local disk.
     note left
+      ใช้เพื่อ
       # ป้องกันหากเครื่องมีการเปิด
       # ปิดโดยไม่ได้ตั้งใจ
       # อื่นๆ
-      หากใน Queue ไม่มีให้มาอ่านใน Local disk. ต่อ
+      ใช้ในกระบวนการ process เปิดเครื่อง
     end note
+  end
+
+  group เริ่มกระบวนการเข้าห้อง mis
     participant "Panel API"
     participant "OIS api"
     "Panel PC" -> "OIS api" : \ngetStaffInfoById ด้วย operatorID
