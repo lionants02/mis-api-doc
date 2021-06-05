@@ -58,6 +58,10 @@ Title Panel PC __MIS__
     participant "Panel API"
     participant "OIS api"
     "Panel PC" -> "OIS api" : \ngetStaffInfoById ด้วย operatorID
+    note left
+      สาเหตุ ที่ต้องเริ่มจากคนก่อนเพราะ เราจะอ้างอิงข้อมูล
+      จากผู้ปฏิบัติงาน
+    end note
     "Panel PC" <-- "OIS api": ข้อมูลพนักงานปฏิบัติการ
     note left
       --ข้อมูลผู้ที่กดรับงาน--
