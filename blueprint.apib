@@ -15,7 +15,7 @@ HOST: https://gw.hii.in.th/mis
   - ใช้โครงสร้าง `ชุดข้อมูลการรับแจ้งเหตุ` มาปรับ
 
   **Update 23-06-2021**
-    
+
   **ต้องการเพิ่มตัวแปร**
   - $.jobs.jobId เป็นเลข J สำหรับนำมาแสดงบน App ของ MIS และอาจรวมถึง เป็นคีย์ ตอนทำข้อมูลส่งรายงาน
   `-`
@@ -44,9 +44,9 @@ HOST: https://gw.hii.in.th/mis
 + eventPatientId: `2222` (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 + centerId: `10000413` (array[number], fixed-type) - ขึ้นตรงกับศูนย์สั่งการไหน
 + jobs (array[Jobs], fixed-type)
-+ vehicleId: `65232` (string) - ยกเลิกใช้งาน
++ vehicleId: `65232` (string,optional) - ยกเลิกใช้งาน
 + operators (array[Operators], fixed-type) - รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
-+ level (VehicleLevel) - ยกเลิกใช้งาน
++ level (VehicleLevel, optional) - ยกเลิกใช้งาน
 + slcus050_id: `2222` (string, required) - รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId
 + createDate: `2021-06-23 09:31:45`
 
