@@ -1079,3 +1079,13 @@ securityDefinitions: {}
 tags:
   - name: Introduction
     description: '# MIS API Design'
+  - name: MIS Note
+    description: >-
+      # ใบชมพู ใบเขียว
+
+
+      [ภาพ](data\note\ใบเขียวใบชมพู สพฉ.svg)
+
+
+      แมพตาม datadig Sheet ALS, BLS แล้ว แต่ยังไม่ได้แมพ Sheet Event, Dispatch
+      เข้าในภาพ
