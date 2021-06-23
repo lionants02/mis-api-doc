@@ -179,7 +179,7 @@ paths:
         - ใช้โครงสร้าง `ชุดข้อมูลการรับแจ้งเหตุ` มาปรับ
 
           **Update 23-06-2021**
-            
+
           **ต้องการเพิ่มตัวแปร**
 
         - $.jobs.jobId เป็นเลข J สำหรับนำมาแสดงบน App ของ MIS และอาจรวมถึง
@@ -291,9 +291,7 @@ paths:
               - eventPatientId
               - centerId
               - jobs
-              - vehicleId
               - operators
-              - level
               - slcus050_id
               - createDate
             additionalProperties: false
