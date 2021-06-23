@@ -21,14 +21,22 @@ paths:
               detail:
                 type: MisRoom
                 officeID:
-                  - 1010
+                  - 10000402
                 eventPatientId:
                   - 2222
-                vehicleId:
-                  - 3324
-                operatorID:
-                  - 9998877
-                level: ALS
+                centerId:
+                  - 10000413
+                jobs:
+                  - vehicleId: '1000665'
+                    jobDetailId: '3998'
+                    jobDetailCode: D210623000049
+                    level: ALS
+                    jobId: jxxxxxxx
+                operators:
+                  - {}
+                level: ''
+                slcus050_id: '2222'
+                createDate: '2021-06-23 09:31:45'
           schema:
             type: object
             properties:
@@ -58,29 +66,56 @@ paths:
                     items:
                       type: number
                     description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-                  vehicleId:
+                  centerId:
                     type: array
                     items:
                       type: number
-                    description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-                  operatorID:
+                    description: ขึ้นตรงกับศูนย์สั่งการไหน
+                  jobs:
                     type: array
                     items:
-                      type: number
-                    description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                      type: object
+                      properties:
+                        vehicleId:
+                          type: string
+                        jobDetailId:
+                          type: string
+                        jobDetailCode:
+                          type: string
+                        level:
+                          type: string
+                          enum:
+                            - ALS
+                            - ILS
+                            - BLS
+                            - FR
+                          description: ระดับปฏิบัติการ
+                        jobId:
+                          type: string
+                          description: เลข J
+                      required:
+                        - vehicleId
+                        - jobId
+                  operators:
+                    type: array
+                    items:
+                      type: object
+                      properties: {}
+                    description: รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
                   level:
                     type: string
-                    enum:
-                      - ALS
-                      - ILS
-                      - BLS
-                      - FR
-                    description: ระดับปฏิบัติการ
+                    description: ตอนนี้ไม่ได้ใช้งาน
+                  slcus050_id:
+                    type: string
+                    description: >-
+                      รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน
+                      ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+                  createDate:
+                    type: string
                 required:
                   - type
                   - officeID
-                  - vehicleId
-                  - operatorID
+                  - slcus050_id
                 description: ข้อมูลรายเอียดห้อง MIS
             required:
               - type
@@ -134,43 +169,82 @@ paths:
                 items:
                   type: number
                 description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-              vehicleId:
+              centerId:
                 type: array
                 items:
                   type: number
-                description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-              operatorID:
+                description: ขึ้นตรงกับศูนย์สั่งการไหน
+              jobs:
                 type: array
                 items:
-                  type: number
-                description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                  type: object
+                  properties:
+                    vehicleId:
+                      type: string
+                    jobDetailId:
+                      type: string
+                    jobDetailCode:
+                      type: string
+                    level:
+                      type: string
+                      enum:
+                        - ALS
+                        - ILS
+                        - BLS
+                        - FR
+                      description: ระดับปฏิบัติการ
+                    jobId:
+                      type: string
+                      description: เลข J
+                  required:
+                    - vehicleId
+                    - jobId
+              operators:
+                type: array
+                items:
+                  type: object
+                  properties: {}
+                description: รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
               level:
                 type: string
-                enum:
-                  - ALS
-                  - ILS
-                  - BLS
-                  - FR
-                description: ระดับปฏิบัติการ
+                description: ตอนนี้ไม่ได้ใช้งาน
+              slcus050_id:
+                type: string
+                description: >-
+                  รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน
+                  ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+              createDate:
+                type: string
             required:
               - type
               - officeID
               - eventPatientId
-              - vehicleId
-              - operatorID
+              - centerId
+              - jobs
+              - operators
               - level
+              - slcus050_id
+              - createDate
             additionalProperties: false
             example:
               type: MisRoom
               officeID:
-                - 1010
+                - 10000402
               eventPatientId:
                 - 2222
-              vehicleId:
-                - 3324
-              operatorID:
-                - 9998877
-              level: ALS
+              centerId:
+                - 10000413
+              jobs:
+                - vehicleId: '1000665'
+                  jobDetailId: '3998'
+                  jobDetailCode: D210623000049
+                  level: ALS
+                  jobId: jxxxxxxx
+              operators:
+                - {}
+              level: ''
+              slcus050_id: '2222'
+              createDate: '2021-06-23 09:31:45'
       produces:
         - application/json
       security:
@@ -185,14 +259,22 @@ paths:
             application/json:
               type: MisRoom
               officeID:
-                - 1010
+                - 10000402
               eventPatientId:
                 - 2222
-              vehicleId:
-                - 3324
-              operatorID:
-                - 9998877
-              level: ALS
+              centerId:
+                - 10000413
+              jobs:
+                - vehicleId: '1000665'
+                  jobDetailId: '3998'
+                  jobDetailCode: D210623000049
+                  level: ALS
+                  jobId: jxxxxxxx
+              operators:
+                - {}
+              level: ''
+              slcus050_id: '2222'
+              createDate: '2021-06-23 09:31:45'
           schema:
             type: object
             properties:
@@ -211,31 +293,62 @@ paths:
                 items:
                   type: number
                 description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-              vehicleId:
+              centerId:
                 type: array
                 items:
                   type: number
-                description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-              operatorID:
+                description: ขึ้นตรงกับศูนย์สั่งการไหน
+              jobs:
                 type: array
                 items:
-                  type: number
-                description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                  type: object
+                  properties:
+                    vehicleId:
+                      type: string
+                    jobDetailId:
+                      type: string
+                    jobDetailCode:
+                      type: string
+                    level:
+                      type: string
+                      enum:
+                        - ALS
+                        - ILS
+                        - BLS
+                        - FR
+                      description: ระดับปฏิบัติการ
+                    jobId:
+                      type: string
+                      description: เลข J
+                  required:
+                    - vehicleId
+                    - jobId
+              operators:
+                type: array
+                items:
+                  type: object
+                  properties: {}
+                description: รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
               level:
                 type: string
-                enum:
-                  - ALS
-                  - ILS
-                  - BLS
-                  - FR
-                description: ระดับปฏิบัติการ
+                description: ตอนนี้ไม่ได้ใช้งาน
+              slcus050_id:
+                type: string
+                description: >-
+                  รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน
+                  ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+              createDate:
+                type: string
             required:
               - type
               - officeID
               - eventPatientId
-              - vehicleId
-              - operatorID
+              - centerId
+              - jobs
+              - operators
               - level
+              - slcus050_id
+              - createDate
             additionalProperties: false
         '404':
           description: Not Found
@@ -304,43 +417,82 @@ paths:
                 items:
                   type: number
                 description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-              vehicleId:
+              centerId:
                 type: array
                 items:
                   type: number
-                description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-              operatorID:
+                description: ขึ้นตรงกับศูนย์สั่งการไหน
+              jobs:
                 type: array
                 items:
-                  type: number
-                description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                  type: object
+                  properties:
+                    vehicleId:
+                      type: string
+                    jobDetailId:
+                      type: string
+                    jobDetailCode:
+                      type: string
+                    level:
+                      type: string
+                      enum:
+                        - ALS
+                        - ILS
+                        - BLS
+                        - FR
+                      description: ระดับปฏิบัติการ
+                    jobId:
+                      type: string
+                      description: เลข J
+                  required:
+                    - vehicleId
+                    - jobId
+              operators:
+                type: array
+                items:
+                  type: object
+                  properties: {}
+                description: รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
               level:
                 type: string
-                enum:
-                  - ALS
-                  - ILS
-                  - BLS
-                  - FR
-                description: ระดับปฏิบัติการ
+                description: ตอนนี้ไม่ได้ใช้งาน
+              slcus050_id:
+                type: string
+                description: >-
+                  รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน
+                  ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+              createDate:
+                type: string
             required:
               - type
               - officeID
               - eventPatientId
-              - vehicleId
-              - operatorID
+              - centerId
+              - jobs
+              - operators
               - level
+              - slcus050_id
+              - createDate
             additionalProperties: false
             example:
               type: MisRoom
               officeID:
-                - 1010
+                - 10000402
               eventPatientId:
                 - 2222
-              vehicleId:
-                - 3324
-              operatorID:
-                - 9998877
-              level: ALS
+              centerId:
+                - 10000413
+              jobs:
+                - vehicleId: '1000665'
+                  jobDetailId: '3998'
+                  jobDetailCode: D210623000049
+                  level: ALS
+                  jobId: jxxxxxxx
+              operators:
+                - {}
+              level: ''
+              slcus050_id: '2222'
+              createDate: '2021-06-23 09:31:45'
       produces:
         - application/json
       security:
@@ -357,14 +509,22 @@ paths:
               detail:
                 type: MisRoom
                 officeID:
-                  - 1010
+                  - 10000402
                 eventPatientId:
                   - 2222
-                vehicleId:
-                  - 3324
-                operatorID:
-                  - 9998877
-                level: ALS
+                centerId:
+                  - 10000413
+                jobs:
+                  - vehicleId: '1000665'
+                    jobDetailId: '3998'
+                    jobDetailCode: D210623000049
+                    level: ALS
+                    jobId: jxxxxxxx
+                operators:
+                  - {}
+                level: ''
+                slcus050_id: '2222'
+                createDate: '2021-06-23 09:31:45'
           schema:
             type: object
             properties:
@@ -394,29 +554,56 @@ paths:
                     items:
                       type: number
                     description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-                  vehicleId:
+                  centerId:
                     type: array
                     items:
                       type: number
-                    description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-                  operatorID:
+                    description: ขึ้นตรงกับศูนย์สั่งการไหน
+                  jobs:
                     type: array
                     items:
-                      type: number
-                    description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                      type: object
+                      properties:
+                        vehicleId:
+                          type: string
+                        jobDetailId:
+                          type: string
+                        jobDetailCode:
+                          type: string
+                        level:
+                          type: string
+                          enum:
+                            - ALS
+                            - ILS
+                            - BLS
+                            - FR
+                          description: ระดับปฏิบัติการ
+                        jobId:
+                          type: string
+                          description: เลข J
+                      required:
+                        - vehicleId
+                        - jobId
+                  operators:
+                    type: array
+                    items:
+                      type: object
+                      properties: {}
+                    description: รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
                   level:
                     type: string
-                    enum:
-                      - ALS
-                      - ILS
-                      - BLS
-                      - FR
-                    description: ระดับปฏิบัติการ
+                    description: ตอนนี้ไม่ได้ใช้งาน
+                  slcus050_id:
+                    type: string
+                    description: >-
+                      รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน
+                      ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+                  createDate:
+                    type: string
                 required:
                   - type
                   - officeID
-                  - vehicleId
-                  - operatorID
+                  - slcus050_id
                 description: ข้อมูลรายเอียดห้อง MIS
             required:
               - type
@@ -517,14 +704,22 @@ paths:
                 detail:
                   type: MisRoom
                   officeID:
-                    - 1010
+                    - 10000402
                   eventPatientId:
                     - 2222
-                  vehicleId:
-                    - 3324
-                  operatorID:
-                    - 9998877
-                  level: ALS
+                  centerId:
+                    - 10000413
+                  jobs:
+                    - vehicleId: '1000665'
+                      jobDetailId: '3998'
+                      jobDetailCode: D210623000049
+                      level: ALS
+                      jobId: jxxxxxxx
+                  operators:
+                    - {}
+                  level: ''
+                  slcus050_id: '2222'
+                  createDate: '2021-06-23 09:31:45'
           schema:
             type: array
             items:
@@ -556,29 +751,56 @@ paths:
                       items:
                         type: number
                       description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-                    vehicleId:
+                    centerId:
                       type: array
                       items:
                         type: number
-                      description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-                    operatorID:
+                      description: ขึ้นตรงกับศูนย์สั่งการไหน
+                    jobs:
                       type: array
                       items:
-                        type: number
-                      description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+                        type: object
+                        properties:
+                          vehicleId:
+                            type: string
+                          jobDetailId:
+                            type: string
+                          jobDetailCode:
+                            type: string
+                          level:
+                            type: string
+                            enum:
+                              - ALS
+                              - ILS
+                              - BLS
+                              - FR
+                            description: ระดับปฏิบัติการ
+                          jobId:
+                            type: string
+                            description: เลข J
+                        required:
+                          - vehicleId
+                          - jobId
+                    operators:
+                      type: array
+                      items:
+                        type: object
+                        properties: {}
+                      description: รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
                     level:
                       type: string
-                      enum:
-                        - ALS
-                        - ILS
-                        - BLS
-                        - FR
-                      description: ระดับปฏิบัติการ
+                      description: ตอนนี้ไม่ได้ใช้งาน
+                    slcus050_id:
+                      type: string
+                      description: >-
+                        รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน
+                        ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+                    createDate:
+                      type: string
                   required:
                     - type
                     - officeID
-                    - vehicleId
-                    - operatorID
+                    - slcus050_id
                   description: ข้อมูลรายเอียดห้อง MIS
               required:
                 - type
@@ -2908,8 +3130,7 @@ definitions:
     required:
       - type
       - officeID
-      - vehicleId
-      - operatorID
+      - slcus050_id
     properties:
       type:
         type: string
@@ -2924,19 +3145,67 @@ definitions:
         items:
           type: number
         description: รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+      centerId:
+        type: array
+        items:
+          type: number
+        description: ขึ้นตรงกับศูนย์สั่งการไหน
+      jobs:
+        type: array
+        items:
+          $ref: '#/definitions/Jobs'
+      operators:
+        type: array
+        items:
+          $ref: '#/definitions/9998877'
+        description: รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
+      level:
+        type: string
+        description: ตอนนี้ไม่ได้ใช้งาน
+      slcus050_id:
+        type: string
+        description: >-
+          รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ
+          eventPatientId
+      createDate:
+        type: string
+  Operators:
+    type: object
+    required:
+      - id
+      - role
+      - officeID
+    properties:
+      id:
+        type: string
+        description: รหัส id ผู้ใช้
+      role:
+        type: string
+        description: role อะไร
+      officeID:
+        type: string
+        description: รหัสศูนย์ที่สังกัด
       vehicleId:
-        type: array
-        items:
-          type: number
-        description: รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-      operatorID:
-        type: array
-        items:
-          type: number
-        description: รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+        type: string
+        description: รหัสพาหนะ
+  Jobs:
+    type: object
+    required:
+      - vehicleId
+      - jobId
+    properties:
+      vehicleId:
+        type: string
+      jobDetailId:
+        type: string
+      jobDetailCode:
+        type: string
       level:
         $ref: '#/definitions/VehicleLevel'
         description: ระดับปฏิบัติการ
+      jobId:
+        type: string
+        description: เลข J
   MisRoomReturn:
     type: object
     required:
@@ -3723,19 +3992,51 @@ tags:
 
       + type: `MisRoom` (string, fixed, required) - ค่าคงที่
 
-      + officeID: 1010 (array[number], required,fixed-type) - หน่วยปฏิบัติการ
-      (ทะเบียนหน่วยงาน)
+      + officeID: `10000402` (array[number], required,fixed-type) -
+      หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
 
-      + eventPatientId: 2222 (array[number], fixed-type) -
+      + eventPatientId: `2222` (array[number], fixed-type) -
       รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
 
-      + vehicleId: 3324 (array[number], fixed-type, required) - รายการ รหัสพาหนะ
-      ที่ออกปฏิบัติการ
+      + centerId: `10000413` (array[number], fixed-type) -
+      ขึ้นตรงกับศูนย์สั่งการไหน
 
-      + operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน
-      Medical Director ที่ดูแลห้อง MIS นี้
+      + jobs (array[Jobs], fixed-type)
+
+      + operators: 9998877 (array[Operators], fixed-type) -
+      รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
+
+      + level - ตอนนี้ไม่ได้ใช้งาน
+
+      + slcus050_id: `2222` (string, required) - รหัสข้อมูลผู้ป่วยที่เกิดเหตุ
+      ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+
+      + createDate: `2021-06-23 09:31:45`
+
+
+
+      # Operators (object)
+
+      + id: `224562` (string, required) - รหัส id ผู้ใช้
+
+      + role: `Operator` (string, required) - role อะไร
+
+      + officeID: `10000999` (string, required) - รหัสศูนย์ที่สังกัด
+
+      + vehicleId: `1000888` (string) - รหัสพาหนะ
+
+
+      # Jobs (object)
+
+      + vehicleId: `1000665` (string, required)
+
+      + jobDetailId: `3998` (string)
+
+      + jobDetailCode: `D210623000049` (string)
 
       + level (VehicleLevel) - ระดับปฏิบัติการ
+
+      + jobId: `jxxxxxxx` (string,required) - เลข J
 
 
       # MisRoomReturn (object)

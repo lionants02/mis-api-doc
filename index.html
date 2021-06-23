@@ -91,18 +91,29 @@
 <h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname">https://gw.hii.in.th/mis</span>/room</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"MisRoom"</span></span>,
   "<span class="hljs-attribute">officeID</span>": <span class="hljs-value">[
-    <span class="hljs-number">1010</span>
+    <span class="hljs-number">10000402</span>
   ]</span>,
   "<span class="hljs-attribute">eventPatientId</span>": <span class="hljs-value">[
     <span class="hljs-number">2222</span>
   ]</span>,
-  "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">[
-    <span class="hljs-number">3324</span>
+  "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">[
+    <span class="hljs-number">10000413</span>
   ]</span>,
-  "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
-    <span class="hljs-number">9998877</span>
+  "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
+      "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
+      "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
+      "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
+      "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+    </span>}
   ]</span>,
-  "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
+  "<span class="hljs-attribute">operators</span>": <span class="hljs-value">[
+    <span class="hljs-literal">null</span>
+  ]</span>,
+  "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value"><span class="hljs-string">"2222"</span></span>,
+  "<span class="hljs-attribute">createDate</span>": <span class="hljs-value"><span class="hljs-string">"2021-06-23 09:31:45"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -128,38 +139,78 @@
       </span>}</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
       "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ขึ้นตรงกับศูนย์สั่งการไหน"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
       "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"ALS"</span>,
+              <span class="hljs-string">"ILS"</span>,
+              <span class="hljs-string">"BLS"</span>,
+              <span class="hljs-string">"FR"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"vehicleId"</span>,
+          <span class="hljs-string">"jobId"</span>
+        ]
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">operators</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
       </span>}</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการผู้ที่มีสิทธิ์เข้าห้อง MIS"</span>
     </span>}</span>,
     "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-        <span class="hljs-string">"ALS"</span>,
-        <span class="hljs-string">"ILS"</span>,
-        <span class="hljs-string">"BLS"</span>,
-        <span class="hljs-string">"FR"</span>
-      ]</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ตอนนี้ไม่ได้ใช้งาน"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">createDate</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
     <span class="hljs-string">"type"</span>,
     <span class="hljs-string">"officeID"</span>,
     <span class="hljs-string">"eventPatientId"</span>,
-    <span class="hljs-string">"vehicleId"</span>,
-    <span class="hljs-string">"operatorID"</span>,
-    <span class="hljs-string">"level"</span>
+    <span class="hljs-string">"centerId"</span>,
+    <span class="hljs-string">"jobs"</span>,
+    <span class="hljs-string">"operators"</span>,
+    <span class="hljs-string">"level"</span>,
+    <span class="hljs-string">"slcus050_id"</span>,
+    <span class="hljs-string">"createDate"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -168,18 +219,29 @@
   "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"MisRoom"</span></span>,
     "<span class="hljs-attribute">officeID</span>": <span class="hljs-value">[
-      <span class="hljs-number">1010</span>
+      <span class="hljs-number">10000402</span>
     ]</span>,
     "<span class="hljs-attribute">eventPatientId</span>": <span class="hljs-value">[
       <span class="hljs-number">2222</span>
     ]</span>,
-    "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">[
-      <span class="hljs-number">3324</span>
+    "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">[
+      <span class="hljs-number">10000413</span>
     ]</span>,
-    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
-      <span class="hljs-number">9998877</span>
+    "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
+        "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
+        "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
+        "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
+        "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+      </span>}
     ]</span>,
-    "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
+    "<span class="hljs-attribute">operators</span>": <span class="hljs-value">[
+      <span class="hljs-literal">null</span>
+    ]</span>,
+    "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+    "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value"><span class="hljs-string">"2222"</span></span>,
+    "<span class="hljs-attribute">createDate</span>": <span class="hljs-value"><span class="hljs-string">"2021-06-23 09:31:45"</span>
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -220,36 +282,72 @@
           </span>}</span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
           "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ขึ้นตรงกับศูนย์สั่งการไหน"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
           "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"ALS"</span>,
+                  <span class="hljs-string">"ILS"</span>,
+                  <span class="hljs-string">"BLS"</span>,
+                  <span class="hljs-string">"FR"</span>
+                ]</span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+              <span class="hljs-string">"vehicleId"</span>,
+              <span class="hljs-string">"jobId"</span>
+            ]
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">operators</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
           </span>}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการผู้ที่มีสิทธิ์เข้าห้อง MIS"</span>
         </span>}</span>,
         "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-            <span class="hljs-string">"ALS"</span>,
-            <span class="hljs-string">"ILS"</span>,
-            <span class="hljs-string">"BLS"</span>,
-            <span class="hljs-string">"FR"</span>
-          ]</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ตอนนี้ไม่ได้ใช้งาน"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">createDate</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
         <span class="hljs-string">"type"</span>,
         <span class="hljs-string">"officeID"</span>,
-        <span class="hljs-string">"vehicleId"</span>,
-        <span class="hljs-string">"operatorID"</span>
+        <span class="hljs-string">"slcus050_id"</span>
       ]</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลรายเอียดห้อง MIS"</span>
     </span>}
@@ -281,18 +379,29 @@
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer {token}</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"MisRoom"</span></span>,
   "<span class="hljs-attribute">officeID</span>": <span class="hljs-value">[
-    <span class="hljs-number">1010</span>
+    <span class="hljs-number">10000402</span>
   ]</span>,
   "<span class="hljs-attribute">eventPatientId</span>": <span class="hljs-value">[
     <span class="hljs-number">2222</span>
   ]</span>,
-  "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">[
-    <span class="hljs-number">3324</span>
+  "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">[
+    <span class="hljs-number">10000413</span>
   ]</span>,
-  "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
-    <span class="hljs-number">9998877</span>
+  "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
+      "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
+      "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
+      "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
+      "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+    </span>}
   ]</span>,
-  "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
+  "<span class="hljs-attribute">operators</span>": <span class="hljs-value">[
+    <span class="hljs-literal">null</span>
+  ]</span>,
+  "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value"><span class="hljs-string">"2222"</span></span>,
+  "<span class="hljs-attribute">createDate</span>": <span class="hljs-value"><span class="hljs-string">"2021-06-23 09:31:45"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -318,55 +427,106 @@
       </span>}</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
       "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ขึ้นตรงกับศูนย์สั่งการไหน"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
       "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"ALS"</span>,
+              <span class="hljs-string">"ILS"</span>,
+              <span class="hljs-string">"BLS"</span>,
+              <span class="hljs-string">"FR"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"vehicleId"</span>,
+          <span class="hljs-string">"jobId"</span>
+        ]
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">operators</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
       </span>}</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการผู้ที่มีสิทธิ์เข้าห้อง MIS"</span>
     </span>}</span>,
     "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-        <span class="hljs-string">"ALS"</span>,
-        <span class="hljs-string">"ILS"</span>,
-        <span class="hljs-string">"BLS"</span>,
-        <span class="hljs-string">"FR"</span>
-      ]</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ตอนนี้ไม่ได้ใช้งาน"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">createDate</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
     <span class="hljs-string">"type"</span>,
     <span class="hljs-string">"officeID"</span>,
     <span class="hljs-string">"eventPatientId"</span>,
-    <span class="hljs-string">"vehicleId"</span>,
-    <span class="hljs-string">"operatorID"</span>,
-    <span class="hljs-string">"level"</span>
+    <span class="hljs-string">"centerId"</span>,
+    <span class="hljs-string">"jobs"</span>,
+    <span class="hljs-string">"operators"</span>,
+    <span class="hljs-string">"level"</span>,
+    <span class="hljs-string">"slcus050_id"</span>,
+    <span class="hljs-string">"createDate"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"MisRoom"</span></span>,
   "<span class="hljs-attribute">officeID</span>": <span class="hljs-value">[
-    <span class="hljs-number">1010</span>
+    <span class="hljs-number">10000402</span>
   ]</span>,
   "<span class="hljs-attribute">eventPatientId</span>": <span class="hljs-value">[
     <span class="hljs-number">2222</span>
   ]</span>,
-  "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">[
-    <span class="hljs-number">3324</span>
+  "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">[
+    <span class="hljs-number">10000413</span>
   ]</span>,
-  "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
-    <span class="hljs-number">9998877</span>
+  "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
+      "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
+      "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
+      "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
+      "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+    </span>}
   ]</span>,
-  "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
+  "<span class="hljs-attribute">operators</span>": <span class="hljs-value">[
+    <span class="hljs-literal">null</span>
+  ]</span>,
+  "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+  "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value"><span class="hljs-string">"2222"</span></span>,
+  "<span class="hljs-attribute">createDate</span>": <span class="hljs-value"><span class="hljs-string">"2021-06-23 09:31:45"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -392,38 +552,78 @@
       </span>}</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
       "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ขึ้นตรงกับศูนย์สั่งการไหน"</span>
     </span>}</span>,
-    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+    "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
       "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+              <span class="hljs-string">"ALS"</span>,
+              <span class="hljs-string">"ILS"</span>,
+              <span class="hljs-string">"BLS"</span>,
+              <span class="hljs-string">"FR"</span>
+            ]</span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+          <span class="hljs-string">"vehicleId"</span>,
+          <span class="hljs-string">"jobId"</span>
+        ]
+      </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">operators</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+      "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+        "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
       </span>}</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการผู้ที่มีสิทธิ์เข้าห้อง MIS"</span>
     </span>}</span>,
     "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-      "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-        <span class="hljs-string">"ALS"</span>,
-        <span class="hljs-string">"ILS"</span>,
-        <span class="hljs-string">"BLS"</span>,
-        <span class="hljs-string">"FR"</span>
-      ]</span>,
-      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ตอนนี้ไม่ได้ใช้งาน"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">createDate</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
     </span>}
   </span>}</span>,
   "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
     <span class="hljs-string">"type"</span>,
     <span class="hljs-string">"officeID"</span>,
     <span class="hljs-string">"eventPatientId"</span>,
-    <span class="hljs-string">"vehicleId"</span>,
-    <span class="hljs-string">"operatorID"</span>,
-    <span class="hljs-string">"level"</span>
+    <span class="hljs-string">"centerId"</span>,
+    <span class="hljs-string">"jobs"</span>,
+    <span class="hljs-string">"operators"</span>,
+    <span class="hljs-string">"level"</span>,
+    <span class="hljs-string">"slcus050_id"</span>,
+    <span class="hljs-string">"createDate"</span>
   ]</span>,
   "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>404</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -463,18 +663,29 @@
   "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"MisRoom"</span></span>,
     "<span class="hljs-attribute">officeID</span>": <span class="hljs-value">[
-      <span class="hljs-number">1010</span>
+      <span class="hljs-number">10000402</span>
     ]</span>,
     "<span class="hljs-attribute">eventPatientId</span>": <span class="hljs-value">[
       <span class="hljs-number">2222</span>
     ]</span>,
-    "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">[
-      <span class="hljs-number">3324</span>
+    "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">[
+      <span class="hljs-number">10000413</span>
     ]</span>,
-    "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
-      <span class="hljs-number">9998877</span>
+    "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
+        "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
+        "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
+        "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
+        "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+      </span>}
     ]</span>,
-    "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
+    "<span class="hljs-attribute">operators</span>": <span class="hljs-value">[
+      <span class="hljs-literal">null</span>
+    ]</span>,
+    "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+    "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value"><span class="hljs-string">"2222"</span></span>,
+    "<span class="hljs-attribute">createDate</span>": <span class="hljs-value"><span class="hljs-string">"2021-06-23 09:31:45"</span>
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -515,36 +726,72 @@
           </span>}</span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
           "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ขึ้นตรงกับศูนย์สั่งการไหน"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
           "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                  <span class="hljs-string">"ALS"</span>,
+                  <span class="hljs-string">"ILS"</span>,
+                  <span class="hljs-string">"BLS"</span>,
+                  <span class="hljs-string">"FR"</span>
+                ]</span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+              </span>}</span>,
+              "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
+              </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+              <span class="hljs-string">"vehicleId"</span>,
+              <span class="hljs-string">"jobId"</span>
+            ]
+          </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">operators</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+            "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
           </span>}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการผู้ที่มีสิทธิ์เข้าห้อง MIS"</span>
         </span>}</span>,
         "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-          "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-            <span class="hljs-string">"ALS"</span>,
-            <span class="hljs-string">"ILS"</span>,
-            <span class="hljs-string">"BLS"</span>,
-            <span class="hljs-string">"FR"</span>
-          ]</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ตอนนี้ไม่ได้ใช้งาน"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">createDate</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
         <span class="hljs-string">"type"</span>,
         <span class="hljs-string">"officeID"</span>,
-        <span class="hljs-string">"vehicleId"</span>,
-        <span class="hljs-string">"operatorID"</span>
+        <span class="hljs-string">"slcus050_id"</span>
       ]</span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลรายเอียดห้อง MIS"</span>
     </span>}
@@ -612,18 +859,29 @@
     "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"MisRoom"</span></span>,
       "<span class="hljs-attribute">officeID</span>": <span class="hljs-value">[
-        <span class="hljs-number">1010</span>
+        <span class="hljs-number">10000402</span>
       ]</span>,
       "<span class="hljs-attribute">eventPatientId</span>": <span class="hljs-value">[
         <span class="hljs-number">2222</span>
       ]</span>,
-      "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">[
-        <span class="hljs-number">3324</span>
+      "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">[
+        <span class="hljs-number">10000413</span>
       ]</span>,
-      "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">[
-        <span class="hljs-number">9998877</span>
+      "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
+          "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
+          "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
+          "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
+          "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+        </span>}
       ]</span>,
-      "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
+      "<span class="hljs-attribute">operators</span>": <span class="hljs-value">[
+        <span class="hljs-literal">null</span>
+      ]</span>,
+      "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"Hello, world!"</span></span>,
+      "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value"><span class="hljs-string">"2222"</span></span>,
+      "<span class="hljs-attribute">createDate</span>": <span class="hljs-value"><span class="hljs-string">"2021-06-23 09:31:45"</span>
     </span>}
   </span>}
 ]</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -667,36 +925,72 @@
             </span>}</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">centerId</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
             "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการ รหัสพาหนะ ที่ออกปฏิบัติการ"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ขึ้นตรงกับศูนย์สั่งการไหน"</span>
           </span>}</span>,
-          "<span class="hljs-attribute">operatorID</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">jobs</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
             "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"ALS"</span>,
+                    <span class="hljs-string">"ILS"</span>,
+                    <span class="hljs-string">"BLS"</span>,
+                    <span class="hljs-string">"FR"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
+                <span class="hljs-string">"vehicleId"</span>,
+                <span class="hljs-string">"jobId"</span>
+              ]
+            </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">operators</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+            "<span class="hljs-attribute">items</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{}
             </span>}</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รายการผู้ที่มีสิทธิ์เข้าห้อง MIS"</span>
           </span>}</span>,
           "<span class="hljs-attribute">level</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
-              <span class="hljs-string">"ALS"</span>,
-              <span class="hljs-string">"ILS"</span>,
-              <span class="hljs-string">"BLS"</span>,
-              <span class="hljs-string">"FR"</span>
-            ]</span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ตอนนี้ไม่ได้ใช้งาน"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">slcus050_id</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId"</span>
+          </span>}</span>,
+          "<span class="hljs-attribute">createDate</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
           </span>}
         </span>}</span>,
         "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
           <span class="hljs-string">"type"</span>,
           <span class="hljs-string">"officeID"</span>,
-          <span class="hljs-string">"vehicleId"</span>,
-          <span class="hljs-string">"operatorID"</span>
+          <span class="hljs-string">"slcus050_id"</span>
         ]</span>,
         "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ข้อมูลรายเอียดห้อง MIS"</span>
       </span>}
@@ -2808,11 +3102,28 @@
 
 <span class="hljs-header"># MisRoom (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`MisRoom`</span> (string, fixed, required) - ค่าคงที่
-<span class="hljs-bullet">+ </span>officeID: 1010 (array[number], required,fixed-type) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
-<span class="hljs-bullet">+ </span>eventPatientId: 2222 (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
-<span class="hljs-bullet">+ </span>vehicleId: 3324 (array[number], fixed-type, required) - รายการ รหัสพาหนะ ที่ออกปฏิบัติการ
-<span class="hljs-bullet">+ </span>operatorID: 9998877 (array[number], required, fixed-type) - รหัสทะเบียน Medical Director ที่ดูแลห้อง MIS นี้
+<span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`10000402`</span> (array[number], required,fixed-type) - หน่วยปฏิบัติการ (ทะเบียนหน่วยงาน)
+<span class="hljs-bullet">+ </span>eventPatientId: <span class="hljs-code">`2222`</span> (array[number], fixed-type) - รหัสรายละเอียดผู้ประสบเหตุ คือ รหัสคนที่เกิดเหตุ
+<span class="hljs-bullet">+ </span>centerId: <span class="hljs-code">`10000413`</span> (array[number], fixed-type) - ขึ้นตรงกับศูนย์สั่งการไหน
+<span class="hljs-bullet">+ </span>jobs (array[Jobs], fixed-type)
+<span class="hljs-bullet">+ </span>operators: 9998877 (array[Operators], fixed-type) - รายการผู้ที่มีสิทธิ์เข้าห้อง MIS
+<span class="hljs-bullet">+ </span>level - ตอนนี้ไม่ได้ใช้งาน
+<span class="hljs-bullet">+ </span>slcus050_id: <span class="hljs-code">`2222`</span> (string, required) - รหัสข้อมูลผู้ป่วยที่เกิดเหตุ ตรงนี้จะไม่ซ้ำกัน ปัจจุบันเป็นเลขเดียวกับ eventPatientId
+<span class="hljs-bullet">+ </span>createDate: <span class="hljs-code">`2021-06-23 09:31:45`</span>
+
+
+<span class="hljs-header"># Operators (object)</span>
+<span class="hljs-bullet">+ </span>id: <span class="hljs-code">`224562`</span> (string, required) - รหัส id ผู้ใช้
+<span class="hljs-bullet">+ </span>role: <span class="hljs-code">`Operator`</span> (string, required) - role อะไร
+<span class="hljs-bullet">+ </span>officeID: <span class="hljs-code">`10000999`</span> (string, required) - รหัสศูนย์ที่สังกัด
+<span class="hljs-bullet">+ </span>vehicleId: <span class="hljs-code">`1000888`</span> (string) - รหัสพาหนะ
+
+<span class="hljs-header"># Jobs (object)</span>
+<span class="hljs-bullet">+ </span>vehicleId: <span class="hljs-code">`1000665`</span> (string, required)
+<span class="hljs-bullet">+ </span>jobDetailId: <span class="hljs-code">`3998`</span> (string)
+<span class="hljs-bullet">+ </span>jobDetailCode: <span class="hljs-code">`D210623000049`</span> (string)
 <span class="hljs-bullet">+ </span>level (VehicleLevel) - ระดับปฏิบัติการ
+<span class="hljs-bullet">+ </span>jobId: <span class="hljs-code">`jxxxxxxx`</span> (string,required) - เลข J
 
 <span class="hljs-header"># MisRoomReturn (object)</span>
 <span class="hljs-bullet">+ </span>type: <span class="hljs-code">`MisRoomReturn`</span> (string, fixed, required) - ค่าคงที่
@@ -3021,7 +3332,7 @@
 
 <span class="hljs-header"># NotFound (object)</span>
 <span class="hljs-bullet">+ </span>message: <span class="hljs-code">`ไม่พบข้อมูลตามที่ระบุใน Link`</span> (string)</code></pre>
-</section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 05 Jun 2021</p><script>/* eslint-env browser */
+</section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 23 Jun 2021</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
