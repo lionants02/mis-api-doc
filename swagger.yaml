@@ -1079,9 +1079,13 @@ tags:
   - name: Introduction
     description: '# MIS API Design'
   - name: MIS Note
-    description: |-
+    description: >-
       # ใบชมพู ใบเขียว
 
-      <a href="data\note\ใบเขียวใบชมพู สพฉ.svg">ภาพ ใบชมพู ใบเขียว</a>
-        <br>
-        แมพตาม datadig Sheet ALS, BLS แล้ว แต่ยังไม่ได้แมพ Sheet Event, Dispatch เข้าในภาพ
+
+      <a href="data\note\ใบเขียวใบชมพู สพฉ.svg">
+        <img border="0" alt="ใบเขียวใบชมพู" src="data\note\ใบเขียวใบชมพู สพฉ.png" width="100%">
+        </a>
+
+      แมพตาม datadig Sheet ALS, BLS แล้ว แต่ยังไม่ได้แมพ Sheet Event, Dispatch
+      เข้าในภาพ
