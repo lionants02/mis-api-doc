@@ -6,11 +6,6 @@
 <li>
 <p>ใช้โครงสร้าง <code>ชุดข้อมูลการรับแจ้งเหตุ</code> มาปรับ</p>
 <p><strong>Update 23-06-2021</strong><br>
-<strong>ต้องการเพิ่มตัวแปร</strong><br></p>
-</li>
-<li>
-<p>$.jobs.jobId เป็นเลข J สำหรับนำมาแสดงบน App ของ MIS และอาจรวมถึง เป็นคีย์ ตอนทำข้อมูลส่งรายงาน
-<br><br>
 <strong>ตัวแปรที่ยกเลิกการใช้งาน แต่คงสภาพไว้ก่อนเพราะไม่อยากเปลี่ยนโครงสร้าง มีโอกาสทำให้เกิดบั๊ค จะส่งค่ามาหรือไม่ส่งมาก็ได้</strong><br></p>
 </li>
 <li>
@@ -36,8 +31,7 @@
       "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
       "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
       "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
-      "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
-      "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+      "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
     </span>}
   ]</span>,
   "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"65232"</span></span>,
@@ -93,7 +87,8 @@
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
           </span>}</span>,
           "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข D"</span>
           </span>}</span>,
           "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -107,15 +102,10 @@
               <span class="hljs-string">"FR"</span>
             ]</span>,
             "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
-          </span>}</span>,
-          "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-            "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
           </span>}
         </span>}</span>,
         "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-          <span class="hljs-string">"vehicleId"</span>,
-          <span class="hljs-string">"jobId"</span>
+          <span class="hljs-string">"vehicleId"</span>
         ]
       </span>}
     </span>}</span>,
@@ -201,8 +191,7 @@
         "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"1000665"</span></span>,
         "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value"><span class="hljs-string">"3998"</span></span>,
         "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value"><span class="hljs-string">"D210623000049"</span></span>,
-        "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span></span>,
-        "<span class="hljs-attribute">jobId</span>": <span class="hljs-value"><span class="hljs-string">"jxxxxxxx"</span>
+        "<span class="hljs-attribute">level</span>": <span class="hljs-value"><span class="hljs-string">"ALS"</span>
       </span>}
     ]</span>,
     "<span class="hljs-attribute">vehicleId</span>": <span class="hljs-value"><span class="hljs-string">"65232"</span></span>,
@@ -273,7 +262,8 @@
                 "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
               </span>}</span>,
               "<span class="hljs-attribute">jobDetailId</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข D"</span>
               </span>}</span>,
               "<span class="hljs-attribute">jobDetailCode</span>": <span class="hljs-value">{
                 "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
@@ -287,15 +277,10 @@
                   <span class="hljs-string">"FR"</span>
                 ]</span>,
                 "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ระดับปฏิบัติการ"</span>
-              </span>}</span>,
-              "<span class="hljs-attribute">jobId</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-                "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"เลข J"</span>
               </span>}
             </span>}</span>,
             "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
-              <span class="hljs-string">"vehicleId"</span>,
-              <span class="hljs-string">"jobId"</span>
+              <span class="hljs-string">"vehicleId"</span>
             ]
           </span>}
         </span>}</span>,
@@ -384,7 +369,7 @@
   <img border="0" alt="ใบเขียวใบชมพู" src="data\note\ใบเขียวใบชมพู สพฉ.png" width="100%">
   </a>
 <p>แมพตาม datadig Sheet ALS, BLS แล้ว แต่ยังไม่ได้แมพ Sheet Event, Dispatch เข้าในภาพ</p>
-</section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 24 Jun 2021</p><script>/* eslint-env browser */
+</section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 14 Jul 2021</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
